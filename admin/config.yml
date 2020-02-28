@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: jdamner/amner-me
+  repo: jdamner/amner.me
   branch: master
   site_domain: amner.me
 media_folder: "images/uploads"
