@@ -1,3 +1,10 @@
+GIT
+  remote: https://d3ba859c85b35b7cd478164fbeeff25cca6c793b:x-oauth-basic@github.com/jdamner/amner-me-theme
+  revision: f102b48372b6aa391c4f37645fb54f9b39509afe
+  specs:
+    amner-me (0.1.0)
+      jekyll (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -73,6 +80,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amner-me!
   jekyll (~> 4.0.0)
   jekyll-feed (~> 0.12)
   minima (~> 2.5)

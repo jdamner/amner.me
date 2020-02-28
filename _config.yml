@@ -1,15 +1,20 @@
 
 title: Amner.me
 email: jdamner@me.com
+telephone: "07515352631"
 description: >-
   A personal site full of personal thoughts from a mortgage adviser turned web developer.
 baseurl: ""
 url: "https://amner.me"
-twitter_username:
-github_username:  jdamner
+
+footer:
+  copyright: "&copy; James Amner 2020"
+  image:
+    src: "/assets/footer.jpg"
+    caption: "Balboa and I hard at work"
 
 # Build settings
-theme: minima
+theme: amner-me
 plugins:
   - jekyll-feed
 
