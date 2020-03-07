@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-M75XTFL');
+  </script>
+
+  <link rel="apple-touch-icon" sizes="57x57" href='{{ "/assets/icon/apple-icon-57x57.png" | absolute_url }}'>
+  <link rel="apple-touch-icon" sizes="60x60" href='{{ "/assets/icon/apple-icon-60x60.png" | absolute_url }}'>
+  <link rel="apple-touch-icon" sizes="72x72" href='{{ "/assets/icon/apple-icon-72x72.png" | absolute_url }}'>
+  <link rel="apple-touch-icon" sizes="76x76" href='{{ "/assets/icon/apple-icon-76x76.png" | absolute_url }}'>
+  <link rel="apple-touch-icon" sizes="114x114" href='{{ "/assets/icon/apple-icon-114x114.png" | absolute_url }}'>
+  <link rel="apple-touch-icon" sizes="120x120" href='{{ "/assets/icon/apple-icon-120x120.png" | absolute_url }}'>
+  <link rel="apple-touch-icon" sizes="144x144" href='{{ "/assets/icon/apple-icon-144x144.png" | absolute_url }}'>
+  <link rel="apple-touch-icon" sizes="152x152" href='{{ "/assets/icon/apple-icon-152x152.png" | absolute_url }}'>
+  <link rel="apple-touch-icon" sizes="180x180" href='{{ "/assets/icon/apple-icon-180x180.png" | absolute_url }}'>
+  <link rel="icon" type="image/png" sizes="192x192" href='{{ "/assets/icon/android-icon-192x192.png" | absolute_url }}'>
+  <link rel="icon" type="image/png" sizes="32x32" href='{{ "/assets/icon/favicon-32x32.png" | absolute_url }}'>
+  <link rel="icon" type="image/png" sizes="96x96" href='{{ "/assets/icon/favicon-96x96.png" | absolute_url }}'>
+  <link rel="icon" type="image/png" sizes="16x16" href='{{ "/assets/icon/favicon-16x16.png" | absolute_url }}'>
+  <link rel="manifest" href='{{ "/assets/icon/manifest.json" | absolute_url }}'>
+  <meta name="msapplication-TileColor" content="#ba1b0a">
+  <meta name="msapplication-TileImage" content='{{ "/assets/icon/ms-icon-144x144.png" | absolute_url }}'>
+  <meta name="theme-color" content="#ba1b0a">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script src='{{ "/assets/masonry.js" | absolute_url }}'></script>
+  <script src='{{ "/assets/theme.js" | absolute_url }}'></script>
+  <link href='{{ "/assets/style.css" | absolute_url }}' rel='stylesheet'>
+
+  <title>{{site.title}} {% if page.title %}» {{page.title}}{%endif%}</title>
+
+</head>
+
+<body data-spy="scroll" data-target="#header-navbar" data-offset="200">
+  <div id="page" class="site">
+    <header id="masthead" class="site-header align-items-center sticky-top top">
+      <nav class='navbar navbar-dark navbar-expand-lg '>
+        <a href="/" rel="home" class='navbar-brand fancy-title'>
+          {{site.title}}
+        </a>
+        <!-- <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#header-navbar"
+          aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button> -->
+      </nav>
+    </header>
+
+    <div id='home'>
+      <main class='container'>
+        {{ content }}
+      </main>
+      <section id='contact'>
+        <div class='container-fluid'>
+
+          <div class='row align-items-center'>
+            <div class='col-md-4 offset-md-1'>
+              <div class='py-5 cf1 text-center'>
+                <!-- <h2 class='fancy-title'>Contact Me</h2> -->
+                <h2 class='mb-5 fancy-title'>Want to say hi? 👋</h2>
+                <a href='tel:{{site.telephone}}'>
+                  <i class='fa fa-phone'></i>
+                  {{site.telephone}}
+                </a><br>
+                <a href='mailto:{{site.email}}' class=''>
+                  <i class='fa fa-envelope-o'></i>
+                  {{site.email}}
+                </a>
+              </div>
+            </div>
+            <div class='col-md-6 offset-md-1 text-center'>
+              <div class='image-frame'>
+                <img src='{{site.footer.image.src}}'>
+                <div class='caption'>
+                  {{site.footer.image.caption}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div><!-- #content -->
+
+    <footer id="colophon" class="site-footer container-fluid">
+      <div class="site-info py-3 text-center">
+        <small>
+          &copy; {{site.footer.copyright}} {{ 'now' | date: '%Y' }}
+        </small>
+      </div><!-- .site-info -->
+    </footer><!-- #colophon -->
+
+  </div><!-- #page -->
+
+
+
+</body>
+
+</html>

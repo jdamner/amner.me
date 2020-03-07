@@ -1,0 +1,22 @@
+.site-header
+  background-color: rgba(desaturate($Primary, 10), 0.9)
+  color: white
+  border-bottom: 2px solid white
+  &:before
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    filter: blur(5px)
+  .navbar-brand
+    @extend h3
+    margin: 0 5px 0 0
+    padding: 0
+    color: white
+    transition: all 0.3s ease
+
+  &.top
+    background-color: rgba($Primary,1)
+    .navbar-brand
+      @extend h2

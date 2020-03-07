@@ -8,13 +8,14 @@ baseurl: ""
 url: "https://amner.me"
 
 footer:
-  copyright: "&copy; James Amner 2020"
+  #copyright is prefixed with &copy; and postfixed with current year
+  copyright: "James Amner"
   image:
     src: "/assets/footer.jpg"
     caption: "Balboa and I hard at work"
 
 # Build settings
-theme: amner-me
+# theme: amner-me
 plugins:
   - jekyll-feed
 

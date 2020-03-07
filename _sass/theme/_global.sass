@@ -1,0 +1,286 @@
+.grid-sizer
+  width: 100.00%
+  @include media-breakpoint-up(md)
+    width: 50%
+  @include media-breakpoint-up(lg)
+    width: 33%
+  @include media-breakpoint-up(xl)
+    width: 25%
+
+img
+  height: auto
+.grid-item
+  @extend .grid-sizer
+  text-align: justify
+  color: white
+  transition: all 0.6s ease
+  border: 2px solid white
+  overflow: hidden
+  display: flex
+  align-items: center
+  .content
+    padding: 15px
+    width: 100%
+    h3
+      margin: 1rem 0
+      text-align: center
+      font-size: 2.4rem
+      text-shadow: 1px 1px 5px rgba(black, 0.75)
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    margin-bottom: -100%
+    min-height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -3
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    z-index: -2
+    background-color: rgba(black, 0.6)
+  &:hover
+    &:before
+      background-color: rgba(black, 0.25)
+
+
+.btn
+  margin: 1rem 0
+  color: saturate($Primary, 2)
+  background-color: rgba(white, 0.75)
+  font-weight: 100
+  letter-spacing: .1rem
+  border: 2px solid white
+  border-radius: 0
+  box-shadow: 1px 1px 10px 5px rgba(black, 0.6)
+  padding-left: 2rem
+  padding-right: 2rem
+  transition: all 0.3s ease
+  white-space: normal
+  &:after
+    content: "»"
+    display: inline-block
+    width: 0px
+    overflow: hidden
+    transition: all 0.3s ease
+  &:hover
+    background-color: rgba(white, 1)
+    padding-right: 0.8rem
+    color: $Primary
+    box-shadow: 1px 1px 15px 5px rgba(black, 0.8)
+    &:after
+      width: 1.2rem
+
+.bg-full
+  background-size: cover
+  background-position: 50% 50%
+  position: relative
+  color: white
+  min-height: 80vh
+  .row
+    min-height: 80vh
+    align-items: center
+  &:before
+    position: absolute
+    content: ""
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(black, 0.6)
+  h1
+    background-color: white
+    box-shadow: 1px 1px 15px 5px rgba(black, 0.8)
+    color: darken($Primary, 5)
+    width: auto
+    padding: 2rem 4rem
+    display: inline-block
+
+#blog
+  border-bottom: 2px solid white
+  border-top: 2px solid white
+#contact
+  background-color: $Primary
+  border-bottom: 2px solid white
+  border-top: 2px solid white
+  .cf1,
+    h3
+      color: white
+    a
+      @extend .btn
+      padding: 1rem 2.2rem
+      font-size: 1.3rem
+      &:hover
+        padding: 1rem 1rem 1rem 2.2rem
+  .cf2
+    .btn
+      padding: 1rem 2.2rem
+      &:hover
+        padding: 1rem 2.2rem
+
+
+.modal-content
+  border-radius: 0
+  box-shadow: 1px 1px 15px 5px rgba(black, 0.8)
+  padding: 1rem
+  @include media-breakpoint-up(md)
+    padding: 3rem
+  color: black
+  #modal-image
+    margin: 1rem 0
+    img
+      width: 100%
+      height: auto
+      max-height: 500px
+      object-fit: cover
+  #modal-meta
+    margin: 0.5rem 0
+    color: #999
+    font-size: 1rem
+  .close
+    margin: 0
+    @include media-breakpoint-up(md)
+      margin: -2rem 0 0 -2rem
+    text-align: right
+    transition: all 0.3s ease
+    width: 1.5rem
+    height: 1.5rem
+    line-height: 1.2rem
+    font-size: 1.5rem
+    color: desaturate($Primary, 50)
+    &:hover
+      transform: scale(1.1)
+      color: $Primary
+.modal-backdrop
+  background-color: darken(desaturate($Primary, 75), 20)
+  &.show
+    opacity: 0.8
+.modal
+  -webkit-overflow-scrolling: touch
+.pre-grid
+  background-color: $Primary
+  color: white
+  p
+    font-size: 1.25rem
+
+body
+  background-color: darken($Primary, 15)
+  color: white
+
+img, figure, article
+  max-width: 100%
+
+.modal-lg
+  max-width: 100vw
+  @include media-breakpoint-up(md)
+    max-width: 90vw
+  @include media-breakpoint-up(xl)
+    max-width: 80vw
+
+.image-frame
+  background-color: white
+  padding: 1rem
+  transform: rotate(3deg)
+  box-shadow: 1px 1px 15px 10px rgba(black, 0.5)
+  position: relative
+  z-index: 1
+  width: 90%
+  margin-left: 5%
+  margin-bottom: 10%
+  @include media-breakpoint-up(md)
+    width: 60%
+    margin-left: 20%
+  img
+    width: 100%
+    object-fit: cover
+    max-height: 500px
+  .caption
+    @extend .fancy-title
+    color: black
+    margin-top: 1rem
+    font-size: 2rem
+
+.screen-reader-text
+  @extend .sr-only
+
+
+nav.post-navigation
+  .nav-links
+    display: flex
+    margin: 2rem 0
+    align-items: stretch
+    align-content: stretch
+    justify-content: space-between
+    background-color: $Primary
+    box-shadow: 0px 0px 5px desaturate($Primary, 15)
+    border: 1px solid white
+    border-radius: 2rem
+    flex-direction: column
+    @include media-breakpoint-up(md)
+      flex-direction: row
+    .nav-previous, .nav-next
+      flex-grow: 1
+      a
+        padding: 1rem 1rem 1rem 4rem
+        color: white
+        display: block
+        position: relative
+        transition: all 0.3s ease
+        &:hover
+          background-color: rgba(white, 0.2)
+          text-decoration: none
+          &:before, &:after
+            transform: scale(1.1)
+
+        &:before, &:after
+          content: "«"
+          color: $Primary
+          width: 2rem
+          text-align: center
+          line-height: 1.6rem
+          border-radius: 1rem
+          font-size: 2rem
+          height: 2rem
+          background-color: white
+          position: absolute
+          left: 1rem
+          top: calc(50% - 1rem)
+          transition: all 0.3s ease
+
+    .nav-previous
+      a
+        border-bottom: 1px solid white
+        @include media-breakpoint-up(md)
+          border-right: 1px solid white
+          border-bottom: none
+        &:after
+          display: none
+    .nav-next
+      height: 100%
+      a
+        padding: 1rem 4rem 1rem 1rem
+        text-align: right
+        width: 100%
+        &:before
+          display: none
+        &:after
+          content: "»"
+          right: 1rem
+          left: unset
+
+
+a.white
+  color: white
+  opacity: 0.75
+  transition: all 300ms ease
+  padding: 1rem
+  &:hover
+    color: white
+    opacity: 1
+    text-decoration: none
