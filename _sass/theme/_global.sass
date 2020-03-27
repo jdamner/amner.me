@@ -108,6 +108,7 @@ img
 #contact
   background-color: $Primary
   border-bottom: 2px solid white
+  margin-top: -2px
   border-top: 2px solid white
   .cf1,
     h3
@@ -124,48 +125,11 @@ img
       &:hover
         padding: 1rem 2.2rem
 
-
-.modal-content
-  border-radius: 0
-  box-shadow: 1px 1px 15px 5px rgba(black, 0.8)
-  padding: 1rem
-  @include media-breakpoint-up(md)
-    padding: 3rem
-  color: black
-  #modal-image
-    margin: 1rem 0
-    img
-      width: 100%
-      height: auto
-      max-height: 500px
-      object-fit: cover
-  #modal-meta
-    margin: 0.5rem 0
-    color: #999
-    font-size: 1rem
-  .close
-    margin: 0
-    @include media-breakpoint-up(md)
-      margin: -2rem 0 0 -2rem
-    text-align: right
-    transition: all 0.3s ease
-    width: 1.5rem
-    height: 1.5rem
-    line-height: 1.2rem
-    font-size: 1.5rem
-    color: desaturate($Primary, 50)
-    &:hover
-      transform: scale(1.1)
-      color: $Primary
-.modal-backdrop
-  background-color: darken(desaturate($Primary, 75), 20)
-  &.show
-    opacity: 0.8
-.modal
-  -webkit-overflow-scrolling: touch
 .pre-grid
   background-color: $Primary
   color: white
+  border-bottom: 2px solid white
+  margin-bottom: -2px
   p
     font-size: 1.25rem
 
@@ -274,6 +238,9 @@ nav.post-navigation
           right: 1rem
           left: unset
 
+.post
+  .container-fluid
+    border-bottom: 2px solid white
 
 a.white
   color: white

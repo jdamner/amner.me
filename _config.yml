@@ -7,6 +7,10 @@ description: >-
 baseurl: ""
 url: "https://amner.me"
 
+blog:
+  title: "My Writings"
+  preamble: "Just a few personal thoughts, some projects, and other bits and bobs"
+
 footer:
   #copyright is prefixed with &copy; and postfixed with current year
   copyright: "James Amner"

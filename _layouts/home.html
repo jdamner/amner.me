@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+
+<section class='container-fluid bg-full' id='about' style='background-image: url({{page.thumbnail}})'>
+  <article class='row py-5 '>
+    <div class='col-md-10 offset-md-1 text-center my-5'>
+      <h1 class="fancy-title">{{page.title}}</h1>
+      <div class='my-5 text-white'>
+        {{ content }}
+      </div>
+    </div>
+  </article>
+</section>
+{% if site.posts.count > 0 %}
+<section class='container-fluid' id='blog'>
+  {% if site.blog.title %}
+  <div class='pre-grid row'>
+    <div class='col-md-10 offset-md-1 py-5 text-center'>
+      <h2 class='fancy-title'>
+        {{site.blog.title}}
+      </h2>
+      {{site.blog.preamble}}
+    </div>
+  </div>
+  {% endif %}
+  <div class='grid row'>
+    <div class="grid-sizer"></div>
+    {% for post in site.posts %}
+    <div class='grid-item text-center'>
+      <img src='{{post.thumbnail}}' />
+      <div class='content'>
+        <h3>
+          {{ post.title }}
+        </h3>
+        <a class='btn text-uppercase' href='{{post.url}}' data-toggle='modal' data-target='#modal-window'
+          data-title='{{post.title}}>' data-content='{{post.content}}' data-image='{{post.thumbnail}}' data-meta='
+          {{post.date}}'>Read More</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{%endif%}
