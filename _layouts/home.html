@@ -13,7 +13,10 @@ layout: default
     </div>
   </div>
 </section>
-{% if site.posts.count > 0 %}
+
+{% assign counter = site.posts | size %}
+
+{% if counter > 0  %}
 <section class='container-fluid' id='blog'>
   {% if site.blog.title %}
   <div class='pre-grid row'>
@@ -34,7 +37,7 @@ layout: default
         <h3>
           {{ post.title }}
         </h3>
-        <a class='btn text-uppercase' data-link='{{post.url}}' data-toggle='modal' data-target='#modal-window'
+        <a class='btn text-uppercase' href='{{post.url}}' data-toggle='modal' data-target='#modal-window'
           data-title='{{post.title}}>' data-content='{{post.content}}' data-image='{{post.thumbnail}}' data-meta='
           {{post.date}}'>Read More</a>
       </div>
