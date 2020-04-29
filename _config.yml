@@ -8,8 +8,8 @@ baseurl: ""
 url: "https://amner.me"
 
 blog:
-  title: "My Writings"
-  preamble: "Just a few personal thoughts, some projects, and other bits and bobs"
+  title: "My Projects"
+  preamble: "Just a few personal projects, some projects, and other bits that might be interesting"
 
 footer:
   #copyright is prefixed with &copy; and postfixed with current year
