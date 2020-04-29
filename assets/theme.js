@@ -17,16 +17,11 @@ jQuery(document).ready(function ($) {
     }
   })
 
-
-  $('#modal-window').on('show.bs.modal', function (e) {
-    var button = $(e.relatedTarget)
-    var modal = $(this)
-    modal.find('#modal-title').html(button.data('title'))
-    modal.find('#modal-content').html(button.data('content'))
-    modal.find('#modal-image').html(button.data('image'))
-    modal.find('#modal-meta').html(button.data('meta'))
-  })
-
+  window.setInterval(function () {
+    if ($('.grid').length > 0) {
+      $grid.masonry('layout');
+    }
+  }, 1000);
 
   $(".nav-link,.dropdown-item").click(function () {
     var t = $(this).attr("href");

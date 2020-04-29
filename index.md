@@ -7,6 +7,6 @@ title: My Work
 thumbnail: assets/bg.jpg
 ---
 
-I'm a mortgage adviser, who runs a second life as a web and app developer. I like residential first charge, or Buy to Let Mortgages, and I like PHP, JavaScript and React.
+I'm an aspiring Software Developer, who likes to turn his hand to anything.
 
 So if you're looking for someone like me, why not __get in touch__.
