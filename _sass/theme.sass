@@ -1,5 +1,15 @@
 @import "./theme/variables"
-@import "./bootstrap/bootstrap"; // important to do variables, then bootstrap then the rest
+// my personal variables first
+@import "./bootstrap/_functions.scss";
+@import "./bootstrap/_variables";
+@import "./bootstrap/_mixins";
+@import "./bootstrap/_root";
+@import "./bootstrap/_reboot";
+@import "./bootstrap/_utilities.scss"
+@import "./bootstrap/_grid.scss"
+@import "./bootstrap/_navbar.scss"
+@import "./bootstrap/_buttons.scss"
+// important to do variables, then bootstrap then the rest
 @import "./theme/global"
 @import "./theme/typography"
 @import "./theme/header"
