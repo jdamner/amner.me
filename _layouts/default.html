@@ -40,29 +40,19 @@
   <meta name="msapplication-TileImage" content='{{ "/assets/icon/ms-icon-144x144.png" | absolute_url }}'>
   <meta name="theme-color" content="#ba1b0a">
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-  <script src='{{ "/assets/masonry.js" | absolute_url }}'></script>
-  <script src='{{ "/assets/theme.js" | absolute_url }}'></script>
   <link href='{{ "/assets/style.css" | absolute_url }}' rel='stylesheet'>
 
   <title>{{site.title}} {% if page.title %}» {{page.title}}{%endif%}</title>
 
 </head>
 
-<body data-spy="scroll" data-target="#header-navbar" data-offset="200">
+<body>
   <div id="page" class="site">
     <header id="masthead" class="site-header align-items-center sticky-top top">
       <nav class='navbar navbar-dark navbar-expand-lg '>
         <a href="/" rel="home" class='navbar-brand fancy-title'>
           {{site.title}}
         </a>
-        <!-- <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#header-navbar"
-          aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars"></i>
-        </button> -->
       </nav>
     </header>
 
@@ -90,7 +80,7 @@
             </div>
             <div class='col-md-6 offset-md-1 text-center'>
               <div class='image-frame'>
-                <img src='{{site.footer.image.src}}'>
+                <img data-src='{{site.footer.image.src}}' class='lazy'>
                 <div class='caption'>
                   {{site.footer.image.caption}}
                 </div>
@@ -132,6 +122,14 @@
       </div>
     </div>
   </div>
+
+
+  <!-- jQuery -->
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script> -->
+
+  <script src='{{ "/assets/masonry.js" | absolute_url }}'></script>
+  <script src='{{ "/assets/theme.js" | absolute_url }}'></script>
 
 </body>
 

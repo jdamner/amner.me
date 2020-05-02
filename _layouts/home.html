@@ -28,11 +28,11 @@ layout: default
     </div>
   </div>
   {% endif %}
-  <div class='grid row'>
+  <div class='grid row' data-masonry='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer" }'>
     <div class="grid-sizer"></div>
     {% for post in site.posts %}
     <div class='grid-item text-center'>
-      <img src='{{post.thumbnail}}' />
+      <img data-src='{{post.thumbnail}}' class='lazy' />
       <div class='content'>
         <h3>
           {{ post.title }}
