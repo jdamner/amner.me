@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What's lurking inside your project
-date: 2020-05-02T15:24:37.168Z
+date: 2019-10-09T15:26:21.788Z
 thumbnail: /images/uploads/john-barkiple-l090ufwopai-unsplash.jpg
 ---
 A little while ago I read [an article on medium](https://medium.com/s/silicon-satire/i-peeked-into-my-node-modules-directory-and-you-wont-believe-what-happened-next-b89f63d21558) about a developer who decided to have a look inside his `node_modules` folder. 
