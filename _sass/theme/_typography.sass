@@ -2,20 +2,31 @@
 
 h4, h5, p, span, div, a
   font-family: 'KoHo', sans-serif
+  font-display: swap
+
 
 h1, h2, h3
   font-family: 'K2D', sans-serif
   word-wrap: break-word
+  font-display: swap
 
 h1
-  font-size: 4.5rem
+  font-size: 2.5rem
+  @include media-breakpoint-up(md)
+    font-size: 4.5rem
+
 h2
-  font-size: 3.8rem
+  font-size: 2rem
+  @include media-breakpoint-up(md)
+    font-size: 3.8rem
 h3
-  font-size: 2.1rem
+  font-size: 1.8rem
+  @include media-breakpoint-up(md)
+    font-size: 2.1rem
 
 .fancy-title
   font-family: 'Satisfy', sans-serif !important
+  font-display: swap
 
 article.post
   a
