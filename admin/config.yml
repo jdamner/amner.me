@@ -16,3 +16,16 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "page"
+    label: "Pages"
+    editor:
+      preview: false
+    files:
+    - label: 'Home Page'
+      name: 'home'
+      file: 'index.md'
+      fields:
+        - { label: 'Title', name: 'title', widget: 'hidden', default: 'Home' }
+        - { label: 'Layout', name: 'title', widget: 'hidden', default: 'default' }
+        - { label: 'Image', name: 'image', widget: 'image' }
+        - { label: 'Body', name: 'body', widget: 'markdown' }

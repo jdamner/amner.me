@@ -69,11 +69,9 @@
                 <!-- <h2 class='fancy-title'>Contact Me</h2> -->
                 <h2 class='mb-5 fancy-title'>Want to say hi? 👋</h2>
                 <a href='tel:{{site.telephone}}'>
-                  <i class='fa fa-phone'></i>
                   {{site.telephone}}
                 </a><br>
                 <a href='mailto:{{site.email}}' class=''>
-                  <i class='fa fa-envelope-o'></i>
                   {{site.email}}
                 </a>
               </div>
@@ -102,31 +100,6 @@
   </div><!-- #page -->
 
 
-  <div id='modal-window' class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <i class='fa fa-times-circle'></i>
-        </button>
-        <div class='container-fluid'>
-          <div class='row'>
-            <div class='col'>
-              <h2 id='modal-title'></h2>
-              <h5 id='modal-meta'></h5>
-              <div id='modal-image'></div>
-              <div id='modal-content' class='content'>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- jQuery -->
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script> -->
 
   <script src='{{ "/assets/masonry.js" | absolute_url }}'></script>
   <script src='{{ "/assets/theme.js" | absolute_url }}'></script>

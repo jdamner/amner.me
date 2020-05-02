@@ -28,8 +28,7 @@ layout: default
     </div>
   </div>
   {% endif %}
-  <div class='grid row' data-masonry='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer" }'>
-    <div class="grid-sizer"></div>
+  <div class='grid row'>
     {% for post in site.posts %}
     <div class='grid-item text-center'>
       <img data-src='{{post.thumbnail}}' class='lazy' />
@@ -37,9 +36,7 @@ layout: default
         <h3>
           {{ post.title }}
         </h3>
-        <a class='btn text-uppercase' href='{{post.url}}' data-toggle='modal' data-target='#modal-window'
-          data-image='{{post.thumbnail}}' data-meta='
-          {{post.date}}'>Read More</a>
+        <a class='btn text-uppercase' href='{{post.url}}'>Read More</a>
       </div>
     </div>
     {% endfor %}
