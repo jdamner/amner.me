@@ -1,16 +1,11 @@
 
 body
-  background-color: darken($Primary, 15)
-  color: white
-
-img, figure, article
-  max-width: 100%
-
+  color: $Primary
 
 .btn
   margin: 1rem 0
-  color: saturate($Primary, 2)
-  background-color: rgba(white, 0.75)
+  background-color: saturate($Primary, 2)
+  color: rgba(white, 0.75)
   font-weight: 100
   letter-spacing: .1rem
   border: 2px solid white
@@ -32,6 +27,7 @@ img, figure, article
     color: $Primary
     box-shadow: 1px 1px 15px 5px rgba(black, 0.8)
     &:after
+      color: $Primary
       width: 1.2rem
 
 
@@ -42,7 +38,7 @@ nav.post-navigation
     align-items: stretch
     align-content: stretch
     justify-content: space-between
-    background-color: $Primary
+    color: $Primary
     box-shadow: 0px 0px 5px desaturate($Primary, 15)
     border: 1px solid white
     border-radius: 2rem
@@ -53,7 +49,6 @@ nav.post-navigation
       flex-grow: 1
       a
         padding: 1rem 1rem 1rem 4rem
-        color: white
         display: block
         position: relative
         transition: all 0.3s ease
@@ -98,20 +93,20 @@ nav.post-navigation
           right: 1rem
           left: unset
 
-.post
-  .container-fluid
-    border-bottom: 2px solid white
-
 .screen-reader-text
   @extend .sr-only
 
 
-a.white
-  color: white
-  opacity: 0.75
-  transition: all 300ms ease
-  padding: 1rem
-  &:hover
-    color: white
-    opacity: 1
-    text-decoration: none
+hr
+  padding: 0
+  border: none
+  text-align: center
+  &:after
+    content: "︾"
+    color: $Primary
+    display: inline-block
+    position: relative
+    top: -0.7em
+    font-size: 1.5em
+    padding: 0 0.25em
+    background: white

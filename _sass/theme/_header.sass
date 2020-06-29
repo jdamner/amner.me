@@ -1,6 +1,12 @@
 .site-header
-  color: white
-  border-bottom: 2px solid white
+  color: $Primary
+  border-bottom: 3px solid $Primary
+
+  img
+    max-width: 4rem
+    max-height: 4rem
+    border-radius: 2rem
+    padding: 0.25rem
   &:before
     position: absolute
     top: 0
@@ -8,16 +14,17 @@
     right: 0
     bottom: 0
     content: ''
-    background-color: rgba(desaturate($Primary, 10), 0.9)
-
+    background-color: white
   .navbar-brand
     @extend h3
     margin: 0 0 0 0
     padding: 0
-    color: white
     transition: all 0.3s ease
-
+    text-decoration: none
+    &:hover
+      // color: lighten($Primary, 5)
   &.top
     .navbar-brand
-      margin: 0 0 0 1rem
-      @extend h2
+      transform: scale(1.5)
+      padding: 0.5rem 0
+      transform-origin: center left

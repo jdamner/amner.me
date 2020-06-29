@@ -1,0 +1,27 @@
+{% assign counter = site.posts | size %}
+
+{% if counter > 0  %}
+<section class='row my-5' id='portfolio'>
+
+  {% if site.blog.title %}
+
+  <div class='col-md-4'>
+    <h2 class='fancy-title'>
+      {{site.blog.title}}
+    </h2>
+    {{site.blog.preamble}}
+
+  </div>
+  <div class='col-md-8'>
+    <div class='grid'>
+      {% for post in site.posts %}
+      {% include grid-item.html title=post.title url=post.url thumbnail=post.thumbnail %}
+      {% endfor %}
+    </div>
+  </div>
+
+  {% endif %}
+
+</section>
+<hr>
+{%endif%}

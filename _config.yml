@@ -1,25 +1,24 @@
 
-title: Amner.me
+title: James Amner
 email: jdamner@me.com
 telephone: "07515352631"
 description: >-
-  A personal site full of personal thoughts from a mortgage adviser turned web developer.
+  A personal site full of personal thoughts from a web developer.
 baseurl: ""
 url: "https://amner.me"
 
 blog:
-  title: "My Projects"
-  preamble: "Just a few personal projects, some writing, and other bits that might be interesting"
+  title: "My Projects and Writing"
+  preamble: "A few things I've done, a few things I think about and a few things that have nowhere else to be."
+  read_more: "Something else?"
 
+contact:
+  title: "Say Hello"
+  preamble: "Looking for someone just like me?"
 footer:
   #copyright is prefixed with &copy; and postfixed with current year
   copyright: "James Amner"
-  image:
-    src: "/assets/footer.jpg"
-    caption: "Balboa and I hard at work"
 
-# Build settings
-# theme: amner-me
 plugins:
   - jekyll-feed
 
