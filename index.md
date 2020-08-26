@@ -6,7 +6,7 @@ layout: home
 title: About Me
 ---
 
-I'm a web and software developer, and I like to turn my hand to anything in front of me. I'm a [Wordpress](https://wordpress.org){:target="_blank"} developer at (Spindogs)[https://www.spindogs.co.uk]{:target="_blank"}. I used to be Technical Director at [Glue Digital Studio](https://gluestudio.co.uk){:target="_blank"}. I adore [Swift](https://developer.apple.com/xcode/swift){:target="_blank"}, I love [PHP](https://php.net){:target="_blank"}, I like [JavaScript](https://javascript.com){:target="_blank"}, I tolerate [React](https://reactjs.org){:target="_blank"} and I struggle with [.Net](https://dotnet.microsoft.com){:target="_blank"}.
+I'm a web and software developer, and I like to turn my hand to anything in front of me. I'm a [Wordpress](https://wordpress.org){:target="_blank"} developer at [Spindogs](https://www.spindogs.co.uk){:target="_blank"}. I used to be Technical Director at [Glue Digital Studio](https://gluestudio.co.uk){:target="_blank"}. I adore [Swift](https://developer.apple.com/xcode/swift){:target="_blank"}, I love [PHP](https://php.net){:target="_blank"}, I like [JavaScript](https://javascript.com){:target="_blank"}, I tolerate [React](https://reactjs.org){:target="_blank"} and I struggle with [.Net](https://dotnet.microsoft.com){:target="_blank"}.
 
 I've recently had some fun with [SwiftUI](https://developer.apple.com/xcode/swiftui/){:target="_blank"} on a private little project, and enjoy developing beautiful user expereinces.
 
