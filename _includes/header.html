@@ -1,26 +1,13 @@
 <!doctype html>
-<html>
+<html lang="en-GB">
 
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{page.description}}">
+  <meta name="author" content="James Amner">
+  <title>{{site.title}} {% if page.title %}» {{page.title}}{%endif%}</title>
 
-  <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-M75XTFL');
-  </script>
 
   <link rel="apple-touch-icon" sizes="57x57" href='{{ "/assets/icon/apple-icon-57x57.png" | absolute_url }}'>
   <link rel="apple-touch-icon" sizes="60x60" href='{{ "/assets/icon/apple-icon-60x60.png" | absolute_url }}'>
@@ -39,9 +26,6 @@
   <meta name="msapplication-TileColor" content="#ba1b0a">
   <meta name="msapplication-TileImage" content='{{ "/assets/icon/ms-icon-144x144.png" | absolute_url }}'>
   <meta name="theme-color" content="#ba1b0a">
-
   <link href='{{ "/assets/style.css" | absolute_url }}' rel='stylesheet'>
-
-  <title>{{site.title}} {% if page.title %}» {{page.title}}{%endif%}</title>
 
 </head>
