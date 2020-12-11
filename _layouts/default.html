@@ -1,21 +1,22 @@
 {%include header.html %}
 
 <body>
-  <div id="page" class="site">
-    {% include top-nav.html %}
+    <div id="page" class="site">
+        {% include top-nav.html %}
 
-    <div id='home' class='container'>
+        <div id='home' class='container'>
 
-      {{ content }}
+            {{ content }} {% include contact.html %}
+        </div>
+        <!-- #content -->
 
-      {% include contact.html %}
-    </div><!-- #content -->
+        {% include footer.html %}
 
-    {% include footer.html %}
+    </div>
+    <!-- #page -->
 
-  </div><!-- #page -->
-
-  <script src='{{ "/assets/theme.js" | absolute_url }}'></script>
+    <script src='{{ "/assets/theme.js" | absolute_url }}'></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "bc20d25648804d78b15bf627d1b8161e"}'></script>
 
 </body>
 
