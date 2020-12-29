@@ -3,6 +3,4 @@ _site
 .jekyll-cache
 .jekyll-metadata
 .DS_Store
-vendor
-
-assets/old_uploads
+.firebase/
