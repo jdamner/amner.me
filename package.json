@@ -1,0 +1,17 @@
+{
+  "name": "amner.me",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdamner/amner.me.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "uncss": "^0.17.3"
+  }
+}

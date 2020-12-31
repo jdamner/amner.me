@@ -10,6 +10,17 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
+      - name: Retrieve Node Cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install Node Dependancies
+        run: npm install
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -21,6 +32,8 @@ jobs:
         run: bundle install
       - name: Build Site
         run: bundle exec jekyll build
+      - name: Remove unused CSS
+        run: node build.js
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

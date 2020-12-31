@@ -42,3 +42,8 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+exclude:
+  - node_modules/
+  - build.js
+  - firebase.json
+  - package*
