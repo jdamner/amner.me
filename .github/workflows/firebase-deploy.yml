@@ -15,8 +15,8 @@ jobs:
         with:
           ruby-version: 2.6
           bundler-cache: true
-      - name: Install Imagemagik
-        run: sudo apt-get install imagemagick
+      - name: Install Imagemagik and WebP
+        run: sudo apt-get install imagemagick && sudo apt-get install webp
       - name: Download Dependancies
         run: bundle install
       - name: Build Site
