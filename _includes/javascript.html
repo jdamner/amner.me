@@ -1,5 +1,4 @@
-// once documnet is ready (interactive), then load images as needed.
-
+<script>
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === "interactive") {
     // lazy load images
@@ -19,3 +18,4 @@ document.addEventListener('readystatechange', event => {
     }
   }
 });
+</script>
