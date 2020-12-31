@@ -5,4 +5,4 @@ _site
 .DS_Store
 .firebase/**/*.cache
 node_modules
-/.firebase.json
+/firebase.json

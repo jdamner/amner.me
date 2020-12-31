@@ -21,8 +21,8 @@ var hash = "";
 
 fs.readFile("_includes/javascript.html", function (error, data) {
     data = String(data);
-    data = data.replace("<script>", "");
-    data = data.replace("</script>", "");
+    data = data.replace("<script>\n", "");
+    data = data.replace("\n</script>", "");
     hash = sha256(data);
     new_firebase = JSON.stringify(firebase).replace("{{SHA_HASH}}", hash);
     fs.writeFileSync('./firebase.json', new_firebase);
