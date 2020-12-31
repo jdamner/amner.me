@@ -14,3 +14,16 @@ var files   = ["_site/**/*.html"],
 uncss(files, options, function (error, output) {
     fs.writeFileSync("_site/assets/style.css", output);
 });
+
+const sha256 = require('js-sha256').sha256;
+const firebase = require('./.firebase/firebase.json');
+var hash = "";
+
+fs.readFile("_includes/javascript.html", function (error, data) {
+    data = String(data);
+    data = data.replace("<script>", "");
+    data = data.replace("</script>", "");
+    hash = sha256(data);
+    new_firebase = JSON.stringify(firebase).replace("{{SHA_HASH}}", hash);
+    fs.writeFileSync('./firebase.json', new_firebase);
+});

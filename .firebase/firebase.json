@@ -8,20 +8,15 @@
         ],
         "headers": [
             {
-                "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
-                "headers": [
-                    {
-                        "key": "Access-Control-Allow-Origin",
-                        "value": "*"
-                    }
-                ]
-            },
-            {
                 "source": "**",
                 "headers": [
                     {
                         "key": "X-Content-Type-Options",
                         "value": "nosniff"
+                    },
+                    {
+                        "key": "Access-Control-Allow-Origin",
+                        "value": "*"
                     },
                     {
                         "key": "X-Frame-Options",
@@ -41,7 +36,7 @@
                     },
                     {
                         "key": "Content-Security-Policy",
-                        "value": "default-src 'self'; font-src fonts.gstatic.com; style-src 'self' fonts.googleapis.com; script-src 'sha256-b0d23f94172f6c36bb5ae07e5714333d4c8b057f1169cfaf4610a55893e7243f';"
+                        "value": "default-src 'self'; font-src fonts.gstatic.com; style-src 'self' fonts.googleapis.com; script-src 'sha256-{{SHA_HASH}}';"
                     }
                 ]
             }
