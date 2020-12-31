@@ -37,7 +37,7 @@
                     },
                     {
                         "key": "Cache-Control",
-                        "value": "max-age=14400"
+                        "value": "max-age=31536000"
                     }
                 ]
             }
