@@ -3,6 +3,5 @@ _site
 .jekyll-cache
 .jekyll-metadata
 .DS_Store
-.firebase/**/*.cache
+.firebase
 node_modules
-/firebase.json
