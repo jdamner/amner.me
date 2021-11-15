@@ -28,7 +28,7 @@ I'm a web and software developer, and I like to turn my hand to anything in fron
 * Supporting the team creating and running local development environments.
 * Contributing to strategy and planning decisions around infrastructure and resource management
 
-Outside of PHP, I adore [Swift](https://developer.apple.com/xcode/swift){:target="_blank" rel='noopener'}, I like [JavaScript](https://javascript.com){:target="_blank" rel='noopener'}, I tolerate [React](https://reactjs.org){:target="_blank" rel='noopener'}.
+Outside of PHP, I adore [Swift](https://developer.apple.com/xcode/swift){:target="_blank" rel='noopener'}, I like [JavaScript](https://javascript.com){:target="_blank" rel='noopener'}, I love [React](https://reactjs.org){:target="_blank" rel='noopener'}.
 
 I've recently had some fun with [SwiftUI](https://developer.apple.com/xcode/swiftui/){:target="_blank" rel='noopener'} on a private little project, and enjoy developing beautiful user expereinces.
 
