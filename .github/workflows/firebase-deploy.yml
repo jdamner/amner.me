@@ -11,7 +11,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Install Node Dependancies
-        run: npm ci && npm run build
+        run: npm ci
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -22,7 +22,7 @@ jobs:
       - name: Download Dependancies
         run: bundle install && bundle exec jekyll build
       - name: Remove unused CSS
-        run: node build.js
+        run: npm run build
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
