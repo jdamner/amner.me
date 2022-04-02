@@ -10,17 +10,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Set up Node
-        uses: actions/setup-node@v1
-      - name: Retrieve Node Cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
       - name: Install Node Dependancies
-        run: npm install
+        run: npm ci && npm run build
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -29,9 +20,7 @@ jobs:
       - name: Install Imagemagik and WebP
         run: sudo apt-get install imagemagick && sudo apt-get install webp
       - name: Download Dependancies
-        run: bundle install
-      - name: Build Site
-        run: bundle exec jekyll build
+        run: bundle install && bundle exec jekyll build
       - name: Remove unused CSS
         run: node build.js
       - name: Deploy to Firebase
