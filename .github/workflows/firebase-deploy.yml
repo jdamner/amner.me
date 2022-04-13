@@ -18,7 +18,7 @@ jobs:
           ruby-version: 2.6
           bundler-cache: true
       - name: Install Imagemagik and WebP
-        run: sudo apt-get install imagemagick && sudo apt-get install webp && sudo apt-get install vips-tools
+        run: sudo apt-get install imagemagick && sudo apt-get install webp && sudo apt-get install libvips-tools
       - name: Download Dependancies
         run: bundle install && bundle exec jekyll build
       - name: Remove unused CSS
