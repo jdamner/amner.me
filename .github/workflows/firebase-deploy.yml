@@ -12,16 +12,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install Node Dependancies
         run: npm ci
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.6
-          bundler-cache: true
-      - name: Install Imagemagik and WebP
-        run: sudo apt-get install imagemagick && sudo apt-get install webp && sudo apt-get install libvips-tools
-      - name: Download Dependancies
-        run: bundle install && bundle exec jekyll build
-      - name: Remove unused CSS
+      - name: Build
         run: npm run build
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0

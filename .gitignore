@@ -1,7 +1,4 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-.DS_Store
-.firebase
-node_modules
+node_modules/
+.cache/
+public
+.firebase/
