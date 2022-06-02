@@ -4,7 +4,7 @@ import PostList from "./PostList";
 
 export default function Blog({data}) {
   return (
-  <section className='row my-5' id='portfolio'>
+  <section className='row my-3' id='portfolio'>
     <div className='col-md-4'>
       <h2 className='fancy-title'>
         My Projects and Writing
@@ -16,7 +16,6 @@ export default function Blog({data}) {
         <PostList data={data} />
       </div>
     </div>
-    <hr />
   </section>
   );
 }

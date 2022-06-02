@@ -1,97 +1,31 @@
 
 body
   color: $Primary
+  background-image: url('/images/bg.png')
+  background-repeat: repeat
+
+section, article, hr
+  background-color: white
+  padding: 2rem
+  border-radius: $border-radius
+  box-shadow: $box-shadow
+  border: $border-style
+
 
 .btn
-  margin: 1rem 0
-  background-color: saturate($Primary, 2)
+  margin: 0.5rem 0
+  background: $Primary
   color: rgba(white, 0.75)
-  font-weight: 100
-  letter-spacing: .1rem
-  border: 2px solid white
-  border-radius: 0
-  box-shadow: 1px 1px 10px 5px rgba(black, 0.6)
-  padding-left: 2rem
-  padding-right: 2rem
+  border: $border-style
+  border-radius: $border-radius
+  box-shadow: $box-shadow
   transition: all 0.3s ease
+  padding: 1rem 2.2rem
   white-space: normal
-  &:after
-    content: "»"
-    display: inline-block
-    width: 0px
-    overflow: hidden
-    transition: all 0.3s ease
+  text-decoration: none
   &:hover
     background-color: rgba(white, 1)
-    padding-right: 0.8rem
     color: $Primary
-    box-shadow: 1px 1px 15px 5px rgba(black, 0.8)
-    &:after
-      color: $Primary
-      width: 1.2rem
-
-
-nav.post-navigation
-  .nav-links
-    display: flex
-    margin: 2rem 0
-    align-items: stretch
-    align-content: stretch
-    justify-content: space-between
-    color: $Primary
-    box-shadow: 0px 0px 5px desaturate($Primary, 15)
-    border: 1px solid white
-    border-radius: 2rem
-    flex-direction: column
-    @include media-breakpoint-up(md)
-      flex-direction: row
-    .nav-previous, .nav-next
-      flex-grow: 1
-      a
-        padding: 1rem 1rem 1rem 4rem
-        display: block
-        position: relative
-        transition: all 0.3s ease
-        &:hover
-          background-color: rgba(white, 0.2)
-          text-decoration: none
-          &:before, &:after
-            transform: scale(1.1)
-
-        &:before, &:after
-          content: "«"
-          color: $Primary
-          width: 2rem
-          text-align: center
-          line-height: 1.6rem
-          border-radius: 1rem
-          height: 2rem
-          background-color: white
-          position: absolute
-          left: 1rem
-          top: calc(50% - 1rem)
-          transition: all 0.3s ease
-
-    .nav-previous
-      a
-        border-bottom: 1px solid white
-        @include media-breakpoint-up(md)
-          border-right: 1px solid white
-          border-bottom: none
-        &:after
-          display: none
-    .nav-next
-      height: 100%
-      a
-        padding: 1rem 4rem 1rem 1rem
-        text-align: right
-        width: 100%
-        &:before
-          display: none
-        &:after
-          content: "»"
-          right: 1rem
-          left: unset
 
 .screen-reader-text
   @extend .sr-only
@@ -99,14 +33,18 @@ nav.post-navigation
 
 hr
   padding: 0
-  border: none
   text-align: center
+  display: inline-block
+  width: calc(100% + 30px)
+  height: 2.5em
+  background: white
+  border-radius: 0.5rem
+  @extend .row
   &:after
     content: "︾"
     color: $Primary
     display: inline-block
     position: relative
-    top: -0.7em
+    top: 0.35em
     font-size: 1.5em
     padding: 0 0.25em
-    background: white

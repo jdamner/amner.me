@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contact({ site }) {
   return (
-    <section className='row my-5 align-items-center' id='contact'>
+    <section className='row my-3 align-items-center' id='contact'>
       <div className='col-md-4'>
         <h2 className='fancy-title'>Say Hello</h2>
         <p>Looking for someone just like me?</p>

@@ -1,30 +1,24 @@
+import React from "react"
 import { Link } from "gatsby"
-import * as React from "react"
-import { graphql } from "gatsby"
-
-import Blog from "../components/Blog"
 
 import Layout from "../components/Layout"
+import Blog from "../components/Blog"
+
 
 // styles
-import "../sass/bootstrap.scss";
-import "../sass/theme.scss";
+
 
 
 // markup
-const IndexPage = ({data}) => {
+const IndexPage = () => {
   return (
     <Layout title='About Me'>
-        <section className='row my-5' id='about'>
+        <section className='row my-3' id='about'>
           <div className='col-md-4'>
-            <h1 className="fancy-title">About Me</h1>
+            <h2 className="fancy-title">About Me</h2>
           </div>
           <div className='col-md-8'>
-            <p>I'm a web and software developer, and I like to turn my hand to anything in front of me.
-              I'm a PHP Team leader at <a href='https://www.spindogs.co.uk' target="_blank" rel='noreferrer'>Spindogs</a> and
-              I used to be Technical Director at <a href='https://gluestudio.co.uk' target="_blank" rel='noreferrer'>Glue Digital Studio</a>.
-              My main focus of development is bespoke <a href='https://wordpress.org' target="_blank" rel='noreferrer'>Wordpress</a> plugins,
-              themes and anything related. Some of the things I get up to at work incude:
+            <p>Some of the things I get up to at work incude:
             </p>
             <ul>
               <li>Developing and delivering API integrations for PHP and WordPress sites.</li>
@@ -57,37 +51,32 @@ const IndexPage = ({data}) => {
               I've recently had some fun with <a href='https://developer.apple.com/xcode/swiftui/' target="_blank" rel='noreferrer'>SwiftUI</a> on a private little project, and enjoy developing beautiful user expereinces.
             </p>
             <p>
-              I make this site using <a href='https://jekyllrb.com/' target="_blank" rel='noreferrer'>Jekyll</a> (<Link to='/why-not-wordpress'>why not wordpress?</Link>), and I've enjoyed <a href='https://shopify.com' target="_blank" rel='noreferrer'>Shopify</a> development in the past.
-            </p>
-            <p>
-              So if you're looking for someone like me, why not <a href='#contact'>get in touch</a>.
-
+              I make this site using <a href='https://gatsbyjs.com/' target="_blank" rel='noreferrer'>Gatsby</a> (<Link to='/why-not-wordpress'>why not wordpress?</Link>), and I've enjoyed <a href='https://shopify.com' target="_blank" rel='noreferrer'>Shopify</a> development in the past.
             </p>
           </div>
         </section>
-        <hr />
-        { data && <Blog data={data} /> }
+        <Blog />
       </Layout>
   )
 }
 
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date
-            slug
-            thumbnail
-            title
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+//       edges {
+//         node {
+//           id
+//           excerpt(pruneLength: 250)
+//           frontmatter {
+//             date
+//             slug
+//             thumbnail
+//             title
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default IndexPage
