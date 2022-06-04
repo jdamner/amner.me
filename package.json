@@ -14,7 +14,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build; firebase deploy"
+    "staging": "gatsby build; firebase hosting:channel:deploy staging",
+    "live": "gatsby build; firebase deploy"
   },
   "dependencies": {
     "@fontsource/comfortaa": "^4.5.8",
