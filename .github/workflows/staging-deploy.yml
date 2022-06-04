@@ -1,4 +1,4 @@
-name: Deploy Live on Master Push
+name: Deploy Staging on Staging
 on:
   push:
     branches:
