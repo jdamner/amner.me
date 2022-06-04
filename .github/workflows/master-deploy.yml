@@ -1,39 +1,25 @@
-name: Master Build and Deploy
+name: Deploy Live on Master
 on:
   push:
     branches:
       - master
 
 jobs:
-  build:
-    name: Build
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Install Dependencies
-        run: yarn
+        uses: actions/checkout@v2
+      - name: Install Node Dependancies
+        run: npm ci
       - name: Build
-        run: yarn build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: public
-          path: public
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: public
+        run: npm run build
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          args: deploy
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AMNER_ME }}'
+          channelId: live
+          projectId: amner-me
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_CLI_PREVIEWS: hostingchannels
