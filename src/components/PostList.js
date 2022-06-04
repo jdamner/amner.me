@@ -14,7 +14,15 @@ export default function PostList({ data }) {
                   frontmatter {
                     date
                     slug
-                    thumbnail
+                    thumbnail {
+                      childImageSharp {
+                        gatsbyImageData(
+                          width: 200
+                          placeholder: BLURRED
+                          formats: [AUTO, WEBP, AVIF]
+                        )
+                      }
+                    }
                     title
                   }
                 }
@@ -23,8 +31,6 @@ export default function PostList({ data }) {
           }
           `}
         render={data => {
-            console.log(data);
-
             const { allMarkdownRemark } = data;
             const Posts = allMarkdownRemark.edges
                 .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria

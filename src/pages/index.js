@@ -4,11 +4,6 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import Blog from "../components/Blog"
 
-
-// styles
-
-
-
 // markup
 const IndexPage = () => {
   return (
@@ -59,24 +54,5 @@ const IndexPage = () => {
       </Layout>
   )
 }
-
-// export const pageQuery = graphql`
-//   query {
-//     allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
-//       edges {
-//         node {
-//           id
-//           excerpt(pruneLength: 250)
-//           frontmatter {
-//             date
-//             slug
-//             thumbnail
-//             title
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
 
 export default IndexPage

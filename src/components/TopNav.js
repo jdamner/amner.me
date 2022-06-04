@@ -1,7 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
-
-import header from "../assets/header.jpg";
+import { StaticImage } from "gatsby-plugin-image";
 
 export default function TopNav() {
   return (
@@ -11,7 +10,7 @@ export default function TopNav() {
         <div className="row justify-content-between align-items-center">
           <div className='col-md-4'>
             <Link to="/" rel="home" className='navbar-brand fancy-title'>
-              <img src={header} className="img-fluid" alt="" />
+              <StaticImage src={'../assets/header.jpg'} className="img-fluid" alt="" />
             </Link>
           </div>
           <div className="col-md-8">

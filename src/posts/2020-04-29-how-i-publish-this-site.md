@@ -2,7 +2,7 @@
 layout: post
 title: How I publish this site
 date: 2020-03-01T17:16:27.796Z
-thumbnail: /images/uploads/logo-2x.png
+thumbnail: ../assets/logo-2x.png
 slug: how-i-publish-this-site
 ---
 During my time working at [Glue Studio](https://gluestudio.co.uk) around 50% of our work was developing WordPress custom themes, additional functionality and bespoke plugins.

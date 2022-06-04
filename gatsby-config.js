@@ -10,17 +10,18 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
     "gatsby-transformer-sharp",
-    "gatsby-transformer-remark",
     {
-      resolve: 'gatsby-plugin-csp',
+      resolve: "gatsby-transformer-remark",
       options: {
-        disableOnDev: true,
-        mergeScriptHashes: true,
-        mergeStyleHashes: true,
-        mergeDefaultDirectives: true,
-        directives: {
-          'style-src': 'unsafe-inline',
-        }
+        plugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1200,
+              linkImagesToOriginal: false
+            }
+          }
+        ]
       }
     },
     {
@@ -32,28 +33,20 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "assets",
-        path: "./src/assets/",
-      },
-      __key: "assets"
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        "name": "images",
-        "path": "./static/images/"
-      },
-      __key: "images"
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "pages",
         "path": "./src/pages/"
       },
       __key: "pages"
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "assets",
+        "path": "./src/assets/"
+      },
+      __key: "assets"
     },
     {
       resolve: 'gatsby-source-filesystem',

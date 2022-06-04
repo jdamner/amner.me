@@ -2,7 +2,7 @@
 layout: post
 title: I've migrated to Firebase
 date: 2021-01-01T15:26:21.788Z
-thumbnail: /images/uploads/firebase.png
+thumbnail: ../assets/firebase.png
 slug: migration-to-firebase
 ---
 I wrote a long while back that I build and deploy this site using netlifly - and I’ve always had really great experiences. 

@@ -2,7 +2,7 @@ import React from "react";
 
 import PostList from "./PostList";
 
-export default function Blog({data}) {
+export default function Blog() {
   return (
   <section className='row my-3' id='portfolio'>
     <div className='col-md-4'>
@@ -13,7 +13,7 @@ export default function Blog({data}) {
     </div>
     <div className='col-md-8'>
       <div className='grid'>
-        <PostList data={data} />
+        <PostList />
       </div>
     </div>
   </section>

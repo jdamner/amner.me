@@ -12,7 +12,7 @@ import "../sass/theme.scss";
 export default function Layout({ children, title }) {
     return (
         <Fragment>
-            <title>{title} - Amner.me</title>
+            <title>{title + "&mdash; Amner.me"}</title>
             <main id="page" className="site">
                 <TopNav />
                 <div id='home' className='container'>
