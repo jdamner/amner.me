@@ -19,8 +19,7 @@ module.exports = {
         mergeStyleHashes: true,
         mergeDefaultDirectives: true,
         directives: {
-          'font-src': 'fonts.gstatic.com',
-          'style-src': 'unsafe-inline https://fonts.googleapis.com',
+          'style-src': 'unsafe-inline',
         }
       }
     },
