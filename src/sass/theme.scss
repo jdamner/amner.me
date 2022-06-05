@@ -1,8 +1,12 @@
 @import "./theme/variables";
 @import "./bootstrap";
 @import "./theme/global";
-@import "./theme/grid";
+@import "./theme/blog";
 @import "./theme/typography";
-@import "./theme/header";
+@import "./theme/about";
 @import "./theme/contact";
 @import "./theme/code";
+
+@import "./theme/signpost";
+@import "./theme/seperator";
+@import "./theme/post";

@@ -1,13 +1,28 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout"
 import Blog from "../components/Blog"
+import Title from '../components/blog/Title';
 
 // markup
 const IndexPage = () => {
   return (
     <Layout title='About Me'>
+        <Title
+          image={<StaticImage src={'../assets/header.jpg'} alt="" />}
+          title={"I'm James Amner"}
+          text={<Fragment>
+            <p className='about-content-text'>
+              I'm a <span>web developer</span> and <span>PHP Team Lead</span> at <a href='https://www.spindogs.co.uk' target="_blank" rel='noreferrer'>Spindogs</a>.
+            </p>
+            <p className='about-content-text'>
+              I specialise in <span>PHP and JavaScript</span> development, with a focus on <a href='https://www.wordpress.org' target="_blank" rel='noreferrer'>WordPress</a>. plugin and theme development.
+            </p>
+          </Fragment>}
+        />
+
         <section className='row my-3' id='about'>
           <div className='col-md-4'>
             <h2 className="fancy-title">About Me</h2>
@@ -50,6 +65,7 @@ const IndexPage = () => {
             </p>
           </div>
         </section>
+
         <Blog />
       </Layout>
   )

@@ -19,12 +19,14 @@
   },
   "dependencies": {
     "@fontsource/comfortaa": "^4.5.8",
+    "@fontsource/limelight": "^4.5.8",
     "@fontsource/poiret-one": "^4.5.8",
     "bootstrap": "^4.6.1",
     "firebase-tools": "^11.0.1",
     "gatsby": "^4.15.2",
     "gatsby-plugin-csp": "^1.1.3",
     "gatsby-plugin-image": "^2.15.1",
+    "gatsby-plugin-react-svg": "^3.1.0",
     "gatsby-plugin-sass": "^5.15.1",
     "gatsby-plugin-sharp": "^4.15.1",
     "gatsby-plugin-sitemap": "^5.15.1",
@@ -34,6 +36,7 @@
     "gatsby-transformer-sharp": "^4.15.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-modal": "^3.15.1",
     "uncss": "^0.17.3"
   }
 }

@@ -1,0 +1,88 @@
+.about {
+    @extend .container;
+    @extend .my-3;
+    &-wrap {
+        @extend .row;
+    }
+    &-image {
+        @extend .col-md-4;
+        width: 100%;
+        height: auto;
+        margin-bottom: 1.5rem;
+        position: relative;
+        border: 4px solid black;
+        background-color: gold;
+        padding: 0;
+        .gatsby-image-wrapper {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+        &:after {
+            content: "";
+            display: block;
+            background-color: gold;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translate(-1rem, -1rem);
+            z-index: -1;
+            border: 4px solid black;
+        }
+
+        &:hover {
+            .gatsby-image-wrapper {
+                transform: translate(-1rem, -1rem);
+                border: 4px solid black;
+                background-color: white;
+            }
+        }
+    }
+    &-content {
+        @extend .col-md-8;
+        @include media-breakpoint-up(md) {
+            margin-top: 6rem;
+            margin-left: -3.5rem;
+            &:after {
+                content: "";
+                display: block;
+                background-color: gold;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 25%;
+                height: 100%;
+                transform: translate(1rem, -1rem);
+                z-index: -1;
+                border: 4px solid black;
+            }
+
+        }
+        padding: 2rem;
+        background-color: white;
+        border: 4px solid black;
+        .corner {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+            position: absolute;
+            top: -5.5rem;
+            left: 3.5rem;
+            width: 5rem;
+            height: 5rem;
+            svg {
+                height: 5rem;
+                width: 5rem;
+                g {
+                    fill: black;
+                }
+            }
+        }
+        span {
+            font-weight: bold;
+            color: black;
+        }
+    }
+}

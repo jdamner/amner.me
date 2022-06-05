@@ -13,6 +13,5 @@ export default function PostListItem({ post }) {
       <h3>
         {post.frontmatter.title}
       </h3>
-      <span>Read More</span>
     </Link>)
 };

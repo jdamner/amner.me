@@ -8,6 +8,7 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    'gatsby-plugin-react-svg',
     {
       resolve: "gatsby-transformer-remark",
       options: {

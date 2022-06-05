@@ -1,0 +1,68 @@
+$signpost-width: 160px;
+$signpost-margin: 60px;
+$signpost-height: 3em;
+$top-width: calc($signpost-width * 0.3);
+$top-height: calc($signpost-height * 0.2);
+
+.signpost {
+    position: fixed;
+    top: 0;
+    left: calc(100vw - $signpost-width - $signpost-margin);
+    z-index: 99;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    &-top {
+        width: $top-width;
+        height: $top-height;
+        transform: perspective(5px) rotateX(1deg);
+        background: black;
+        z-index: 100;
+        margin-bottom: 0;
+        margin-top: 0;
+        margin-left: calc(($signpost-width / 2) - ($top-width / 2));
+    }
+    &-content {
+        width: $signpost-width;
+        height: $signpost-height;
+        margin: 0;
+        text-align: center;
+        background: white;
+        border: 4px solid black;
+        z-index: 110;
+        box-sizing: border-box;
+        transform: perspective(10px) rotateX(1deg) translateY(-3px);
+        display: flex;
+        justify-content: center;
+        
+        align-items: center;
+        span {
+            display: block;
+            padding: 3px;
+            font-weight: bolder;
+            font-size: 18px;
+            letter-spacing: 0.1rem;
+            font-family: $main-font-family;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+    &-bottom {
+        @extend .signpost-content;
+        z-index: 109;
+        height: calc($signpost-height * 0.5);
+        transform: perspective(20px) rotateX(-3deg) translateY(-2px);
+        background: black !important;
+    }
+    &:hover {
+        text-decoration: none;
+        .signpost-content {
+            background: gold;
+            box-shadow: inset 0 0 $signpost-height #fff;
+        }
+        .signpost-bottom {
+            background: black;
+            box-shadow: none;
+        }
+    }
+}
