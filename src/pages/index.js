@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout"
 import Blog from "../components/Blog"
-import Title from '../components/blog/Title';
+import Title from '../components/Title';
 
 // markup
 const IndexPage = () => {
@@ -14,10 +14,10 @@ const IndexPage = () => {
           image={<StaticImage src={'../assets/header.jpg'} alt="" />}
           title={"I'm James Amner"}
           text={<Fragment>
-            <p className='about-content-text'>
+            <p>
               I'm a <span>web developer</span> and <span>PHP Team Lead</span> at <a href='https://www.spindogs.co.uk' target="_blank" rel='noreferrer'>Spindogs</a>.
             </p>
-            <p className='about-content-text'>
+            <p>
               I specialise in <span>PHP and JavaScript</span> development, with a focus on <a href='https://www.wordpress.org' target="_blank" rel='noreferrer'>WordPress</a>. plugin and theme development.
             </p>
           </Fragment>}

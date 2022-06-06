@@ -19,6 +19,13 @@ module.exports = {
               maxWidth: 1200,
               linkImagesToOriginal: false
             }
+          },
+          {
+            resolve: 'gatsby-remark-highlight-code',
+            options: {
+              terminal: 'carbon',
+              theme: "one-light",
+            },
           }
         ]
       }

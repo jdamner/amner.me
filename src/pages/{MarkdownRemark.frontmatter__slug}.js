@@ -3,7 +3,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import Blog from "../components/Blog"
-import Title from "../components/blog/Title"
+import Title from "../components/Title"
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 

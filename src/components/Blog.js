@@ -1,7 +1,7 @@
 import React from "react";
 
-import PostList from "./PostList";
-import Seperator from "./global/Seperator";
+import PostList from "./PostList/PostList";
+import Seperator from "./Global/Seperator";
 
 export default function Blog() {
   return (
