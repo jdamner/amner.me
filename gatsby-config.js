@@ -41,6 +41,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        "name": "assets",
+        "path": "./src/assets/"
+      },
+      __key: "assets"
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         "name": "pages",
         "path": "./src/pages/"
       },
@@ -49,10 +57,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        "name": "assets",
-        "path": "./src/assets/"
+        "name": "services",
+        "path": "./src/services/"
       },
-      __key: "assets"
+      __key: "services"
     },
     {
       resolve: 'gatsby-source-filesystem',

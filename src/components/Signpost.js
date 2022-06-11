@@ -41,6 +41,7 @@ export default class Signpost extends Component {
     }
 
     render = () => {
+        ReactModal.setAppElement('#___gatsby')
         return (
             <Fragment>
                 <button className='signpost' onClick={this.handleModalClick} >
@@ -51,7 +52,6 @@ export default class Signpost extends Component {
                     <div className='signpost-bottom'></div>
                 </button>
                 <ReactModal
-                    appElement={document ? document.getElementById('___gatsby') : null}
                     isOpen={this.state.isOpen}
                     onRequestClose={this.handleModalClose}
                     contentLabel="Contact"
