@@ -1,5 +1,5 @@
 import React from "react";
-import Seperator from "../Global/Seperator";
+import Seperator from "../global/Seperator";
 import TabButton from "./TabButton";
 import TabContent from "./TabContent";
 import { StaticQuery, graphql } from "gatsby";
