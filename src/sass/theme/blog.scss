@@ -5,10 +5,10 @@ $grid-margin: 15px;
     width: 100%;
   }
   @include media-breakpoint-up(lg) {
-    width: calc(50% - ($grid-margin * 2));
+    width: calc(50% - 30px);
   }
   @include media-breakpoint-up(xl) {
-    width: calc(25% - ($grid-margin * 2));
+    width: calc(25% - 30px);
   }
 }
 
@@ -18,7 +18,7 @@ $grid-margin: 15px;
     @extend .row;
     &-title {
       @extend .col-12;
-      padding: 2rem;
+      padding: 1rem 0;
       text-align: center;
       h2 {
         font-family: "Limelight", cursive !important;
@@ -32,6 +32,10 @@ $grid-margin: 15px;
       flex-wrap: wrap;
       justify-content: center;
       padding: 0;
+      margin: 0 -15px;
+      max-width: calc(100% + 30px);
+      width: calc(100% + 30px);
+      flex: 0 0 auto;
       .grid-item {
         @extend .grid-sizer;
         margin: $grid-margin;
