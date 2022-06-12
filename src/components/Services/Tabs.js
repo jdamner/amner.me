@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Seperator from "../Global/Seperator";
 import TabButton from "./TabButton";
 import TabContent from "./TabContent";
@@ -51,26 +51,27 @@ export default function Tabs() {
                         return null;
                     }
 
+                    const active = tabOpen && activeTab === edge.node.id;
+
                     const file = frontmatter.thumbnail ? getImage(frontmatter.thumbnail) : null;
-                    console.log(file, frontmatter);
                     const image = file ? <GatsbyImage image={file} alt={frontmatter.title} objectFit={'contain'} /> : null;
                     
-
                     return (
+                        <Fragment key={edge.node.id}>
                         <TabButton
                             key={edge.node.id}
                             name={frontmatter.title}
                             image={image}
-                            active={tabOpen && activeTab === edge.node.id}
+                            active={active}
                             index={edge.node.id}
                             onClick={() => handleTabChange(edge.node.id)}
                         />
+                        <div className="tab-content-wrapper">
+                            {active ? <TabContent tab={edge.node.childrenMarkdownRemark[0]} /> : null}
+                        </div>
+                        </Fragment>
                     );
                 })
-
-                const active = allFile.edges.find(edge => edge.node.id === activeTab)
-                const tab = active ? active.node.childrenMarkdownRemark[0] : null;
-
 
                 return (
                     <div className="tab">
@@ -81,9 +82,6 @@ export default function Tabs() {
                         </div>
                         <div className="tab-buttons-wrapper">
                             {TabButtons}
-                        </div>
-                        <div className="tab-content-wrapper">
-                            {tabOpen ? <TabContent tab={tab} /> : null}
                         </div>
                     </div>
                 )
