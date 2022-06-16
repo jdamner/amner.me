@@ -34,6 +34,7 @@ export default function Tabs() {
                                 formats: [AUTO, WEBP, AVIF]
                               )
                             }
+                            publicURL
                           }
                         }
                         html
@@ -54,8 +55,13 @@ export default function Tabs() {
                     const active = tabOpen && activeTab === edge.node.id;
 
                     const file = frontmatter.thumbnail ? getImage(frontmatter.thumbnail) : null;
-                    const image = file ? <GatsbyImage image={file} alt={frontmatter.title} objectFit={'contain'} /> : null;
-                    
+                    var image = null;
+                    if (file) {
+                      image = <GatsbyImage image={file} alt={frontmatter.title} objectFit={'contain'} />;
+                    } else if(frontmatter.thumbnail) {
+                      image = <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />;
+                    }
+
                     return (
                         <Fragment key={edge.node.id}>
                         <TabButton

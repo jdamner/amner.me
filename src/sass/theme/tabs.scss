@@ -15,7 +15,8 @@
   &-button {
     @include media-breakpoint-up(md) {  
         order: -1;
-        flex-basis: auto;
+        flex-basis: 25%;
+        flex-grow: 2;
     }
     flex-basis: 100%;
     text-align: center;
@@ -56,12 +57,11 @@
       z-index: -1;
     }
 
+    img, 
     .gatsby-image-wrapper {
       width: 50%;
-      height: 50%;
-      margin: 0 auto;
       display: block;
-      margin: 1rem auto;
+      margin: 0rem auto;
     }
   }
   &-content {
