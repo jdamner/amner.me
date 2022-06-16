@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
-import Seperator from "../Global/Seperator";
 import TabButton from "./TabButton";
 import TabContent from "./TabContent";
 import { StaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Title from "../Global/Title";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Tabs() {
 
@@ -73,7 +74,17 @@ export default function Tabs() {
                             onClick={() => handleTabChange(edge.node.id)}
                         />
                         <div className="tab-content-wrapper">
-                            {active ? <TabContent tab={edge.node.childrenMarkdownRemark[0]} /> : null}
+                            <AnimatePresence exitBeforeEnter>
+                            {active ? 
+                            <motion.div className="tab-content" 
+                              key={edge.node.id}
+                              initial={{ opacity: 0 }} 
+                              animate={{ opacity: 1 }} 
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.25 }}>
+                                <TabContent tab={edge.node.childrenMarkdownRemark[0]} />
+                              </motion.div> : null}
+                            </AnimatePresence>
                         </div>
                         </Fragment>
                     );
@@ -81,11 +92,7 @@ export default function Tabs() {
 
                 return (
                     <div className="tab">
-                        <div className='blog-wrap-title'>
-                            <Seperator />
-                            <h2>Special Skills</h2>
-                            <Seperator modifier='rotate' />
-                        </div>
+                        <Title text={"Special Skills"} />
                         <div className="tab-buttons-wrapper">
                             {TabButtons}
                         </div>

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import ReactModal from "react-modal";
-
-import Corner from '../assets/corner1.svg';
+import Corner from "./Global/Corner";
 
 export default class Signpost extends Component {
     
@@ -51,28 +50,28 @@ export default class Signpost extends Component {
                     </div>
                     <div className='signpost-bottom'></div>
                 </button>
-                <ReactModal
-                    isOpen={this.state.isOpen}
-                    onRequestClose={this.handleModalClose}
-                    contentLabel="Contact"
-                    style={this.modalStyle}
-                >
-                    <section className='contact' id='contact'>
-                        <Corner />
-                        <div className='contact-title'>
-                            <h2>Say Hello</h2>
-                            <p>Looking for someone just like me?</p>
-                        </div>
-                        <div className='contact-list'>
-                            <a className='btn' href='tel:+447515352631'>
-                                +44 07515 352631
-                            </a>
-                            <a className='btn' href='mailto:jdamner@me.com'>
-                                jdamner@me.com
-                            </a>
-                        </div>
-                    </section>
-                </ReactModal>
+                    <ReactModal
+                        isOpen={this.state.isOpen}
+                        onRequestClose={this.handleModalClose}
+                        contentLabel="Contact"
+                        style={this.modalStyle}
+                    >
+                        <section className='contact' id='contact'>
+                            <Corner />
+                            <div className='contact-title'>
+                                <h2>Say Hello</h2>
+                                <p>Looking for someone just like me?</p>
+                            </div>
+                            <div className='contact-list'>
+                                <a className='btn' href='tel:+447515352631'>
+                                    +44 07515 352631
+                                </a>
+                                <a className='btn' href='mailto:jdamner@me.com'>
+                                    jdamner@me.com
+                                </a>
+                            </div>
+                        </section>
+                    </ReactModal>
             </Fragment>
         )
     }

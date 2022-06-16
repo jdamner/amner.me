@@ -9,6 +9,8 @@ import Signpost from "./Signpost";
 import "../sass/bootstrap.scss";
 import "../sass/theme.scss";
 
+import { motion } from "framer-motion";
+
 
 export default function Layout({ children, title }) {
     const year = new Date().getFullYear();
@@ -18,9 +20,16 @@ export default function Layout({ children, title }) {
             <title>{title + " - Amner.me"}</title>
             <main id="page" className="site">
                 <Signpost />
-                <div id='home' className='container'>
+                <motion.div 
+                    id='home' 
+                    className='container'
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    >
                     {children}
-                </div>
+                </motion.div>
             </main>
             <footer id="footer">
                 <small>&copy; James Amner {year}</small>
