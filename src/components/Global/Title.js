@@ -10,8 +10,9 @@ export default function Title({ text }) {
         <motion.div
             className='blog-wrap-title'
             initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            // transition={{ duration: 0.5 }}
+            viewport={{ once: true}}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
         >
             <Seperator />
             <h2>{text}</h2>

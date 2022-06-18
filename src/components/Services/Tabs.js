@@ -80,8 +80,7 @@ export default function Tabs() {
                               key={edge.node.id}
                               initial={{ opacity: 0 }} 
                               animate={{ opacity: 1 }} 
-                              exit={{ opacity: 0 }}
-                              transition={{ duration: 0.25 }}>
+                              transition={{ duration: 0.5 }}>
                                 <TabContent tab={edge.node.childrenMarkdownRemark[0]} />
                               </motion.div> : null}
                             </AnimatePresence>

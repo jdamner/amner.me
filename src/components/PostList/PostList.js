@@ -45,6 +45,7 @@ export default function PostList({ data }) {
             key={edge.node.id}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            viewport={{ once: true}}
             transition={{ delay, duration: 0.5 }}
             className='grid-item'>
             <Link to={'/' + edge.node.frontmatter.slug}>
