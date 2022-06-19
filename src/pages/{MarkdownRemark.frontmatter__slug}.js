@@ -3,7 +3,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import Blog from "../components/Blog"
-import Title from "../components/Title"
+import Header from "../components/Header"
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -15,7 +15,7 @@ export default function Template({ data }) {
     return (
         <Layout title={frontmatter.title}>
             <article className='post'>
-                <Title frontmatter={frontmatter} 
+                <Header frontmatter={frontmatter} 
                     image={
                     <GatsbyImage
                         loading='eager'

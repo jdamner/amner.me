@@ -73,17 +73,13 @@ export default function Tabs() {
                             index={edge.node.id}
                             onClick={() => handleTabChange(edge.node.id)}
                         />
+                        <div className='tab-content-divider' />
                         <div className="tab-content-wrapper">
-                            <AnimatePresence exitBeforeEnter>
                             {active ? 
-                            <motion.div className="tab-content" 
-                              key={edge.node.id}
-                              initial={{ opacity: 0 }} 
-                              animate={{ opacity: 1 }} 
-                              transition={{ duration: 0.5 }}>
+                            <div className="tab-content" 
+                              key={edge.node.id}>
                                 <TabContent tab={edge.node.childrenMarkdownRemark[0]} />
-                              </motion.div> : null}
-                            </AnimatePresence>
+                              </div> : null}
                         </div>
                         </Fragment>
                     );

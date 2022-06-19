@@ -6,10 +6,15 @@ export default function Corner({ rotation }) {
   const style = {
     transform: `rotate(${rotation}deg)`
   }
-  const transition = { duration: 4, ease: "easeInOut" }
 
   return (
-    <div className="corner" style={style}>
+    <motion.div 
+      className="corner" style={style}
+      initial={{top: "-50rem" }}
+      animate={{top: "-5.5rem"}}
+      exit={{top: "-10rem"}}
+      transition={{duration: 0.25, type: "spring", stiffness: 300}}
+      >
       <svg 
       version="1.0" xmlns="http://www.w3.org/2000/svg"
         width="493.000000pt" 
@@ -17,7 +22,7 @@ export default function Corner({ rotation }) {
         viewBox="0 0 493.000000 496.000000"
         preserveAspectRatio="xMidYMid meet">
         <g transform="translate(0.000000,496.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
-          <motion.path d="M10 2480 l0 -2480 75 0 75 0 2 483 3 482 345 5 345 5 3 165 c2 116 6
+          <path d="M10 2480 l0 -2480 75 0 75 0 2 483 3 482 345 5 345 5 3 165 c2 116 6
 166 15 172 6 4 103 8 214 8 l203 0 2 642 3 641 140 72 c221 113 335 197 508
 375 74 77 152 169 196 234 70 103 191 325 191 351 0 33 23 35 630 35 384 0
 609 4 621 11 18 9 19 24 19 213 0 177 2 205 16 210 9 3 94 6 190 6 l174 0 0
@@ -41,13 +46,10 @@ m-2306 -1406 c3 -9 6 -258 6 -554 0 -523 -1 -540 -19 -550 -21 -11 -258 -14
 -528 -8 -548 0 -14 6 -16 63 -16 546 l0 540 23 -5 c12 -4 65 -13 117 -22z
 m438 -1297 l3 -118 -291 0 -290 0 0 113 c0 63 3 117 7 120 4 4 133 6 287 5
 l281 -3 3 -117z"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={transition}
         />
         </g>
       </svg>
 
-    </div>
+    </motion.div>
   );
 }

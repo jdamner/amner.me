@@ -9,7 +9,7 @@ export default function TabButton({ onClick, name, active, index, image }) {
             role='button' 
             aria-current={active} 
             tabIndex={index}>
-                {image ?? null}
+                {/* {image ?? null} */}
             <h3>{ name }</h3>
         </div>
     );

@@ -3,14 +3,14 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout"
 import Blog from "../components/Blog"
-import Title from '../components/Title';
+import Header from '../components/Header';
 import Tabs from "../components/Services/Tabs";
 
 // markup
 const IndexPage = () => {
   return (
     <Layout title='About Me'>
-        <Title
+        <Header
           image={<StaticImage src={'../assets/header.jpg'} alt="" />}
           title={"I'm James Amner"}
           text={<Fragment>

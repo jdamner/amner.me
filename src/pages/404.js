@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
-import Title from "../components/Title"
+import Header from "../components/Header"
 
 
 
@@ -9,7 +9,7 @@ import Title from "../components/Title"
 const NotFoundPage = () => {
   return (
     <Layout title="Page Not Found">
-      <Title
+      <Header
         image={null}
         title="Page Not Found"
         text={
