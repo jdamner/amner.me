@@ -16,7 +16,7 @@ export default function TabContent({ tab }) {
                     animate={{ opacity: 1, rotate : 36, marginRight: "-6.25rem" }}
                     exit={{ opacity: 0, rotate: 0, marginRight: 0 }}
                     transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
-                    className='flash'
+                    className='flash d-none d-md-block'
                     >
                     <StaticImage 
                         src={'../../assets/flash.svg'} 
