@@ -4,7 +4,7 @@ import TabContent from "./TabContent";
 import { StaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Title from "../Global/Title";
-import { motion, AnimatePresence } from "framer-motion";
+import { event } from "../../utils/insights";
 
 export default function Tabs() {
 
@@ -12,6 +12,7 @@ export default function Tabs() {
     const [tabOpen, setTabOpen] = React.useState(false);
 
     const handleTabChange = (index) => {
+        event('tab-change', { index, tabOpen });
         setTabOpen(index === activeTab ? !tabOpen : true);
         setActiveTab(index);
     }

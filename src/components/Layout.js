@@ -11,8 +11,10 @@ import "../sass/theme.scss";
 
 import { motion } from "framer-motion";
 
+import { pageView } from "../utils/insights";
 
 export default function Layout({ children, title }) {
+    pageView();
     const year = new Date().getFullYear();
 
     return (

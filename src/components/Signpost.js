@@ -4,6 +4,8 @@ import Corner from "./Global/Corner";
 
 import { motion } from "framer-motion";
 
+import { event } from "../utils/insights";
+
 export default class Signpost extends Component {
     
     constructor(props) {
@@ -30,6 +32,7 @@ export default class Signpost extends Component {
     }
 
     handleModalClick = () => {
+        event('signpost-click', { open: this.state.isOpen });
         this.setState({
             isOpen: !this.state.isOpen
         });
@@ -83,10 +86,10 @@ export default class Signpost extends Component {
                                 <p>Looking for someone just like me?</p>
                             </div>
                             <div className='contact-list'>
-                                <a className='btn' href='tel:+447515352631'>
+                                <a className='btn' href='tel:+447515352631' onClick={ event('phone-click', {})}>
                                     +44 07515 352631
                                 </a>
-                                <a className='btn' href='mailto:jdamner@me.com'>
+                                <a className='btn' href='mailto:jdamner@me.com' onClick={ event('email-click', {})}>
                                     jdamner@me.com
                                 </a>
                             </div>
