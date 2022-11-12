@@ -6,7 +6,6 @@
     }
     &-image {
         @extend .col-md-4;
-        width: 100%;
         height: auto;
         margin-bottom: 1.5rem;
         position: relative;
@@ -42,6 +41,7 @@
     }
     &-content {
         @extend .col-md-8;
+        position: relative;
         @include media-breakpoint-up(md) {
             margin-top: 6rem;
             margin-left: -3.5rem;
