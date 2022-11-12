@@ -97,7 +97,7 @@
         // flip on Y axis and rotate 30deg
         transform: rotate(36deg);
         z-index: -1;
-        .gatsby-image-wrapper {
+        .gatsby-image-, svg {
           width: 100%;
           height: 100%;
         }

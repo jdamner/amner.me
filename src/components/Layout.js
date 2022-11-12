@@ -6,7 +6,6 @@ import "@fontsource/limelight";
 
 import Signpost from "./Signpost";
 
-import "../sass/bootstrap.scss";
 import "../sass/theme.scss";
 
 import { motion } from "framer-motion";
@@ -20,6 +19,7 @@ export default function Layout({ children, title }) {
     return (
         <Fragment>
             <title>{title + " - Amner.me"}</title>
+            <meta name="description" value={title} />
             <main id="page" className="site">
                 <Signpost />
                 <motion.div 

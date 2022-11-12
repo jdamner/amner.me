@@ -3,7 +3,7 @@ import { graphql, StaticQuery, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { motion } from "framer-motion";
 
-export default function PostList({ data }) {
+export default function PostList() {
   return (<StaticQuery
     query={graphql`
         query {

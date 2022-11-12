@@ -1,6 +1,7 @@
 name: Deploy to Firebase Hosting on Staging
 'on':
-  push:
+  workflow_dispatch: # Allow manual trigger
+  pull_request_target:
     branches:
       - staging
 jobs:
@@ -9,18 +10,20 @@ jobs:
     steps:
       - name: 'Checkout Code'
         uses: actions/checkout@v2
-      - name: Cache dependencies
-        uses: actions/cache@v2
+      - name: 'Use Node.js 18.x'
+        uses: actions/setup-node@v3
         with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
+          node-version: 18
       - name: 'Install dependancies'
-        run: npm ci && npm run build
+        run: npm ci;
+      - name: Run Tests with Jest
+        run: npm run test;
+      - name: 'Build'
+        run: npm run build;
       - name: 'Deploy'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AMNER_ME }}'
-          channelId: live
           projectId: amner-me
+          expires: 30d

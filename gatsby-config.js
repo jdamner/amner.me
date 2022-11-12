@@ -8,7 +8,23 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    'gatsby-plugin-react-svg',
+    "gatsby-plugin-react-svg",
+    {
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        disableOnDev: false,
+        reportOnly: false, 
+        mergeScriptHashes: false,
+        mergeStyleHashes: false,
+        mergeDefaultDirectives: true,
+        directives: {
+          "script-src": "'self' 'unsafe-inline' 'unsafe-eval' https://getinsights.io",
+          "style-src": "'self' 'unsafe-inline'",
+          "img-src": "'self' data:",
+          "connect-src": "'self' https://getinsights.io",
+         }
+      }
+    },
     {
       resolve: "gatsby-transformer-remark",
       options: {
