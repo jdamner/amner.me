@@ -1,11 +1,10 @@
 @import "./theme/variables";
-@import "./bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import "./theme/global";
 @import "./theme/blog";
 @import "./theme/typography";
 @import "./theme/title";
 @import "./theme/code";
-
 @import "./theme/signpost";
 @import "./theme/seperator";
 @import "./theme/post";
