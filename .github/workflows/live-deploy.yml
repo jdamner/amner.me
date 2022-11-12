@@ -1,8 +1,9 @@
 name: Deploy to Firebase Hosting on Master
 'on':
+  workflow_dispatch: # Allow manual trigger
   push:
     branches:
-      - master
+      - main
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
