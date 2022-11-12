@@ -16,7 +16,11 @@ jobs:
           key: npm-${{ hashFiles('package-lock.json') }}
           restore-keys: npm-
       - name: 'Install dependancies'
-        run: npm ci && npm run build
+        run: npm ci
+      - name: Run Tests with Jest
+        run: npm run test
+      - name: 'Build'
+        run: npm run build
       - name: 'Deploy'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

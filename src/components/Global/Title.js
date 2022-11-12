@@ -1,11 +1,9 @@
 import React from "react";
 
 import Seperator from "./Seperator";
-import { motion, useViewportScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Title({ text }) {
-    const { scrollYProgress } = useViewportScroll();
-    console.log(scrollYProgress);
     return (
         <motion.div
             className='blog-wrap-title'
