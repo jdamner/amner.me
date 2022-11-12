@@ -1,9 +1,6 @@
 name: Deploy to Firebase Hosting on Staging
 'on':
   workflow_dispatch: # Allow manual trigger
-  push:
-    branches:
-      - staging
   pull_request_target:
     branches:
       - staging
