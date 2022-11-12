@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+    title: "amner.me-gatsby",
+    siteUrl: "https://www.amner.me"
+  },
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
@@ -9,7 +13,7 @@ module.exports = {
       resolve: `gatsby-plugin-csp`,
       options: {
         disableOnDev: false,
-        reportOnly: false, 
+        reportOnly: true, 
       }
     },
     {
