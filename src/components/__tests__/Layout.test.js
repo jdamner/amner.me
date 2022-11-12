@@ -10,6 +10,10 @@ describe("Layout", () => {
         <title>
           TEST - Amner.me
         </title>,
+        <meta
+          name="description"
+          value="TEST"
+        />,
         <main
           className="site"
           id="page"
