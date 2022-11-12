@@ -10,21 +10,12 @@ jobs:
     steps:
       - name: 'Checkout Code'
         uses: actions/checkout@v2
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
-      - name: 'Install dependancies'
-        run: npm ci
-      - name: Run Tests with Jest
-        run: npm run test
-      - name: 'Build'
-        run: npm run build
+      - name: 'Install dependancies and build'
+        run: npm ci && npm run build
       - name: 'Deploy'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AMNER_ME }}'
           projectId: amner-me
+          expires: 30d
