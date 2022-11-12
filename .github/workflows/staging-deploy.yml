@@ -4,6 +4,9 @@ name: Deploy to Firebase Hosting on Staging
   push:
     branches:
       - staging
+  pull_request:
+    branches:
+      - staging
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -27,9 +30,5 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AMNER_ME }}'
-          channelId: staging
+          channelId: ${{ github.event.number }}
           projectId: amner-me
-      - name: Create Live Deployment PR
-        run: gh pr create -B main -H staging --title 'Deploy to Live' --body 'Deploy to main. [Preview](${{ steps.deploy.outputs.details_url }}) available until ${{ steps.deploy.outputs.expire_time }}' --label 'deploy' --label 'staging'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
