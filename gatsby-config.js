@@ -13,7 +13,16 @@ module.exports = {
       resolve: `gatsby-plugin-csp`,
       options: {
         disableOnDev: false,
-        reportOnly: true, 
+        reportOnly: false, 
+        mergeScriptHashes: false,
+        mergeStyleHashes: false,
+        mergeDefaultDirectives: true,
+        directives: {
+          "script-src": "'self' 'unsafe-inline' 'unsafe-eval' https://getinsights.io",
+          "style-src": "'self' 'unsafe-inline'",
+          "img-src": "'self' data:",
+          "connect-src": "'self' https://getinsights.io",
+         }
       }
     },
     {
