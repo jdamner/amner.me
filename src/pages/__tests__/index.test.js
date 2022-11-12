@@ -11,6 +11,10 @@ describe("IndexPage", () => {
         <title>
           About Me - Amner.me
         </title>,
+        <meta
+          name="description"
+          value="About Me"
+        />,
         <main
           className="site"
           id="page"

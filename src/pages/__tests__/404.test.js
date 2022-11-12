@@ -11,6 +11,10 @@ describe("NotFoundPage", () => {
         <title>
           Page Not Found - Amner.me
         </title>,
+        <meta
+          name="description"
+          value="Page Not Found"
+        />,
         <main
           className="site"
           id="page"

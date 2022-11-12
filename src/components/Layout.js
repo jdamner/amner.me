@@ -20,6 +20,7 @@ export default function Layout({ children, title }) {
     return (
         <Fragment>
             <title>{title + " - Amner.me"}</title>
+            <meta name="description" value={title} />
             <main id="page" className="site">
                 <Signpost />
                 <motion.div 
