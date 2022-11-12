@@ -6,7 +6,6 @@ import "@fontsource/limelight";
 
 import Signpost from "./Signpost";
 
-import "../sass/bootstrap.scss";
 import "../sass/theme.scss";
 
 import { motion } from "framer-motion";
