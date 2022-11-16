@@ -24,7 +24,7 @@
     "@fontsource/limelight": "^4.5.8",
     "@fontsource/poiret-one": "^4.5.8",
     "bootstrap": "^5.2.2",
-    "firebase-tools": "^11.0.1",
+    "firebase-tools": "^11.16.1",
     "framer-motion": "^7.6.6",
     "gatsby": "^4.15.2",
     "gatsby-plugin-csp": "^1.1.3",
