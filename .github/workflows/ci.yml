@@ -1,0 +1,117 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - staging
+      - main
+  pull_request_target:
+    branches:
+      - staging
+      - main
+jobs:
+  run_jest:
+    name: Run Jest Tests
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
+      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
+    steps:
+      - name: Checkout
+        if: ${{ github.event_name != 'pull_request_target' }}
+        uses: actions/checkout@v3
+      - name: Checkout PR
+        if: ${{ github.event_name == 'pull_request_target' }}
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Jest tests
+        run: npm run test:ci
+  run_vr:
+    name: Run VR Tests
+    if: |
+      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
+      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        if: ${{ github.event_name != 'pull_request_target' }}
+        uses: actions/checkout@v3
+      - name: Checkout PR
+        if: ${{ github.event_name == 'pull_request_target' }}
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Next app
+        run: npm run build
+      - name: Run Next app
+        run: npm run start &
+      - name: Lost Pixel
+        id: lp
+        uses: lost-pixel/lost-pixel@v2.15.0
+        env:
+          LOST_PIXEL_MODE: update
+      - name: Commit Changes and Create Pull Request
+        if: ${{ failure() && steps.lp.conclusion == 'failure' }}
+        working-directory: ./
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global push.autoSetupRemote true
+          git checkout -b lost-pixel-update/${{ github.sha }}
+          git add .
+          git commit -m "Update lost-pixel images"
+          git push origin
+          gh pr create --title "Update lost-pixel images" --body "Update lost-pixel images" --base ${{ github.event.pull_request.head.ref }} --head lost-pixel-update/${{ github.sha }} --label "VR test update"
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy_for_review:
+    name: Deploy for review
+    if: |
+      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
+      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
+    runs-on: ubuntu-latest
+    needs: [run_jest, run_vr]
+    steps:
+      - name: Checkout
+        if: ${{ github.event_name != 'pull_request_target' }}
+        uses: actions/checkout@v3
+      - name: Checkout PR
+        if: ${{ github.event_name == 'pull_request_target' }}
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Next app
+        run: npm run build
+      - name: 'Deploy'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          entrypoint: ./
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AMNER_ME }}'
+          expires: 30d
+          projectId: amner-me
+

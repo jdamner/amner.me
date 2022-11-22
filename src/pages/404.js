@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import Link from "next/link"
 import Layout from "../components/Layout"
 import Header from "../components/Header"
 
@@ -16,7 +16,7 @@ const NotFoundPage = () => {
           <p>
             Sorry, we couldn’t find what you were looking for.
             <br />
-            <Link to="/">Go home</Link>.
+            <Link href="/">Go home</Link>.
           </p>
         }
       />
