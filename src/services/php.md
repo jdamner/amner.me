@@ -1,6 +1,6 @@
 ---
 title: PHP
-thumbnail: ../assets/php.svg
+thumbnail: /assets/php.svg
 ---
 I'm a PHP Developer with a focus on WordPress but have experience with other frameworks such as Laravel, Symfony, and others.
 

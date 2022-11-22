@@ -9,77 +9,44 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop -H 0.0.0.0",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
-    "lint": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve -H 0.0.0.0",
-    "clean": "gatsby clean",
+    "build": "next build && next export",
+    "develop": "next develop -H 0.0.0.0",
+    "lint": "next lint",
+    "dev": "next dev",
+    "start": "next start",
     "test": "jest",
-    "update-snapshots": "jest --updateSnapshot"
+    "test:ci": "jest --ci",
+    "update-snapshots": "jest --update-snapshot",
+    "export": "next export"
   },
   "dependencies": {
     "@fontsource/comfortaa": "^4.5.8",
     "@fontsource/limelight": "^4.5.8",
     "@fontsource/poiret-one": "^4.5.8",
     "bootstrap": "^5.2.2",
-    "firebase-tools": "^11.0.1",
+    "ci": "^2.2.0",
+    "file-system": "^2.2.2",
     "framer-motion": "^7.6.6",
-    "gatsby": "^4.15.2",
-    "gatsby-plugin-csp": "^1.1.3",
-    "gatsby-plugin-image": "^2.15.1",
-    "gatsby-plugin-react-svg": "^3.1.0",
-    "gatsby-plugin-sass": "^5.15.1",
-    "gatsby-plugin-sharp": "^4.15.1",
-    "gatsby-plugin-sitemap": "^5.15.1",
-    "gatsby-remark-highlight-code": "^3.2.0",
-    "gatsby-remark-images": "^6.15.1",
-    "gatsby-source-filesystem": "^4.15.0",
-    "gatsby-transformer-remark": "^5.15.1",
-    "gatsby-transformer-sharp": "^4.15.1",
+    "gray-matter": "^4.0.0",
     "insights-js": "^1.2.11",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-modal": "^3.15.1",
-    "uncss": "^0.17.3"
+    "next": "^13.0",
+    "react": "^18.2.0",
+    "react-dom": "latest",
+    "react-modal": "^3.16.1",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
+    "sass": "^1.56.1"
   },
   "devDependencies": {
-    "babel-jest": "^29.2.2",
-    "babel-preset-gatsby": "^3.0.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^29.2.2",
-    "prettier": "^2.7.1",
-    "react-test-renderer": "^18.2.0"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "<rootDir>/jest/jest-preprocess.js"
-    },
-    "moduleNameMapper": {
-      "^@fontsource/.+$": "identity-obj-proxy",
-      ".+\\.(css|less|scss)$": "identity-obj-proxy",
-      ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jest/__mocks__/file-mock.js",
-      "^gatsby-page-utils/(.*)$": [ "gatsby-page-utils/dist/$1", "gatsby-page-utils/$1" ],
-      "^gatsby-core-utils/(.*)$": [ "gatsby-core-utils/dist/$1", "gatsby-core-utils/$1" ],
-      "^gatsby-plugin-utils/(.*)$": [ "gatsby-plugin-utils/dist/$1", "gatsby-plugin-utils/$1" ]
-    },
-    "testPathIgnorePatterns": [
-      "node_modules",
-      "\\.cache",
-      "<rootDir>.*/public"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(gatsby|gatsby-script|gatsby-link)/)"
-    ],
-    "globals": {
-      "__PATH_PREFIX__": ""
-    },
-    "testEnvironmentOptions": {
-      "url": "http://localhost"
-    },
-    "setupFiles": [
-      "<rootDir>/jest/loadershim.js"
-    ]
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/react": "18.0.9",
+    "react-test-renderer": "^18.2.0",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.4",
+    "jest": "^29.3.0",
+    "jest-environment-jsdom": "^29.3.0",
+    "lost-pixel": "^2.23.0",
+    "next-router-mock": "^0.8.0"
   }
 }

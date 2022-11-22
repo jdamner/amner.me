@@ -1,6 +1,6 @@
 ---
 title: React
-thumbnail: ../assets/js.svg
+thumbnail: /assets/js.svg
 ---
 
 I've worked with React and React native for a few years and find the stateful nature of the React framework to be a great fit for my needs.
