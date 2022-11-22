@@ -2,7 +2,7 @@
 layout: post
 title: Full Site Editing in WordPress
 date: 2022-04-12T00:00:00.000Z
-thumbnail: ../assets/fse.webp
+thumbnail: /assets/fse.webp
 slug: full-site-editing-in-wordpress
 
 ---

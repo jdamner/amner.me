@@ -2,7 +2,7 @@
 layout: post
 title: New WP Plugin
 date: 2021-11-15T15:26:21.788Z
-thumbnail: ../assets/jerc.webp
+thumbnail: /assets/jerc.webp
 slug: new-wp-plugin
 ---
 I've got a new WordPress plugin. It's a plugin to help developers find and identify javascript errors on their website. Check out more on the [WordPress Plugin Directory](https://wordpress.org/plugins/javascript-error-reporting-client).

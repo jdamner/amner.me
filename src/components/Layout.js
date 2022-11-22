@@ -1,16 +1,8 @@
 import React, { Fragment } from "react"
-
-import "@fontsource/comfortaa";
-import "@fontsource/poiret-one";
-import "@fontsource/limelight";
-
 import Signpost from "./Signpost";
-
-import "../sass/theme.scss";
-
 import { motion } from "framer-motion";
-
-import { pageView } from "../utils/insights";
+import { pageView } from "../api/insights";
+import Head from "next/head";
 
 export default function Layout({ children, title }) {
     pageView();
@@ -18,8 +10,10 @@ export default function Layout({ children, title }) {
 
     return (
         <Fragment>
-            <title>{title + " - Amner.me"}</title>
-            <meta name="description" value={title} />
+            <Head>
+                <title>{title + " - Amner.me"}</title>
+                <meta name="description" value={title} />
+            </Head>
             <main id="page" className="site">
                 <Signpost />
                 <motion.div 
