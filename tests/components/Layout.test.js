@@ -1,49 +1,40 @@
 import React from "react"
 import Layout from "@components/Layout"
-import renderer from "react-test-renderer"
+import { render } from "@testing-library/react"
 
 describe("Layout", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Layout title="TEST" />).toJSON()
-    expect(tree).toMatchInlineSnapshot(`
-[
+    const { container } = render(<Layout title="TEST" />)
+    expect(container).toMatchInlineSnapshot(`
+<div>
   <main
-    className="site"
+    class="site"
     id="page"
   >
     <button
-      className="signpost"
-      onClick={[Function]}
-      style={
-        {
-          "top": "-150px",
-        }
-      }
+      class="signpost"
+      style="top: -150px;"
     >
       <div
-        className="signpost-top"
+        class="signpost-top"
       />
       <div
-        className="signpost-content"
+        class="signpost-content"
       >
         <span>
           Contact
         </span>
       </div>
       <div
-        className="signpost-bottom"
+        class="signpost-bottom"
       />
     </button>
     <div
-      className="container"
+      class="container"
       id="home"
-      style={
-        {
-          "opacity": 0,
-        }
-      }
+      style="opacity: 0;"
     />
-  </main>,
+  </main>
   <footer
     id="footer"
   >
@@ -51,8 +42,8 @@ describe("Layout", () => {
       © James Amner 
       2022
     </small>
-  </footer>,
-]
+  </footer>
+</div>
 `)
   })
 })

@@ -1,34 +1,31 @@
 import React from "react"
 import Signpost from "@components/Signpost"
-import renderer from "react-test-renderer"
+import { render } from "@testing-library/react"
 
 describe("Signpost", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Signpost />).toJSON()
-    expect(tree).toMatchInlineSnapshot(`
-      <button
-        className="signpost"
-        onClick={[Function]}
-        style={
-          {
-            "top": "-150px",
-          }
-        }
-      >
-        <div
-          className="signpost-top"
-        />
-        <div
-          className="signpost-content"
-        >
-          <span>
-            Contact
-          </span>
-        </div>
-        <div
-          className="signpost-bottom"
-        />
-      </button>
-    `)
+    const { container } = render(<Signpost />)
+    expect(container).toMatchInlineSnapshot(`
+<div>
+  <button
+    class="signpost"
+    style="top: -150px;"
+  >
+    <div
+      class="signpost-top"
+    />
+    <div
+      class="signpost-content"
+    >
+      <span>
+        Contact
+      </span>
+    </div>
+    <div
+      class="signpost-bottom"
+    />
+  </button>
+</div>
+`)
   })
 })

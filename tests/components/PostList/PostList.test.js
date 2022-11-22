@@ -1,11 +1,11 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import { render } from "@testing-library/react"
 
 import PostList from "@components/PostList/PostList"
 
 describe("PostList", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<PostList />).toJSON()
-    expect(tree).toMatchInlineSnapshot(`null`)
+    const { container } = render(<PostList />)
+    expect(container).toMatchInlineSnapshot(`<div />`)
   })
 })

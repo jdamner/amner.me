@@ -1,11 +1,11 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import { render } from "@testing-library/react"
 
 import Tabs from "@components/Services/Tabs"
 
 describe("Tabs", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Tabs />).toJSON()
-    expect(tree).toMatchInlineSnapshot(`null`)
+    const { container } = render(<Tabs />)
+    expect(container).toMatchInlineSnapshot(`<div />`)
   })
 })

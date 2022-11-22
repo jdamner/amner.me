@@ -1,70 +1,56 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import { render } from "@testing-library/react"
 
 import NotFoundPage from "../../src/pages/404"
 
 describe("NotFoundPage", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<NotFoundPage />).toJSON()
-    expect(tree).toMatchInlineSnapshot(`
-[
+    const { container } = render(<NotFoundPage />)
+    expect(container).toMatchInlineSnapshot(`
+<div>
   <main
-    className="site"
+    class="site"
     id="page"
   >
     <button
-      className="signpost"
-      onClick={[Function]}
-      style={
-        {
-          "top": "-150px",
-        }
-      }
+      class="signpost"
+      style="top: -150px;"
     >
       <div
-        className="signpost-top"
+        class="signpost-top"
       />
       <div
-        className="signpost-content"
+        class="signpost-content"
       >
         <span>
           Contact
         </span>
       </div>
       <div
-        className="signpost-bottom"
+        class="signpost-bottom"
       />
     </button>
     <div
-      className="container"
+      class="container"
       id="home"
-      style={
-        {
-          "opacity": 0,
-        }
-      }
+      style="opacity: 0;"
     >
       <section
-        className="title"
+        class="title"
         id="title"
       >
         <div
-          className="title-wrap"
+          class="title-wrap"
         >
           <div
-            className="title-image"
+            class="title-image"
           />
           <div
-            className="title-content"
+            class="title-content"
           >
             <div
-              className="corner"
-              style={
-                {
-                  "top": "-50rem",
-                  "transform": "rotate(-90deg)",
-                }
-              }
+              class="corner"
+              style="transform: rotate(-90deg); top: -50rem;"
             >
               <svg
                 height="496.000000pt"
@@ -86,7 +72,7 @@ describe("NotFoundPage", () => {
               </svg>
             </div>
             <h1
-              className="title-content-title"
+              class="title-content-title"
             >
               Page Not Found
             </h1>
@@ -95,9 +81,6 @@ describe("NotFoundPage", () => {
               <br />
               <a
                 href="/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                onTouchStart={[Function]}
               >
                 Go home
               </a>
@@ -107,7 +90,7 @@ describe("NotFoundPage", () => {
         </div>
       </section>
     </div>
-  </main>,
+  </main>
   <footer
     id="footer"
   >
@@ -115,8 +98,8 @@ describe("NotFoundPage", () => {
       © James Amner 
       2022
     </small>
-  </footer>,
-]
+  </footer>
+</div>
 `)
   })
 })

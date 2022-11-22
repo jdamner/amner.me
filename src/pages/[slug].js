@@ -19,12 +19,12 @@ export default function Template({ post, posts }) {
                         alt={post.title}
                         style={{ objectFit: "cover" }}
                         priority fill
-                        placeholder="blur"
                          />
                     }
                     title={post.title} />
                 <div
                     className="post-content"
+                    dangerouslySetInnerHTML={{ __html: post.content }}
                 />
                 <Link href='/' rel='home' className="btn">« Return Home</Link>
             </article>

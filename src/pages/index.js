@@ -8,6 +8,7 @@ import HeaderJPG from '../assets/header.jpg';
 
 import { getAllPosts } from "../api/Posts";
 import { getAllServices } from "../api/Services";
+import markdownToHtml from "../api/MarkdownToHtml";
 
 const IndexPage = ( { posts, services }) => {
   return (
@@ -39,10 +40,17 @@ export async function getStaticProps() {
     'thumbnail',
   ])
 
-  const services = await getAllServices([
+  const services = getAllServices([
     'title',
     'content'
-  ]);
+  ])
+  
+  services.map(
+    async(service) => {
+      service.content = await markdownToHtml(service.content || '')
+      return service
+    }
+  )
 
   return {
     props: { posts, services },
