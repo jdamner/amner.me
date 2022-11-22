@@ -1,7 +1,7 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import PostList from "../../PostList/PostList"
+import PostList from "@components/PostList/PostList"
 
 describe("PostList", () => {
   it("renders correctly", () => {

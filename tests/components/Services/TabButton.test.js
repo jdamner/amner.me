@@ -1,7 +1,7 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import TabButton from "../../../src/components/Services/TabButton"
+import TabButton from "@components/Services/TabButton"
 
 describe("TabButton", () => {
   it("renders correctly", () => {

@@ -1,7 +1,7 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import Tabs from "../../Services/Tabs"
+import Tabs from "@components/Services/Tabs"
 
 describe("Tabs", () => {
   it("renders correctly", () => {

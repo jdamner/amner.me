@@ -1,5 +1,5 @@
 import React from "react"
-import Signpost from "../../src/components/Signpost"
+import Signpost from "@components/Signpost"
 import renderer from "react-test-renderer"
 
 describe("Signpost", () => {

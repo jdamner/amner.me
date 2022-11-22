@@ -5,7 +5,6 @@ import Image from "next/image"
 
 export default function PostList({ posts }) {
   if (!posts) {
-    console.error("No posts found");
     return null;
   }
   return posts.map((post, index) => (
