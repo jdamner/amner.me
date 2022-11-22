@@ -12,7 +12,7 @@
         border: 4px solid black;
         background-color: gold;
         padding: 0;
-        .gatsby-image-wrapper {
+        img {
             width: 100%;
             height: 100%;
             background-color: white;
@@ -32,7 +32,7 @@
         }
 
         &:hover {
-            .gatsby-image-wrapper {
+            img {
                 transform: translate(-1rem, -1rem);
                 border: 4px solid black;
                 background-color: white;
