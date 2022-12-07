@@ -16,4 +16,5 @@ module.exports = {
   },
   generateOnly: true,
   failOnDifference: true,
+  waitBeforeScreenshot: 30000,
 };
