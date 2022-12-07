@@ -13,8 +13,8 @@ module.exports = {
       { path: "/why-not-wordpress", name: "Why Not WordPress?" },
     ],
     baseUrl: "http://172.17.0.1:3000",
-    waitBeforeScreenshot: 5000,
   },
   generateOnly: true,
   failOnDifference: true,
+  waitBeforeScreenshot: 30000,
 };
