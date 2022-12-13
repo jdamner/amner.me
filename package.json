@@ -23,7 +23,7 @@
     "@fontsource/comfortaa": "^4.5.8",
     "@fontsource/limelight": "^4.5.8",
     "@fontsource/poiret-one": "^4.5.8",
-    "bootstrap": "^5.2.2",
+    "bootstrap": "^5.2.3",
     "ci": "^2.2.0",
     "file-system": "^2.2.2",
     "framer-motion": "^7.6.6",
