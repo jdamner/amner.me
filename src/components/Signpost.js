@@ -4,7 +4,7 @@ import Corner from "./Global/Corner";
 
 import { motion } from "framer-motion";
 
-import { event } from "../utils/insights";
+import { event } from "../api/insights";
 
 export default class Signpost extends Component {
     
@@ -47,7 +47,6 @@ export default class Signpost extends Component {
     
 
     render = () => {
-        ReactModal.setAppElement('#___gatsby')
         const ContentWrapper = (props, children) => {
         return (<motion.div
             {...props}
