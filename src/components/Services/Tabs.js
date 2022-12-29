@@ -1,101 +1,51 @@
 import React, { Fragment } from "react";
 import TabButton from "./TabButton";
 import TabContent from "./TabContent";
-import { StaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Title from "../Global/Title";
-import { event } from "../../utils/insights";
+import { event } from "../../api/insights";
 
-export default function Tabs() {
+export default function Tabs({ tabs }) {
 
-    const [activeTab, setActiveTab] = React.useState(0);
-    const [tabOpen, setTabOpen] = React.useState(false);
+  if (!tabs) return null;
 
-    const handleTabChange = (index) => {
-        event('tab-change', { index, tabOpen });
-        setTabOpen(index === activeTab ? !tabOpen : true);
-        setActiveTab(index);
-    }
+  const [activeTab, setActiveTab] = React.useState(0);
+  const [tabOpen, setTabOpen] = React.useState(false);
 
+  const handleTabChange = (index) => {
+    event('tab-change', { index, tabOpen });
+    setTabOpen(index === activeTab ? !tabOpen : true);
+    setActiveTab(index);
+  }
+
+  const TabButtons = tabs.map((tab, index) => {
+    const active = tabOpen && activeTab === index;
     return (
-        <StaticQuery
-            query={graphql`
-            query MyQuery {
-                allFile(filter: {sourceInstanceName: {eq: "services"}}) {
-                  edges {
-                    node {
-                      id
-                      childrenMarkdownRemark {
-                        frontmatter {
-                          title
-                          thumbnail {
-                            childImageSharp {
-                              gatsbyImageData(
-                                width: 200
-                                placeholder: BLURRED
-                                formats: [AUTO, WEBP, AVIF]
-                              )
-                            }
-                            publicURL
-                          }
-                        }
-                        html
-                      }
-                    }
-                  }
-                }
-              }`}
-            render={data => {
-                const { allFile } = data;
-                const TabButtons = allFile.edges.map(edge => {
-
-                    const { frontmatter } = edge.node.childrenMarkdownRemark[0];
-                    if (!frontmatter) {
-                        return null;
-                    }
-
-                    const active = tabOpen && activeTab === edge.node.id;
-
-                    const file = frontmatter.thumbnail ? getImage(frontmatter.thumbnail) : null;
-                    var image = null;
-                    if (file) {
-                      image = <GatsbyImage image={file} alt={frontmatter.title} objectFit={'contain'} />;
-                    } else if(frontmatter.thumbnail) {
-                      image = <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />;
-                    }
-
-                    return (
-                        <Fragment key={edge.node.id}>
-                        <TabButton
-                            key={edge.node.id}
-                            name={frontmatter.title}
-                            image={image}
-                            active={active}
-                            index={edge.node.id}
-                            onClick={() => handleTabChange(edge.node.id)}
-                        />
-                        <div className='tab-content-divider' />
-                        <div className="tab-content-wrapper">
-                            {active ? 
-                            <div className="tab-content" 
-                              key={edge.node.id}>
-                                <TabContent tab={edge.node.childrenMarkdownRemark[0]} />
-                              </div> : null}
-                        </div>
-                        </Fragment>
-                    );
-                })
-
-                return (
-                    <div className="tab">
-                        <Title text={"Special Skills"} />
-                        <div className="tab-buttons-wrapper">
-                            {TabButtons}
-                        </div>
-                    </div>
-                )
-            }
-            }
+      <Fragment key={index}>
+        <TabButton
+          key={index}
+          name={tab.title}
+          active={active}
+          index={index}
+          onClick={() => handleTabChange(index)}
         />
-    )
+        <div className='tab-content-divider' />
+        <div className="tab-content-wrapper">
+          {active ?
+            <div className="tab-content"
+              key={index}>
+              <TabContent tab={tab} />
+            </div> : null}
+        </div>
+      </Fragment>
+    );
+  });
+
+  return (
+    <div className="tab">
+      <Title text={"Special Skills"} />
+      <div className="tab-buttons-wrapper">
+        {TabButtons}
+      </div>
+    </div>
+  )
 }
