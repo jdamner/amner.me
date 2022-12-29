@@ -12,6 +12,4 @@ updates:
     open-pull-requests-limit: 10
     labels:
       - "dependencies"
-    reviewers:
-      - "jdamner"
     target-branch: "staging"

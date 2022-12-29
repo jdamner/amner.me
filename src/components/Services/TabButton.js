@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TabButton({ onClick, name, active, index, image }) {
+export default function TabButton({ onClick, name, active, index }) {
     return (
         <div 
             className={`tab-button ${active ? "active" : ""}`}
@@ -9,7 +9,6 @@ export default function TabButton({ onClick, name, active, index, image }) {
             role='button' 
             aria-current={active} 
             tabIndex={index}>
-                {/* {image ?? null} */}
             <h3>{ name }</h3>
         </div>
     );
