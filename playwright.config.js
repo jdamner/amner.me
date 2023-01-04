@@ -37,6 +37,7 @@ const config = {
       use: {...devices['iPhone 12'] }
     },
   ],
+  reporter: [['junit', { outputFile: 'vr-results.xml' }]],
 }
 
 export default config

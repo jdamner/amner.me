@@ -32,6 +32,11 @@ jobs:
         run: npm ci
       - name: Run Jest tests
         run: npm run test:ci
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          junit_files: 'jest-results.xml'
   run_vr:
     name: Run VR Tests
     runs-on: ubuntu-latest
@@ -55,7 +60,11 @@ jobs:
           npx playwright install --with-deps
       - name: Run VR Tests
         run: npm run test:vr
-        id: vr
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          junit_files: 'vr-results.xml'
   update_snapshots:
     name: Update Test Snapshots
     needs: [run_jest, run_vr]
