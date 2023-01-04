@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="13" failures="0" errors="0" time="5.32">
+  <testsuite name="Blog" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:02" time="0.696" tests="1">
+    <testcase classname="Blog renders correctly" name="Blog renders correctly" time="0.058">
+    </testcase>
+  </testsuite>
+  <testsuite name="Title" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:03" time="0.352" tests="1">
+    <testcase classname="Title renders correctly" name="Title renders correctly" time="0.037">
+    </testcase>
+  </testsuite>
+  <testsuite name="TabContent" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:03" time="0.359" tests="1">
+    <testcase classname="TabContent renders correctly" name="TabContent renders correctly" time="0.032">
+    </testcase>
+  </testsuite>
+  <testsuite name="Flash" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:04" time="0.288" tests="1">
+    <testcase classname="Flash renders correctly" name="Flash renders correctly" time="0.017">
+    </testcase>
+  </testsuite>
+  <testsuite name="Seperator" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:04" time="0.286" tests="1">
+    <testcase classname="Seperator renders correctly" name="Seperator renders correctly" time="0.017">
+    </testcase>
+  </testsuite>
+  <testsuite name="NotFoundPage" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:04" time="0.445" tests="1">
+    <testcase classname="NotFoundPage renders correctly" name="NotFoundPage renders correctly" time="0.095">
+    </testcase>
+  </testsuite>
+  <testsuite name="Header" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:05" time="0.323" tests="1">
+    <testcase classname="Header renders correctly" name="Header renders correctly" time="0.03">
+    </testcase>
+  </testsuite>
+  <testsuite name="Corner" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:05" time="0.316" tests="1">
+    <testcase classname="Corner renders correctly" name="Corner renders correctly" time="0.027">
+    </testcase>
+  </testsuite>
+  <testsuite name="Layout" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:05" time="0.344" tests="1">
+    <testcase classname="Layout renders correctly" name="Layout renders correctly" time="0.041">
+    </testcase>
+  </testsuite>
+  <testsuite name="Signpost" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:06" time="0.402" tests="1">
+    <testcase classname="Signpost renders correctly" name="Signpost renders correctly" time="0.042">
+    </testcase>
+  </testsuite>
+  <testsuite name="TabButton" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:06" time="0.276" tests="1">
+    <testcase classname="TabButton renders correctly" name="TabButton renders correctly" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="PostList" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:06" time="0.311" tests="1">
+    <testcase classname="PostList renders correctly" name="PostList renders correctly" time="0.013">
+    </testcase>
+  </testsuite>
+  <testsuite name="Tabs" errors="0" failures="0" skipped="0" timestamp="2023-01-04T22:31:07" time="0.306" tests="1">
+    <testcase classname="Tabs renders correctly" name="Tabs renders correctly" time="0.013">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,188 @@
+<testsuites id="" name="" tests="30" failures="0" skipped="0" errors="0" time="131.636373">
+<testsuite name="vr.js" timestamp="1672871468414" hostname="" tests="10" failures="0" skipped="0" time="58.278" errors="0">
+<testcase name="Page: index" classname="[Desktop Chrome] › vr.js › Page: index" time="5.014">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/index-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: 404" classname="[Desktop Chrome] › vr.js › Page: 404" time="4.668">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/404-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: chasing-100" classname="[Desktop Chrome] › vr.js › Page: chasing-100" time="6.026">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/chasing-100-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: full-site-editing-in-wordpress" classname="[Desktop Chrome] › vr.js › Page: full-site-editing-in-wordpress" time="5.649">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/full-site-editing-in-wordpress-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: how-i-publish-this-site" classname="[Desktop Chrome] › vr.js › Page: how-i-publish-this-site" time="6.475">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/how-i-publish-this-site-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: ive-launched-colorbar" classname="[Desktop Chrome] › vr.js › Page: ive-launched-colorbar" time="6.595">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/ive-launched-colorbar-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: migration-to-firebase" classname="[Desktop Chrome] › vr.js › Page: migration-to-firebase" time="5.194">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/migration-to-firebase-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: new-wp-plugin" classname="[Desktop Chrome] › vr.js › Page: new-wp-plugin" time="6.558">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/new-wp-plugin-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: whats-lurking-inside-your-project" classname="[Desktop Chrome] › vr.js › Page: whats-lurking-inside-your-project" time="6.633">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/whats-lurking-inside-your-project-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: why-not-wordpress" classname="[Desktop Chrome] › vr.js › Page: why-not-wordpress" time="5.466">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/why-not-wordpress-Desktop-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="vr.js" timestamp="1672871468414" hostname="" tests="10" failures="0" skipped="0" time="25.167" errors="0">
+<testcase name="Page: index" classname="[Mobile Chrome] › vr.js › Page: index" time="2.579">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/index-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: 404" classname="[Mobile Chrome] › vr.js › Page: 404" time="1.555">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/404-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: chasing-100" classname="[Mobile Chrome] › vr.js › Page: chasing-100" time="2.306">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/chasing-100-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: full-site-editing-in-wordpress" classname="[Mobile Chrome] › vr.js › Page: full-site-editing-in-wordpress" time="2.403">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/full-site-editing-in-wordpress-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: how-i-publish-this-site" classname="[Mobile Chrome] › vr.js › Page: how-i-publish-this-site" time="2.298">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/how-i-publish-this-site-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: ive-launched-colorbar" classname="[Mobile Chrome] › vr.js › Page: ive-launched-colorbar" time="3.846">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/ive-launched-colorbar-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: migration-to-firebase" classname="[Mobile Chrome] › vr.js › Page: migration-to-firebase" time="2.369">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/migration-to-firebase-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: new-wp-plugin" classname="[Mobile Chrome] › vr.js › Page: new-wp-plugin" time="3.039">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/new-wp-plugin-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: whats-lurking-inside-your-project" classname="[Mobile Chrome] › vr.js › Page: whats-lurking-inside-your-project" time="2.388">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/whats-lurking-inside-your-project-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: why-not-wordpress" classname="[Mobile Chrome] › vr.js › Page: why-not-wordpress" time="2.384">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/why-not-wordpress-Mobile-Chrome-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="vr.js" timestamp="1672871468414" hostname="" tests="10" failures="0" skipped="0" time="33.659" errors="0">
+<testcase name="Page: index" classname="[Mobile Safari] › vr.js › Page: index" time="2.892">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/index-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: 404" classname="[Mobile Safari] › vr.js › Page: 404" time="1.805">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/404-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: chasing-100" classname="[Mobile Safari] › vr.js › Page: chasing-100" time="3.42">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/chasing-100-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: full-site-editing-in-wordpress" classname="[Mobile Safari] › vr.js › Page: full-site-editing-in-wordpress" time="3.588">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/full-site-editing-in-wordpress-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: how-i-publish-this-site" classname="[Mobile Safari] › vr.js › Page: how-i-publish-this-site" time="3.076">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/how-i-publish-this-site-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: ive-launched-colorbar" classname="[Mobile Safari] › vr.js › Page: ive-launched-colorbar" time="4.503">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/ive-launched-colorbar-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: migration-to-firebase" classname="[Mobile Safari] › vr.js › Page: migration-to-firebase" time="3.667">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/migration-to-firebase-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: new-wp-plugin" classname="[Mobile Safari] › vr.js › Page: new-wp-plugin" time="3.838">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/new-wp-plugin-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: whats-lurking-inside-your-project" classname="[Mobile Safari] › vr.js › Page: whats-lurking-inside-your-project" time="3.376">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/whats-lurking-inside-your-project-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+<testcase name="Page: why-not-wordpress" classname="[Mobile Safari] › vr.js › Page: why-not-wordpress" time="3.494">
+<system-out>
+<![CDATA[A snapshot doesn't exist at /home/runner/work/amner.me/amner.me/vr-tests/vr.js-snapshots/why-not-wordpress-Mobile-Safari-linux.png, writing actual.
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
