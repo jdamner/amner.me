@@ -11,6 +11,7 @@ const baseURL = `http://localhost:${PORT}`
 const config = {
   timeout: 30 * 1000,
   testDir: path.join(__dirname, 'vr-tests'),
+  testMatch: '**/*.js',
   retries: 2,
   outputDir: 'vr-tests/results/',
   webServer: {
