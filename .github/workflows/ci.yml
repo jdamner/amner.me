@@ -33,10 +33,12 @@ jobs:
       - name: Run Jest tests
         run: npm run test:ci
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: dorny/test-reporter@v1
         if: always()
         with:
-          junit_files: 'jest-results.xml'
+          name: Jest Tests
+          path: 'jest-results.xml'
+          reporter: 'jest-junit'
   run_vr:
     name: Run VR Tests
     runs-on: ubuntu-latest
@@ -61,10 +63,12 @@ jobs:
       - name: Run VR Tests
         run: npm run test:vr
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: dorny/test-reporter@v1
         if: always()
         with:
-          junit_files: 'vr-results.xml'
+          name: Visual Regression Tests
+          path: 'vr-results.xml'
+          reporter: 'jest-junit'
   update_snapshots:
     name: Update Test Snapshots
     needs: [run_jest, run_vr]
