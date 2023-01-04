@@ -13,9 +13,6 @@ jobs:
   run_jest:
     name: Run Jest Tests
     runs-on: ubuntu-latest
-    if: |
-      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
-      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
     steps:
       - name: Checkout
         if: ${{ github.event_name != 'pull_request_target' }}
@@ -37,9 +34,6 @@ jobs:
         run: npm run test:ci
   run_vr:
     name: Run VR Tests
-    if: |
-      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
-      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -57,35 +51,50 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Build Next app
-        run: npm run build
-      - name: Run Next app
-        run: npm run start &
-      - name: Lost Pixel
-        id: lp
-        uses: lost-pixel/lost-pixel@v2.15.0
-        env:
-          LOST_PIXEL_MODE: update
-      - name: Commit Changes and Create Pull Request
-        if: ${{ failure() && steps.lp.conclusion == 'failure' }}
-        working-directory: ./
+      - name: Run VR Tests
+        run: npm run test:vr
+        id: vr
+  update_snapshots:
+    name: Update Test Snapshots
+    # If either of the previous jobs failed, run this job
+    if: |
+      failure() &&
+      (needs.run_jest.conclusion == 'failure' ||
+      needs.run_vr.conclusion == 'failure')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        if: ${{ github.event_name != 'pull_request_target' }}
+        uses: actions/checkout@v3
+      - name: Checkout PR
+        if: ${{ github.event_name == 'pull_request_target' }}
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Update snapshots
+        run: npm run update-snapshots
+      - name: Create PR
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           git config --global push.autoSetupRemote true
-          git checkout -b lost-pixel-update/${{ github.sha }}
+          git checkout -b vr-image-update/${{ github.sha }}
           git add .
-          git commit -m "Update lost-pixel images"
+          git commit -m "Update VR images"
           git push origin
-          gh pr create --title "Update lost-pixel images" --body "Update lost-pixel images" --base ${{ github.event.pull_request.head.ref }} --head lost-pixel-update/${{ github.sha }} --label "VR test update"
+          gh pr create --title "Update VR images" --body "Update VR images" --base ${{ github.event.pull_request.head.ref }} --head vr-image-update/${{ github.sha }} --label "VR test update"
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy_for_review:
     name: Deploy for review
-    if: |
-      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
-      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
     runs-on: ubuntu-latest
     needs: [run_jest, run_vr]
     steps:
