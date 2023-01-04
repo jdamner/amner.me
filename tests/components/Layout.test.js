@@ -40,7 +40,7 @@ describe("Layout", () => {
   >
     <small>
       © James Amner 
-      2022
+      2023
     </small>
   </footer>
 </div>

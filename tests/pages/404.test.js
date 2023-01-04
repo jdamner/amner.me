@@ -96,7 +96,7 @@ describe("NotFoundPage", () => {
   >
     <small>
       © James Amner 
-      2022
+      2023
     </small>
   </footer>
 </div>
