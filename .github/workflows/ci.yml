@@ -59,10 +59,7 @@ jobs:
   update_snapshots:
     name: Update Test Snapshots
     needs: [run_jest, run_vr]
-    if: |
-      failure() &&
-      (needs.run_jest.conclusion == 'failure' ||
-      needs.run_vr.conclusion == 'failure')
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
