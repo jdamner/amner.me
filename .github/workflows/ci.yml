@@ -52,7 +52,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npx playwright install
+          npx playwright install --with-deps
       - name: Run VR Tests
         run: npm run test:vr
         id: vr
@@ -81,7 +81,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npx playwright install
+          npx playwright install --with-deps
       - name: Update snapshots
         run: npm run update-snapshots
       - name: Create PR
