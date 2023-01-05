@@ -13,6 +13,13 @@ const customJestConfig = {
 	},
 	testEnvironment: 'jest-environment-jsdom',
 	setupFilesAfterEnv: ['<rootDir>/tests/setup.js'],
+	reporters: [
+		'default',
+		['jest-junit', {
+			outputDirectory: '',
+			outputName: 'jest-results.xml'
+		}]
+	]
 }
 
 module.exports = createJestConfig(customJestConfig)
