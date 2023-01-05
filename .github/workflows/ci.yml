@@ -32,13 +32,11 @@ jobs:
         run: npm ci
       - name: Run Jest tests
         run: npm run test:ci
-      - name: Publish Test Results
-        uses: dorny/test-reporter@v1
-        if: always()
+      - uses: actions/upload-artifact@v2 
+        if: success() || failure() 
         with:
-          name: Jest Tests
-          path: 'jest-results.xml'
-          reporter: 'jest-junit'
+          name: jest-results
+          path: jest-results.xml
   run_vr:
     name: Run VR Tests
     runs-on: ubuntu-latest
@@ -62,13 +60,11 @@ jobs:
           npx playwright install --with-deps
       - name: Run VR Tests
         run: npm run test:vr
-      - name: Publish Test Results
-        uses: dorny/test-reporter@v1
-        if: always()
+      - uses: actions/upload-artifact@v2 
+        if: success() || failure() 
         with:
-          name: Visual Regression Tests
-          path: 'vr-results.xml'
-          reporter: 'jest-junit'
+          name: vr-results
+          path: vr-results.xml
   update_snapshots:
     name: Update Test Snapshots
     needs: [run_jest, run_vr]
