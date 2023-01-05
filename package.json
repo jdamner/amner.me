@@ -26,7 +26,7 @@
     "bootstrap": "^5.2.3",
     "ci": "^2.2.0",
     "file-system": "^2.2.2",
-    "framer-motion": "^8.0.2",
+    "framer-motion": "^8.1.9",
     "gray-matter": "^4.0.0",
     "insights-js": "^1.2.11",
     "next": "^13.1",
