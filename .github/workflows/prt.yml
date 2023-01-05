@@ -1,28 +1,29 @@
-name: CI
+name: PRT
 
 on:
-  pull_request:
-    branches:
-      - staging
-      - main
   pull_request_target:
     branches:
       - staging
-      - main
 jobs:
+  is_dependabot:
+    name: Is Dependabot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Is Dependabot 
+        if: ${{ github.actor == 'dependabot[bot]' }}
+        run: exit 0
+      - name: Is Not Dependabot
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        run: exit 1      
   run_jest:
     name: Run Jest Tests
     runs-on: ubuntu-latest
+    needs: is_dependabot
     steps:
-      - name: Checkout
-        if: ${{ github.event_name != 'pull_request_target' }}
-        uses: actions/checkout@v3
       - name: Checkout PR
-        if: ${{ github.event_name == 'pull_request_target' }}
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -40,12 +41,9 @@ jobs:
   run_vr:
     name: Run VR Tests
     runs-on: ubuntu-latest
+    needs: is_dependabot
     steps:
-      - name: Checkout
-        if: ${{ github.event_name != 'pull_request_target' }}
-        uses: actions/checkout@v3
       - name: Checkout PR
-        if: ${{ github.event_name == 'pull_request_target' }}
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -67,15 +65,11 @@ jobs:
           path: vr-results.xml
   update_snapshots:
     name: Update Test Snapshots
-    needs: [run_jest, run_vr]
-    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    needs: [run_jest, run_vr, is_dependabot]
+    if: ${{ always() && ( contains(needs.run_vr.result, 'failure') || contains(needs.run_jest.result, 'failure') ) }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        if: ${{ github.event_name != 'pull_request_target' }}
-        uses: actions/checkout@v3
       - name: Checkout PR
-        if: ${{ github.event_name == 'pull_request_target' }}
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -106,13 +100,9 @@ jobs:
   deploy_for_review:
     name: Deploy for review
     runs-on: ubuntu-latest
-    needs: [run_jest, run_vr]
+    needs: [run_jest, run_vr, is_dependabot]
     steps:
-      - name: Checkout
-        if: ${{ github.event_name != 'pull_request_target' }}
-        uses: actions/checkout@v3
       - name: Checkout PR
-        if: ${{ github.event_name == 'pull_request_target' }}
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
