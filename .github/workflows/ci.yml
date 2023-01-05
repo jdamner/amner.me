@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  checks: read
+  checks: write
 
 jobs:
   run_jest:
