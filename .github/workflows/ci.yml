@@ -7,8 +7,9 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   run_jest:
