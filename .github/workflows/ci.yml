@@ -5,6 +5,11 @@ on:
     branches:
       - staging
       - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   run_jest:
     name: Run Jest Tests
