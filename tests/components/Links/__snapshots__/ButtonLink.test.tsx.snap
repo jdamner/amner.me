@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonLink renders correctly 1`] = `
+<div>
+  <a
+    class="border-solid border-2 border-slate-800 uppercase font-black font-sans bg-white px-4 py-2 text-slate-800 hover:bg-slate-100 hover:text-black"
+    href="/"
+  >
+    Test
+  </a>
+</div>
+`;

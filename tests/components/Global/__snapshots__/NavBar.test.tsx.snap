@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders correctly 1`] = `
+<div>
+  <nav
+    class="w-full h-16 bg-gradient-to-r bg-emerald-900 text-slate-100 from-teal-900 to-emerald-600"
+  >
+    <div
+      class="container mx-auto h-full flex flex-row justify-between items-center px-3 md:px-0"
+    >
+      <ul>
+        <li
+          class="inline-block mr-3"
+        >
+          <a
+            class="text-xl font-bold"
+            href="/"
+          >
+            amner.me
+          </a>
+        </li>
+      </ul>
+      <a
+        href="/"
+      >
+        Home
+      </a>
+    </div>
+  </nav>
+</div>
+`;
