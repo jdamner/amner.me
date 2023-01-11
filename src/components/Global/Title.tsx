@@ -23,7 +23,7 @@ export default function Title({ children, title }: { children?: string | JSX.Ele
                 <div className='mb-2'>{ children }</div>
                 
                 <motion.div
-                    className='bg-black h-2 w-full'
+                    className='bg-black h-2 w-full dark:bg-slate-300'
                     initial={{ maxWidth: 0 }}
                     viewport={{ once: true }}
                     whileInView={{ maxWidth: '100%' }}

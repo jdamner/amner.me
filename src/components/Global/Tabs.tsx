@@ -33,17 +33,19 @@ export default function Tabs({ tabs, content }: { tabs: post[], content: string 
     );
   });
 
+  const contentClassName = 'prose prose-slate dark:prose-invert mr-auto px-3 md:px-0 text-slate-900 dark:text-slate-200'
+
   const ActiveTab = () => {
     const tab = tabs[activeTab];
     return (
-      <Html content={tab.content} className="mr-auto prose" />
+      <Html content={tab.content} className={contentClassName} />
     )
   }
 
 
   const NonActiveTab = () => {
     return (
-      <Html content={content} className="mr-auto prose" />
+      <Html content={content} className={contentClassName} />
     )
   }
 
@@ -51,10 +53,10 @@ export default function Tabs({ tabs, content }: { tabs: post[], content: string 
     <div className="container mx-auto my-5 py-5 px-3 md:px-0">
       <Title title={'Techincal Skills'}>Web Development</Title>
       <div className="md:grid md:grid-cols-3">
-        <div className="flex flex-row md:flex-col items-start md:items-end pr-4 mr-3 mb-3 md:mb-0">
+        <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-3 md:gap-0 items-start md:items-end pr-5 mb-3">
           {TabButtons}
         </div>
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           {tabOpen ? <ActiveTab /> : <NonActiveTab />}
         </div>
       </div>
