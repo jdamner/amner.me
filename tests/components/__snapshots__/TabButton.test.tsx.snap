@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabButton renders correctly 1`] = `
+<div>
+  <button
+    aria-current="true"
+    class="text-3xl font-bold text-right px-4 mr-3 text-gray-900"
+    tabindex="1"
+  >
+    Test
+  </button>
+</div>
+`;

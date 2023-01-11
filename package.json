@@ -19,15 +19,12 @@
     "update-snapshots": "jest --update-snapshot && playwright test --update-snapshots",
     "export": "next export"
   },
-  "dependencies": {
-    "@fontsource/comfortaa": "^4.5.8",
-    "@fontsource/limelight": "^4.5.8",
-    "@fontsource/poiret-one": "^4.5.8",
-    "bootstrap": "^5.2.3",
-    "ci": "^2.2.0",
+  "devDependencies": {
+    "@heroicons/react": "^2.0.13",
     "file-system": "^2.2.2",
     "framer-motion": "^8.4.0",
     "gray-matter": "^4.0.0",
+    "html-react-parser": "^3.0.7",
     "insights-js": "^1.2.11",
     "next": "^13.1",
     "react": "^18.2.0",
@@ -35,12 +32,11 @@
     "react-modal": "^3.16.1",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
-    "sass": "^1.57.1"
-  },
-  "devDependencies": {
+    "sass": "^1.57.1",
     "@playwright/test": "^1.29.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "@types/node": "18.11.3",
     "@types/react": "18.0.26",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",

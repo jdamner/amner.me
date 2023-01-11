@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title renders correctly 1`] = `
+<div>
+  <div
+    class="flex items-end mb-5"
+  >
+    <h2
+      class="text-lg font-sans font-semibold tracking-tight text-left font-black uppercase text-6xl break-words basis-1/3"
+    >
+      TEST
+    </h2>
+    <div
+      class="w-full text-left uppercase text-2xl font-black"
+    >
+      <div
+        class="mb-2"
+      >
+        Here's the children
+      </div>
+      <div
+        class="bg-black h-2 w-full"
+        style="max-width: 0px;"
+      />
+    </div>
+  </div>
+</div>
+`;
