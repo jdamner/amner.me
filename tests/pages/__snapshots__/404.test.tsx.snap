@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage renders correctly 1`] = `
+<div>
+  <nav
+    class="w-full h-16 bg-gradient-to-r bg-emerald-900 text-slate-100 from-teal-900 to-emerald-600"
+  >
+    <div
+      class="container mx-auto h-full flex flex-row justify-between items-center"
+    >
+      <ul>
+        <li
+          class="inline-block mr-3"
+        >
+          <a
+            class="text-xl font-bold"
+            href="/"
+          >
+            amner.me
+          </a>
+        </li>
+      </ul>
+      <button
+        class="border-solid border-2 border-slate-800 uppercase font-black font-sans bg-white px-4 py-2 text-slate-800 hover:bg-slate-100 hover:text-black"
+      >
+        Contact
+      </button>
+    </div>
+  </nav>
+  <main
+    id="page"
+  >
+    <div
+      style="opacity: 0;"
+    >
+      <section
+        class="bg-slate-200 py-5"
+        id="title"
+      >
+        <div
+          class="container mx-auto text-center py-5"
+        >
+          <h1
+            class="font-sans text-9xl font-black uppercase mb-5"
+          >
+            Page Not Found
+          </h1>
+          <p>
+            Sorry, we couldn’t find what you were looking for.
+            <br />
+            <a
+              href="/"
+            >
+              Go home
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer
+    class="container mx-auto text-center my-3"
+    id="footer"
+  >
+    <small
+      class="text-xs text"
+    >
+      © James Amner 
+      2023
+    </small>
+  </footer>
+</div>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineLink renders correctly 1`] = `
+<div>
+  <a
+    class="underline hover:text-slate-800 hover:no-underline"
+    href="/"
+  >
+    Test
+  </a>
+</div>
+`;

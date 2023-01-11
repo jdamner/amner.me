@@ -7,19 +7,9 @@ const createJestConfig = nextJest({
 /** @type {import('jest').Config} */
 const customJestConfig = {
 	moduleDirectories: ['node_modules', '<rootDir>/'],
-	moduleNameMapper: {
-		'^@components/(.*)$': '<rootDir>/src/components/$1',
-		'^@pages/(.*)$': '<rootDir>/src/pages/$1',
-	},
 	testEnvironment: 'jest-environment-jsdom',
 	setupFilesAfterEnv: ['<rootDir>/tests/setup.js'],
-	reporters: [
-		'default',
-		['jest-junit', {
-			outputDirectory: '',
-			outputName: 'jest-results.xml'
-		}]
-	]
+	preset: "jest-runner-remark",
 }
 
 module.exports = createJestConfig(customJestConfig)

@@ -3,6 +3,7 @@ module.exports = {
 	images: {
 		unoptimized: true,
 	},
+	reactStrictMode: true,
 	poweredByHeader: false,
 	trailingSlash: false,
 	webpack(config) {

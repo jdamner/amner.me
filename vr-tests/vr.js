@@ -6,7 +6,7 @@ const pages = [
   'index',
   '404',
 ];
-const posts = fs.readdirSync(path.join(__dirname, '../src/posts'));
+const posts = fs.readdirSync(path.join(__dirname, '../content/posts'));
 posts.forEach((post) => {
   pages.push(`${post.replace('.md', '')}`);
 });
