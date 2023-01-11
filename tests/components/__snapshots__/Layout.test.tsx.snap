@@ -6,7 +6,7 @@ exports[`Layout renders correctly 1`] = `
     class="w-full h-16 bg-gradient-to-r bg-emerald-900 text-slate-100 from-teal-900 to-emerald-600"
   >
     <div
-      class="container mx-auto h-full flex flex-row justify-between items-center"
+      class="container mx-auto h-full flex flex-row justify-between items-center px-3 md:px-0"
     >
       <ul>
         <li

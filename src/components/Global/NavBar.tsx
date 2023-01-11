@@ -1,7 +1,7 @@
 import Link from "next/link"
 import InlineLink from "../Links/Inline";
 
-export default function NavBar(props): JSX.Element {
+export default function NavBar({ children }: { children: JSX.Element | JSX.Element[] | string }): JSX.Element {
 	return (
 		<nav className="w-full h-16 bg-gradient-to-r bg-emerald-900 text-slate-100 from-teal-900 to-emerald-600">
 			<div className='container mx-auto h-full flex flex-row justify-between items-center px-3 md:px-0'>
@@ -10,7 +10,7 @@ export default function NavBar(props): JSX.Element {
 						<InlineLink href="/" className="text-xl font-bold">amner.me</InlineLink>
 					</li>
 				</ul>
-				{props.children}
+				{children}
 			</div>
 		</nav>
 	);

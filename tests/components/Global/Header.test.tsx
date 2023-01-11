@@ -1,7 +1,5 @@
-import React from "react"
 import { render } from "@testing-library/react"
-
-import Header from "../../src/components/Global/Header"
+import Header from "../../../src/components/Global/Header"
 
 describe("Header", () => {
   it("renders correctly", () => {

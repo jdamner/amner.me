@@ -1,8 +1,8 @@
 
 import { render } from "@testing-library/react"
-import ContactDetails from "../../src/components/Global/ContactDetails"
+import ContactDetails from "../../../src/components/Global/ContactDetails"
 
-describe("Corner", () => {
+describe("ContactDetails", () => {
   it("renders correctly", () => {
     const { container } = render(<ContactDetails />)
     expect(container).toMatchSnapshot()

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostLink renders correctly 1`] = `
+<div>
+  <a
+    class="group mb-3 block rounded-md overflow-hidden w-full bg-white relative"
+    href="test-post"
+  >
+    <img
+      alt="Test Post"
+      class="w-full brightness-90 group-hover:brightness-105 transition"
+      data-nimg="1"
+      decoding="async"
+      height="300"
+      loading="lazy"
+      src="/_next/image?url=https%3A%2F%2Fexample.com%2Fimage.png&w=640&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Fexample.com%2Fimage.png&w=384&q=75 1x, /_next/image?url=https%3A%2F%2Fexample.com%2Fimage.png&w=640&q=75 2x"
+      style="color: transparent;"
+      width="300"
+    />
+    <h2
+      class="bg-gradient-to-r from-teal-900 to-emerald-600 group-hover:from-emerald-700 group-hover:to-teal-500 shadow-slate-900 px-4 text-lg font-sans font-semibold tracking-tight leading-loose text-center text-white normal-case"
+    >
+      Test Post
+    </h2>
+  </a>
+</div>
+`;

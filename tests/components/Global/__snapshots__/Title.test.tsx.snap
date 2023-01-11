@@ -3,10 +3,10 @@
 exports[`Title renders correctly 1`] = `
 <div>
   <div
-    class="flex items-end mb-5"
+    class="flex flex-col md:flex-row md:items-end mb-5"
   >
     <h2
-      class="text-lg font-sans font-semibold tracking-tight text-left font-black uppercase text-6xl break-words basis-1/3"
+      class="text-lg font-sans font-semibold tracking-tight text-left font-black uppercase text-xl md:text-6xl break-words basis-1/3"
     >
       TEST
     </h2>

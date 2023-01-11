@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react"
-import Signpost from "../../src/components/Global/Signpost"
+import Signpost from "../../../src/components/Global/Signpost"
 
 describe("Signpost", () => {
   it("renders correctly", () => {
