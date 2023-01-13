@@ -7,7 +7,7 @@ export default function NavBar({ children }: { children: JSX.Element | JSX.Eleme
 			dark:to-emerald-900 dark:text-slate-200 dark:from-teal-900
 		" id='main-nav'>
 			<div className='container mx-auto h-full flex flex-row justify-between items-center px-3 md:px-0'>
-				<InlineLink href="/"><HomeIcon className="stroke-1 h-10" /></InlineLink>
+				<InlineLink href="/" title="home"><HomeIcon className="stroke-1 h-10" /></InlineLink>
 				{children}
 			</div>
 		</nav>

@@ -12,41 +12,8 @@ import { join } from 'path'
  * @param {any} obj The object to be parsed
  * @returns {any}
  */
-export function makeJsonParseable( obj: any ) {
-  return JSON.parse( JSON.stringify( obj ) )
-}
-
-/**
- * Before classes
- * 
- * @param {string[]} classes
- * 
- * @returns {string[]}
- */
-export function before( classes: string[] ): string[] {
-  return classes.map( ( c ) => `before:${c}` )
-}
-
-/**
- * After classes
- * 
- * @param {string[]} classes
- * 
- * @returns {string[]}
- */
-export function after( classes: string[] ): string[] {
-  return classes.map( ( c ) => `after:${c}` )
-}
-
-/**
- * Dark mode classes
- * 
- * @param {string[]} classes
- * 
- * @returns {string[]}
- */
-export function dark( classes: string[] ): string[] {
-  return classes.map( ( c ) => `dark:${c}` )
+export function makeJsonParseable<Type>(obj: Type): Type {
+	return JSON.parse(JSON.stringify(obj)) as Type
 }
 
 /**
@@ -56,9 +23,9 @@ export function dark( classes: string[] ): string[] {
  * 
  * @returns {Promise<MDFile>} The file contents
  */
-export async function readMdFile( path: string ): Promise<MDFile> {
+export async function readMdFile(path: string): Promise<MDFile> {
 	const fullPath = `${process.cwd()}/${path}`
-  	const fileContents = fs.readFileSync(fullPath, 'utf8')
+	const fileContents = fs.readFileSync(fullPath, 'utf8')
 	return matter(fileContents)
 }
 
@@ -69,7 +36,7 @@ export async function readMdFile( path: string ): Promise<MDFile> {
  * 
  * @returns {string[]}
  */
-export function getFilesInDir(directory:string): string[] {
+export function getFilesInDir(directory: string): string[] {
 	const fullPath = join(process.cwd(), directory)
 	return fs.readdirSync(fullPath)
 }

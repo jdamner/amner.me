@@ -11,7 +11,7 @@ const config: PlaywrightTestConfig = {
   retries: 2,
   outputDir: 'tests/results/',
   webServer: {
-    command: 'npm run build && npm run start',
+    command: 'npm run dev',
     url: baseURL,
     timeout: 120 * 1000,
     reuseExistingServer: false,

@@ -5,6 +5,7 @@ export default function InlineLink(props): JSX.Element {
 
 	const handleClick = function (e: React.MouseEvent<HTMLAnchorElement>) {
         event('click', { name: e.currentTarget.innerText });
+		props.handleClick && props.handleClick();
     }
 
 	return (

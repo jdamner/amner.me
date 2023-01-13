@@ -24,7 +24,7 @@ export default function Tabs({ tabs, content }: { tabs: post[], content: string 
     return (
       <TabButton
         key={index}
-        index={index}
+        index={index + 1}
         name={tab.title}
         active={active}
         onClick={() => handleTabChange(index)}
