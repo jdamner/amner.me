@@ -20,7 +20,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "@fontsource/comfortaa": "^4.5.8",
+    "@fontsource/comfortaa": "^4.5.11",
     "@fontsource/limelight": "^4.5.8",
     "@fontsource/poiret-one": "^4.5.8",
     "bootstrap": "^5.2.3",
