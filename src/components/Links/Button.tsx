@@ -1,0 +1,40 @@
+/**
+ * Button 
+ * 
+ * @param {JSX.IntrinsicElements['button']} props
+ * @returns {JSX.Element}
+ */
+export default function Button(props: JSX.IntrinsicElements['button']): JSX.Element {
+
+	const classes = ButtonClasses;
+	props.className && classes.push(props.className);
+	return (
+		<button {...props} className={ButtonClasses.join(' ')} >
+			{props.children}
+		</button>
+	);
+}
+
+/**
+ * Button Classes
+ * 
+ * @type {string[]}
+ */
+export const ButtonClasses: string[] = [
+	'border-solid',
+	'border-2',
+	'border-slate-800',
+	'uppercase',
+	'font-black',
+	'font-sans',
+	'bg-white',
+	'dark:bg-slate-900',
+	'px-4',
+	'py-2',
+	'text-slate-800',
+	'dark:text-slate-200',
+	'hover:bg-slate-100',
+	'dark:hover:bg-slate-800',
+	'hover:text-black',
+	'dark:hover:text-white'
+];
