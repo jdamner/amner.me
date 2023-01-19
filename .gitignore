@@ -71,6 +71,6 @@ yarn-error.log
 # firebase
 .firebase/
 
-# VR Test Results
-vr-tests/results/
-*-results.xml
+# Results of Test
+tests/results
+results.xml
