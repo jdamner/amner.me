@@ -1,16 +1,13 @@
+// @ts-check
+/**
+ * @type {import('next').NextConfig}
+ **/
 module.exports = {
 	output: 'standalone',
-	images: {
-		unoptimized: true,
-	},
+	reactStrictMode: true,
 	poweredByHeader: false,
 	trailingSlash: false,
-	webpack(config) {
-		config.resolve.fallback = {
-			...config.resolve.fallback, 
-			fs: false,
-		};
-
-		return config;
+	images: {
+		unoptimized: true, // disable once I work out how to serve these statically
 	},
 };
