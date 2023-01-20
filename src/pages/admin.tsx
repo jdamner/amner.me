@@ -1,5 +1,6 @@
 /* API */
 import dynamic from 'next/dynamic';
+import PostPreview from '../components/Admin/PostPreview';
 
 /* Config */
 import config from '../config/cms';
@@ -16,7 +17,9 @@ export default function CMS(): JSX.Element {
 	const CMS = dynamic(
 		async () => {
 			const netlifly = await import('netlify-cms-app');
-			netlifly.default.init({ config });
+			const cms = netlifly.default;
+			cms.init({ config });
+			cms.registerPreviewTemplate( 'post', PostPreview );
 			return loading;
 		},
 		{ ssr: false, loading },

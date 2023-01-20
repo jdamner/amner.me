@@ -10,4 +10,13 @@ module.exports = {
 	images: {
 		unoptimized: true, // disable once I work out how to serve these statically
 	},
+	redirects: async () => {
+		return [
+			{
+				source: '/ouath/',
+				destination: '/oauth/auth',
+				permanent: true,
+			}
+		]
+	},
 };
