@@ -7,14 +7,19 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
   checks: write
+  issues: write
 
 jobs:
-  run_jest:
-    name: Run Jest Tests
+  tests:
+    name: Run Tests
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        playwright: [chromium, chromium-mobile, webkit-mobile, chromium-dark, chromium-mobile-dark, webkit-mobile-dark]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,41 +29,25 @@ jobs:
           node-version: 18
           cache: 'npm'
       - name: Install dependencies
-        run: npm ci
-      - name: Run Jest tests
-        run: npm run test:ci
-      - uses: actions/upload-artifact@v2 
-        if: success() || failure() 
-        with:
-          name: jest-results
-          path: jest-results.xml
-  run_vr:
-    name: Run VR Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-      - name: Install dependencies
-        run: |
-          npm ci
-          npx playwright install --with-deps
+        run: npm ci && npx playwright install --with-deps
       - name: Run VR Tests
-        run: npm run test:vr
-      - uses: actions/upload-artifact@v2 
-        if: success() || failure() 
+        run: npx playwright test --project=${{ matrix.playwright }}
+      - name: Publish Test Results
+        uses: mikepenz/action-junit-report@v3
+        if: always()
         with:
-          name: vr-results
-          path: vr-results.xml
+          report_paths: 'results.xml'
+          fail_on_failure: false
+          require_tests: false
+          job_name: ${{ matrix.playwright }} Results
   update_snapshots:
     name: Update Test Snapshots
-    needs: [run_jest, run_vr]
+    needs: [tests]
     if: ${{ always() && contains(needs.*.result, 'failure') }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        playwright: [chromium, chromium-mobile, webkit-mobile, chromium-dark, chromium-mobile-dark, webkit-mobile-dark]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -68,28 +57,24 @@ jobs:
           node-version: 18
           cache: 'npm'
       - name: Install dependencies
-        run: |
-          npm ci
-          npx playwright install --with-deps
+        run: npm ci && npx playwright install --with-deps
       - name: Update snapshots
-        run: npm run update-snapshots
+        run: npx playwright test --project=${{ matrix.playwright }} --update-snapshots
       - name: Create PR
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           git config --global push.autoSetupRemote true
-          git checkout -b vr-image-update/${{ github.sha }}
+          git checkout -b update-snapshots/${{ github.sha }}
           git add .
-          git commit -m "Update VR images"
+          git commit -m "Update Snapshots for ${{ matrix.playwright }}"
           git push origin
-          gh pr create --title "Update VR images" --body "Update VR images" --base ${{ github.event.pull_request.head.ref }} --head vr-image-update/${{ github.sha }} --label "VR test update"
+          gh pr create --title "Update Snapshots" --body "Automated update of snapshots for ${{ matrix.playwright }}" --base ${{ github.event.pull_request.head.ref }} --head update-snapshots/${{ github.sha }} --label "snapshots"
         env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
   deploy_for_review:
     name: Deploy for review
     runs-on: ubuntu-latest
-    needs: [run_jest, run_vr]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -110,4 +95,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AMNER_ME }}'
           expires: 30d
           projectId: amner-me
-
