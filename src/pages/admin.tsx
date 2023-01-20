@@ -12,8 +12,8 @@ import config from '../config/cms';
 export default function CMS() {
 	const CMS = dynamic(
 		async () => {
-			const module = await import('netlify-cms-app');
-			const cms = module.default;
+			const netlifly = await import('netlify-cms-app');
+			const cms = netlifly.default;
 			cms.init({ config });
 			return () => <></>
 		},
