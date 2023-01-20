@@ -2,7 +2,7 @@
 layout: post
 title: Why don't I use WordPress for this site?
 date: 2021-10-30T12:16:27.796Z
-thumbnail: /assets/wordpress.jpg
+thumbnail: /assets/why-not-wordpress.jpg
 slug: why-not-wordpress
 ---
 

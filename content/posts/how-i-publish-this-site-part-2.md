@@ -2,7 +2,7 @@
 layout: post
 title: How I publish this site (part 2)
 date: 2023-01-18T17:16:27.796Z
-thumbnail: /assets/how-i-publish-this-site-2.webp
+thumbnail: /assets/how-i-publish-this-site-part-2.webp
 slug: how-i-publish-this-site-2
 ---
 I wrote [before](/how-i-publish-this-site) about using Jekyll (then Gatsby) and Netlifly (then Firebase) to publish this site. 
