@@ -7,10 +7,10 @@ services:
     working_dir: /app
     ports:
       - '3000:3000'
-    command: npm start
+    command: npm run dev
   playwright:
     image: mcr.microsoft.com/playwright:focal
     volumes:
       - .:/app
     working_dir: /app
-    command: npm run test:vr
+    command: npm run test
