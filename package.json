@@ -23,7 +23,7 @@
     "@playwright/test": "^1.29.2",
     "@tailwindcss/typography": "^0.5.9",
     "@testing-library/react": "^13.4.0",
-    "@types/node": "18.11.3",
+    "@types/node": "18.11.18",
     "@types/react": "^18.0.27",
     "autoprefixer": "^10.4.13",
     "eslint": "8.32.0",
