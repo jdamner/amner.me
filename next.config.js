@@ -1,3 +1,6 @@
+/* Define ENV variables */
+process.env.NEXT_PUBLIC_UPLOADCARE_PUBLIC_KEY = process.env.NEXT_PUBLIC_UPLOADCARE_PUBLIC_KEY || 'a575d40e9c408bdf7cfb'
+
 // @ts-check
 /**
  * @type {import('next').NextConfig}
@@ -8,6 +11,7 @@ module.exports = {
 	poweredByHeader: false,
 	trailingSlash: false,
 	images: {
-		unoptimized: true, // disable once I work out how to serve these statically
+		loader: 'custom',
+		loaderFile: './node_modules/@uploadcare/nextjs-loader/build/loader.js',
 	},
 };

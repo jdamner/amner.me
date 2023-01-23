@@ -6,11 +6,12 @@ import { event } from "../../api/Insights";
 /* Components */
 import Spinner from "../Global/Spinner";
 import Link from "next/link";
+import { ButtonClasses } from "./Button";
 
 /* Types */
 import type { LinkProps } from "next/link"
 import type { withChildren } from "../../types/children.type";
-import { ButtonClasses } from "./Button";
+import type { NextRouter } from "next/router";
 
 /**
  * Button Link
@@ -22,12 +23,18 @@ export default function ButtonLink(props : LinkProps & withChildren): JSX.Elemen
 
 	const [isClicked, setIsClicked] = useState(false);
 
-	const router = useRouter()
+
+	let router: NextRouter|null = null;
+	try {
+		router = useRouter()
+	} catch (e) {
+		// Do nothing
+	}
 
 	const handleClick = function (e: React.MouseEvent<HTMLAnchorElement>) {
 		event('click', { name: e.currentTarget.innerText });
 		setIsClicked(true);
-		router.events.on('routeChangeComplete', () => {
+		router?.events.on('routeChangeComplete', () => {
 			setIsClicked(false);
 		});
 	}
