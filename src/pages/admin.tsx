@@ -18,8 +18,13 @@ export default function CMS(): JSX.Element {
 		async () => {
 			const netlifly = await import('netlify-cms-app');
 			const cms = netlifly.default;
+			const mediaLibrary = await import('netlify-cms-media-library-uploadcare');
+			
 			cms.init({ config });
+			
 			cms.registerPreviewTemplate( 'post', PostPreview );
+			cms.registerMediaLibrary( mediaLibrary.default );
+			
 			return loading;
 		},
 		{ ssr: false, loading },

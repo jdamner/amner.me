@@ -92,6 +92,16 @@ const backend: CmsBackend = {
 }
 
 /**
+ * Media Library
+ */
+const media_library = {
+	name: "uploadcare",
+	config: {
+		publicKey: 'a575d40e9c408bdf7cfb'
+	}
+}
+
+/**
  * CMS Configuration
  * 
  * @see https://www.netlifycms.org/docs/configuration-options/
@@ -99,8 +109,7 @@ const backend: CmsBackend = {
 export default {
 	backend,
 	logo_url: "/cms.png",
-	site_url: "https://amner.me",
-	media_folder: "public/assets",
-	public_folder: "/assets",
-	collections: collections
+	site_url: "/",
+	collections,
+	media_library,
 } as CmsConfig
