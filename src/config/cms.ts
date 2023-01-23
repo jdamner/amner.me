@@ -1,6 +1,6 @@
 
 /* Types */
-import type { CmsConfig, CmsCollection, CmsField } from 'netlify-cms-core'
+import type { CmsConfig, CmsCollection, CmsField, CmsBackend, CmsBackendType } from 'netlify-cms-core'
 
 /* Field Type Definitions */
 const TitleField: CmsField = { label: "Title", name: "title", widget: "string" };
@@ -17,14 +17,14 @@ const PostLayoutField: CmsField = { label: "Layout", name: "layout", widget: "hi
  */
 const collections: CmsCollection[] = [
 	{
-		name: "posts",
+		name: "post",
 		label: "Posts",
 		label_singular: "Post",
 		description: "Blog posts",
 		folder: "content/posts",
 		create: true,
 		slug: "{{slug}}",
-		fields: [PostLayoutField, TitleField, BodyField, SlugField, ThumbnailField, DateField]
+		fields: [PostLayoutField, TitleField, SlugField, ThumbnailField, DateField, BodyField]
 	},
 	{
 		name: "service",
@@ -70,20 +70,46 @@ const collections: CmsCollection[] = [
 	}
 ]
 
+const backend: CmsBackend = {
+	name: "github" as CmsBackendType,
+	branch: "staging",
+	repo: "jdamner/amner.me",
+	api_root: "https://api.github.com",
+	// site_domain: "https://amner.me",
+	// base_url: "https://amner.me",
+	// auth_endpoint: "api/auth",
+	// app_id: "a1b2c3d4e5f6g7h8i9j0",
+	cms_label_prefix: "cms",
+    squash_merges: true,
+    commit_messages: {
+      create: "Create {{collection}} “{{slug}}”",
+      update: "Update {{collection}} “{{slug}}”",
+      delete: "Delete {{colection}} “{{slug}}”",
+      uploadMedia: "Upload “{{path}}”",
+      deleteMedia: "Delete “{{path}}”",
+      openAuthoring: "Open Authoring {{collection}} “{{slug}}”"
+    }
+}
+
+/**
+ * Media Library
+ */
+const media_library = {
+	name: "uploadcare",
+	config: {
+		publicKey: 'a575d40e9c408bdf7cfb'
+	}
+}
+
 /**
  * CMS Configuration
  * 
  * @see https://www.netlifycms.org/docs/configuration-options/
  */
 export default {
-	backend: {
-		name: "github",
-		branch: "staging",
-		repo: "jdamner/amner.me"
-	},
+	backend,
 	logo_url: "/cms.png",
-	site_url: "https://amner.me",
-	media_folder: "public/assets",
-	public_folder: "/assets",
-	collections: collections
+	site_url: "/",
+	collections,
+	media_library,
 } as CmsConfig
