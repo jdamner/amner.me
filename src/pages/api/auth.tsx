@@ -1,4 +1,4 @@
-import { config, oauth2Config } from "../../api/Oauth"
+import { config, oauth2Config } from "../../config/oauth"
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { AuthorizationCode } from "simple-oauth2";
 

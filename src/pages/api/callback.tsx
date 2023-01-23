@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { AuthorizationCode } from 'simple-oauth2'
-import { config, oauth2Config } from "../../api/Oauth"
+import { config, oauth2Config } from "../../config/oauth"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
