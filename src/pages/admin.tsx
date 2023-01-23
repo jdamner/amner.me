@@ -6,6 +6,7 @@ import config from '../config/cms';
 
 /* Components */
 const loading = () => <></>;
+import PostPreview from '../components/Admin/PostPreview';
 
 /**
  * Load the CMS Dynamically
@@ -16,7 +17,14 @@ export default function CMS(): JSX.Element {
 	const CMS = dynamic(
 		async () => {
 			const netlifly = await import('netlify-cms-app');
-			netlifly.default.init({ config });
+			const cms = netlifly.default;
+			const mediaLibrary = await import('netlify-cms-media-library-uploadcare');
+			
+			cms.init({ config });
+			
+			cms.registerPreviewTemplate( 'post', PostPreview );
+			cms.registerMediaLibrary( mediaLibrary.default );
+			
 			return loading;
 		},
 		{ ssr: false, loading },
