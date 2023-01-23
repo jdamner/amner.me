@@ -80,11 +80,18 @@ const media_library = {
 	}
 }
 
+/**
+ * Backend Config
+ */
 const backend: CmsBackend = {
 	name: "github" as CmsBackendType,
 	branch: "staging",
 	repo: "jdamner/amner.me",
 	api_root: "https://api.github.com",
+	// site_domain: "https://amner.me",
+	// base_url: "https://amner.me",
+	// auth_endpoint: "api/auth",
+	// app_id: "a1b2c3d4e5f6g7h8i9j0",
 	cms_label_prefix: "cms",
     squash_merges: true,
     commit_messages: {
