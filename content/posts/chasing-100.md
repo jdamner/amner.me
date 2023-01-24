@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Chasing the perfect 100 pagespeed
-date: 2021-03-18T15:26:21.788Z
-thumbnail: /assets/chasing-100.png
 slug: chasing-100
+thumbnail: https://ucarecdn.com/8b9f388b-7e73-47e0-8815-295759eb93d4/
+date: 2021-03-18T15:26:21.788Z
 ---
 Pagespeed is a horrid metric about how fast your site loads. Regardless on how I feel though, it mattters - slow loading pages are ranked lower in search engines, but more importantly are more likely to bounce users. 
 
