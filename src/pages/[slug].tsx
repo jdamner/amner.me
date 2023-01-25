@@ -56,6 +56,9 @@ export default function Template({ post, posts }: PostPageProps): JSX.Element {
         <div className="col-span-2">
           <ReactMarkdown className="prose mx-auto px-3 md:px-0 prose-slate dark:prose-invert">{post.content}</ReactMarkdown>
         </div>
+        <span className='block mx-3 my-5 md:hidden'>
+          <ButtonLink href='/'>« Home</ButtonLink>
+        </span>
       </article>
       <div className='clear-both'></div>
       <Blog posts={posts} />
