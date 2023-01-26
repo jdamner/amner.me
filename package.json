@@ -19,7 +19,7 @@
     "export": "next export"
   },
   "devDependencies": {
-    "@heroicons/react": "^2.0.13",
+    "@heroicons/react": "^2.0.14",
     "@playwright/test": "^1.30.0",
     "@tailwindcss/typography": "^0.5.9",
     "@testing-library/react": "^13.4.0",
