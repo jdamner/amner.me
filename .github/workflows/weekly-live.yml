@@ -14,7 +14,6 @@ jobs:
       - name: Create PR
         run: |
           PRNUMBER=`gh pr create --title "Live Release" --body "Automated Release" --base main --head staging`
-          gh pr review $PRNUMBER --approve
           gh pr merge $PRNUMBER --auto
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
