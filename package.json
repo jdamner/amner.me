@@ -19,16 +19,16 @@
     "export": "next export"
   },
   "devDependencies": {
-    "@heroicons/react": "^2.0.15",
-    "@playwright/test": "^1.30.0",
+    "@heroicons/react": "^2.0.16",
+    "@playwright/test": "^1.31.0",
     "@tailwindcss/typography": "^0.5.9",
-    "@testing-library/react": "^13.4.0",
-    "@types/node": "18.13.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "18.14.0",
     "@types/react": "^18.0.27",
     "autoprefixer": "^10.4.13",
-    "eslint": "8.33.0",
+    "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
-    "framer-motion": "^9.0.2",
+    "framer-motion": "^9.0.7",
     "gray-matter": "^4.0.0",
     "insights-js": "^1.2.11",
     "next": "^13.1",
@@ -36,7 +36,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.4",
-    "tailwindcss": "^3.2.6"
+    "tailwindcss": "^3.2.7"
   },
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",

@@ -3,9 +3,10 @@ name: Test
 on:
   pull_request:
     branches:
-      - staging
-      - main
-
+      - 'staging'
+      - 'main'
+  workflow_dispatch:
+  
 permissions:
   contents: write
   pull-requests: write

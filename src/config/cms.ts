@@ -84,6 +84,8 @@ const backend: CmsBackend = {
 	name: "github" as CmsBackendType,
 	branch: "staging",
 	repo: "jdamner/amner.me",
+	base_url: "https://oauth.jdamner.workers.dev",
+	auth_endpoint: "/",
 	api_root: "https://api.github.com",
 	cms_label_prefix: "cms",
     squash_merges: true,
