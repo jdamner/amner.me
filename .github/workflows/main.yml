@@ -1,8 +1,11 @@
 name: Deploy Live
 on:
   push:
-    branches: ["main"]
+    branches: 
+      - main
   workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * 0'
 jobs:
   # Build job
   build_and_deploy:
