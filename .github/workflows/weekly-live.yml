@@ -19,4 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Trigger Test Workflow
         run: |
-          gh workflow run test.yml --ref main
+          gh workflow run test.yml --ref
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
