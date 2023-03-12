@@ -15,11 +15,7 @@ jobs:
         run: |
           PRNUMBER=`gh pr create --title "Live Release" --body "Automated Release" --base main --head staging`
           gh pr merge $PRNUMBER --auto --merge
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Trigger Test Workflow
-        run: |
-          gh workflow run test.yml --ref
+          gh workflow run test.yml --ref main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
