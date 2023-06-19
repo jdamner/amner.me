@@ -30,7 +30,7 @@ export default function Title({ children, title }: { children?: children, title:
 
     return (
         <div className="flex flex-col md:flex-row md:items-end mb-5">
-            <h3 className={classes.join(' ')}>{title}</h3>
+            <h2 className={classes.join(' ')}>{title}</h2>
             <div className='w-full text-left uppercase text-2xl font-black'>
                 <div className='mb-2'>{ children }</div>
                 
