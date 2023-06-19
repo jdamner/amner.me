@@ -39,10 +39,10 @@ export default function Layout({ children, title }: { children: children, title:
           {children}
         </motion.div>
       </main>
-      <footer id="footer" className="container mx-auto text-center my-3 prose prose-ul:list-none">
-        <ul className="text-xs text">
-          <li >&copy; James Amner {new Date().getFullYear()}</li>
+      <footer id="footer" className="container mx-auto px-3 md:px-0 my-3">
+        <ul className="prose prose-ul:list-none max-w-full flex flex-col md:flex-row justify-between text text-xs">
           <li><Link href="/privacy">Privacy Policy</Link></li>
+          <li>&copy; James Amner {new Date().getFullYear()}</li>
           <li><Link href="https://github.com/jdamner">GitHub</Link></li>
         </ul>
       </footer>
