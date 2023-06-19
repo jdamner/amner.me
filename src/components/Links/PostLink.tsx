@@ -58,13 +58,15 @@ export default function PostLink({ post }: { post: post }): JSX.Element {
 		'normal-case',
 	];
 
+	const thumbnail = require('../../../public' + post.thumbnail);
+
 	return (
 		<Link href={post.slug} className={classes.join(' ')} onClick={handleClick}>
 			{isClicked ? <div className="absolute top-0 left-0 w-full h-full bg-white/10 backdrop-blur-sm z-10 rounded-md">
 				<Spinner className='flex items-center justify-center w-full h-full' />
 			</div> : null}
 			<Image
-				src={post.thumbnail}
+				src={thumbnail}
 				alt={post.title}
 				sizes="(max-width: 640px) 100vw, 640px
 					(max-width: 768px) 33vw, 768px
@@ -73,6 +75,7 @@ export default function PostLink({ post }: { post: post }): JSX.Element {
 				width={375}
 				height={375}
 				className="w-full brightness-90 group-hover:brightness-105 transition"
+				placeholder="blur"
 			/>
 			<h2 className={linkClasses.join(' ')}>{post.title}</h2>
 		</Link>

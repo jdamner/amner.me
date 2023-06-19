@@ -1,7 +1,7 @@
 /* Types */
 import type { AppProps } from 'next/app';
 /* Global Styles */
-import { Poppins } from "@next/font/google";
+import { Poppins } from "next/font/google";
 
 // Get Regular, Bold and SemiBold
 const font = Poppins({
