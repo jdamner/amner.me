@@ -8,7 +8,7 @@
     ],
     "frameworksBackend": {
       "region": "europe-west1"
-    }
+    },
     "headers": [
       {
         "source": "**",
