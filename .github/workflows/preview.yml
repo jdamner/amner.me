@@ -5,7 +5,9 @@ on:
     branches:
       - staging
       - main
-
+env: 
+  FIREBASE_CLI_EXPERIMENTS: webframeworks
+  
 jobs:
   deploy_preview:
     name: Deploy Preview
@@ -17,15 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Build Next app
-        run: npm run build
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         id: deploy
