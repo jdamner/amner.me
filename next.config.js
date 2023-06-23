@@ -1,17 +1,17 @@
-/* Define ENV variables */
-process.env.NEXT_PUBLIC_UPLOADCARE_PUBLIC_KEY = process.env.NEXT_PUBLIC_UPLOADCARE_PUBLIC_KEY || 'a575d40e9c408bdf7cfb'
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
+});
 
 // @ts-check
 /**
  * @type {import('next').NextConfig}
  **/
-module.exports = {
-	output: 'standalone',
+module.exports = withBundleAnalyzer({
+	output: 'export',
 	reactStrictMode: true,
 	poweredByHeader: false,
 	trailingSlash: false,
 	images: {
-		loader: 'custom',
-		loaderFile: './node_modules/@uploadcare/nextjs-loader/build/loader.js',
-	},
-};
+		unoptimized: true,
+	}
+});
