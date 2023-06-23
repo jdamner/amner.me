@@ -9,13 +9,12 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "next build && next export",
+    "build": "next build",
     "lint": "next lint",
     "dev": "next dev",
     "test": "playwright test",
     "test:ci": "playwright test --ci",
-    "update-snapshots": "playwright test --update-snapshots",
-    "export": "next export"
+    "update-snapshots": "playwright test --update-snapshots"
   },
   "devDependencies": {
     "@heroicons/react": "^2.0.18",
