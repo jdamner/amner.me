@@ -9,14 +9,12 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "next build && next export",
+    "build": "next build",
     "lint": "next lint",
     "dev": "next dev",
-    "start": "next start",
     "test": "playwright test",
     "test:ci": "playwright test --ci",
-    "update-snapshots": "playwright test --update-snapshots",
-    "export": "next export"
+    "update-snapshots": "playwright test --update-snapshots"
   },
   "devDependencies": {
     "@heroicons/react": "^2.0.18",
@@ -36,14 +34,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.7",
-    "tailwindcss": "^3.3.2"
-  },
-  "dependencies": {
-    "@fontsource/poppins": "^5.0.3",
-    "@next/font": "^13.4.7",
-    "@uploadcare/nextjs-loader": "^1.0.0",
+    "tailwindcss": "^3.3.2",
+    "@next/bundle-analyzer": "^13.4.6",
     "netlify-cms-app": "^2.15.72",
-    "netlify-cms-media-library-uploadcare": "^0.5.10"
+    "sharp": "^0.32.1"
   },
   "overrides": {
     "react": "^18.2.0",
