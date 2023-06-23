@@ -33,7 +33,6 @@ export default function Tabs({ tabs, content }: { tabs: post[], content: string 
     return (
       <TabButton
         key={index}
-        tabIndex={index + 1}
         role="tab"
         id={ `tab-${index}` }
         aria-current={ariaCurrent}
@@ -70,7 +69,7 @@ export default function Tabs({ tabs, content }: { tabs: post[], content: string 
   return (
     <section className="container mx-auto my-5 py-5 px-3 md:px-0" id="services-tabs">
       <Title title={'Techincal Skills'}>Web Development</Title>
-      <div className="md:grid md:grid-cols-3">
+      <div className="md:grid md:grid-cols-3" role="tablist">
         <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-3 md:gap-0 items-start md:items-end pr-5 mb-3">
           {TabButtons}
         </div>
