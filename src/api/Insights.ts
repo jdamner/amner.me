@@ -18,6 +18,11 @@ export const pageView = () : void => {
  * @returns void
  */
 export const event = (eventName: string, eventProperties: object = {}) => {
+    // Don't track events in development
+    if (process.env.NODE_ENV === 'development') {
+        return;
+    }
+
     init('HbSIygPWVvMzXFRP');
     track({
         id: eventName,
