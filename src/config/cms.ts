@@ -70,16 +70,6 @@ const collections: CmsCollection[] = [
 	}
 ]
 
-/**
- * Media Library
- */
-const media_library = {
-	name: "uploadcare",
-	config: {
-		publicKey: 'a575d40e9c408bdf7cfb'
-	}
-}
-
 const backend: CmsBackend = {
 	name: "github" as CmsBackendType,
 	branch: "staging",
@@ -109,5 +99,4 @@ export default {
 	logo_url: "/cms.png",
 	site_url: "/",
 	collections,
-	media_library,
 } as CmsConfig
