@@ -44,6 +44,8 @@ export default function Template({ post, posts }: PostPageProps): JSX.Element {
             alt={post.title} 
             width={500} 
             height={500} 
+            placeholder="blur"
+            priority
             />
             <ul className="mb-5 text-sm">
               <li><strong>Author:</strong> James Amner</li>
