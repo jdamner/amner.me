@@ -10,16 +10,16 @@ import { ButtonClasses } from "./Button";
 
 /* Types */
 import type { LinkProps } from "next/link"
-import type { withChildren } from "../../types/children.type";
+import type { WithChildren } from "../../types/children.type";
 import type { NextRouter } from "next/router";
 
 /**
  * Button Link
  * 
- * @param {LinkProps & withChildren} props
+ * @param {LinkProps & WithChildren} props
  * @returns {JSX.Element} 
  */
-export default function ButtonLink(props : LinkProps & withChildren): JSX.Element {
+export default function ButtonLink(props : LinkProps & WithChildren): JSX.Element {
 
 	const [isClicked, setIsClicked] = useState(false);
 

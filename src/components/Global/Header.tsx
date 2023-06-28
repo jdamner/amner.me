@@ -1,13 +1,13 @@
 /* Types */
-import type { withChildren } from "../../types/children.type";
+import type { WithChildren } from "../../types/children.type";
 
 /**
  * Header 
- * @param {JSX.IntrinsicElements['section'] & withChildren & { subtitle?: string } } props
+ * @param {JSX.IntrinsicElements['section'] & WithChildren & { subtitle?: string } } props
  * @returns {JSX.Element}
  */
 export default function Header(
-    { subtitle, title, children } : JSX.IntrinsicElements['section'] & withChildren & { subtitle?: string }
+    { subtitle, title, children } : JSX.IntrinsicElements['section'] & WithChildren & { subtitle?: string }
 ): JSX.Element {
 
     const subtitleClasses = [
