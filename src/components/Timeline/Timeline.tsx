@@ -5,98 +5,94 @@ import TimelineDetail from "./TimelineDetail";
 import getTimelineData from "../../api/TimelineData";
 
 import type { TimelineEvent } from "../../types/Timeline.types";
+import TimelineControlButton from "./TimelineControlButton";
 
 
-export default function Timeline(): React.JSX.Element {
+export default function Timeline({ events = [] }: { events: TimelineEvent[] }): React.JSX.Element {
 
     const [timelineState, setTimelineState] = useState<{
         events: TimelineEvent[],
         currentIndex: number
     }>({
-        events: [],
+        events: events,
         currentIndex: 0,
     })
 
     useEffect(() => {
-        (async () => {
-            const data = await getTimelineData()
-            setTimelineState({
-                ...timelineState,
-                events: data,
-            })
-        })()
-    }, [timelineState])
-
-
-    let setEvent = (index: number) => {
-
-        if (index < 0 || index >= timelineState.events.length) return;
-
         setTimelineState({
-            ...timelineState,
-            currentIndex: index,
+            events: getTimelineData(),
+            currentIndex: 0,
         })
-    }
+    }, [])
 
-    let handleScroll = (event: React.UIEvent<HTMLOListElement, UIEvent>) => {
+    const sliderRef = React.useRef<HTMLOListElement>(null);
+
+    const handleScroll = (event: React.UIEvent<HTMLOListElement, UIEvent>) => {
         const clientWidth = event.currentTarget.clientWidth
-        const children = event.currentTarget.children
+        let index = 0
 
-        let i = 0
-        for( let child of children) {
+        for (let child of event.currentTarget.children) {
             let childLeft = child.getBoundingClientRect().left
             let childWidth = child.getBoundingClientRect().width
-            if (childLeft < clientWidth / 2 && childLeft + childWidth > clientWidth / 2) {
-                setEvent(i)
+
+            if (
+                index !== timelineState.currentIndex && // If the index is not the current index
+                index <= timelineState.events.length && // If the index is not greater than the number of events
+                childLeft < clientWidth / 2 && // If the left side of the child is less than half the width of the screen
+                childLeft + childWidth > clientWidth / 2 // If the right side of the child is greater than half the width of the screen
+            ) {
+                setTimelineState({
+                    ...timelineState,
+                    currentIndex: index,
+                })
             }
-            i++;
+            index++;
         }
     }
 
-    let forceScrollTo = (index: number) => {
-        const element = document.getElementById('timeline-scroll')
-        if (!element) return;
-        const children = element.children
-        if (index < 0 || index >= children.length) return;
+    const forceScrollTo = (index: number) => {
+        const element = sliderRef.current
 
-        const child = children[index]
-        child.scrollIntoView({
+        if (!element) return;
+        if (index < 0 || index >= element.children.length) return;
+
+        element.children[index]?.scrollIntoView({
             behavior: 'smooth',
             block: 'nearest',
-            inline: 'center',
+            inline: 'start',
         })
     }
 
-
-    if (timelineState.events.length === 0) return (<div>Loading...</div>)
-
-    const currentEvent = timelineState.events[timelineState.currentIndex] || null
-
     return (
         <div className='flex flex-col'>
-            <ol id="timeline-scroll" className="relative w-full flex snap-x snap-mandatory overflow-x-auto" onScroll={handleScroll}>
-                {timelineState.events.map((event, index) => (
-                    <TimelineItem event={event} key={event.id} last={index === timelineState.events.length - 1} />
-                ))}
-            </ol>
+            {timelineState.events.length > 0 &&
+                <>
+                    <ol ref={sliderRef} className="relative w-full flex snap-x snap-mandatory overflow-x-auto no-scrollbar" onScroll={handleScroll}>
+                        {timelineState.events.map((event, index) => (
+                            <TimelineItem event={event} key={event.id} last={index === timelineState.events.length - 1} />
+                        ))}
+                    </ol>
 
-            <div className="flex">
-                {currentEvent && <TimelineDetail event={currentEvent} />}
+                    <div className="flex justify-between flex-col-reverse md:flex-row">
+                        {timelineState.events[timelineState.currentIndex] && <TimelineDetail event={timelineState.events[timelineState.currentIndex]} />}
 
-                <div className="flex justify-center mt-4">
-                    <button className="p-2 w-10 h-10 mx-3 bg-slate-900 dark:bg-slate-400 rounded-full text-white dark:text-black" onClick={() => forceScrollTo(timelineState.currentIndex - 1)} disabled={timelineState.currentIndex === 0}>
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <button className="p-2 w-10 h-10 bg-slate-900 dark:bg-slate-400 rounded-full text-white dark:text-black" onClick={() => forceScrollTo(timelineState.currentIndex + 1)} disabled={timelineState.currentIndex === timelineState.events.length - 1}>
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                </div>
+                        <div className="hidden md:block">
+                            <TimelineControlButton direction="left" onClick={() => forceScrollTo(timelineState.currentIndex - 1)} disabled={timelineState.currentIndex === 0} />
+                            <TimelineControlButton direction="right" onClick={() => forceScrollTo(timelineState.currentIndex + 1)} disabled={timelineState.currentIndex === timelineState.events.length - 1} />
+                        </div>
 
-            </div>
+                    </div>
+                </>
+            }
         </div>
     )
+}
+
+export async function getStaticProps() {
+    const events = await getTimelineData();
+    return {
+        props: {
+            events
+        }
+    }
 }

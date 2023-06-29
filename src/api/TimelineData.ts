@@ -1,7 +1,7 @@
 
 import type { TimelineEvent } from '../types/Timeline.types'
 
-export default async function getTimelineData(): Promise<TimelineEvent[]> {
+export default  function getTimelineData(): TimelineEvent[] {
     return [
         {
             id: "1",

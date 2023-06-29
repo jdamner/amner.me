@@ -37,7 +37,7 @@ export default function Template({ post, posts }: PostPageProps): JSX.Element {
         <p className="hidden">{date.toDateString()}</p>
       </Header>
       <article className='container mx-auto py-5 flex flex-col lg:flex-row'>
-        <div className='-mt-20 p-5'>
+        <div className='-mt-20 pr-5'>
           <Image 
             className="border-solid border-4 border-slate-900 mb-5 bg-white" 
             src={post.thumbnail} 

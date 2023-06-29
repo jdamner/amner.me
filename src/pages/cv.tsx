@@ -11,7 +11,7 @@ export default function CV() {
         <Layout title='Curriculum Vitae'>
             <Header title="Curriculum Vitae" />
             <article className='container mx-auto py-5 flex flex-col lg:flex-row'>
-                <div className='-mt-20 p-5 w-1/5'>
+                <div className='-mt-20 w-1/5'>
                     <Image
                         className="border-solid border-4 border-slate-900 mb-5 bg-white"
                         src={MyImage}
