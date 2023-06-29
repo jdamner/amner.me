@@ -1,8 +1,6 @@
 /* API */
 import { readMdFile, getFilesInDir } from './Utils';
 import { join } from 'path';
-import fs from 'fs';
-import dynamic from 'next/dynamic';
 
 /* Types */
 import type { post } from '../types/post.type'

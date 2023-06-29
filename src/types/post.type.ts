@@ -1,7 +1,6 @@
 /**
  * Post type
  * 
- * @typedef {Object} post
  * @property {string} layout
  * @property {string} title
  * @property {Date} date
@@ -16,4 +15,13 @@ export type post = {
 	thumbnail?: string;
 	slug?: string;
 	content?: string;
-};	
+};
+
+export function isPost(object: any): object is post {
+	return 'layout' in object && 
+		'title' in object && 
+		'date' in object && 
+		'thumbnail' in object && 
+		'slug' in object && 
+		'content' in object
+}
