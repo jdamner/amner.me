@@ -1,21 +1,20 @@
+import React from "react";
 /* Layout */
 import Title from "./Title";
 import PostList from "./PostList";
 /* Types */
-import type { post } from "../../types/post.type";
+import type { Post } from "../../types/Post.type";
 
 /**
  * Blog List
- * @param {post[]} posts
+ * @param {Post[]} posts
  * @returns {JSX.Element}
  */
-export default function Blog({ posts }: { posts: post[] }): JSX.Element {
+export default function Blog({ posts }: { posts: Post[] }): React.JSX.Element {
   return (
-    <section className='bg-slate-200 dark:bg-slate-800 py-5' id='blog'>
-      <div className='container mx-auto px-3 md:px-0'>
-        <Title title="Projects and Writing">My blog</Title>
+    <>
+        <Title title="Projects and Writing">Blog</Title>
         <PostList posts={posts} />
-      </div>
-    </section>
+      </>
   );
 }

@@ -18,20 +18,23 @@ export const pageView = () : void => {
  * @returns void
  */
 export const event = (eventName: string, eventProperties: object = {}) => {
-    // Don't track events in development
-    if (process.env.NODE_ENV === 'development') {
-        return;
-    }
 
-    init('HbSIygPWVvMzXFRP');
-    track({
+    const properties = {
         id: eventName,
         parameters: {
             ...eventProperties,
-            locale: parameters.locale(),
-            screenType: parameters.screenType(),
-            referrer: parameters.referrer(),
-            path: parameters.path(),
+            locale: parameters.locale().value,
+            screenType: parameters.screenType().value,
+            referrer: parameters.referrer().value,
+            path: parameters.path().value,
         }
-    });
+    }
+
+    // Don't track events in development
+    if (process.env.NODE_ENV === 'development') {
+        console.debug('[Insights] Event', properties)
+        return;
+    }
+    init('HbSIygPWVvMzXFRP');
+    track(properties);
 }

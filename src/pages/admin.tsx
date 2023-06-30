@@ -1,3 +1,4 @@
+import React from "react";
 /* API */
 import dynamic from 'next/dynamic';
 
@@ -13,7 +14,7 @@ import PostPreview from '../components/Admin/PostPreview';
  * 
  * It won't work for server-side rendering becaue it relies on `window`. 
  */
-export default function CMS(): JSX.Element {
+export default function CMS(): React.JSX.Element {
 	const CMS = dynamic(
 		async () => {
 			const netlifly = await import('netlify-cms-app');

@@ -1,3 +1,4 @@
+import React from "react";
 /* API */
 import { motion } from "framer-motion"
 /* Types */
@@ -11,7 +12,7 @@ import type { MotionProps } from "framer-motion"
  * @param {JSX.IntrinsicElements['button']} props
  * @returns JSX.Element
  */
-export default function MotionButton(props: JSX.IntrinsicElements['button']): JSX.Element {
+export default function MotionButton(props: React.JSX.IntrinsicElements['button']): React.JSX.Element {
 
     const letters = props.children.toString().split('') as string[]
     // replace spaces with non-breaking spaces
