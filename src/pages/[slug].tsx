@@ -1,20 +1,22 @@
+import React from "react";
 /* Layout */
 import Layout from "../components/Layout"
 import Blog from "../components/Global/Blog"
 import Header from "../components/Global/Header"
-import ButtonLink from "../components/Links/ButtonLink";
 import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
 
 /* API */
-import { getData, getAllPosts, postsDirectory } from "../api/GetData";
+import { getAllPosts } from "../api/GetData";
 import { makeJsonParseable } from "../api/Utils";
 
 /* Types */
-import type { post } from "../types/post.type";
+import type { Post } from "../types/Post.type";
+import Container from "../components/Layouts/Container";
+import Article from "../components/Layouts/Article";
 type PostPageProps = {
-  post: post,
-  posts: post[]
+  post: Post,
+  posts: Post[]
 }
 type PostPageParams = {
   params: {
@@ -29,41 +31,33 @@ type PostPageParams = {
  * @param {PostPageProps}
  * @returns {JSX.Element}
  */
-export default function Template({ post, posts }: PostPageProps): JSX.Element {
+export default function Template({ post, posts }: PostPageProps): React.JSX.Element {
   const date = new Date(post.date);
   return (
     <Layout title={post.title}>
       <Header title={post.title}>
         <p className="hidden">{date.toDateString()}</p>
       </Header>
-      <article className='container mx-auto py-5 flex flex-col lg:flex-row'>
-        <div className='-mt-20 p-5'>
-          <Image 
-            className="border-solid border-4 border-slate-900 mb-5 bg-white" 
-            src={post.thumbnail} 
-            alt={post.title} 
-            width={500} 
-            height={500} 
-            placeholder="blur"
-            priority
-            />
-            <ul className="mb-5 text-sm">
-              <li><strong>Author:</strong> James Amner</li>
-              <li><strong>Date:</strong> { date.toLocaleDateString( 'en-GB' ) }</li>
-            </ul>
-          <span className='hidden md:block'>
-            <ButtonLink href='/'>« Home</ButtonLink>
-          </span>
-        </div>
-        <div className="col-span-2">
-          <ReactMarkdown className="prose mx-auto px-3 md:px-0 prose-slate dark:prose-invert">{post.content}</ReactMarkdown>
-        </div>
-        <span className='block mx-3 my-5 md:hidden'>
-          <ButtonLink href='/'>« Home</ButtonLink>
-        </span>
-      </article>
-      <div className='clear-both'></div>
-      <Blog posts={posts} />
+      <Article offset first={<>
+        <Image
+          className="border-2 border-slate-500 mb-5 bg-white"
+          src={post.thumbnail}
+          alt={post.title}
+          width={1024}
+          height={1024}
+          placeholder="blur"
+          priority
+        />
+        <ul className="mb-5 text-sm">
+          <li><strong>Author:</strong> James Amner</li>
+          <li><strong>Date:</strong> {date.toLocaleDateString('en-GB')}</li>
+        </ul>
+      </>}>
+        <ReactMarkdown className="prose prose-slate dark:prose-invert">{post.content}</ReactMarkdown>
+      </Article>
+      <Container alt>
+        <Blog posts={posts} />
+      </Container>
     </Layout>
   )
 }
@@ -75,10 +69,12 @@ export default function Template({ post, posts }: PostPageProps): JSX.Element {
   * @returns {Promise<{ props: PostPageProps }>} 
   */
 export async function getStaticProps({ params }: PostPageParams): Promise<{ props: PostPageProps }> {
+  const posts = makeJsonParseable(await getAllPosts())
+  const post = posts.find((post) => post.slug === params.slug)
   return {
     props: {
-      post: makeJsonParseable(await getData(params.slug, postsDirectory)),
-      posts: makeJsonParseable(await getAllPosts()),
+      post: post,
+      posts: posts,
     },
   }
 }

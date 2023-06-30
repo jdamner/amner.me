@@ -1,10 +1,11 @@
+import React from "react";
 /**
  * Spinner 
  * 
  * @param {JSX.IntrinsicElements['span']} props
  * @returns {JSX.Element}
  */
-export default function Spinner(props: JSX.IntrinsicElements['span']): JSX.Element {
+export default function Spinner(props: React.JSX.IntrinsicElements['span']): React.JSX.Element {
 	return (
 		<span { ...props }>
 			<svg className="animate-spin h-full w-5 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
