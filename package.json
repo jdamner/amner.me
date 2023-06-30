@@ -27,7 +27,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
-    "framer-motion": "^10.12.17",
+    "framer-motion": "^10.12.18",
     "gray-matter": "^4.0.0",
     "insights-js": "^1.2.11",
     "netlify-cms-app": "^2.15.72",
