@@ -8,6 +8,7 @@ export function getPages(): string[] {
 	const pages = [
 		'index',
 		'404',
+		'cv',
 	];
 	const posts = fs.readdirSync(path.join(__dirname, '../content/posts'));
 	posts.forEach((post) => {
