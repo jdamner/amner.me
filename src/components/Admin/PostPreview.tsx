@@ -1,12 +1,12 @@
 import type { PreviewTemplateComponentProps } from "netlify-cms-core";
-import type { post } from "../../types/post.type";
+import type { Post } from "../../types/Post.type";
 
 import Template from "../../pages/[slug]";
 
 export default function PostPreview({ entry }: PreviewTemplateComponentProps): JSX.Element {
 
 	const data = entry.getIn(['data']).toJS();
-	const post: post = {
+	const post: Post = {
 		title: data.title as string,
 		date: data.date as Date,
 		thumbnail: data.thumbnail as string,

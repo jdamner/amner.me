@@ -7,7 +7,7 @@ import Button from "../Links/Button";
 
 
 /* Types */
-import type { children } from "../../types/children.type";
+import type { WithChildren } from "../../types/WithChildren.type";
 
 /**
  * Signpost Modal
@@ -15,7 +15,7 @@ import type { children } from "../../types/children.type";
  * @param { string, children } props
  * @returns {JSX.Element}
  */
-export default function Signpost({ title, children }: { title: string, children: children}): JSX.Element {
+export default function Signpost({ title, children }: WithChildren & { title: string }): JSX.Element {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleModalClick = () => {
@@ -43,7 +43,7 @@ export default function Signpost({ title, children }: { title: string, children:
                                 </div>
                                 {/* Content */}
                                 {children}
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                 </div>

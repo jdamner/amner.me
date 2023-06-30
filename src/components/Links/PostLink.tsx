@@ -9,15 +9,15 @@ import Image from "next/image";
 import Spinner from "../Global/Spinner";
 
 /* Types */
-import type { post } from "../../types/post.type";
+import type { Post } from "../../types/Post.type";
 
 /**
  * Post Link
  * 
- * @param {post} post
+ * @param {Post} post
  * @returns JSX.Element
  */
-export default function PostLink({ post }: { post: post }): JSX.Element {
+export default function PostLink({ post }: { post: Post }): JSX.Element {
 	const [isClicked, setIsClicked] = useState(false);
 	const router = useRouter();
 

@@ -7,16 +7,24 @@ import Head from "next/head";
 import ContactDetails from "./Global/ContactDetails";
 import NavBar from "./Global/NavBar";
 import Signpost from "./Global/Signpost";
-
+import Container from "./Layouts/Container";
 /* Types */
-import { children } from "../types/children.type";
+import { WithChildren } from "../types/WithChildren.type";
 import Link from "next/link";
 
-export default function Layout({ children, title }: { children: children, title: string }) {
+export default function Layout({ children, title }: WithChildren & { title: string }) {
   //  Log page views
   pageView();
 
   const reducedMotion = useReducedMotion();
+
+  const Links = [
+    { href: '/', text: 'Home' },
+    { href: '/cv', text: 'Digital CV' },
+    { href: '/privacy', text: 'Privacy Policy' },
+    { href: 'https://github.com/jdamner', text: 'GitHub', target: '_blank', rel: 'noopener noreferrer' },
+  ]
+
 
   return (
     <>
@@ -39,12 +47,24 @@ export default function Layout({ children, title }: { children: children, title:
           {children}
         </motion.div>
       </main>
-      <footer id="footer" className="container mx-auto px-3 md:px-0 my-3">
-        <ul className="prose prose-ul:list-none max-w-full flex flex-col md:flex-row justify-between text text-xs">
-          <li><Link href="/privacy">Privacy Policy</Link></li>
-          <li>&copy; James Amner {new Date().getFullYear()}</li>
-          <li><Link href="https://github.com/jdamner">GitHub</Link></li>
-        </ul>
+      <footer id="footer">
+        <Container>
+          <div className="text-sm">
+            <ul>
+              {Links.map((link, index) => {
+                return (
+                  <li className='mb-2' key={link.href}>
+                    <Link {...link}>{link.text}</Link>
+                  </li>
+                )
+              })
+              }
+            </ul>
+            <div className='text-center w-full'>
+              &copy; James Amner {new Date().getFullYear()}
+            </div>
+          </div>
+        </Container>
       </footer>
     </>
   )

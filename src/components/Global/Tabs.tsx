@@ -8,7 +8,7 @@ import Title from "./Title";
 import ReactMarkdown from 'react-markdown';
 
 /* Types */
-import type { post } from "../../types/post.type";
+import type { MdFile } from "../../types/MdFile.type";
 
 /**
  * Tabs 
@@ -16,12 +16,21 @@ import type { post } from "../../types/post.type";
  * @param {tabs: post[], content: string} props
  * @returns  {JSX.Element}
  */
-export default function Tabs({ tabs, content }: { tabs: post[], content: string }): JSX.Element {
+export default function Tabs({ tabs, defaultContent, title }:
+  {
+    tabs: {
+      title: string,
+      content: string
+    }[],
+    defaultContent: string,
+    title: React.ReactNode | React.ReactNode[]
+  }
+): JSX.Element {
 
   const [activeTab, setActiveTab] = useState(0);
   const [tabOpen, setTabOpen] = useState(false);
 
-  const handleTabChange = (index) => {
+  const handleTabChange = (index: number) => {
     event('tab-change', { index, tabOpen });
     setTabOpen(index === activeTab ? !tabOpen : true);
     setActiveTab(index);
@@ -34,7 +43,7 @@ export default function Tabs({ tabs, content }: { tabs: post[], content: string 
       <TabButton
         key={index}
         role="tab"
-        id={ `tab-${index}` }
+        id={`tab-${index}`}
         aria-current={ariaCurrent}
         aria-controls={`tab-${index}`}
         active={active}
@@ -43,18 +52,18 @@ export default function Tabs({ tabs, content }: { tabs: post[], content: string 
     );
   });
 
-  const contentClassName = 'prose prose-slate dark:prose-invert mr-auto px-3 md:px-0 text-slate-900 dark:text-slate-200'
+  const contentClassName = 'prose prose-slate dark:prose-invert mr-auto text-slate-900 dark:text-slate-200'
 
   const ActiveTab = () => {
     const tab = tabs[activeTab];
     return (
-      <div 
+      <div
         className={contentClassName}
         id={`tab-${activeTab}`}
         role="tabpanel"
         aria-labelledby={`tab-${activeTab}`}
-        >
-      <ReactMarkdown>{tab.content}</ReactMarkdown>
+      >
+        <ReactMarkdown>{tab.content}</ReactMarkdown>
       </div>
     )
   }
@@ -62,13 +71,13 @@ export default function Tabs({ tabs, content }: { tabs: post[], content: string 
 
   const NonActiveTab = () => {
     return (
-      <ReactMarkdown className={contentClassName}>{ content }</ReactMarkdown>
+      <ReactMarkdown className={contentClassName}>{defaultContent}</ReactMarkdown>
     )
   }
 
   return (
-    <section className="container mx-auto my-5 py-5 px-3 md:px-0" id="services-tabs">
-      <Title title={'Techincal Skills'}>Web Development</Title>
+    <>
+      {title}
       <div className="md:grid md:grid-cols-3" role="tablist">
         <div className="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-3 md:gap-0 items-start md:items-end pr-5 mb-3">
           {TabButtons}
@@ -77,6 +86,6 @@ export default function Tabs({ tabs, content }: { tabs: post[], content: string 
           {tabOpen ? <ActiveTab /> : <NonActiveTab />}
         </div>
       </div>
-    </section>
+    </>
   )
 }
