@@ -1,0 +1,8 @@
+---
+title: Peter Alan 
+subtitle: Estate Agency
+role: Mortgage Advisor
+from: October 2016
+to: December 2017
+---
+My main responsibility as a mortgage adviser is to deliver on key performance objectives relating to mortgage sales in estate agency branches, such as number of mortgages and cross-sold product sales, whilst delivering fair and transparent advice with relaxed down to earth service for clients at a tone and pace that suits them. To achieve this I used key skills such as time and diary management to meet my goals and targets in a self- managed process. I needed to build great relationships with lead generators and provide training and coaching to improve quantity and quality of leads. I also used these skills to maintain relationships with potential clients and managing business opportunities with my own systems and processes for tracking my clients. Another key area within this role was compliance within the FCA Regulations, which includes writing suitability reports and letters amongst other checks. My skills in written communication and attention to detail were key in ensuring my compliance record was 100%.

@@ -3,62 +3,88 @@ import { readMdFile, getFilesInDir } from './Utils';
 import { join } from 'path';
 
 /* Types */
-import type { post } from '../types/post.type'
+import type { Post } from '../types/Post.type'
+import type { MdFile } from '../types/MdFile.type';
 
-/**
- * Posts directory
- * 
- * @type {string}
- */
-export const postsDirectory: string = 'content/posts'
-
-/**
- * Services directory
- * 
- * @type {string}
- */
+const postsDirectory: string = 'content/posts'
 const servicesDirectory: string = 'content/services'
+const projectsDirectory: string = 'content/cv/projects'
+const referencesDirectory: string = 'content/cv/references'
+const employmentDirectory: string = 'content/cv/employment'
+const educationDirectory: string = 'content/cv/education'
 
 /**
- * Gets a post by slug
+ * Gets all files in a directory
+ * @param {string} directory The directory to get files from
  * 
- * @param {string} slug The slug of the post
- * @param {string} directory The directory to read from
- * 
- * @returns {Promise<post>}
+ * @returns {Promise<MdFile[]>} A promise that resolves to an array of MDFiles
  */
-export async function getData(slug: string, directory: string): Promise<post> {
-	const realSlug = slug.replace(/\.md$/, '')
-	const filePath = join(directory, `${realSlug}.md`)
-	const { data, content } = await readMdFile(filePath)
-
-	return {
-		layout: data['layout'] || null,
-		title: data['title'] || null,
-		date: new Date(data['date']),
-		thumbnail: data['thumbnail'] || null,
-		slug: realSlug,
-		content: content,
-	} as post;
+async function getAllInDirectory(directory: string): Promise<MdFile[]> {
+	return Promise.all(
+		getFilesInDir(directory).map(async (filename) => await readMdFile(filename, directory))
+	)
 }
 
 /**
 * Gets all Posts
 * 
-* @returns {Promise<post[]>}
+* @returns {Promise<Post[]>}
 */
-export async function getAllPosts(sortCallback = (post1, post2) => (post1.date > post2.date ? -1 : 1)): Promise<post[]> {
-	let slugs = getFilesInDir(postsDirectory)
-	let posts = slugs.map((slug) => getData(slug, postsDirectory))
-	return Promise.all(posts).then((posts) => posts.sort(sortCallback))
+export async function getAllPosts(): Promise<Post[]> {
+	let files = await getAllInDirectory(postsDirectory)
+	return files.map((file) => {
+		return {
+			title: file.data['title'] || null,
+			date: new Date(file.data['date']),
+			thumbnail: file.data['thumbnail'] || null,
+			...file
+		} as Post
+	}).sort((post1, post2) =>
+		(post1.date > post2.date ? -1 : 1)
+	)
 }
 
 /**
 * Gets all services
 * 
-* @returns {Promise<post[]>}
+* @returns {Promise<Post[]>}
 */
-export async function getAllServices(): Promise<post[]> {
-	let slugs = getFilesInDir(servicesDirectory)
-	return Promise.all(slugs.map((slug) => getData(slug, servicesDirectory)))
+export async function getAllServices(): Promise<MdFile[]> {
+	return getAllInDirectory(servicesDirectory)
+}
+
+/**
+ * Gets all CV projects
+ * 
+ * @returns {Promise<Post[]>}
+ */
+export async function getAllProjects(): Promise<MdFile[]> {
+	return getAllInDirectory(projectsDirectory)
+}
+
+/**
+ * Gets all CV references
+ * 
+ * @returns {Promise<Post[]>}
+ */
+export async function getAllReferences(): Promise<MdFile[]> {
+	return getAllInDirectory(referencesDirectory)
+}
+
+/**
+ * Gets all CV employment
+ * 	
+ * @returns {Promise<Post[]>}
+ */
+export async function getAllEmployment(): Promise<MdFile[]> {
+	return getAllInDirectory(employmentDirectory)
+}
+
+/**
+ * Gets all CV education
+ * 
+ * @returns {Promise<Post[]>}
+ */
+export async function getAllEducation(): Promise<MdFile[]> {
+	return getAllInDirectory(educationDirectory)
 }

@@ -1,27 +1,3 @@
-# Key Skills
-
-## Technical
-
-- HTML & CSS/SCSS (Bootstrap, Tailwind)
-- JavaScript (Typescript, jQuery, React, Gutenberg) 
-- PHP (WordPress, Laravel)
-- WooCommerce
-- MySQL
-- REST APIs
-## Personal
-- Diary Management
-- People Management
-- Coaching and Training - Problem Solving
-- Git (Code Reviews, Merge Conflicts)
-- CI/CD (Github, Azure, Travis)
-- Automated Testing (PHPUnit, Playwright, Jest) 
-- Static Analysis (PHPStan, SonarQube/Cloud)
-- Task Management (JIRA, Azure)
-- Serverless Functions (AWS, Firebase)
-- Relationship Building
-- Attention to Detail
-- Written and Oral Communication - Remote Working
-
 I’ve spent the majority of my web developer career working within a WordPress context, but I have good experience working with Laravel and no-framework PHP codebases. Having experienced other frameworks helps me have an open mind to finding simple solutions to complex problems. Within WordPress, I typically use composer to manage dependancies and handle autoloading, using a base structure similar to Roots Bedrock. This helps structure the code in a safe and convenient manner.
 
 I have extensive experience working with WooCommerce, developing bespoke payment gateways, unique product types, shipping integrations and connections, and integrations to third party services such as Sage ERP. I have developed API integrations where I’m comfortable both consuming an API or creating one to be consumed. As great as WooCommerce is, I also have experience working with a number of bespoke e-commerce solutions within a WordPress and no-framework contexts where using an off the shelf solution would not have provided the functionality needed at the performance required.

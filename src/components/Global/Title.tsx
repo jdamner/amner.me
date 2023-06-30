@@ -2,7 +2,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 /* Types */
-import type { children } from "../../types/children.type";
+import type { WithChildren } from "../../types/WithChildren.type";
+import TwoThirds from "../Layouts/TwoThirds";
 
 /**
  * Title Component
@@ -10,7 +11,7 @@ import type { children } from "../../types/children.type";
  * @param {children, string} props
  * @returns {JSX.Element}
  */
-export default function Title({ children, title }: { children?: children, title: string }): JSX.Element {
+export default function Title({ children, title }: WithChildren & { title?: string }): JSX.Element {
 
     const classes = [
         'text-lg',
@@ -29,20 +30,21 @@ export default function Title({ children, title }: { children?: children, title:
     const reducedMotion = useReducedMotion();
 
     return (
-        <div className="flex flex-col md:flex-row md:items-end mb-5">
-            <h2 className={classes.join(' ')}>{title}</h2>
-            <div className='w-full text-left uppercase text-2xl font-black'>
-                <div className='mb-2'>{ children }</div>
-                
-                <motion.div
-                    className='bg-black h-2 w-full dark:bg-slate-300'
-                    initial={{ maxWidth: reducedMotion ? '100%' : '0%'}}
-                    viewport={{ once: true }}
-                    whileInView={{ maxWidth: '100%' }}
-                    transition={{ duration: 0.5 }}
-                >
-                </motion.div>
-            </div>
-        </div>
+        <TwoThirds first={title && <h2 className={classes.join(' ')}>{title}</h2>}>
+            {children && <>
+                <div className='w-full text-left uppercase text-2xl font-black'>
+                    <div className='mb-2'>{children}</div>
+                    <motion.div
+                        className='bg-black h-2 w-full dark:bg-slate-300'
+                        initial={{ maxWidth: reducedMotion ? '100%' : '0%' }}
+                        viewport={{ once: true }}
+                        whileInView={{ maxWidth: '100%' }}
+                        transition={{ duration: 0.5 }}
+                    >
+                    </motion.div>
+                </div>
+            </>
+            }
+        </TwoThirds>
     );
 }

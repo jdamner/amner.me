@@ -1,5 +1,5 @@
 /* Types */
-import type { WithChildren } from "../../types/children.type";
+import type { WithChildren } from "../../types/WithChildren.type";
 
 /**
  * Header 

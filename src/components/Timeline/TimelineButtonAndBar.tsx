@@ -6,7 +6,6 @@ export default function TimelineButtonAndBar({ last = false }: { last: boolean }
         "h-4",
         "mt-2.5",
         "-top-2.5",
-        "ml-3",
         "bg-slate-900",
         "dark:bg-slate-400",
         "rounded-full",
@@ -14,7 +13,6 @@ export default function TimelineButtonAndBar({ last = false }: { last: boolean }
 
     let barClasses = [
         "mt-1.5",
-        "ml-3",
         "w-full",
         "h-1",
     ]

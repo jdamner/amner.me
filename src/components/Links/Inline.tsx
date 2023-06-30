@@ -6,7 +6,7 @@ import Link from "next/link"
 
 /* Types */
 import type { LinkProps } from "next/link";
-import type { WithChildren } from "../../types/children.type";
+import type { WithChildren } from "../../types/WithChildren.type";
 
 /**
  * InlineLink

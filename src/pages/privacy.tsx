@@ -2,19 +2,22 @@ import Layout from "../components/Layout"
 import Header from "../components/Global/Header"
 import ReactMarkdown from 'react-markdown';
 import { makeJsonParseable, readMdFile } from "../api/Utils"
-import type { MDFile } from "../types/mdfile.type";
+import type { MdFile } from "../types/MdFile.type";
+import Container from "../components/Layouts/Container";
 
 /**
  * Privacy Page
- * @param {MDFile} { data, content }
+ * @param {MdFile} { data, content }
  * @returns {JSX.Element} 
  */
-export default function PrivacyPage( { content }: MDFile): JSX.Element {
+export default function PrivacyPage( { content }: MdFile): JSX.Element {
   return (
     <Layout title="Privacy">
       <Header title="Privacy Policy">
-        <ReactMarkdown className="prose text-left mx-auto px-3 md:px-0 prose-slate dark:prose-invert">{ content }</ReactMarkdown>
       </Header>
+      <Container>
+        <ReactMarkdown className="prose text-left mx-auto px-3 md:px-0 prose-slate dark:prose-invert">{ content }</ReactMarkdown>
+      </Container>
     </Layout>
   )
 }
@@ -22,10 +25,10 @@ export default function PrivacyPage( { content }: MDFile): JSX.Element {
 /**
  * Gets static data for SS Generation
  * 
- * @returns {Promise<{ props: MDFile }>}
+ * @returns {Promise<{ props: MdFile }>}
  */
-export async function getStaticProps(): Promise<{ props: MDFile }> {
+export async function getStaticProps(): Promise<{ props: MdFile }> {
   return {
-    props: makeJsonParseable( await readMdFile( 'content/privacy.md' ) ),
+    props: makeJsonParseable( await readMdFile( 'privacy.md' ) ),
   }
 }
