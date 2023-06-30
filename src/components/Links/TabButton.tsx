@@ -1,3 +1,4 @@
+import React from "react";
 /* API */
 import { useReducedMotion } from "framer-motion"
 
@@ -10,7 +11,7 @@ import MotionButton from "./MotionButton";
  * @param {JSX.IntrinsicElements['button'] & { active: boolean }} props 
  * @returns {JSX.Element}
  */
-export default function TabButton(props: JSX.IntrinsicElements['button'] & { active: boolean } ): JSX.Element {
+export default function TabButton(props: React.JSX.IntrinsicElements['button'] & { active: boolean } ): React.JSX.Element {
 
     const classes = [
         "text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline",
