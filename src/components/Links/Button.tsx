@@ -1,10 +1,11 @@
+import React from "react";
 /**
  * Button 
  * 
  * @param {JSX.IntrinsicElements['button']} props
  * @returns {JSX.Element}
  */
-export default function Button(props: JSX.IntrinsicElements['button']): JSX.Element {
+export default function Button(props: React.JSX.IntrinsicElements['button']): React.JSX.Element {
 
 	const classes = ButtonClasses;
 	props.className && classes.push(props.className);
@@ -21,12 +22,9 @@ export default function Button(props: JSX.IntrinsicElements['button']): JSX.Elem
  * @type {string[]}
  */
 export const ButtonClasses: string[] = [
-	'border-solid',
-	'border-2',
-	'border-slate-800',
+	'border-2 border-slate-500',
 	'uppercase',
-	'font-black',
-	'font-sans',
+	'font-bold',
 	'bg-white',
 	'dark:bg-slate-900',
 	'px-4',
