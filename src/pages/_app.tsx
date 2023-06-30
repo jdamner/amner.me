@@ -1,3 +1,4 @@
+import React from "react";
 /* Types */
 import type { AppProps } from 'next/app';
 /* Global Styles */
@@ -16,7 +17,7 @@ import "../global.css";
  * @param {AppProps} { Component, pageProps }
  * @returns {JSX.Element}
  */
-export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+export default function MyApp({ Component, pageProps }: AppProps): React.JSX.Element {
   return <>
     <style jsx global>{`
       :root {
