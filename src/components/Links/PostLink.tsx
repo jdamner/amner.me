@@ -1,3 +1,4 @@
+import React from "react";
 /* API */
 import { useRouter } from "next/router";
 import { event } from "../../api/Insights";
@@ -9,15 +10,15 @@ import Image from "next/image";
 import Spinner from "../Global/Spinner";
 
 /* Types */
-import type { post } from "../../types/post.type";
+import type { Post } from "../../types/Post.type";
 
 /**
  * Post Link
  * 
- * @param {post} post
+ * @param {Post} post
  * @returns JSX.Element
  */
-export default function PostLink({ post }: { post: post }): JSX.Element {
+export default function PostLink({ post }: { post: Post }): React.JSX.Element {
 	const [isClicked, setIsClicked] = useState(false);
 	const router = useRouter();
 
@@ -31,31 +32,22 @@ export default function PostLink({ post }: { post: post }): JSX.Element {
 
 	const classes = [
 		'group',
-		'mb-3',
 		'block',
-		'rounded-md',
-		'overflow-hidden',
-		'w-full',
 		'bg-white',
-		'relative',
+		'dark:bg-slate-900',
+		// 'relative',
+		// 'border-solid',
+		'border-2',
+		'border-slate-500',
 	]
 
 	const linkClasses = [
-		'bg-gradient-to-r',
-		'from-teal-900',
-		'to-emerald-600',
-		'group-hover:from-emerald-700',
-		'group-hover:to-teal-500',
-		'shadow-slate-900',
-		'px-4',
+		'bg-slate-900',
+		'group-hover:bg-slate-700',
+		'px-2',
 		'text-lg',
-		'font-sans',
-		'font-semibold',
-		'tracking-tight',
 		'leading-loose',
-		'text-center',
-		'text-white',
-		'normal-case',
+		'text-center text-slate-100',
 	];
 
 	const thumbnail = require('../../../public' + post.thumbnail);
@@ -68,13 +60,9 @@ export default function PostLink({ post }: { post: post }): JSX.Element {
 			<Image
 				src={thumbnail}
 				alt={post.title}
-				sizes="(max-width: 640px) 100vw, 640px
-					(max-width: 768px) 33vw, 768px
-					(max-width: 1024px) 25vw, 1024px
-					"
 				width={375}
 				height={375}
-				className="w-full brightness-90 group-hover:brightness-105 transition"
+				className="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
 				placeholder="blur"
 			/>
 			<h2 className={linkClasses.join(' ')}>{post.title}</h2>

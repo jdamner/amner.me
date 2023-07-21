@@ -11,6 +11,7 @@
   "scripts": {
     "build": "next build && next export && next-export-optimize-images",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "dev": "next dev",
     "test": "playwright test",
     "test:ci": "playwright test --ci",
@@ -34,6 +35,7 @@
     "next": "^13.4",
     "next-export-optimize-images": "^3.0.5",
     "postcss": "^8.4.27",
+    "postcss-import": "^15.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.7",
