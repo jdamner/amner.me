@@ -1,3 +1,4 @@
+import React from "react";
 /* API */
 import { motion, useReducedMotion } from "framer-motion"
 
@@ -5,16 +6,16 @@ import { motion, useReducedMotion } from "framer-motion"
 import PostLink from "../Links/PostLink"
 
 /* Types */
-import type { post } from "../../types/post.type"
+import type { Post } from "../../types/Post.type"
 import type { MotionProps } from "framer-motion"
 
 /**
  * Post List
  * 
- * @param {post[]} posts
+ * @param {Post[]} posts
  * @returns JSX.Element
  */
-export default function PostList({ posts }: { posts: post[] }): JSX.Element {
+export default function PostList({ posts }: { posts: Post[] }): React.JSX.Element {
   const reduceMotion: boolean = useReducedMotion()
   const PostLinks = posts && posts.map((post, index) => {
     const delay = index * 0.01
@@ -30,7 +31,7 @@ export default function PostList({ posts }: { posts: post[] }): JSX.Element {
   })
 
   return (
-    <div className='columns-1 xs:columns-2 md:columns-3 lg:columns-4 gap-2' id='post-list' >
+    <div className='columns-1 xs:columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2' id='post-list' >
       {PostLinks}
     </div >
   );

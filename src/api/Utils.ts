@@ -3,7 +3,7 @@
  */
 import fs from 'fs'
 import matter from 'gray-matter'
-import type { MDFile } from '../types/mdfile.type'
+import type { MdFile } from '../types/MdFile.type'
 import { join } from 'path'
 
 /**
@@ -18,15 +18,16 @@ export function makeJsonParseable<Type>(obj: Type): Type {
 
 /**
  * Reads a markdown file
- * 
- * @param {string} path The path to the file
- * 
- * @returns {Promise<MDFile>} The file contents
  */
-export async function readMdFile(path: string): Promise<MDFile> {
+export async function readMdFile(filename: string, directory: string = 'content/'): Promise<MdFile> {
+	const path = `${directory}/${filename}`
 	const fullPath = `${process.cwd()}/${path}`
 	const fileContents = fs.readFileSync(fullPath, 'utf8')
-	return matter(fileContents)
+	const slug = filename.replace(/\.md$/, '')
+	return {
+		slug: slug,
+		...matter(fileContents)
+	}
 }
 
 /**

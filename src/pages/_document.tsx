@@ -1,3 +1,4 @@
+import React from "react";
 import { Html, Head, Main, NextScript } from 'next/document'
 
 /**
@@ -5,7 +6,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
  * 
  * @returns {JSX.Element}
  */
-export default function Document(): JSX.Element {
+export default function Document(): React.JSX.Element {
   return (
     <Html lang="en-GB">
       <Head />
