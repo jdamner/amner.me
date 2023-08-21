@@ -27,7 +27,7 @@
     "@types/react": "^18.0.27",
     "autoprefixer": "^10.4.15",
     "eslint": "8.47.0",
-    "eslint-config-next": "13.4.18",
+    "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.1",
     "gray-matter": "^4.0.0",
     "insights-js": "^1.2.11",
