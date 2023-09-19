@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@heroicons/react": "^2.0.18",
-    "@next/bundle-analyzer": "^13.4.19",
+    "@next/bundle-analyzer": "^13.5.1",
     "@playwright/test": "^1.38.0",
     "@tailwindcss/typography": "^0.5.10",
     "@testing-library/react": "^14.0.0",
