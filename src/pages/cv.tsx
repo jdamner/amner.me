@@ -39,7 +39,7 @@ export default function CV(
     return (
         <Layout title='Curriculum Vitae'>
             <Header title="Curriculum Vitae" />
-            <Article offset first={<Image
+            <Article offset image={<Image
                 className="border-2 border-slate-500 mb-5 bg-white"
                 src={MyImage}
                 alt={"James Amner"}
