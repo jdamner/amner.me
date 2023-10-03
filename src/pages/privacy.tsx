@@ -19,7 +19,7 @@ export default function PrivacyPage( { content }: MdFile): React.JSX.Element {
     <Layout title="Privacy">
       <Header title="Privacy Policy">
       </Header>
-      <Article offset first={<Image
+      <Article offset image={<Image
                 className="border-2 border-slate-500 mb-5 bg-white"
                 src={Privacy}
                 alt={"Privacy Policy"}
