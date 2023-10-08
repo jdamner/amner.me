@@ -3,12 +3,17 @@ import React from "react";
 import Layout from "../components/Layout"
 import Blog from "../components/Global/Blog"
 import Header from "../components/Global/Header"
+import TOCInline from "../components/Toc";
+
 import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
 
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+
 /* API */
 import { getAllPosts } from "../api/GetData";
-import { makeJsonParseable } from "../api/Utils";
+import { makeJsonParseable, makeSlug } from "../api/Utils";
 
 /* Types */
 import type { Post } from "../types/Post.type";
@@ -33,27 +38,74 @@ type PostPageParams = {
  */
 export default function Template({ post, posts }: PostPageProps): React.JSX.Element {
   const date = new Date(post.date);
+
   return (
     <Layout title={post.title}>
       <Header title={post.title}>
         <p className="hidden">{date.toDateString()}</p>
       </Header>
-      <Article offset first={<>
-        <Image
-          className="border-2 border-slate-500 mb-5 bg-white"
-          src={post.thumbnail}
-          alt={post.title}
-          width={1024}
-          height={1024}
-          placeholder="blur"
-          priority
-        />
-        <ul className="mb-5 text-sm">
-          <li><strong>Author:</strong> James Amner</li>
-          <li><strong>Date:</strong> {date.toLocaleDateString('en-GB')}</li>
-        </ul>
-      </>}>
-        <ReactMarkdown className="prose prose-slate dark:prose-invert">{post.content}</ReactMarkdown>
+      <Article offset
+        image={
+          <Image
+            className="border-2 border-slate-500 mb-5 bg-white"
+            src={post.thumbnail}
+            alt={post.title}
+            width={1024}
+            height={1024}
+            placeholder="blur"
+            priority
+          />
+        }
+        first={
+          <ul className="mb-5 text-sm">
+            <li><strong>Author:</strong> James Amner</li>
+            <li><strong>Date:</strong> {date.toLocaleDateString('en-GB')}</li>
+            <TOCInline content={post.content} indentDepth={3} fromHeading={1} toHeading={6} exclude="" />
+          </ul>
+        }>
+        <ReactMarkdown
+          className="prose prose-slate dark:prose-invert"
+          components={{
+            pre: function Pre(props) {
+              return <>{props?.children}</>
+            },
+            code(props) {
+              const { children, className, ...rest } = props
+              const match = /language-(\w+)/.exec(className || '')
+              return match ? (
+                <SyntaxHighlighter
+                  {...rest}
+                  language={match[1]}
+                  style={vscDarkPlus}
+                >
+                  {children}
+                </SyntaxHighlighter>
+              ) : (
+                <code {...rest} className={className}>
+                  {children}
+                </code>
+              )
+            },
+            h1(props) {
+              return <h1 id={makeSlug(props.children)} {...props} />
+            },
+            h2(props) {
+              return <h2 id={makeSlug(props.children)} {...props} />
+            },
+            h3(props) {
+              return <h3 id={makeSlug(props.children)} {...props} />
+            },
+            h4(props) {
+              return <h4 id={makeSlug(props.children)} {...props} />
+            },
+            h5(props) {
+              return <h5 id={makeSlug(props.children)} {...props} />
+            },
+            h6(props) {
+              return <h6 id={makeSlug(props.children)} {...props} />
+            }
+          }}
+        >{post.content}</ReactMarkdown>
       </Article>
       <Container alt>
         <Blog posts={posts} />
