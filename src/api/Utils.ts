@@ -5,6 +5,8 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import type { MdFile } from '../types/MdFile.type'
 import { join } from 'path'
+import { slug } from 'github-slugger'
+import { ReactNode } from 'react'
 
 /**
  * Makes an object JSON parseable
@@ -23,10 +25,9 @@ export async function readMdFile(filename: string, directory: string = 'content/
 	const path = `${directory}/${filename}`
 	const fullPath = `${process.cwd()}/${path}`
 	const fileContents = fs.readFileSync(fullPath, 'utf8')
-	const slug = filename.replace(/\.md$/, '')
 	return {
-		slug: slug,
-		...matter(fileContents)
+		slug: slug(filename.replace(/\.md$/, '')),
+		...matter(fileContents),
 	}
 }
 
@@ -40,4 +41,47 @@ export async function readMdFile(filename: string, directory: string = 'content/
 export function getFilesInDir(directory: string): string[] {
 	const fullPath = join(process.cwd(), directory)
 	return fs.readdirSync(fullPath)
+}
+
+/**
+ * Converts all headings in a markdown file to have IDs 
+ * Converts 
+ * ## Heading 1 
+ * to become
+ * ## Heading 1{#heading-1}
+ * 
+ * @param {string} markdown The markdown to convert
+ * 
+ * @returns {string}
+ */
+export function convertHeadingsToAnchorLinks(markdown: string): string {
+	return markdown.replace(/(#{1,6})\s(.+)\n/gm, (match, p1, p2) => {
+		return `${p1} ${p2}{#${slug(p2)}}\n`
+	})
+}
+
+
+/**
+ * Converts a react node to a slug
+ * 
+ * Usually the value is a string, but sometimes it contains
+ * a `<code>` element, which is a react node. This function
+ * converts the value to a string.
+ */
+export function makeSlug(value: ReactNode | ReactNode[]): string {
+	if (! Array.isArray(value)) return slug(value.toString());
+	return slug(
+		value.map((node) => {
+			if (typeof node === 'string' ||
+				typeof node === 'number' ||
+				typeof node === 'boolean'
+			) return node;
+
+			if (typeof node === 'object' && node !== null && 'props' in node) {
+				return makeSlug(node.props.children)
+			}
+
+			return ''
+		}).join('')
+	)
 }
