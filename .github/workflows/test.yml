@@ -43,22 +43,10 @@ jobs:
           require_tests: false
           job_name: ${{ matrix.playwright }} Results
       - name: Update Snapshots
+        uses: ./.github/actions/update-snapshots
         if: ${{ always() && contains(steps.tests.outcome, 'failure') }}
-        run: npx playwright test --project=${{ matrix.playwright }} --update-snapshots
-      - name: Create pr
-        if : ${{ always() && contains(steps.tests.outcome, 'failure') }}
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git config --global push.autoSetupRemote true
-          git checkout -b $BRANCH_NAME
-          git add .
-          git commit -m "Update Snapshots for ${{ matrix.playwright }}"
-          git push origin
-          gh pr create --title "Update Snapshots" --body "Automated update of snapshots for ${{ matrix.playwright }}" --base ${{ github.event.pull_request.head.ref }} --head $BRANCH_NAME --label "snapshots"
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-          BRANCH_NAME: update-snapshots/${{ matrix.playwright}}/${{ github.sha }}
+        with: 
+          base-branch: ${{ github.event.pull_request.base.ref }}
   report:
     name: Report Test Results
     runs-on: ubuntu-latest

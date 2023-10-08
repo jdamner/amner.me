@@ -1,0 +1,44 @@
+name: Update Snapshots
+
+on: 
+  workflow_call:
+    workflows: ["Test"]
+    inputs: 
+      base-branch:
+        description: 'The name of the branch to create the PR against'
+        required: true
+        type: string
+  
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+  issues: write
+
+jobs:
+  update-snapshots: 
+    name: Update Snapshots
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with: 
+          ref: ${{ github.event.inputs.base-branch }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci && npx playwright install --with-deps
+      - name: Update Snapshots
+        run: npx playwright test --update-snapshots
+      - name: Create Or Update PR
+        run: | 
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b update-snapshots-${{ github.event.inputs.base-branch }}
+          git add .
+          git commit -m "Update snapshots"
+          git push origin update-snapshots --force
+          gh pr create --title "Update snapshots" --body "This PR updates the snapshots for the ${{ github.event.inputs.base-branch }} branch" --base ${{ github.event.inputs.base-branch }} --head update-snapshots --repo ${{ github.repository }}
