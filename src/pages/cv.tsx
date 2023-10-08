@@ -9,7 +9,7 @@ import MyImage from "../../public/me.jpg";
 
 import { makeJsonParseable, readMdFile } from "../api/Utils";
 import { getAllEducation, getAllEmployment, getAllProjects, getAllReferences, getAllServices } from "../api/GetData";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import ReactMarkdown from "react-markdown";
 import { MdFile } from "../types/MdFile.type";
 import Tabs from "../components/Global/Tabs";
 import Title from "../components/Global/Title";
@@ -39,7 +39,7 @@ export default function CV(
     return (
         <Layout title='Curriculum Vitae'>
             <Header title="Curriculum Vitae" />
-            <Article offset first={<Image
+            <Article offset image={<Image
                 className="border-2 border-slate-500 mb-5 bg-white"
                 src={MyImage}
                 alt={"James Amner"}
