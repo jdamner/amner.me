@@ -12,7 +12,7 @@ export default function TwoThirds({ top = false, first, children } : WithChildre
     ]
 
     if (top) {
-        classList.push("md:items-start");
+        classList.push("md:items-stretch");
     } else {
         classList.push("md:items-end");
     }
