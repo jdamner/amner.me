@@ -28,7 +28,7 @@
     "autoprefixer": "^10.4.16",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
-    "framer-motion": "^10.17.0",
+    "framer-motion": "^10.17.4",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.0",
     "insights-js": "^1.2.11",
