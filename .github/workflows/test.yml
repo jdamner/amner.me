@@ -66,7 +66,7 @@ jobs:
           gh pr create --title "Update Snapshots" --body "Automated update of snapshots" --base ${{ github.event.pull_request.head.ref }} --head $BRANCH_NAME --label "snapshots"
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-          BRANCH_NAME: update-snapshots/${{ matrix.playwright}}/${{ github.sha }}
+          BRANCH_NAME: update-snapshots/${{ github.sha }}
 
   report:
     name: Report Test Results
