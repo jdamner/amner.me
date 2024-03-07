@@ -27,7 +27,7 @@ jobs:
         playwright: [chromium, chromium-mobile, webkit-mobile, chromium-dark, chromium-mobile-dark, webkit-mobile-dark]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v3
         with: 
@@ -45,7 +45,7 @@ jobs:
     if: always() && contains(needs.tests.result, 'failure')
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v3
         with: 
