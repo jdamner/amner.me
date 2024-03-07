@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "framer-motion"
 import PostLink from "../Links/PostLink"
 
 /* Types */
-import type { Post } from "../../types/Post.type"
+import type { PostLinkType } from "../../types/Post.type"
 import type { MotionProps } from "framer-motion"
 
 /**
@@ -15,7 +15,7 @@ import type { MotionProps } from "framer-motion"
  * @param {Post[]} posts
  * @returns JSX.Element
  */
-export default function PostList({ posts }: { posts: Post[] }): React.JSX.Element {
+export default function PostList({ posts }: { posts: PostLinkType[] }): React.JSX.Element {
   const reduceMotion: boolean = useReducedMotion()
   const PostLinks = posts && posts.map((post, index) => {
     const delay = index * 0.01
@@ -26,7 +26,7 @@ export default function PostList({ posts }: { posts: Post[] }): React.JSX.Elemen
       transition: { delay, duration: 0.5 },
     }
     return <motion.div {...motionProps} key={index} className='break-inside-avoid-column'>
-      <PostLink post={post} />
+      <PostLink {...post} />
     </motion.div>
   })
 

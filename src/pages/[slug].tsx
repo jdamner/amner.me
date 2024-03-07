@@ -16,12 +16,12 @@ import { getAllPosts } from "../api/GetData";
 import { makeJsonParseable, makeSlug } from "../api/Utils";
 
 /* Types */
-import type { Post } from "../types/Post.type";
+import type { Post, PostLinkType } from "../types/Post.type";
 import Container from "../components/Layouts/Container";
 import Article from "../components/Layouts/Article";
 type PostPageProps = {
   post: Post,
-  posts: Post[]
+  posts: PostLinkType[]
 }
 type PostPageParams = {
   params: {
@@ -122,11 +122,19 @@ export default function Template({ post, posts }: PostPageProps): React.JSX.Elem
   */
 export async function getStaticProps({ params }: PostPageParams): Promise<{ props: PostPageProps }> {
   const posts = makeJsonParseable(await getAllPosts())
+  const postLinks = posts.map((post) => {
+    return {
+      title: post.title,
+      thumbnail: post.thumbnail,
+      slug: post.slug
+    }
+  });
+  
   const post = posts.find((post) => post.slug === params.slug)
   return {
     props: {
       post: post,
-      posts: posts,
+      posts: postLinks,
     },
   }
 }
