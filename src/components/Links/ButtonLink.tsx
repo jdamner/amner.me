@@ -12,7 +12,6 @@ import { ButtonClasses } from "./Button";
 /* Types */
 import type { LinkProps } from "next/link"
 import type { WithChildren } from "../../types/WithChildren.type";
-import type { NextRouter } from "next/router";
 
 /**
  * Button Link
@@ -23,15 +22,12 @@ import type { NextRouter } from "next/router";
 export default function ButtonLink(props : LinkProps & WithChildren): React.JSX.Element {
 
 	const [isClicked, setIsClicked] = useState(false);
-
-
-	let router: NextRouter|null = null;
-	router = useRouter()
+	const router = useRouter()
 
 	const handleClick = function (e: React.MouseEvent<HTMLAnchorElement>) {
 		event('click', { name: e.currentTarget.innerText });
 		setIsClicked(true);
-		router?.events.on('routeChangeComplete', () => {
+		router.events.on('routeChangeComplete', () => {
 			setIsClicked(false);
 		});
 	}

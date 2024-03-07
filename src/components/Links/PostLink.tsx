@@ -35,8 +35,6 @@ export default function PostLink({ post }: { post: Post }): React.JSX.Element {
 		'block',
 		'bg-white',
 		'dark:bg-slate-900',
-		// 'relative',
-		// 'border-solid',
 		'border-2',
 		'border-slate-500',
 	]
