@@ -5,3 +5,9 @@ export interface Post extends MdFile {
 	date: Date;
 	thumbnail: string;
 }
+
+export interface PostLinkType {
+	title: string;
+	thumbnail: string;
+	slug: string;
+}

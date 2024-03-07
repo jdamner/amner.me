@@ -12,13 +12,13 @@ import { getAllPosts, getAllServices } from "../api/GetData";
 import { makeJsonParseable, readMdFile } from "../api/Utils";
 
 /* Types */
-import type { Post } from "../types/Post.type";
+import type { PostLinkType } from "../types/Post.type";
 import { MdFile } from "../types/MdFile.type";
 import Title from "../components/Global/Title";
 
 
 type IndexPageProps = {
-  posts: Post[],
+  posts: PostLinkType[],
   services: MdFile[],
   page: MdFile,
   service: MdFile
@@ -62,7 +62,13 @@ export default function IndexPage({ posts, services, page, service }: IndexPageP
 export async function getStaticProps(): Promise<{ props: IndexPageProps }> {
   return {
     props: {
-      posts: makeJsonParseable(await getAllPosts()),
+      posts: makeJsonParseable(await getAllPosts()).map(post => {
+        return {
+          title: post.title,
+          thumbnail: post.thumbnail,
+          slug: post.slug
+        }
+      }),
       services: makeJsonParseable(await getAllServices()),
       page: makeJsonParseable(await readMdFile('index.md')),
       service: makeJsonParseable(await readMdFile('services.md'))
