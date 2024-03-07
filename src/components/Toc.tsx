@@ -79,23 +79,23 @@ const TOCInline = ({ content }: TOCInlineProps) => {
 	})
 
 	if (!toc) return null
-
-	/**
-	 * Setup a listener to update the TOC when the user scrolls
-	 */
-
+	
+	const minDepth = toc.reduce((min, heading) => Math.min(min, heading.depth), 6)
+	const marginCalc = (depth: number) => {
+		return Math.max( 0, depth - (minDepth - 1) ) + 'rem';
+	}
 
 	return (
 		<div className='py-3'>
-			<ul className='text-sm list-disc list-inside'>
+			<ul className='text-sm list-disc'>
 				<h2 className='text-lg font-black font-sans uppercase my-2'>Contents</h2>
 				{toc?.map((heading) => (
 					heading.depth < 2 ?
-						<a href={heading.url} key={heading.value}>
+						<a href={heading.url} key={heading.url}>
 							<ReactMarkdown
 								className="prose prose-slate dark:prose-invert prose-sm">{heading.value}</ReactMarkdown></a>
 						:
-						<li key={heading.value} style={{ marginLeft: (heading.depth - 2) + 'rem' }}>
+						<li key={heading.url} style={{ marginLeft: marginCalc(heading.depth) }}>
 							<a href={heading.url} onClick={(event) => {
 								event.preventDefault()
 								history.pushState(null, '', heading.url)
