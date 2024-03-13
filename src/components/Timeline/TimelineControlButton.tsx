@@ -1,11 +1,8 @@
 import React from "react";
 
-export default function TimelineControlButton({ direction = 'left', onClick, disabled = false }: {
-    direction?: 'left' | 'right', 
-    onClick: () => void
-    disabled?: boolean
-}
-): React.JSX.Element {
+export default function TimelineControlButton(props: React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & { direction?: 'left' | 'right' }) {
+
+    const { direction = 'left', ...rest } = props
 
     const arrow = direction === 'left' ? (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,8 +24,7 @@ export default function TimelineControlButton({ direction = 'left', onClick, dis
                 hover:cursor-pointer
                 disabled:opacity-50 disabled:cursor-default
                 disabled:hover:bg-slate-400"
-            onClick={onClick}
-            disabled={disabled}>
+            {...rest}>
             {arrow}
         </button>
 

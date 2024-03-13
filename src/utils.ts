@@ -3,10 +3,11 @@
  */
 import fs from 'fs'
 import matter from 'gray-matter'
-import type { MdFile } from '../types/MdFile.type'
 import { join } from 'path'
 import { slug } from 'github-slugger'
-import { ReactNode } from 'react'
+
+import type { ReactNode } from 'react'
+import type { MdFile } from './types'
 
 /**
  * Makes an object JSON parseable
@@ -69,7 +70,7 @@ export function convertHeadingsToAnchorLinks(markdown: string): string {
  * converts the value to a string.
  */
 export function makeSlug(value: ReactNode | ReactNode[]): string {
-	if (! Array.isArray(value)) return slug(value.toString());
+	if (! Array.isArray(value)) return slug(value?.toString() ?? '');
 	return slug(
 		value.map((node) => {
 			if (typeof node === 'string' ||

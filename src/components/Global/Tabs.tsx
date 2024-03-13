@@ -1,18 +1,12 @@
+'use client'
 import React from "react";
 /* API */
 import { useState } from "react";
-import { event } from "../../api/Insights";
 
 /* Components */
 import TabButton from "../Links/TabButton";
 import ReactMarkdown from 'react-markdown';
 
-/**
- * Tabs 
- * 
- * @param {tabs: post[], content: string} props
- * @returns  {JSX.Element}
- */
 export default function Tabs({ tabs, defaultContent, title }:
   {
     tabs: {
@@ -20,15 +14,14 @@ export default function Tabs({ tabs, defaultContent, title }:
       content: string
     }[],
     defaultContent: string,
-    title: React.ReactNode | React.ReactNode[]
+    title: React.ReactNode
   }
-): React.JSX.Element {
+) {
 
   const [activeTab, setActiveTab] = useState(0);
   const [tabOpen, setTabOpen] = useState(false);
 
   const handleTabChange = (index: number) => {
-    event('tab-change', { index, tabOpen });
     setTabOpen(index === activeTab ? !tabOpen : true);
     setActiveTab(index);
   }
@@ -39,6 +32,7 @@ export default function Tabs({ tabs, defaultContent, title }:
     return (
       <TabButton
         key={index}
+        delay={index * 0.25}
         role="tab"
         id={`tab-${index}`}
         aria-current={ariaCurrent}
@@ -60,7 +54,10 @@ export default function Tabs({ tabs, defaultContent, title }:
         role="tabpanel"
         aria-labelledby={`tab-${activeTab}`}
       >
-        <ReactMarkdown>{tab.content}</ReactMarkdown>
+        <ReactMarkdown
+          components={
+            { a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" /> }
+          }>{tab.content}</ReactMarkdown>
       </div>
     )
   }
