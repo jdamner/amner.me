@@ -1,9 +1,11 @@
 import React from "react";
+
 /* Layout */
-import Layout from "../components/Layout"
-import Blog from "../components/Global/Blog"
-import Header from "../components/Global/Header"
-import TOCInline from "../components/Toc";
+import Blog from "../../components/Global/Blog"
+import Header from "../../components/Global/Header"
+import TOCInline from "../../components/Toc";
+import Container from "../../components/Layouts/Container";
+import Article from "../../components/Layouts/Article";
 
 import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
@@ -12,23 +14,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 /* API */
-import { getAllPosts } from "../api/GetData";
-import { makeJsonParseable, makeSlug } from "../api/Utils";
+import { getAllPosts } from "../../data";
+import { makeJsonParseable, makeSlug } from "../../utils";
 
-/* Types */
-import type { Post, PostLinkType } from "../types/Post.type";
-import Container from "../components/Layouts/Container";
-import Article from "../components/Layouts/Article";
-type PostPageProps = {
-  post: Post,
-  posts: PostLinkType[]
-}
-type PostPageParams = {
-  params: {
-    slug: string
-  }
-}
-
+export const generateStaticParams = (async () => {
+  const posts = await getAllPosts()
+  return posts.map((post) => ({ slug: post.slug }))
+})
 
 /**
  * Post Page
@@ -36,11 +28,25 @@ type PostPageParams = {
  * @param {PostPageProps}
  * @returns {JSX.Element}
  */
-export default function Template({ post, posts }: PostPageProps): React.JSX.Element {
-  const date = new Date(post.date);
+export default async function Template({ params }: { params: { slug: string } }) {
+  const allPosts = makeJsonParseable(await getAllPosts())
+  const posts = allPosts.map((post) => {
+    return {
+      title: post.title,
+      thumbnail: post.thumbnail,
+      slug: post.slug ?? ''
+    }
+  });
 
+  const post = allPosts.find((post) => post.slug === params.slug)
+
+  if (!post) {
+    return null;
+  }
+
+  const date = new Date(post.date);
   return (
-    <Layout title={post.title}>
+    <>
       <Header title={post.title}>
         <p className="hidden">{date.toDateString()}</p>
       </Header>
@@ -49,10 +55,9 @@ export default function Template({ post, posts }: PostPageProps): React.JSX.Elem
           <Image
             className="border-2 border-slate-500 mb-5 bg-white"
             src={post.thumbnail}
-            alt={post.title}
+            alt=""
             width={1024}
             height={1024}
-            placeholder="blur"
             priority
           />
         }
@@ -60,12 +65,13 @@ export default function Template({ post, posts }: PostPageProps): React.JSX.Elem
           <ul className="mb-5 text-sm">
             <li><strong>Author:</strong> James Amner</li>
             <li><strong>Date:</strong> {date.toLocaleDateString('en-GB')}</li>
-            <TOCInline content={post.content} indentDepth={3} fromHeading={1} toHeading={6} exclude="" />
+            <TOCInline content={post.content} />
           </ul>
         }>
         <ReactMarkdown
           className="prose prose-slate dark:prose-invert"
           components={{
+            a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" />,
             pre: function Pre(props) {
               return <>{props?.children}</>
             },
@@ -74,11 +80,10 @@ export default function Template({ post, posts }: PostPageProps): React.JSX.Elem
               const match = /language-(\w+)/.exec(className || '')
               return match ? (
                 <SyntaxHighlighter
-                  {...rest}
                   language={match[1]}
                   style={vscDarkPlus}
                 >
-                  {children}
+                  {String(children)}
                 </SyntaxHighlighter>
               ) : (
                 <code {...rest} className={className}>
@@ -110,54 +115,6 @@ export default function Template({ post, posts }: PostPageProps): React.JSX.Elem
       <Container alt>
         <Blog posts={posts} />
       </Container>
-    </Layout>
+    </>
   )
-}
-
-/**
-  * Gets static data for SS Generation
-  * 
-  * @param {PostPageParams} { params }
-  * @returns {Promise<{ props: PostPageProps }>} 
-  */
-export async function getStaticProps({ params }: PostPageParams): Promise<{ props: PostPageProps }> {
-  const posts = makeJsonParseable(await getAllPosts())
-  const postLinks = posts.map((post) => {
-    return {
-      title: post.title,
-      thumbnail: post.thumbnail,
-      slug: post.slug
-    }
-  });
-  
-  const post = posts.find((post) => post.slug === params.slug)
-  return {
-    props: {
-      post: post,
-      posts: postLinks,
-    },
-  }
-}
-
-/**
- * Gets static paths for SS Generation
- * 
- * @returns {Promise<{ paths: PostPageParams[], fallback: boolean }>}
- * @see https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
- */
-export async function getStaticPaths(): Promise<{ paths: PostPageParams[], fallback: boolean }> {
-  const posts = await getAllPosts()
-
-  return {
-    paths: makeJsonParseable(
-      posts.map((post) => {
-        return {
-          params: {
-            slug: post.slug,
-          },
-        }
-      })
-    ),
-    fallback: false,
-  }
 }

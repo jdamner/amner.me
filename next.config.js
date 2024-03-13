@@ -5,11 +5,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 // @ts-check
-/**
- * @type {import('next').NextConfig}
- **/
+/** @type {import('next').NextConfig} */
 module.exports = withPlugins(
-	[ [ withExportImages, withBundleAnalyzer ] ],
+	[ [ 
+		withExportImages, 
+		withBundleAnalyzer 
+	] ],
 	{
 		output: 'export',
 		reactStrictMode: true,

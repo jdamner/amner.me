@@ -1,29 +1,13 @@
 import React from "react";
-/* API */
-import { event } from "../../api/Insights";
 
 /* Components */
-import Link from "next/link"
+import Link, { type LinkProps } from "next/link"
 
-/* Types */
-import type { LinkProps } from "next/link";
-import type { WithChildren } from "../../types/WithChildren.type";
-
-/**
- * InlineLink
- * 
- * @param {LinkProps & WithChildren} props
- * @returns {JSX.Element}
- */
-export default function InlineLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement> & LinkProps & WithChildren & React.RefAttributes<HTMLAnchorElement> ): React.JSX.Element {
-
-	const handleClick = function (e: React.MouseEvent<HTMLAnchorElement>) {
-        event('click', { name: e.currentTarget.innerText });
-		props.onClick && props.onClick(e);
-    }
-
+export default function InlineLink(props: Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> & LinkProps & {
+	children?: React.ReactNode;
+} & React.RefAttributes<HTMLAnchorElement>) {
 	return (
-		<Link className={ InlineLinkClasses.join( ' ' ) } {...props} onClick={handleClick} >{props.children}</Link>
+		<Link className={InlineLinkClasses.join(' ')} {...props} />
 	)
 }
 

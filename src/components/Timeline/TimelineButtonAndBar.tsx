@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TimelineButtonAndBar({ last = false }: { last: boolean }): React.JSX.Element {
+export default function TimelineButtonAndBar({ last = false }: { last?: boolean }) {
 
     let buttonClasses = [
         "absolute",
