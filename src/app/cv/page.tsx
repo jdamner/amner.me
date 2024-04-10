@@ -1,34 +1,37 @@
-import Timeline from "../components/Timeline/Timeline";
-import Layout from "../components/Layout";
-import Header from "../components/Global/Header";
-import Image from "next/image";
-import ButtonLink from "../components/Links/ButtonLink";
-import Container from "../components/Layouts/Container";
+import React from "react";
 
-import MyImage from "../../public/me.jpg";
-
-import { makeJsonParseable, readMdFile } from "../api/Utils";
-import { getAllEducation, getAllEmployment, getAllProjects, getAllReferences, getAllServices } from "../api/GetData";
 import ReactMarkdown from "react-markdown";
-import { MdFile } from "../types/MdFile.type";
-import Tabs from "../components/Global/Tabs";
-import Title from "../components/Global/Title";
-import TwoThirds from "../components/Layouts/TwoThirds";
-import Article from "../components/Layouts/Article";
-import InlineLink from "../components/Links/Inline";
 
-export default function CV(
-    { employment, education, projects, references, profile, service, services }:
-        {
-            employment: MdFile[],
-            education: MdFile[],
-            projects: MdFile[],
-            references: MdFile[],
-            profile: MdFile,
-            service: MdFile,
-            services: MdFile[]
-        }
-) {
+import Header from "../../components/Global/Header";
+import Tabs from "../../components/Global/Tabs";
+import Title from "../../components/Global/Title";
+import TwoThirds from "../../components/Layouts/TwoThirds";
+import Article from "../../components/Layouts/Article";
+import Container from "../../components/Layouts/Container";
+import ButtonLink from "../../components/Links/ButtonLink";
+import InlineLink from "../../components/Links/Inline";
+import Timeline from "../../components/Timeline/Timeline";
+
+
+import { makeJsonParseable, readMdFile } from "../../utils";
+import { getAllEducation, getAllEmployment, getAllProjects, getAllReferences, getAllServices } from "../../data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { 
+    title: 'Curriculum Vitae',
+    description: 'James Amner\'s Curriculum Vitae (Resume)'
+}
+
+export default async function CV() {
+
+    const employment = makeJsonParseable(await getAllEmployment())
+    const education = makeJsonParseable(await getAllEducation())
+    const projects = makeJsonParseable(await getAllProjects())
+    const references = makeJsonParseable(await getAllReferences())
+    const profile = makeJsonParseable(await readMdFile('cv/profile.md'))
+    const service = makeJsonParseable(await readMdFile('services.md'))
+    const services = makeJsonParseable(await getAllServices())
+
     const serviceTabs = services.map(service => {
         return {
             title: service.data.title,
@@ -36,19 +39,9 @@ export default function CV(
         }
     })
 
-    return (
-        <Layout title='Curriculum Vitae'>
+    return ( <>
             <Header title="Curriculum Vitae" />
-            <Article offset image={<Image
-                className="border-2 border-slate-500 mb-5 bg-white"
-                src={MyImage}
-                alt={"James Amner"}
-                width={500}
-                height={500}
-                placeholder="blur"
-                priority
-            />
-            }>
+            <Article offset image={'/me.jpg'}>
                 <ReactMarkdown className="prose mr-auto px-3 md:px-0 prose-slate dark:prose-invert">{profile.content}</ReactMarkdown>
             </Article>
             <Container alt>
@@ -69,7 +62,7 @@ export default function CV(
                         <div className="mb-3" key={item.slug}>
                             <Title>{item.data['title']}</Title>
                             <ReactMarkdown className="prose prose-slate dark:prose-invert my-5">{item.content}</ReactMarkdown>
-                            <ButtonLink href={item.data.link}>Find out more</ButtonLink>
+                            <ButtonLink href={item.data.link} target='_blank'>Find out more</ButtonLink>
                         </div>
                     )}
                 </TwoThirds>
@@ -113,20 +106,6 @@ export default function CV(
                     )}
                 </TwoThirds>
             </Container>
-        </Layout>
+        </>
     )
-}
-
-export async function getStaticProps() {
-    return {
-        props: {
-            employment: makeJsonParseable(await getAllEmployment()),
-            education: makeJsonParseable(await getAllEducation()),
-            projects: makeJsonParseable(await getAllProjects()),
-            references: makeJsonParseable(await getAllReferences()),
-            profile: makeJsonParseable(await readMdFile('cv/profile.md')),
-            service: makeJsonParseable(await readMdFile('services.md')),
-            services: makeJsonParseable(await getAllServices()),
-        }
-    }
 }

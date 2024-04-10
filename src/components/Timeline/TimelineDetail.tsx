@@ -1,10 +1,11 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown, { type Options } from 'react-markdown'
 
-import { MdFile } from '../../types/MdFile.type'
+import type { MdFile } from '../../types'
 
-export default function TimelineDetail({ event }: { event: MdFile }): React.JSX.Element {
+export default function TimelineDetail(props: Options & { event: MdFile }) {
+    const { event, ...rest } = props
     return (
-        <ReactMarkdown className="prose px-3 md:px-0 prose-slate dark:prose-invert">{event.content}</ReactMarkdown>
+        <ReactMarkdown className="prose px-3 md:px-0 prose-slate dark:prose-invert" { ...rest }>{event.content}</ReactMarkdown>
     )
 }

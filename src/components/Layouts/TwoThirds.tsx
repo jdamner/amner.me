@@ -1,7 +1,6 @@
 import React from "react";
-import { WithChildren } from "../../types/WithChildren.type";
 
-export default function TwoThirds({ top = false, first, children } : WithChildren & { top?: boolean, first?: React.ReactNode | React.ReactNode[]} ): React.JSX.Element { 
+export default function TwoThirds({ top = false, first, children }: { children?: React.ReactNode, top?: boolean, first?: React.ReactNode | React.ReactNode[] }) {
 
     let classList = [
         "flex",

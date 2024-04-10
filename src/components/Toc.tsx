@@ -1,3 +1,4 @@
+'use client'
 import GithubSlugger from 'github-slugger'
 import ReactMarkdown from 'react-markdown'
 import { useEffect } from 'react'
@@ -8,39 +9,23 @@ export type Toc = {
 	url: string
 }[]
 
-export interface TOCInlineProps {
-	content: string,
-	indentDepth?: number
-	fromHeading?: number
-	toHeading?: number
-	asDisclosure?: boolean
-	exclude?: string | string[]
-}
+export interface TOCInlineProps { content: string }
 
 /**
  * Generates an inline table of contents
  * Exclude titles matching this string (new RegExp('^(' + string + ')$', 'i')).
  * If an array is passed the array gets joined with a pipe (new RegExp('^(' + array.join('|') + ')$', 'i')).
  *
- * @param {TOCInlineProps} {
- *   toc,
- *   indentDepth = 3,
- *   fromHeading = 1,
- *   toHeading = 6,
- *   asDisclosure = false,
- *   exclude = '',
- * }
- *
+ * @param {TOCInlineProps} props
  */
 const TOCInline = ({ content }: TOCInlineProps) => {
-
 
 	const slugger = new GithubSlugger
 
 	const toc = content.match(/^(#{1,6})\s(.+)$/gm)?.map((heading) => {
 		return {
 			value: heading.replace(/^(#{1,6})\s/, ''),
-			depth: heading.match(/^(#{1,6})\s/)?.[1].length,
+			depth: heading.match(/^(#{1,6})\s/)?.[1].length ?? Infinity,
 			url: "#" + slugger.slug(heading.replace(/^(#{1,6})\s/, ''))
 		}
 	})
@@ -53,7 +38,6 @@ const TOCInline = ({ content }: TOCInlineProps) => {
 			(entries) => {
 				entries.forEach((entry) => {
 					const id = entry.target.getAttribute('id')
-					history.pushState(null, '', '#' + id)
 					const tocLink = tocLinks.find((link) => link.getAttribute('href') === '#' + id)
 					if (tocLink) {
 						if (entry.isIntersecting) {
@@ -79,10 +63,10 @@ const TOCInline = ({ content }: TOCInlineProps) => {
 	})
 
 	if (!toc) return null
-	
+
 	const minDepth = toc.reduce((min, heading) => Math.min(min, heading.depth), 6)
 	const marginCalc = (depth: number) => {
-		return Math.max( 0, depth - (minDepth - 1) ) + 'rem';
+		return Math.max(0, depth - (minDepth - 1)) + 'rem';
 	}
 
 	return (
@@ -100,7 +84,7 @@ const TOCInline = ({ content }: TOCInlineProps) => {
 								event.preventDefault()
 								history.pushState(null, '', heading.url)
 								document.getElementById(heading.url.replace('#', ''))?.scrollIntoView({ behavior: 'smooth' })
-								
+
 							}}>
 								<ReactMarkdown
 									className="prose prose-slate dark:prose-invert prose-sm">{heading.value}</ReactMarkdown></a>

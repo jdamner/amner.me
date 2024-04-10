@@ -1,14 +1,15 @@
+'use client'
 import React, { useState } from "react";
 import TimelineItem from "./TimelineItem";
 import TimelineDetail from "./TimelineDetail";
 import TimelineControlButton from "./TimelineControlButton";
 
-import type { MdFile } from "../../types/MdFile.type";
+import type { MdFile } from "../../types";
 
-export default function Timeline({ events }: { events: MdFile[] }): React.JSX.Element {
+export default function Timeline(props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & { events: MdFile[] }) {
+    const { events, ...rest } = props
 
     const [currentIndex, setCurrentIndex] = useState<number>(0)
-
     const sliderRef = React.useRef<HTMLOListElement>(null);
 
     const handleScroll = (event: React.UIEvent<HTMLOListElement, UIEvent>) => {
@@ -41,7 +42,7 @@ export default function Timeline({ events }: { events: MdFile[] }): React.JSX.El
     }
 
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col' {...rest}>
             {events?.length > 0 &&
                 <>
                     <ol ref={sliderRef} className="relative w-full flex snap-x snap-mandatory overflow-x-auto no-scrollbar" onScroll={handleScroll}>
@@ -50,14 +51,11 @@ export default function Timeline({ events }: { events: MdFile[] }): React.JSX.El
                         ))}
                     </ol>
                     <div className="ml-auto my-3">
-                            <TimelineControlButton direction="left" onClick={() => forceScrollTo(currentIndex - 1)} disabled={currentIndex === 0} />
-                            <TimelineControlButton direction="right" onClick={() => forceScrollTo(currentIndex + 1)} disabled={currentIndex === events.length - 1} />
-                        </div>
+                        <TimelineControlButton direction="left" onClick={() => forceScrollTo(currentIndex - 1)} disabled={currentIndex === 0} />
+                        <TimelineControlButton direction="right" onClick={() => forceScrollTo(currentIndex + 1)} disabled={currentIndex === events.length - 1} />
+                    </div>
                     <div className="flex justify-between flex-col md:flex-row">
                         {events[currentIndex] && <TimelineDetail event={events[currentIndex]} />}
-
-                        
-
                     </div>
                 </>
             }
