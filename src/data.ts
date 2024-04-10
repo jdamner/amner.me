@@ -1,9 +1,8 @@
 /* API */
-import { readMdFile, getFilesInDir } from './Utils';
+import { readMdFile, getFilesInDir } from './utils';
 
 /* Types */
-import type { Post } from '../types/Post.type'
-import type { MdFile } from '../types/MdFile.type';
+import type { Post, MdFile } from './types'
 
 const postsDirectory: string = 'content/posts'
 const servicesDirectory: string = 'content/services'
