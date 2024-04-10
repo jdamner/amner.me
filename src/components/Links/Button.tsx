@@ -1,18 +1,12 @@
 import React from "react";
-/**
- * Button 
- * 
- * @param {JSX.IntrinsicElements['button']} props
- * @returns {JSX.Element}
- */
-export default function Button(props: React.JSX.IntrinsicElements['button']): React.JSX.Element {
 
-	const classes = ButtonClasses;
-	props.className && classes.push(props.className);
+export default function Button(props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLButtonElement>, HTMLButtonElement>) {
+	const newProps = {
+		...props, 
+		className: props.className + ' ' + ButtonClasses.join(' ')
+	}
 	return (
-		<button {...props} className={ButtonClasses.join(' ')} >
-			{props.children}
-		</button>
+		<button { ...newProps } />
 	);
 }
 

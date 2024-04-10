@@ -3,18 +3,13 @@ import React from "react";
 import Title from "./Title";
 import PostList from "./PostList";
 /* Types */
-import type { PostLinkType } from "../../types/Post.type";
+import type { PostLinkType } from "../../types";
 
-/**
- * Blog List
- * @param {Post[]} posts
- * @returns {JSX.Element}
- */
-export default function Blog({ posts }: { posts: PostLinkType[] }): React.JSX.Element {
+export default function Blog({ posts }: { posts: PostLinkType[] }) {
   return (
     <>
-        <Title title="Projects and Writing">Blog</Title>
-        <PostList posts={posts} />
-      </>
+      <Title title="Projects and Writing">Blog</Title>
+      <PostList posts={posts} />
+    </>
   );
 }

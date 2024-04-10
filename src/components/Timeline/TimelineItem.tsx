@@ -1,16 +1,14 @@
 import React from "react";
-import { MdFile } from "../../types/MdFile.type";
+
 import InlineLink from "../Links/Inline";
 import TimelineButtonAndBar from "./TimelineButtonAndBar";
 
-export default function TimelineItem({ event, last = false }: { event: MdFile, last: boolean }): React.JSX.Element {
+import type { MdFile } from "../../types";
+
+export default function TimelineItem(props: React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> & { event: MdFile, last: boolean }) {
+    const { event, last = false, ...rest } = props;
     return (
-        <li className="
-            group
-            snap-always snap-start 
-            shrink-0 
-            w-9/12
-            last:w-full">
+        <li className="group snap-always snap-start  shrink-0 w-9/12 last:w-full" {...rest}>
             <TimelineButtonAndBar last={last} />
             <div className="mt-3 text-slate-900 dark:text-slate-200">
                 <h3 className="w-full text-left text-2xl font-black mb-2">{event.data.role}</h3>

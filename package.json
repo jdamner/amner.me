@@ -13,6 +13,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "dev": "next dev",
+    "serve": "next start",
     "test": "playwright test",
     "test:ci": "playwright test --ci",
     "update-snapshots": "playwright test --update-snapshots"
@@ -26,22 +27,22 @@
     "@types/node": "20.12.6",
     "@types/react": "^18.2.74",
     "autoprefixer": "^10.4.19",
-    "eslint": "8.57.0",
+    "eslint": "^8.0.0",
     "eslint-config-next": "14.1.4",
     "framer-motion": "^11.0.25",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.0",
     "insights-js": "^1.2.11",
     "next": "^14.1",
-    "next-export-optimize-images": "^3.3.0",
+    "next-export-optimize-images": "^4.0.0",
     "postcss": "^8.4.38",
     "postcss-import": "^16.1.0",
+    "@types/react-syntax-highlighter": "^15.5.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "sharp": "^0.33.3",
-    "tailwindcss": "^3.4.3",
-    "next-compose-plugins": "^2.2.1"
+    "tailwindcss": "^3.4.3"
   }
 }
