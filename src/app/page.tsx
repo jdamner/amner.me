@@ -5,11 +5,9 @@ import { makeJsonParseable, readMdFile } from "../utils";
 import ReactMarkdown from 'react-markdown';
 
 /* Layout/Visual Component */
-import Blog from "../components/Global/Blog"
-import Tabs from "../components/Global/Tabs";
-import Header from "../components/Global/Header";
-import Container from "../components/Layouts/Container";
-import Title from "../components/Global/Title";
+import { Blog, Tabs, Header } from "../Components";
+import { Container } from "../Layouts";
+import Title from "../Atoms/Title";
 
 import type { Metadata } from 'next';
 

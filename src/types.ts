@@ -1,6 +1,6 @@
-import type {GrayMatterFile} from 'gray-matter';
+import type {GrayMatterFile, Input} from 'gray-matter';
 
-export type Post = MdFile & {
+export type Post = MdFile<string> & {
 	title: string;
 	date: Date;
 	thumbnail: string;
@@ -12,6 +12,6 @@ export type PostLinkType = {
 	slug: string;
 }
 
-export type MdFile = GrayMatterFile<string> & {
+export type MdFile<T extends Input = string> = GrayMatterFile<T> & {
 	slug?: string,
 }

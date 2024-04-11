@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import ButtonLink from "../Links/ButtonLink";
+import ButtonLink from "../Atoms/Links/ButtonLink";
 import Container from "./Container";
 import TwoThirds from "./TwoThirds";
 

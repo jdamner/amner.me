@@ -1,11 +1,8 @@
 import React from "react";
 
 /* Layout */
-import Blog from "../../components/Global/Blog"
-import Header from "../../components/Global/Header"
-import TOCInline from "../../components/Toc";
-import Container from "../../components/Layouts/Container";
-import Article from "../../components/Layouts/Article";
+import { Blog, Header, TOCInline } from "../../Components";
+import { Container, Article } from "../../Layouts";
 
 import ReactMarkdown from 'react-markdown';
 

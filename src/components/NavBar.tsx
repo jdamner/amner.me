@@ -1,6 +1,6 @@
 import React from "react";
 /* Components */
-import InlineLink from "../Links/Inline";
+import InlineLink from "../Atoms/Links/Inline";
 import { HomeIcon } from "@heroicons/react/24/solid";
 
 export default function NavBar(props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>) {
