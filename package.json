@@ -33,7 +33,7 @@
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.0",
     "insights-js": "^1.2.11",
-    "next": "^14.1",
+    "next": "^14.2",
     "next-export-optimize-images": "^4.0.0",
     "postcss": "^8.4.38",
     "postcss-import": "^16.1.0",
