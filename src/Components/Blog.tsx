@@ -1,9 +1,9 @@
 import React from "react";
 /* Layout */
-import Title from "./Title";
+import Title from "../Atoms/Title";
 import PostList from "./PostList";
 /* Types */
-import type { PostLinkType } from "../../types";
+import type { PostLinkType } from "../types";
 
 export default function Blog({ posts }: { posts: PostLinkType[] }) {
   return (

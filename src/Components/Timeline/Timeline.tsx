@@ -47,7 +47,7 @@ export default function Timeline(props: React.DetailedHTMLProps<React.HTMLAttrib
                 <>
                     <ol ref={sliderRef} className="relative w-full flex snap-x snap-mandatory overflow-x-auto no-scrollbar" onScroll={handleScroll}>
                         {events.map((event, index) => (
-                            <TimelineItem event={event} key={event.slug} last={index === events.length - 1} />
+                            <TimelineItem event={event} key={event.slug + index.toString()} last={index === events.length - 1} />
                         ))}
                     </ol>
                     <div className="ml-auto my-3">

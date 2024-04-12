@@ -1,17 +1,16 @@
 import React from 'react';
-/* Global Styles */
 
-import { Poppins } from "next/font/google";
-import Link from "next/link";
 
 /* Components */
-import ContactDetails from "../components/Global/ContactDetails"
-import NavBar from "../components/Global/NavBar";
-import Signpost from "../components/Global/Signpost";
-import Container from "../components/Layouts/Container";
+import { ContactDetails, NavBar, Signpost } from "../Components";
+import { Container } from "../Layouts";
+import Link from "next/link";
+import { Poppins } from "next/font/google";
+
 /* Types */
 import type { Metadata } from 'next'
 
+/* Global Styles */
 import "../global.css";
 
 // Get Regular, Bold and SemiBold

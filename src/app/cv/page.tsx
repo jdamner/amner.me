@@ -2,15 +2,12 @@ import React from "react";
 
 import ReactMarkdown from "react-markdown";
 
-import Header from "../../components/Global/Header";
-import Tabs from "../../components/Global/Tabs";
-import Title from "../../components/Global/Title";
-import TwoThirds from "../../components/Layouts/TwoThirds";
-import Article from "../../components/Layouts/Article";
-import Container from "../../components/Layouts/Container";
-import ButtonLink from "../../components/Links/ButtonLink";
-import InlineLink from "../../components/Links/Inline";
-import Timeline from "../../components/Timeline/Timeline";
+import { Header, Tabs, Timeline } from "../../Components";
+import { TwoThirds, Article, Container } from "../../Layouts";
+
+import Title from "../../Atoms/Title";
+import ButtonLink from "../../Atoms/Links/ButtonLink";
+import InlineLink from "../../Atoms/Links/Inline";
 
 
 import { makeJsonParseable, readMdFile } from "../../utils";

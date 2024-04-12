@@ -3,9 +3,8 @@ import ReactMarkdown from 'react-markdown';
 
 import { makeJsonParseable, readMdFile } from "../../utils"
 
-import Header from "../../components/Global/Header"
-import Article from "../../components/Layouts/Article";
-import Container from "../../components/Layouts/Container";
+import { Header } from "../../Components"
+import { Container, Article } from "../../Layouts"
 
 export const metadata = {
   title: 'Privacy Policy',
