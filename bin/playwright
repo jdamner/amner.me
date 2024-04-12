@@ -1,1 +1,3 @@
-docker-compose run --rm playwright "$@"
+#!/usr/bin/env bash
+
+$(dirname "$0")/docker /bin/bash -c "npx playwright install --with-deps && npx playwright $@"
