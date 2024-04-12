@@ -5,7 +5,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion, type HTMLMotionProps } from "framer-motion";
 
 /* Components */
-import Button from "../Links/Button";
+import Button from "../Atoms/Links/Button";
 
 export default function Signpost({ title, children }: { children?: React.ReactNode, title: string }) {
     const [isOpen, setIsOpen] = useState(false);

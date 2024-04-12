@@ -2,8 +2,8 @@ import React from "react";
 
 import ReactMarkdown from 'react-markdown';
 
-import Header from "../components/Global/Header"
-import Container from "../components/Layouts/Container";
+import { Header } from "../Components"
+import { Container } from "../Layouts";
 
 import { makeJsonParseable, readMdFile } from "../utils"
 

@@ -5,11 +5,11 @@ import React from "react";
 import { useState } from "react";
 
 /* Components */
-import Title from "./Title";
+import Title from "../Atoms/Title";
 import { EnvelopeOpenIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import ProtectedLink from "../Links/ProtectedLink";
+import ProtectedLink from "../Atoms/Links/ProtectedLink";
 
-export default function ContactDetails(props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLSelectElement>, HTMLSelectElement>) {
+export default function ContactDetails(props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
 
 	const [isMouseOver, setIsMouseOver] = useState(false);
 	const enableMouseOver = () => setIsMouseOver(true);

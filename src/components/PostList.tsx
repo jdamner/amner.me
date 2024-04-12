@@ -1,10 +1,10 @@
 import React from "react";
 
 /* Components */
-import PostLink from "../Links/PostLink"
+import PostLink from "../Atoms/Links/PostLink"
 
 /* Types */
-import type { PostLinkType } from "../../types"
+import type { PostLinkType } from "../types"
 
 export default function PostList(props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & { posts: PostLinkType[] }) {
   const { posts, ...rest } = props;

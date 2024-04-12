@@ -1,6 +1,6 @@
 import React from "react";
 
-import InlineLink from "../Links/Inline";
+import InlineLink from "../../Atoms/Links/Inline";
 import TimelineButtonAndBar from "./TimelineButtonAndBar";
 
 import type { MdFile } from "../../types";
