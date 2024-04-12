@@ -3,7 +3,7 @@ import React from "react";
 
 /* Components */
 import Link from "next/link";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image'
 
 /* Types */
 import type { PostLinkType } from "../../types";
@@ -39,7 +39,6 @@ export default function PostLink({ thumbnail, title, slug }: PostLinkType ): Rea
 				src={thumbnail}
 				alt={title}
 				width={375}
-				loader={({ src }) => src}
 				height={375}
 				className="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
 			/>

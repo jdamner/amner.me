@@ -1,5 +1,5 @@
 import React from "react";
-import ExpandingLine from "./ExpandingLine";
+import ExpandingLine from "../Atoms/ExpandingLine";
 
 export default function Header(
     props : React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>,HTMLDivElement> & { title: string, subtitle?: string }

@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 
 /* Components */
-import TabButton from "../Links/TabButton";
+import TabButton from "../Atoms/Links/TabButton";
 import ReactMarkdown from 'react-markdown';
 
 export default function Tabs({ tabs, defaultContent, title }:
