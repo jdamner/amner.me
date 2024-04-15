@@ -37,7 +37,7 @@
     "@storybook/test": "^8.0.6",
     "@storybook/test-runner": "^0.17.0",
     "@tailwindcss/typography": "^0.5.12",
-    "@testing-library/react": "^15.0.1",
+    "@testing-library/react": "^15.0.2",
     "@types/node": "20.12.6",
     "@types/react": "^18.2.78",
     "autoprefixer": "^10.4.19",
