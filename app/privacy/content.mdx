@@ -1,0 +1,9 @@
+## I'm a believer that privacy is standard expectation for all digital services.
+
+There's a few blog posts about the technical implementation of this website, but in short I use [next.js](https://nextjs.org) to generate static HTML pages. I host on [Firebase](https://firebase.google.com). DNS is handled by [Google Domains](https://domains.google.com) also, so Google will likely get to see your IP address when you visit this website. 
+
+For some basic analytics I use [getinsights.io](https://getinsights.io) which is a service that promises a privacy-foucsed approach to analytics. I don't see any user-specific data, however I do send data to GetInsights that includes your IP address, browser, and operating system. This is all anonymized and aggregated, and I don't see any personally identifiable information.
+
+If you contact me via email, I'll do everything I can to keep your personal information but I'll be holding some of your personal information in that instance. It's a personal email address that runs through Apple's iCloud service. Apple talks good game on privacy too, so I'm confident that it'll be as private as email can be. 
+
+There's no cookies, no local storage or any other funny-business on this site. It's just a place for me to write about things I'm interested in with no ulterior motives.
