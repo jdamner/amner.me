@@ -1,19 +1,15 @@
 /**
  * Helper functions for tests
  */
-import fs from 'fs'
-import path from 'path'
+import path from "path";
+import { readdirSync } from "fs";
 
 export function getPages(): string[] {
-	const pages = [
-		'index',
-		'404',
-		'cv',
-	];
-	const posts = fs.readdirSync(path.join(__dirname, '../content/posts'));
-	posts.forEach((post) => {
-		pages.push(`${post.replace('.md', '')}`);
-	});
-	
-	return pages;
+  const pages = ["index", "404", "cv"];
+  const posts = readdirSync(path.resolve("content/blog"));
+  posts.forEach((post) => {
+    pages.push(`${post.replace(".mdx", "")}`);
+  });
+
+  return pages;
 }
