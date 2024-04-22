@@ -3,6 +3,7 @@
     "eslint:recommended",
     "next",
     "next/core-web-vitals",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:prettier/recommended"
   ]
 }
