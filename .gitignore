@@ -75,3 +75,4 @@ yarn-error.log
 tests/results
 results.xml
 *storybook.log
+storybook-static/
