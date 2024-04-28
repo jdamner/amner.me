@@ -18,10 +18,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test:
-    timeout-minutes: 60
+  tests:
     runs-on: ubuntu-latest
-    if: github.event.deployment_status.state == 'success'
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -31,33 +29,10 @@ jobs:
         run: npm ci
       - name: Install Playwright
         run: npx playwright install --with-deps
-      - name: Build Storybook
-        run: npm run build-storybook --quiet
-      - name: Serve Storybook and run tests
-        run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && npm run test-storybook"
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        playwright: [chromium, chromium-mobile, webkit-mobile, chromium-dark, chromium-mobile-dark, webkit-mobile-dark]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with: 
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm install && npx playwright install --with-deps
-      - name: Run Tests
-        id: tests
-        run: npx playwright test --project=${{ matrix.playwright }}
-
+      - name: Start Storybook
+        run: npm run dev:storybook &
+      - name: Test Storybook 
+        run: npm run test:ci
   update-snapshots:
     name: Update Snapshots
     runs-on: ubuntu-latest
@@ -73,7 +48,7 @@ jobs:
       - name: Install dependencies
         run: npm install && npx playwright install --with-deps
       - name: Update Snapshots
-        run: npx playwright test --update-snapshots  
+        run: npm run test:snapshots 
       - name: Create pr
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"

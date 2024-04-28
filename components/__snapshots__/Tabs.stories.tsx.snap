@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Tabs Default smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <div class="md:grid md:grid-cols-3"
+       role="tablist"
+  >
+    <div class="flex flex-row md:flex-col flex-wrap md:flex-nowrap gap-3 md:gap-0 items-start md:items-end pr-5 mb-3">
+      <button delay="0"
+              role="tab"
+              id="tab-0"
+              aria-controls="tab-0"
+              class="undefined text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline text-gray-600 dark:text-gray-400"
+      >
+        Tab 1
+      </button>
+      <button delay="0.25"
+              role="tab"
+              id="tab-1"
+              aria-controls="tab-1"
+              class="undefined text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline text-gray-600 dark:text-gray-400"
+      >
+        Tab 2
+      </button>
+      <button delay="0.5"
+              role="tab"
+              id="tab-2"
+              aria-controls="tab-2"
+              class="undefined text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline text-gray-600 dark:text-gray-400"
+      >
+        Tab 3
+      </button>
+      <button delay="0.75"
+              role="tab"
+              id="tab-3"
+              aria-controls="tab-3"
+              class="undefined text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline text-gray-600 dark:text-gray-400"
+      >
+        Tab 4
+      </button>
+      <button delay="1"
+              role="tab"
+              id="tab-4"
+              aria-controls="tab-4"
+              class="undefined text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline text-gray-600 dark:text-gray-400"
+      >
+        Tab 5
+      </button>
+    </div>
+    <div class="md:col-span-2">
+      <div class="prose prose-slate dark:prose-invert mr-auto text-slate-900 dark:text-slate-200">
+        Summisse circumvenio curto calamitas studio ipsa super super. Curo termes vomer cunctatio stillicidium nisi. Apud cruciamentum cui conicio quis suspendo.
+Decens caries adulatio sub cubicularis. Taceo ratione auctor decerno atque agnosco exercitationem. Exercitationem cursus reiciendis coadunatio ulciscor deprimo surculus taedium.
+      </div>
+    </div>
+  </div>
+</div>
+`;

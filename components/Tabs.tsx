@@ -26,7 +26,7 @@ export default function Tabs({
   };
 
   const TabButtons = tabs.map((tab, index) => {
-    const active = (tabOpen && activeTab === index) || !tabOpen;
+    const active = tabOpen && activeTab === index;
     const ariaCurrent = activeTab === index && tabOpen ? "page" : undefined;
     return (
       <TabButton

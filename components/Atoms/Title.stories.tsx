@@ -10,6 +10,8 @@ export default {
   component: Title,
 } as Meta;
 
+faker.seed(123);
+
 export const Default: Story = {
   args: {
     title: faker.person.firstName(),
