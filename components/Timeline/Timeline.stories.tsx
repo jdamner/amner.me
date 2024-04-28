@@ -11,13 +11,17 @@ export default {
   component: Timeline,
 } as Meta;
 
+faker.seed(123);
+
 export const Default: Story = {
   args: {
     events: Array.from({ length: 10 }, () =>
       generateMdFile({
         role: faker.person.jobTitle(),
-        from: faker.date.past().toDateString(),
-        to: faker.date.recent().toDateString(),
+        title: faker.company.name(),
+        url: faker.internet.url(),
+        from: "March 2020", // faker dates aren't consistent even with a seed
+        to: "Present",
       }),
     ),
   },

@@ -15,6 +15,8 @@ export default {
   component: ButtonComponent,
 } as Meta;
 
+faker.seed(123);
+
 export const Button: StoryObj<typeof ButtonComponent> = {
   args: {
     children: faker.lorem.words(2),

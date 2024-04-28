@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms/Links & Buttons ActiveTab smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <button delay="0.5315513701643795"
+          class="undefined text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline text-gray-900 dark:text-gray-200"
+  >
+    atque agnosco
+  </button>
+</div>
+`;
+
+exports[`Atoms/Links & Buttons Button smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <button class="undefined border-2 border-slate-500 uppercase font-bold bg-white dark:bg-slate-900 px-4 py-2 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-black dark:hover:text-white">
+    subito summisse
+  </button>
+</div>
+`;
+
+exports[`Atoms/Links & Buttons Inline smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <a class="underline hover:text-slate-800 hover:no-underline"
+     href="https://red-mountain.info/"
+  >
+    termes vomer
+  </a>
+</div>
+`;
+
+exports[`Atoms/Links & Buttons LinkButton smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <a class="border-2 border-slate-500 uppercase font-bold bg-white dark:bg-slate-900 px-4 py-2 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-black dark:hover:text-white"
+     href="https://remote-media.net/"
+  >
+    circumvenio curto
+  </a>
+</div>
+`;
+
+exports[`Atoms/Links & Buttons Motion smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <button delay="0.42310646059922874">
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      s
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      u
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      p
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      e
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      r
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      &nbsp;
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      d
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      e
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      p
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      r
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      e
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      c
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      a
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      t
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      o
+    </span>
+    <span class="group-hover:underline inline-block"
+          style="transform: none;"
+    >
+      r
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Atoms/Links & Buttons Post smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <div style="max-width: 300px;">
+    <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
+       href="/suspendo-commodo-decens"
+    >
+      <img alt
+           loading="lazy"
+           width="375"
+           height="375"
+           decoding="async"
+           data-nimg="1"
+           class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
+           srcset="https://loremflickr.com/640/480?lock=5650369250066432&amp;w=384&amp;q=75 1x, https://loremflickr.com/640/480?lock=5650369250066432&amp;w=750&amp;q=75 2x"
+           src="https://loremflickr.com/640/480?lock=5650369250066432&amp;w=750&amp;q=75"
+           style="color: transparent;"
+      >
+      <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
+        apud cruciamentum cui
+      </h2>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Atoms/Links & Buttons Protected smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <a href="/#">
+    caries adulatio
+  </a>
+</div>
+`;
+
+exports[`Atoms/Links & Buttons Tab smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <button delay="0.44025717745535076"
+          class="undefined text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline text-gray-600 dark:text-gray-400"
+  >
+    ratione auctor
+  </button>
+</div>
+`;
