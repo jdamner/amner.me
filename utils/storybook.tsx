@@ -5,6 +5,8 @@ import React from "react";
 
 type MdAttributes = Record<string, string>;
 
+faker.seed(123);
+
 export const generateMdFile = <T extends MdAttributes>(
   attributes: T,
   content?: string,

@@ -11,6 +11,8 @@ export default {
   component: Tabs,
 } as Meta;
 
+faker.seed(123);
+
 export const Default: Story = {
   args: {
     title: "",

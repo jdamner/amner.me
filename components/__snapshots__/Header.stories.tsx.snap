@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Header Default smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <section id="header"
+           class="bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-300 py-10"
+  >
+    <div class="container mx-auto text-center py-5 px-3 md:px-0 flex flex-col">
+      <h1 class="font-sans text-5xl md:text-9xl font-black uppercase mb-5 order-2">
+        Header
+      </h1>
+      <h2 class="font-sans text-md font-black justify-stretch items-center w-full order-1 flex-col mb-5 hidden md:text-xl md:flex md:flex-row">
+        <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+             style="max-width: 100%;"
+        >
+        </div>
+        <span class="my-3 basis-3/4 grow px-5">
+          Subtitle
+        </span>
+        <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+             style="max-width: 100%;"
+        >
+        </div>
+      </h2>
+      <span class="order-3">
+        Children
+      </span>
+    </div>
+  </section>
+</div>
+`;
