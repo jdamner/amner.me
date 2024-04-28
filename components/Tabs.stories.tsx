@@ -18,7 +18,7 @@ export const Default: Story = {
     title: "",
     defaultContent: faker.lorem.paragraphs(2),
     tabs: Array.from({ length: 5 }, (_, i) =>
-      generateMdFile({ title: `Tab ${i + 1}` }, faker.lorem.paragraphs(i + 1)),
+      generateMdFile({ title: `Tab ${i + 1}` }),
     ),
   },
 };

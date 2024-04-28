@@ -1,17 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
+
 import TimelineItem from "./TimelineItem";
 import TimelineDetail from "./TimelineDetail";
 import TimelineControlButton from "./TimelineControlButton";
 
-import type { MdFile } from "../../types";
+import { useAllEmployment } from "@/utils/index";
 
 export default function Timeline(
   props: React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
-  > & { events: MdFile[] },
+  > & {
+    events: ReturnType<typeof useAllEmployment>;
+  },
 ) {
   const { events, ...rest } = props;
 
@@ -58,9 +61,13 @@ export default function Timeline(
           >
             {events.map((event, index) => (
               <TimelineItem
-                event={event}
-                key={event.slug + index.toString()}
+                title={event.data.subtitle}
+                role={event.data.role}
+                date={event.data.date}
+                company={event.data.title}
+                companyUrl={event.data.website}
                 last={index === events.length - 1}
+                key={event.slug + index.toString()}
               />
             ))}
           </ol>
@@ -82,7 +89,7 @@ export default function Timeline(
           </div>
           <div className="flex justify-between flex-col md:flex-row">
             {events[currentIndex] && (
-              <TimelineDetail event={events[currentIndex]} />
+              <TimelineDetail>{events[currentIndex].content}</TimelineDetail>
             )}
           </div>
         </>

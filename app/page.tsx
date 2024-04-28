@@ -1,4 +1,4 @@
-import { useAllPosts, useAllServices } from "@/utils";
+import { useAllPostLinks, useAllServices } from "@/utils";
 
 import Content from "@/content/home.mdx";
 import Service from "@/content/services.mdx";
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   description: "James Amner's personal website",
 };
 
-export default async function Page() {
-  const services = await useAllServices();
-  const posts = await useAllPosts();
+const Page = () => {
+  const services = useAllServices();
+  const posts = useAllPostLinks();
   return (
     <>
       <Header title="James Amner" subtitle="Senior PHP Developer">
@@ -37,4 +37,6 @@ export default async function Page() {
       </Container>
     </>
   );
-}
+};
+
+export default Page;

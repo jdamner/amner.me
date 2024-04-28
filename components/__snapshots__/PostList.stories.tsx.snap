@@ -2,208 +2,252 @@
 
 exports[`Components/PostList Default smoke-test 1`] = `
 <div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="columns-1 xs:columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2"
-       id="post-list"
-  >
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/studio-ipsa-super"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://loremflickr.com/640/480?lock=2043296255836160&amp;w=384&amp;q=75 1x, https://loremflickr.com/640/480?lock=2043296255836160&amp;w=750&amp;q=75 2x"
-             src="https://loremflickr.com/640/480?lock=2043296255836160&amp;w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          subito summisse circumvenio
-        </h2>
-      </a>
+  <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-end">
+    <div class="basis-1/3">
     </div>
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/commodo-decens-caries"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://picsum.photos/seed/pGzt8oolCJ/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/pGzt8oolCJ/640/480?w=750&amp;q=75 2x"
-             src="https://picsum.photos/seed/pGzt8oolCJ/640/480?w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          super deprecator curo
-        </h2>
-      </a>
-    </div>
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/reiciendis-coadunatio-ulciscor"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://picsum.photos/seed/Dbra5wIwq/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/Dbra5wIwq/640/480?w=750&amp;q=75 2x"
-             src="https://picsum.photos/seed/Dbra5wIwq/640/480?w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          adulatio sub cubicularis
-        </h2>
-      </a>
-    </div>
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/canonicus-claudeo-voveo"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://picsum.photos/seed/IpkEmne/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/IpkEmne/640/480?w=750&amp;q=75 2x"
-             src="https://picsum.photos/seed/IpkEmne/640/480?w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          deprimo surculus taedium
-        </h2>
-      </a>
-    </div>
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/color-valetudo-cursim"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://picsum.photos/seed/1qau9q4/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/1qau9q4/640/480?w=750&amp;q=75 2x"
-             src="https://picsum.photos/seed/1qau9q4/640/480?w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          quos tener aliquam
-        </h2>
-      </a>
-    </div>
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/cuppedia-statua-usitas"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://picsum.photos/seed/vsCz7iju/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/vsCz7iju/640/480?w=750&amp;q=75 2x"
-             src="https://picsum.photos/seed/vsCz7iju/640/480?w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          tandem varietas suadeo
-        </h2>
-      </a>
-    </div>
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/voro-candidus-earum"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://loremflickr.com/640/480?lock=4462993249140736&amp;w=384&amp;q=75 1x, https://loremflickr.com/640/480?lock=4462993249140736&amp;w=750&amp;q=75 2x"
-             src="https://loremflickr.com/640/480?lock=4462993249140736&amp;w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          veritatis casso amitto
-        </h2>
-      </a>
-    </div>
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/trepide-thema-pax"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://loremflickr.com/640/480?lock=4331491186180096&amp;w=384&amp;q=75 1x, https://loremflickr.com/640/480?lock=4331491186180096&amp;w=750&amp;q=75 2x"
-             src="https://loremflickr.com/640/480?lock=4331491186180096&amp;w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          debilito placeat tantillus
-        </h2>
-      </a>
-    </div>
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/cognomen-confugo-cur"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://loremflickr.com/640/480?lock=87886405828608&amp;w=384&amp;q=75 1x, https://loremflickr.com/640/480?lock=87886405828608&amp;w=750&amp;q=75 2x"
-             src="https://loremflickr.com/640/480?lock=87886405828608&amp;w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          cimentarius impedit damnatio
-        </h2>
-      </a>
-    </div>
-    <div class="break-inside-avoid-column">
-      <a class="group block bg-white dark:bg-slate-900 border-2 border-slate-500"
-         href="/quibusdam-cerno-spero"
-      >
-        <img alt
-             loading="lazy"
-             width="375"
-             height="375"
-             decoding="async"
-             data-nimg="1"
-             class="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
-             srcset="https://picsum.photos/seed/vsFgAP/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/vsFgAP/640/480?w=750&amp;q=75 2x"
-             src="https://picsum.photos/seed/vsFgAP/640/480?w=750&amp;q=75"
-             style="color: transparent;"
-        >
-        <h2 class="bg-slate-900 group-hover:bg-slate-700 px-2 text-lg leading-loose text-center text-slate-100">
-          strenuus stabilis ustulo
-        </h2>
-      </a>
+    <div class="w-full">
+      <div class="flex flex-col gap-2">
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/studio-ipsa-super"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              subito summisse circumvenio
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://loremflickr.com/640/480?lock=2043296255836160&amp;w=384&amp;q=75 1x, https://loremflickr.com/640/480?lock=2043296255836160&amp;w=640&amp;q=75 2x"
+                 src="https://loremflickr.com/640/480?lock=2043296255836160&amp;w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/commodo-decens-caries"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              super deprecator curo
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://picsum.photos/seed/pGzt8oolCJ/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/pGzt8oolCJ/640/480?w=640&amp;q=75 2x"
+                 src="https://picsum.photos/seed/pGzt8oolCJ/640/480?w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/reiciendis-coadunatio-ulciscor"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              adulatio sub cubicularis
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://picsum.photos/seed/Dbra5wIwq/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/Dbra5wIwq/640/480?w=640&amp;q=75 2x"
+                 src="https://picsum.photos/seed/Dbra5wIwq/640/480?w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/canonicus-claudeo-voveo"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              deprimo surculus taedium
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://picsum.photos/seed/IpkEmne/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/IpkEmne/640/480?w=640&amp;q=75 2x"
+                 src="https://picsum.photos/seed/IpkEmne/640/480?w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/color-valetudo-cursim"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              quos tener aliquam
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://picsum.photos/seed/1qau9q4/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/1qau9q4/640/480?w=640&amp;q=75 2x"
+                 src="https://picsum.photos/seed/1qau9q4/640/480?w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/cuppedia-statua-usitas"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              tandem varietas suadeo
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://picsum.photos/seed/vsCz7iju/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/vsCz7iju/640/480?w=640&amp;q=75 2x"
+                 src="https://picsum.photos/seed/vsCz7iju/640/480?w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/voro-candidus-earum"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              veritatis casso amitto
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://loremflickr.com/640/480?lock=4462993249140736&amp;w=384&amp;q=75 1x, https://loremflickr.com/640/480?lock=4462993249140736&amp;w=640&amp;q=75 2x"
+                 src="https://loremflickr.com/640/480?lock=4462993249140736&amp;w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/trepide-thema-pax"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              debilito placeat tantillus
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://loremflickr.com/640/480?lock=4331491186180096&amp;w=384&amp;q=75 1x, https://loremflickr.com/640/480?lock=4331491186180096&amp;w=640&amp;q=75 2x"
+                 src="https://loremflickr.com/640/480?lock=4331491186180096&amp;w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/cognomen-confugo-cur"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              cimentarius impedit damnatio
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://loremflickr.com/640/480?lock=87886405828608&amp;w=384&amp;q=75 1x, https://loremflickr.com/640/480?lock=87886405828608&amp;w=640&amp;q=75 2x"
+                 src="https://loremflickr.com/640/480?lock=87886405828608&amp;w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+        <div class="break-inside-avoid-column">
+          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+             href="/quibusdam-cerno-spero"
+          >
+            <div class="w-full text-left  text-2xl font-black">
+              strenuus stabilis ustulo
+              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
+                   style="margin-left: auto; max-width: 100%;"
+              >
+              </div>
+            </div>
+            <img alt
+                 loading="lazy"
+                 width="320"
+                 height="160"
+                 decoding="async"
+                 data-nimg="1"
+                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
+                 srcset="https://picsum.photos/seed/vsFgAP/640/480?w=384&amp;q=75 1x, https://picsum.photos/seed/vsFgAP/640/480?w=640&amp;q=75 2x"
+                 src="https://picsum.photos/seed/vsFgAP/640/480?w=640&amp;q=75"
+                 style="color: transparent;"
+            >
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

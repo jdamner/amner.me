@@ -1,11 +1,11 @@
 import React from "react";
+import type { Metadata } from "next";
 
 import Service from "@/content/services.mdx";
 import Profile from "@/content/cv/profile.mdx";
-import type { Metadata } from "next";
+
 import { Header, Tabs, Timeline } from "../../components";
 import { TwoThirds, Article, Container } from "../../components/Layouts";
-
 import Title from "../../components/Atoms/Title";
 import ButtonLink from "../../components/Atoms/Links/ButtonLink";
 import InlineLink from "../../components/Atoms/Links/Inline";
@@ -25,12 +25,12 @@ export const metadata: Metadata = {
   description: "James Amner's Curriculum Vitae (Resume)",
 };
 
-export default async function CV() {
-  const employment = await useAllEmployment();
-  const education = await useAllEducation();
-  const projects = await getAllProjects();
-  const references = await useAllReferences();
-  const services = await useAllServices();
+const Page = () => {
+  const employment = useAllEmployment();
+  const education = useAllEducation();
+  const projects = getAllProjects();
+  const references = useAllReferences();
+  const services = useAllServices();
 
   return (
     <>
@@ -131,4 +131,6 @@ export default async function CV() {
       </Container>
     </>
   );
-}
+};
+
+export default Page;

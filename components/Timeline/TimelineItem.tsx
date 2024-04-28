@@ -3,15 +3,20 @@ import React from "react";
 import InlineLink from "../Atoms/Links/Inline";
 import TimelineButtonAndBar from "./TimelineButtonAndBar";
 
-import type { MdFile } from "../../types";
-
 export default function TimelineItem(
   props: React.DetailedHTMLProps<
     React.LiHTMLAttributes<HTMLLIElement>,
     HTMLLIElement
-  > & { event: MdFile; last: boolean },
+  > &
+    Partial<{
+      role: string;
+      company: string;
+      companyUrl: string;
+      date: string;
+      last: boolean;
+    }>,
 ) {
-  const { event, last = false, ...rest } = props;
+  const { role, company, companyUrl, date, last = false, ...rest } = props;
   return (
     <li
       className="group snap-always snap-start  shrink-0 w-9/12 last:w-full"
@@ -19,21 +24,13 @@ export default function TimelineItem(
     >
       <TimelineButtonAndBar last={last} />
       <div className="mt-3 text-slate-900 dark:text-slate-200">
-        <h3 className="w-full text-left text-2xl font-black mb-2">
-          {event.data.role}
-        </h3>
+        <h3 className="w-full text-left text-2xl font-black mb-2">{role}</h3>
         <h4 className="text-lg">
-          <InlineLink
-            href={event.data.url ?? "#"}
-            target="_blank"
-            rel="noopener norefferrer"
-          >
-            {event.data.title}
+          <InlineLink href={companyUrl} target="_blank">
+            {company}
           </InlineLink>
         </h4>
-        <span className="text-sm">
-          {event.data.from} &mdash; {event.data.to}{" "}
-        </span>
+        <span className="text-sm">{date}</span>
       </div>
     </li>
   );

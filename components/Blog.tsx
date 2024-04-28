@@ -8,7 +8,7 @@ import type { PostLinkType } from "../types";
 export default function Blog({ posts }: { posts: PostLinkType[] }) {
   return (
     <>
-      <Title title="Projects and Writing">Blog</Title>
+      <Title title="Projects and Writing"></Title>
       <PostList posts={posts} />
     </>
   );
