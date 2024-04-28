@@ -6,9 +6,11 @@ import ExpandingLine from "./ExpandingLine";
 export default function Title({
   children,
   title,
+  reverse,
 }: {
   children?: React.ReactNode;
   title?: string;
+  reverse?: boolean;
 }) {
   const classes = [
     "text-lg",
@@ -27,7 +29,7 @@ export default function Title({
   const ChildComponent = (
     <div className="w-full text-left  text-2xl font-black">
       {children}
-      <ExpandingLine />
+      <ExpandingLine reverse={reverse} />
     </div>
   );
 

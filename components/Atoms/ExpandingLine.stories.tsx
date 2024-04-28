@@ -9,4 +9,5 @@ export default {
   component: Expandingline,
 } as Meta;
 
-export const Default: Story = {};
+export const Default: Story = { args: { reverse: false } };
+export const Reverse: Story = { args: { reverse: true } };

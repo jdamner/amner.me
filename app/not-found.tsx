@@ -8,10 +8,10 @@ export const metadata = {
   description: "Page Not Found",
 };
 
-export default function NotFound() {
-  return (
-    <Header title="Page Not Found">
-      <Container />
-    </Header>
-  );
-}
+const NotFound = () => (
+  <Header title="Page Not Found">
+    <Container />
+  </Header>
+);
+
+export default NotFound;

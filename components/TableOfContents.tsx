@@ -2,17 +2,7 @@
 
 import GithubSlugger from "github-slugger";
 import ReactMarkdown from "react-markdown";
-import { useEffect } from "react";
-
-export type Toc = {
-  value: string;
-  depth: number;
-  url: string;
-}[];
-
-export interface TOCInlineProps {
-  content: string;
-}
+import { useEffect, type PropsWithChildren } from "react";
 
 /**
  * Generates an inline table of contents
@@ -21,14 +11,17 @@ export interface TOCInlineProps {
  *
  * @param {TOCInlineProps} props
  */
-function TOCInline({ content }: TOCInlineProps) {
+function TableOfContents({ children }: PropsWithChildren) {
   const slugger = new GithubSlugger();
 
-  const toc = content.match(/^(#{1,6})\s(.+)$/gm)?.map((heading) => ({
-    value: heading.replace(/^(#{1,6})\s/, ""),
-    depth: heading.match(/^(#{1,6})\s/)?.[1].length ?? Infinity,
-    url: `#${slugger.slug(heading.replace(/^(#{1,6})\s/, ""))}`,
-  }));
+  const toc = children
+    .toString()
+    .match(/^(#{1,6})\s(.+)$/gm)
+    ?.map((heading) => ({
+      value: heading.replace(/^(#{1,6})\s/, ""),
+      depth: heading.match(/^(#{1,6})\s/)?.[1].length ?? Infinity,
+      url: `#${slugger.slug(heading.replace(/^(#{1,6})\s/, ""))}`,
+    }));
 
   useEffect(() => {
     const tocLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
@@ -115,4 +108,4 @@ function TOCInline({ content }: TOCInlineProps) {
   );
 }
 
-export default TOCInline;
+export default TableOfContents;

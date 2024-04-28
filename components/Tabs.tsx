@@ -5,15 +5,16 @@ import React from "react";
 import { useState } from "react";
 
 /* Components */
-import type { MdFile } from "types";
 import TabButton from "./Atoms/Links/TabButton";
+
+import { useAllServices } from "../utils";
 
 export default function Tabs({
   tabs,
   defaultContent,
   title,
 }: {
-  tabs: MdFile[];
+  tabs: ReturnType<typeof useAllServices>;
   defaultContent: React.ReactNode;
   title: React.ReactNode;
 }) {

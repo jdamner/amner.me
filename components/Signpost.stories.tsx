@@ -7,13 +7,6 @@ type Story = StoryObj<typeof Signpost>;
 export default {
   title: "Components/Signpost",
   component: Signpost,
-  argTypes: {
-    children: {
-      control: {
-        type: "none",
-      },
-    },
-  },
 } as Meta;
 
 export const Default: Story = {

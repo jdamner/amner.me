@@ -19,9 +19,9 @@ export const Default: Story = {
       generateMdFile({
         role: faker.person.jobTitle(),
         title: faker.company.name(),
-        url: faker.internet.url(),
-        from: "March 2020", // faker dates aren't consistent even with a seed
-        to: "Present",
+        subtitle: faker.company.buzzPhrase(),
+        website: faker.internet.url(),
+        date: "March 2020 - Present", // faker dates aren't consistent even with a seed
       }),
     ),
   },
