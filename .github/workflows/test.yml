@@ -47,6 +47,8 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install && npx playwright install --with-deps
+      - name: Start Storybook
+        run: npm run dev:storybook &
       - name: Update Snapshots
         run: npm run test:snapshots 
       - name: Create pr
