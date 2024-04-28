@@ -77,17 +77,17 @@ function TOCInline({ content }: TOCInlineProps) {
 
   return (
     <div className="py-3">
+      <h2 className="text-lg font-black font-sans uppercase my-2">Contents</h2>
       <ul className="text-sm list-disc">
-        <h2 className="text-lg font-black font-sans uppercase my-2">
-          Contents
-        </h2>
         {toc?.map((heading) =>
           heading.depth < 2 ? (
-            <a href={heading.url} key={heading.url}>
-              <ReactMarkdown className="prose prose-slate dark:prose-invert prose-sm">
-                {heading.value}
-              </ReactMarkdown>
-            </a>
+            <li key={heading.url}>
+              <a href={heading.url}>
+                <ReactMarkdown className="prose prose-slate dark:prose-invert prose-sm">
+                  {heading.value}
+                </ReactMarkdown>
+              </a>
+            </li>
           ) : (
             <li
               key={heading.url}

@@ -15,8 +15,8 @@ export default function TabButton(
   const classes = [
     "text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline",
     active
-      ? "text-gray-900 dark:text-gray-300"
-      : "text-gray-300 dark:text-gray-500",
+      ? "text-gray-900 dark:text-gray-200"
+      : "text-gray-600 dark:text-gray-400",
   ];
 
   const newProps = {

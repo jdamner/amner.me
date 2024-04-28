@@ -42,7 +42,7 @@ export default function PostLink({
     <Link href={slug} className={classes.join(" ")}>
       <Image
         src={thumbnail}
-        alt={title}
+        alt={""}
         width={375}
         height={375}
         className="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"

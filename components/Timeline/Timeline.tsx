@@ -66,11 +66,15 @@ export default function Timeline(
           </ol>
           <div className="ml-auto my-3">
             <TimelineControlButton
+              name={"Previous"}
+              aria-label="Previous event"
               direction="left"
               onClick={() => forceScrollTo(currentIndex - 1)}
               disabled={currentIndex === 0}
             />
             <TimelineControlButton
+              name={"Next"}
+              aria-label="Next event"
               direction="right"
               onClick={() => forceScrollTo(currentIndex + 1)}
               disabled={currentIndex === events.length - 1}
