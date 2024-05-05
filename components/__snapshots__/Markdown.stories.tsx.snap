@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Markdown Default smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <h1 id="subito-summisse-circumvenio"
+      node="[object Object]"
+  >
+    subito summisse circumvenio
+  </h1>
+  <h2 id="curto-calamitas"
+      node="[object Object]"
+  >
+    curto calamitas
+  </h2>
+  <p>
+    Ipsa super super deprecator curo termes vomer cunctatio. Nisi denique apud cruciamentum cui conicio quis suspendo. Decens caries adulatio sub cubicularis.
+  </p>
+  <h3 id="paens-taceo"
+      node="[object Object]"
+  >
+    paens taceo
+  </h3>
+  <p>
+    Auctor decerno atque agnosco exercitationem summa exercitationem cursus. Coadunatio ulciscor deprimo surculus taedium perferendis contabesco suppono. Commodi sollers conturbo corrumpo calco canonicus.
+  </p>
+  <h3 id="claudeo-voveo"
+      node="[object Object]"
+  >
+    claudeo voveo
+  </h3>
+  <p>
+    Tener aliquam tergiversatio damno acsi curvo atavus depulso. Cursim aetas color valetudo. Tandem varietas suadeo vinco doloremque desipio.
+  </p>
+  <h3 id="delectus-quia"
+      node="[object Object]"
+  >
+    delectus quia
+  </h3>
+  <p>
+    Ancilla cognatus comes derideo cuppedia statua usitas. Casso amitto denuncio deputo voro candidus earum debilito placeat tantillus. Denique trepide thema.
+  </p>
+  <h2 id="pax-cimentarius"
+      node="[object Object]"
+  >
+    pax cimentarius
+  </h2>
+  <p>
+    Damnatio conicio absque cognomen confugo cur strenuus. Ustulo utique ceno dolore defluo sortitus censura occaecati. Quibusdam cerno spero ex turbo atque agnosco comburo tenax.
+  </p>
+  <h3 id="vallum-careo"
+      node="[object Object]"
+  >
+    vallum careo
+  </h3>
+  <p>
+    Autem depulso mollitia benevolentia. Eligendi vae artificiose. Verto supra vulgus acceptus demoror paens collum iusto.
+  </p>
+  <h3 id="dignissimos-articulus"
+      node="[object Object]"
+  >
+    dignissimos articulus
+  </h3>
+  <p>
+    Argumentum tendo sub amitto comis. Stultus verbera iste blanditiis creta conventus vespillo. Turba sum contabesco crudelis adimpleo campana cogo crastinus cubicularis.
+  </p>
+  <h3 id="inflammatio-sufficio"
+      node="[object Object]"
+  >
+    inflammatio sufficio
+  </h3>
+  <p>
+    Vulnero abeo constans reprehenderit tempus adsuesco optio. Stultus utique arcus. Cubitum tenax caput corona coniecto.
+  </p>
+  <h2 id="uterque-dolores"
+      node="[object Object]"
+  >
+    uterque dolores
+  </h2>
+  <p>
+    Sophismata ipsam amiculum. Aperte vado comminor degero. Aurum tyrannus claudeo ipsum toties ultra laboriosam creo.
+  </p>
+  <h3 id="spiritus-comes"
+      node="[object Object]"
+  >
+    spiritus comes
+  </h3>
+  <p>
+    Considero ustilo assumenda cura tricesimus adsum confido demulceo ipsam. Nesciunt nobis enim colligo abbas verto voveo. Ventosus conscendo beatus hic clarus deduco eius cimentarius.
+  </p>
+  <h3 id="veniam-clementia"
+      node="[object Object]"
+  >
+    veniam clementia
+  </h3>
+  <p>
+    Magnam causa sumo magni eaque timor consequuntur cruentus recusandae suus. Arto aspicio paulatim votum uredo consectetur vorago trepide ager. Cursus abscido bardus.
+  </p>
+  <h3 id="valens-defendo"
+      node="[object Object]"
+  >
+    valens defendo
+  </h3>
+  <p>
+    Infit aveho aliquid acsi clibanus totidem vestigium carbo modi adstringo. Aegre tardus demitto talis dolor administratio. Suggero cattus tumultus creber asperiores timor.
+  </p>
+</div>
+`;

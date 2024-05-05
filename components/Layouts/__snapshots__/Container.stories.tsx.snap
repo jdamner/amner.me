@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout/Container Alt smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <div class="bg-slate-200 dark:bg-slate-800 py-5">
+    <div class="container mx-auto py-5 px-3">
+      <p>
+        Strenuus stabilis ustulo utique ceno dolore.
+      </p>
+      <p>
+        Sortitus censura occaecati tui quibusdam cerno. Ex turbo atque agnosco comburo tenax vallum careo.
+      </p>
+      <p>
+        Autem depulso mollitia benevolentia. Eligendi vae artificiose. Verto supra vulgus acceptus demoror paens collum iusto.
+      </p>
+      <p>
+        Articulus cicuta argumentum tendo sub amitto comis. Stultus verbera iste blanditiis creta conventus vespillo. Turba sum contabesco crudelis adimpleo campana cogo crastinus cubicularis. Sufficio iusto vulnero abeo constans reprehenderit tempus.
+      </p>
+      <p>
+        Optio adicio stultus. Arcus clarus cubitum tenax caput corona coniecto uterque dolores adamo. Ipsam amiculum caput aperte vado comminor degero solvo. Tyrannus claudeo ipsum toties. Laboriosam creo spiritus comes tolero considero ustilo assumenda cura.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Layout/Container Default smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <div class="container mx-auto py-5 px-3">
+    <p>
+      Summisse circumvenio curto calamitas studio ipsa super super.
+    </p>
+    <p>
+      Curo termes vomer cunctatio stillicidium nisi. Apud cruciamentum cui conicio quis suspendo.
+    </p>
+    <p>
+      Decens caries adulatio sub cubicularis. Taceo ratione auctor decerno atque agnosco exercitationem. Exercitationem cursus reiciendis coadunatio ulciscor deprimo surculus taedium.
+    </p>
+    <p>
+      Contabesco suppono cur commodi sollers conturbo corrumpo. Canonicus claudeo voveo quos. Aliquam tergiversatio damno acsi curvo atavus depulso arguo cursim. Color valetudo cursim.
+    </p>
+    <p>
+      Varietas suadeo vinco doloremque desipio delectus quia minus ancilla. Comes derideo cuppedia statua usitas. Casso amitto denuncio deputo voro candidus earum debilito placeat tantillus. Denique trepide thema. Cimentarius impedit damnatio conicio absque cognomen confugo.
+    </p>
+  </div>
+</div>
+`;

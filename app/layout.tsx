@@ -6,6 +6,8 @@ import { Poppins } from "next/font/google";
 
 /* Types */
 import type { Metadata } from "next";
+
+/* Components */
 import { Container } from "../components/Layouts";
 import { ContactDetails, NavBar, Signpost } from "../components";
 
@@ -23,54 +25,48 @@ export const metadata: Metadata = {
   description: "James Amner's personal website",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const Links = [
-    { href: "/cv", text: "Digital CV" },
-    { href: "/privacy", text: "Privacy Policy" },
-    {
-      href: "https://github.com/jdamner",
-      text: "GitHub",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-  ];
-
-  return (
-    <html>
-      <head />
-      <body
-        className="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300"
-        style={font.style}
-      >
-        <NavBar>
-          <Signpost title="Contact">
-            <ContactDetails />
-          </Signpost>
-        </NavBar>
-        <main id="page">{children}</main>
-        <footer id="footer">
-          <Container>
-            <div className="text-sm">
-              <ul className="flex flex-wrap items-center justify-center gap-10 mb-10">
-                {Links.map((link) => (
-                  <li className="" key={link.href}>
-                    <Link {...link} className="hover:underline">
-                      {link.text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div className="text-center">
-                &copy; James Amner {new Date().getFullYear()}
-              </div>
+const Layout = ({ children }: { children: React.ReactNode }) => (
+  <html>
+    <head />
+    <body
+      className="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300"
+      style={font.style}
+    >
+      <NavBar>
+        <Signpost title="Contact">
+          <ContactDetails />
+        </Signpost>
+      </NavBar>
+      <main id="page">{children}</main>
+      <footer id="footer">
+        <Container>
+          <div className="text-sm">
+            <ul className="flex flex-wrap items-center justify-center gap-10 mb-10">
+              {[
+                { href: "/cv", text: "Digital CV" },
+                { href: "/privacy", text: "Privacy Policy" },
+                {
+                  href: "https://github.com/jdamner",
+                  text: "GitHub",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                },
+              ].map((link) => (
+                <li className="" key={link.href}>
+                  <Link {...link} className="hover:underline">
+                    {link.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="text-center">
+              &copy; James Amner {new Date().getFullYear()}
             </div>
-          </Container>
-        </footer>
-      </body>
-    </html>
-  );
-}
+          </div>
+        </Container>
+      </footer>
+    </body>
+  </html>
+);
+
+export default Layout;

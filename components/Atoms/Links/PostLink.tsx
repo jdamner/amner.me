@@ -8,6 +8,7 @@ import Image from "next/image";
 
 /* Types */
 import type { PostLinkType } from "../../../types";
+import Title from "../Title";
 
 /**
  * Post Link
@@ -20,34 +21,19 @@ export default function PostLink({
   title,
   slug,
 }: PostLinkType): React.JSX.Element {
-  const classes = [
-    "group",
-    "block",
-    "bg-white",
-    "dark:bg-slate-900",
-    "border-2",
-    "border-slate-500",
-  ];
-
-  const linkClasses = [
-    "bg-slate-900",
-    "group-hover:bg-slate-700",
-    "px-2",
-    "text-lg",
-    "leading-loose",
-    "text-center text-slate-100",
-  ];
-
   return (
-    <Link href={slug} className={classes.join(" ")}>
+    <Link
+      href={slug}
+      className="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+    >
+      <Title reverse>{title}</Title>
       <Image
         src={thumbnail}
-        alt={title}
-        width={375}
-        height={375}
-        className="w-full brightness-90 dark:brightness:75 group-hover:brightness-105"
+        alt={""}
+        width={320}
+        height={160}
+        className="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
       />
-      <h2 className={linkClasses.join(" ")}>{title}</h2>
     </Link>
   );
 }

@@ -5,6 +5,7 @@ import PostLink from "./Atoms/Links/PostLink";
 
 /* Types */
 import type { PostLinkType } from "../types";
+import { TwoThirds } from "./Layouts";
 
 export default function PostList(
   props: React.DetailedHTMLProps<
@@ -14,17 +15,15 @@ export default function PostList(
 ) {
   const { posts, ...rest } = props;
   return (
-    <div
-      className="columns-1 xs:columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2"
-      id="post-list"
-      {...rest}
-    >
-      {posts &&
-        posts.map((post, index) => (
-          <div key={index} className="break-inside-avoid-column">
-            <PostLink {...post} />
-          </div>
-        ))}
-    </div>
+    <TwoThirds>
+      <div className="flex flex-col gap-2" {...rest}>
+        {posts &&
+          posts.map((post, index) => (
+            <div key={index} className="break-inside-avoid-column">
+              <PostLink {...post} />
+            </div>
+          ))}
+      </div>
+    </TwoThirds>
   );
 }

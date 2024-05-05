@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Table of Contents Default smoke-test 1`] = `
+<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+  <div class="py-3">
+    <h2 class="text-lg font-black font-sans uppercase my-2">
+      Contents
+    </h2>
+    <ul class="text-sm list-disc">
+      <li>
+        <a href="#subito-summisse-circumvenio">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              subito summisse circumvenio
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 2rem;">
+        <a href="#curto-calamitas">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              curto calamitas
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 3rem;">
+        <a href="#paens-taceo">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              paens taceo
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 3rem;">
+        <a href="#claudeo-voveo">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              claudeo voveo
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 3rem;">
+        <a href="#delectus-quia">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              delectus quia
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 2rem;">
+        <a href="#pax-cimentarius">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              pax cimentarius
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 3rem;">
+        <a href="#vallum-careo">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              vallum careo
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 3rem;">
+        <a href="#dignissimos-articulus">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              dignissimos articulus
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 3rem;">
+        <a href="#inflammatio-sufficio">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              inflammatio sufficio
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 2rem;">
+        <a href="#uterque-dolores">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              uterque dolores
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 3rem;">
+        <a href="#spiritus-comes">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              spiritus comes
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 3rem;">
+        <a href="#veniam-clementia">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              veniam clementia
+            </p>
+          </div>
+        </a>
+      </li>
+      <li style="margin-left: 3rem;">
+        <a href="#valens-defendo">
+          <div class="prose prose-slate dark:prose-invert prose-sm">
+            <p>
+              valens defendo
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
