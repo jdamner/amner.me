@@ -17,7 +17,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
     <div class="w-full">
       <div class="flex flex-col gap-2">
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/studio-ipsa-super"
           >
             <div class="w-full text-left  text-2xl font-black">
@@ -41,7 +41,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
           </a>
         </div>
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/commodo-decens-caries"
           >
             <div class="w-full text-left  text-2xl font-black">
@@ -65,7 +65,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
           </a>
         </div>
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/reiciendis-coadunatio-ulciscor"
           >
             <div class="w-full text-left  text-2xl font-black">
@@ -89,7 +89,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
           </a>
         </div>
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/canonicus-claudeo-voveo"
           >
             <div class="w-full text-left  text-2xl font-black">
@@ -113,7 +113,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
           </a>
         </div>
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/color-valetudo-cursim"
           >
             <div class="w-full text-left  text-2xl font-black">
@@ -137,7 +137,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
           </a>
         </div>
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/cuppedia-statua-usitas"
           >
             <div class="w-full text-left  text-2xl font-black">
@@ -161,7 +161,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
           </a>
         </div>
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/voro-candidus-earum"
           >
             <div class="w-full text-left  text-2xl font-black">
@@ -185,7 +185,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
           </a>
         </div>
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/trepide-thema-pax"
           >
             <div class="w-full text-left  text-2xl font-black">
@@ -209,7 +209,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
           </a>
         </div>
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/cognomen-confugo-cur"
           >
             <div class="w-full text-left  text-2xl font-black">
@@ -233,7 +233,7 @@ exports[`Components/Blog Default smoke-test 1`] = `
           </a>
         </div>
         <div class="break-inside-avoid-column">
-          <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
              href="/quibusdam-cerno-spero"
           >
             <div class="w-full text-left  text-2xl font-black">
