@@ -24,7 +24,7 @@ export default function PostLink({
   return (
     <Link
       href={slug}
-      className="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+      className="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
     >
       <Title reverse>{title}</Title>
       <Image

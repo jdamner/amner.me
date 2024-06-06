@@ -128,7 +128,7 @@ exports[`Atoms/Links & Buttons Motion smoke-test 1`] = `
 exports[`Atoms/Links & Buttons Post smoke-test 1`] = `
 <div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
   <div style="max-width: 300px;">
-    <a class="group flex bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
+    <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
        href="/suspendo-commodo-decens"
     >
       <div class="w-full text-left  text-2xl font-black">
