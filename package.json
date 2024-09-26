@@ -50,7 +50,7 @@
     "@storybook/addon-essentials": "^8.1.5",
     "@storybook/nextjs": "^8.1.5",
     "@storybook/react": "^8.1.5",
-    "@faker-js/faker": "^8.4.1",
+    "@faker-js/faker": "^9.0.3",
     "axe-playwright": "^2.0.1",
     "eslint": "^8.0.0",
     "eslint-config-next": "14.2.5",
