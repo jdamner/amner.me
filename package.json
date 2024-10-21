@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/mdx": "^2.0.13",
-    "@types/node": "22.4.0",
+    "@types/node": "22.7.7",
     "@types/react": "^18.3.3",
     "@types/react-syntax-highlighter": "^15.5.13",
     "storybook": "^8.1.5",
