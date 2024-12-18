@@ -31,7 +31,7 @@
     "framer-motion": "^11.2.10",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.0",
-    "next": "^14.2",
+    "next": "^15.1",
     "postcss": "^8.4.38",
     "postcss-import": "^16.1.0",
     "react": "^18.2.0",
