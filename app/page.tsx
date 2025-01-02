@@ -1,4 +1,4 @@
-import { useAllPostLinks, useAllServices } from "@/utils";
+import { getAllPostLinks, useAllServices } from "@/utils";
 
 import Content from "@/content/home.mdx";
 import Service from "@/content/services.mdx";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 const Page = () => {
   const services = useAllServices();
-  const posts = useAllPostLinks();
+  const posts = getAllPostLinks();
   return (
     <>
       <Header title="James Amner" subtitle="Senior PHP Developer">
