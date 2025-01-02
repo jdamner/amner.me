@@ -31,13 +31,32 @@ const makeSlug = (value: ReactNode | ReactNode[]): string => {
         )
           return node;
 
-        if (typeof node === "object" && node !== null && "props" in node) {
+        if (isNodeWithChildren(node)) {
           return makeSlug(node.props.children);
         }
 
         return "";
       })
       .join(""),
+  );
+};
+
+const isNodeWithChildren = (
+  value: unknown,
+): value is { props: { children: string | number | boolean | Array<any> } } => {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "props" in value &&
+    value.props !== null &&
+    typeof value.props === "object" &&
+    "children" in value.props &&
+    value.props.children !== null &&
+    typeof value.props.children !== "undefined" &&
+    (typeof value.props.children === "string" ||
+      typeof value.props.children === "number" ||
+      typeof value.props.children === "boolean" ||
+      Array.isArray(value.props.children))
   );
 };
 

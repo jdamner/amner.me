@@ -75,7 +75,7 @@ export const parseMarkdown = <T extends MatterData>(
 /**
  * Gets all Posts
  */
-const useAllPosts = () =>
+const getAllPosts = () =>
   getAllFrom<WithTitle & WithThumbnail & WithDate>(
     postsDirectory,
     (data): data is WithTitle & WithThumbnail & WithDate =>
@@ -124,11 +124,11 @@ export const useAllEducation = () =>
       hasTitle(data) && hasDateString(data),
   );
 
-export const usePost = (slug: string) =>
-  useAllPosts().find((post) => post.slug === slug);
+export const getPost = (slug: string) =>
+  getAllPosts().find((post) => post.slug === slug);
 
-export const useAllPostLinks = () =>
-  useAllPosts()
+export const getAllPostLinks = () =>
+  getAllPosts()
     .map((post) => ({
       title: post.data.title,
       thumbnail: post.data.thumbnail,
