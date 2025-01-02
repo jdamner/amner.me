@@ -5,11 +5,18 @@ import { Blog, Header, TableOfContents } from "@/components";
 import { Container, Article } from "@/components/Layouts/";
 
 /* API */
-import { useAllPostLinks, usePost } from "@/utils";
+import { getAllPostLinks, getPost } from "@/utils";
 
-const Page = ({ params }: { params: { slug: string } }) => {
-  const post = usePost(params.slug);
-  const postLinks = useAllPostLinks();
+export async function generateStaticParams() {
+  return getAllPostLinks().map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const slug = (await params).slug;
+  const post = getPost(slug);
+  const postLinks = getAllPostLinks();
 
   if (!post) {
     return null;
