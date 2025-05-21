@@ -11,8 +11,7 @@ export default {
 
 export const Default: Story = {
   args: {
-    title: "Header",
-    subtitle: "Subtitle",
-    children: "Children",
+    title: "Hi, I'm a web developer.",
+    children: "I build accessible, high performance web applications.",
   },
 };

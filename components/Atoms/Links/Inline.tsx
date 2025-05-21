@@ -14,6 +14,6 @@ export default function InlineLink(
 
 export const InlineLinkClasses = [
   "underline",
-  "hover:text-slate-800",
+  "hover:text-orange-600",
   "hover:no-underline",
 ];

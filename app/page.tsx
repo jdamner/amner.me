@@ -20,21 +20,25 @@ const Page = () => {
   const posts = getAllPostLinks();
   return (
     <>
-      <Header title="James Amner" subtitle="Senior PHP Developer">
-        <div className="prose mx-auto px-3 md:px-0 prose-slate dark:prose-invert">
+      <Header title="Hi, I'm a software developer.">
+        <div className="prose prose-invert">
           <Content />
         </div>
       </Header>
-      <Container>
-        <Tabs
-          title={<Title title="Techincal Skills">Web Development</Title>}
-          tabs={services}
-          defaultContent={<Service />}
-        />
-      </Container>
-      <Container alt>
-        <Blog posts={posts} />
-      </Container>
+      <div className="bg-orange-600 lg:bg-gradient-to-r from-orange-600 from-50% to-50% to-orange-100 text-black px-3">
+        <Container>
+          <Tabs
+            title={<Title>Technical Skills</Title>}
+            tabs={services}
+            defaultContent={<Service />}
+          />
+        </Container>
+      </div>
+      <div className="mb-5 px-3">
+        <Container>
+          <Blog posts={posts} />
+        </Container>
+      </div>
     </>
   );
 };

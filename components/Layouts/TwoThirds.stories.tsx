@@ -16,11 +16,3 @@ export const Default: Story = {
     children: generatePlaceholderContent(),
   },
 };
-
-export const TopTitle: Story = {
-  args: {
-    top: true,
-    first: <h1>Title</h1>,
-    children: generatePlaceholderContent(),
-  },
-};

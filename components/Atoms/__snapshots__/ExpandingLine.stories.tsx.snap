@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Atoms/Expandingline Default smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+<div class="bg-black text-orange-100  font-sans">
   <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
        style="max-width: 100%;"
   >
@@ -10,7 +10,7 @@ exports[`Atoms/Expandingline Default smoke-test 1`] = `
 `;
 
 exports[`Atoms/Expandingline Reverse smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+<div class="bg-black text-orange-100  font-sans">
   <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
        style="margin-left: auto; max-width: 100%;"
   >

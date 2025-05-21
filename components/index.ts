@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 import PostList from "./PostList";
 import Signpost from "./Signpost";
 import Tabs from "./Tabs";
-import TableOfContents from "./TableOfContents";
 import Timeline from "./Timeline";
 
 export {
@@ -16,6 +15,5 @@ export {
   PostList,
   Signpost,
   Tabs,
-  TableOfContents,
   Timeline,
 };

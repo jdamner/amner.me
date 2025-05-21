@@ -4,6 +4,8 @@ import { useReducedMotion } from "framer-motion";
 
 /* Components */
 import MotionButton from "./MotionButton";
+import { ButtonClasses } from "./Button";
+import clsx from "clsx";
 
 export default function TabButton(
   props: React.DetailedHTMLProps<
@@ -12,16 +14,12 @@ export default function TabButton(
   > & { active?: boolean; delay?: number },
 ) {
   const { active, ...rest } = props;
-  const classes = [
-    "text-xl md:text-3xl font-bold mr-3 md:mr-0 group hover:underline",
-    active
-      ? "text-gray-900 dark:text-gray-200"
-      : "text-gray-600 dark:text-gray-400",
-  ];
 
   const newProps = {
     ...rest,
-    className: `${rest.className} ${classes.join(" ")}`,
+    className: clsx(...ButtonClasses, props.className, "mb-1", {
+      "bg-orange-100 text-black": active,
+    }),
   };
 
   return useReducedMotion() ? (

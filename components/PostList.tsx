@@ -1,29 +1,29 @@
 import React from "react";
 
 /* Components */
-import PostLink from "./Atoms/Links/PostLink";
-
-/* Types */
-import type { PostLinkType } from "../types";
-import { TwoThirds } from "./Layouts";
+import Title from "./Atoms/Title";
+import ButtonLink from "./Atoms/Links/ButtonLink";
 
 export default function PostList(
   props: React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
-  > & { posts: PostLinkType[] },
+  > & { posts: { slug: string; title: string }[] },
 ) {
   const { posts, ...rest } = props;
   return (
-    <TwoThirds>
-      <div className="flex flex-col gap-2" {...rest}>
+    <div {...rest}>
+      <Title>Blog Posts</Title>
+      <ul>
         {posts &&
           posts.map((post, index) => (
-            <div key={index} className="break-inside-avoid-column">
-              <PostLink {...post} />
-            </div>
+            <li key={index} className="mb-1">
+              <ButtonLink href={post.slug} key={index}>
+                {post.title}
+              </ButtonLink>
+            </li>
           ))}
-      </div>
-    </TwoThirds>
+      </ul>
+    </div>
   );
 }
