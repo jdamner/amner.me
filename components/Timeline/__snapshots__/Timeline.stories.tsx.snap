@@ -186,7 +186,7 @@ exports[`Components/Timeline Default smoke-test 1`] = `
           <h4 class="text-lg">
             <a class="underline hover:text-slate-800 hover:no-underline"
                target="_blank"
-               href="https://insecure-ethyl.biz"
+               href="https://insecure-ethyl.com"
             >
               Kuhn - Kessler
             </a>
@@ -223,7 +223,7 @@ exports[`Components/Timeline Default smoke-test 1`] = `
       <li class="group snap-always snap-start  shrink-0 w-9/12 last:w-full"
           title="architect enterprise users"
       >
-        <div class="mt-1.5 w-full h-1 bg-gradient-to-r from-slate-300 to-transparent dark:from-slate-600">
+        <div class="mt-1.5 w-full h-1 bg-linear-to-r from-slate-300 to-transparent dark:from-slate-600">
         </div>
         <div class="absolute w-4 h-4 mt-2.5 -top-2.5 bg-slate-900 dark:bg-slate-400 rounded-full">
         </div>

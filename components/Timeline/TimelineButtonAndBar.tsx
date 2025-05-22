@@ -20,7 +20,7 @@ export default function TimelineButtonAndBar({
 
   if (last) {
     barClasses.push(
-      "bg-gradient-to-r from-slate-300 to-transparent dark:from-slate-600",
+      "bg-linear-to-r from-slate-300 to-transparent dark:from-slate-600",
     );
   } else {
     barClasses.push("bg-slate-300 dark:bg-slate-600");

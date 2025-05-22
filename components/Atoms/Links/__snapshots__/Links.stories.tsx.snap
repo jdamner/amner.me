@@ -21,7 +21,7 @@ exports[`Atoms/Links & Buttons Button smoke-test 1`] = `
 exports[`Atoms/Links & Buttons Inline smoke-test 1`] = `
 <div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
   <a class="underline hover:text-slate-800 hover:no-underline"
-     href="https://impeccable-reconsideration.biz/"
+     href="https://impeccable-reconsideration.com/"
   >
     suspendo decens
   </a>
