@@ -12,7 +12,7 @@ export default function NavBar(
   const { children, ...rest } = props;
   return (
     <nav
-      className="w-full h-16 bg-gradient-to-r text-slate-100 from-slate-900 to-slate-700 dark:text-slate-200"
+      className="w-full h-16 bg-linear-to-r text-slate-100 from-slate-900 to-slate-700 dark:text-slate-200"
       id="main-nav"
       {...rest}
     >
