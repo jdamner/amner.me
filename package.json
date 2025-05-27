@@ -48,7 +48,7 @@
     "@storybook/test-runner": "^0.22.0",
     "@tailwindcss/postcss": "^4.1.7",
     "@types/mdx": "^2.0.13",
-    "@types/node": "22.15.21",
+    "@types/node": "22.15.23",
     "@types/react": "^19.0.0",
     "@types/react-syntax-highlighter": "^15.5.13",
     "axe-playwright": "^2.0.1",
