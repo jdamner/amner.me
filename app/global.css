@@ -1,14 +1,131 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer utilities {
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --tw-prose-body: var(--color-orange-800);
+  --tw-prose-headings: var(--color-orange-900);
+  --tw-prose-lead: var(--color-orange-700);
+  --tw-prose-links: var(--color-orange-900);
+  --tw-prose-bold: var(--color-orange-900);
+  --tw-prose-counters: var(--color-orange-600);
+  --tw-prose-bullets: var(--color-orange-400);
+  --tw-prose-hr: var(--color-orange-300);
+  --tw-prose-quotes: var(--color-orange-900);
+  --tw-prose-quote-borders: var(--color-orange-300);
+  --tw-prose-captions: var(--color-orange-700);
+  --tw-prose-code: var(--color-orange-900);
+  --tw-prose-pre-code: var(--color-orange-100);
+  --tw-prose-pre-bg: var(--color-orange-900);
+  --tw-prose-th-borders: var(--color-orange-300);
+  --tw-prose-td-borders: var(--color-orange-200);
+  --tw-prose-invert-body: var(--color-orange-200);
+  --tw-prose-invert-headings: var(--color-white);
+  --tw-prose-invert-lead: var(--color-orange-300);
+  --tw-prose-invert-links: var(--color-white);
+  --tw-prose-invert-bold: var(--color-white);
+  --tw-prose-invert-counters: var(--color-orange-400);
+  --tw-prose-invert-bullets: var(--color-orange-600);
+  --tw-prose-invert-hr: var(--color-orange-700);
+  --tw-prose-invert-quotes: var(--color-orange-100);
+  --tw-prose-invert-quote-borders: var(--color-orange-700);
+  --tw-prose-invert-captions: var(--color-orange-400);
+  --tw-prose-invert-code: var(--color-white);
+  --tw-prose-invert-pre-code: var(--color-orange-300);
+  --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
+  --tw-prose-invert-th-borders: var(--color-orange-600);
+  --tw-prose-invert-td-borders: var(--color-orange-700);
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility bg-diagonal-stripes {
+    background: repeating-linear-gradient(
+        135deg,
+        #0a0a0a,
+        #0a0a0a 20px,
+        #1a1a1a 20px,
+        #1a1a1a 40px
+    );
+}
+
+@utility bg-highlighted {
+    position: relative;
+    background-color: rgb(255 237 213 / var(--tw-text-opacity, 1)); 
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: radial-gradient(circle at top left, orange 0%, orange 100%);
+      mask-image: repeating-linear-gradient(
+          -45deg,
+          rgba(0, 0, 0, 0.15) 0,
+          rgba(0, 0, 0, 0.15) 20px,
+          transparent 20px,
+          transparent 40px
+      );
+      -webkit-mask-image: repeating-linear-gradient(
+          -45deg,
+          rgba(0, 0, 0, 0.15) 0,
+          rgba(0, 0, 0, 0.15) 20px,
+          transparent 20px,
+          transparent 40px
+      );
     }
 
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+    & > * {
+        position: relative;
+        z-index: 2;
     }
+}
+
+@utility corner-blob {
+    position: relative;
+    overflow: hidden;
+    &::before,
+    &::after {
+      content: "";
+      background-color: currentColor;
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      clip-path: path("M332.3,48.8c32.6,18.1,58.5,49.4,64.7,83.7c6.3,34.3-7.1,71.5-15.8,107.1c-8.6,35.7-12.6,69.7-26,108.4 c-13.5,38.6-36.5,81.9-68,86.9c-31.4,5-71.5-28.3-117.1-41.8c-45.7-13.6-97.1-7.5-123.9-28.3c-26.7-20.8-28.9-68.5-35-115.4 c-6.2-46.8-16.4-92.6-8-138c8.3-45.3,35.3-90,74.7-105s91.3-0.3,136.9,9.6C260.4,25.8,299.7,30.6,332.3,48.8z");
+      opacity: 0.5;
+      border-radius: 33% 67% 71% 29% / 42% 30% 70% 58%;
+      transition: border-radius 4s ease-in-out;
+      animation: blobMorph 8s infinite;
+    }
+
+    &::before {
+        top: 50px;
+        right: 50px;
+        transform: rotate(30deg);
+    }
+
+    &::after {
+        bottom: -20px;
+        left: -20px;
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes blobMorph {
+  0%, 100% {
+    border-radius: 33% 67% 71% 29% / 42% 30% 70% 58%;
+  }
+  50% {
+    border-radius: 70% 30% 34% 66% / 60% 55% 45% 40%;
+  }
 }

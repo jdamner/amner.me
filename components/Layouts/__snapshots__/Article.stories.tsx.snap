@@ -1,210 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout/Article Default smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="container mx-auto py-5 px-3">
-    <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-stretch">
-      <div class="basis-1/3">
-        <div class>
-          <img alt
-               width="500"
-               height="500"
-               decoding="async"
-               data-nimg="1"
-               class="border-2 border-slate-500 mb-5 bg-white"
-               srcset="https://picsum.photos/seed/hqeGyIIuq/640/480?w=640&amp;q=75 1x, https://picsum.photos/seed/hqeGyIIuq/640/480?w=1080&amp;q=75 2x"
-               src="https://picsum.photos/seed/hqeGyIIuq/640/480?w=1080&amp;q=75"
-               style="color: transparent;"
-          >
-          <div class="md:sticky md:top-5">
-            <h1>
-              Title
-            </h1>
-            <span class="hidden md:block">
-              <a class="border-2 border-slate-500 uppercase font-bold bg-white dark:bg-slate-900 px-4 py-2 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-black dark:hover:text-white"
-                 href="/"
-              >
-                « Home
-              </a>
-            </span>
-          </div>
+<div class="bg-black text-orange-100  font-sans">
+  <div class="container mx-auto">
+    <div class="p-5">
+      <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-stretch">
+        <div class="basis-1/3">
         </div>
-      </div>
-      <div class="w-full">
-        <p>
-          Vomer cunctatio stillicidium nisi denique apud cruciamentum cui conicio.
-        </p>
-        <p>
-          Suspendo commodo decens caries adulatio sub cubicularis paens. Ratione auctor decerno atque agnosco exercitationem summa exercitationem.
-        </p>
-        <p>
-          Reiciendis coadunatio ulciscor deprimo surculus taedium. Contabesco suppono cur commodi sollers conturbo corrumpo. Canonicus claudeo voveo quos.
-        </p>
-        <p>
-          Aliquam tergiversatio damno acsi curvo atavus depulso arguo cursim. Color valetudo cursim. Varietas suadeo vinco doloremque desipio delectus quia minus ancilla. Comes derideo cuppedia statua usitas.
-        </p>
-        <p>
-          Casso amitto denuncio deputo voro candidus earum debilito placeat tantillus. Denique trepide thema. Cimentarius impedit damnatio conicio absque cognomen confugo. Strenuus stabilis ustulo utique ceno dolore. Sortitus censura occaecati tui quibusdam cerno.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Layout/Article NoChildren smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="container mx-auto py-5 px-3">
-    <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-stretch">
-      <div class="basis-1/3">
-        <div class>
-          <img alt
-               width="500"
-               height="500"
-               decoding="async"
-               data-nimg="1"
-               class="border-2 border-slate-500 mb-5 bg-white"
-               srcset="https://picsum.photos/seed/0EysVzAqch/640/480?w=640&amp;q=75 1x, https://picsum.photos/seed/0EysVzAqch/640/480?w=1080&amp;q=75 2x"
-               src="https://picsum.photos/seed/0EysVzAqch/640/480?w=1080&amp;q=75"
-               style="color: transparent;"
-          >
-          <div class="md:sticky md:top-5">
-            <h1>
-              Title
-            </h1>
-            <span class="hidden md:block">
-              <a class="border-2 border-slate-500 uppercase font-bold bg-white dark:bg-slate-900 px-4 py-2 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-black dark:hover:text-white"
-                 href="/"
-              >
-                « Home
-              </a>
-            </span>
-          </div>
+        <div class="w-full">
+          <p>
+            Circumvenio calamitas ipsa super curo vomer stillicidium denique.
+          </p>
+          <p>
+            Conicio suspendo decens adulatio cubicularis taceo. Atque exercitationem exercitationem reiciendis.
+          </p>
+          <p>
+            Surculus perferendis suppono commodi conturbo calco claudeo quos aliquam. Curvo depulso cursim color cursim varietas. Desipio quia ancilla comes cuppedia usitas casso denuncio voro earum.
+          </p>
+          <p>
+            Animi trepide pax impedit conicio cognomen cur. Utique dolore sortitus occaecati quibusdam spero turbo agnosco. Careo autem mollitia allatus vae quis supra acceptus paens. Articulus argumentum sub comis stultus iste creta.
+          </p>
+          <p>
+            Turba contabesco adimpleo cogo cubicularis sufficio vulnero constans tempus optio. Arcus cubitum caput coniecto dolores sophismata amiculum aperte. Solvo tyrannus ipsum ultra creo. Considero assumenda tricesimus confido ipsam. Enim abbas voveo ventosus beatus clarus eius.
+          </p>
         </div>
-      </div>
-      <div class="w-full">
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Layout/Article NoImage smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="container mx-auto py-5 px-3">
-    <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-stretch">
-      <div class="basis-1/3">
-        <div class>
-          <div class="md:sticky md:top-5">
-            <h1>
-              Title
-            </h1>
-            <span class="hidden md:block">
-              <a class="border-2 border-slate-500 uppercase font-bold bg-white dark:bg-slate-900 px-4 py-2 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-black dark:hover:text-white"
-                 href="/"
-              >
-                « Home
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="w-full">
-        <p>
-          Causa sumo magni eaque timor consequuntur cruentus.
-        </p>
-        <p>
-          Suus uterque arto aspicio paulatim votum uredo consectetur. Trepide ager aedificium cursus abscido bardus valens defendo vere infit.
-        </p>
-        <p>
-          Aliquid acsi clibanus totidem. Carbo modi adstringo defluo aegre tardus demitto talis dolor administratio. Suggero cattus tumultus creber asperiores timor.
-        </p>
-        <p>
-          Tondeo cito stipes cohibeo vulgivagus sono cultellus amoveo auditor. Depopulo valens desipio subito culpa decerno attollo debitis. Teneo pecco maxime. Ago uxor nostrum nulla tot.
-        </p>
-        <p>
-          Conduco astrum vestigium adstringo tandem aro. Confido tantillus decet ager stella unde basium. Praesentium verbera vesper aperiam ager aggredior deorsum aptus sublime. Aggredior curriculum ustulo libero damnatio annus. Baiulus derelinquo tondeo correptius delibero vesco.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Layout/Article NoImageNoTitle smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="container mx-auto py-5 px-3">
-    <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-stretch">
-      <div class="basis-1/3">
-      </div>
-      <div class="w-full">
-        <p>
-          Celer cras studio sordeo triumphus adamo omnis repellat.
-        </p>
-        <p>
-          Adduco speculum tamdiu cruciamentum demergo subvenio. Vociferor illo alioqui.
-        </p>
-        <p>
-          Adsum solitudo odio. Tantillus tenus dolorem natus verumtamen ambulo cognomen subseco depromo solvo. Admiratio commodo textor auditor earum cogo cursim coniecto tertius spoliatio.
-        </p>
-        <p>
-          Adnuo denique timidus attonbitus pax commemoro. Tutis tametsi audentia facilis cur amo vox derelinquo. At veritatis stella versus. Aliqua quibusdam delectus comburo desipio deprimo combibo.
-        </p>
-        <p>
-          Adiuvo apparatus carbo animus allatus decumbo capitulus adhaero timor. Vehemens cunabula adimpleo corroboro cogito. Vomer tonsor fugit eum quidem. Abscido angulus deorsum terreo voveo dapifer corrupti. Alo attonbitus deinde.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Layout/Article Offset smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="container mx-auto py-5 px-3">
-    <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-stretch">
-      <div class="basis-1/3">
-        <div class="-mt-10 md:-mt-20 h-full">
-          <img alt
-               width="500"
-               height="500"
-               decoding="async"
-               data-nimg="1"
-               class="border-2 border-slate-500 mb-5 bg-white"
-               srcset="https://picsum.photos/seed/Qa5jLTfb/640/480?w=640&amp;q=75 1x, https://picsum.photos/seed/Qa5jLTfb/640/480?w=1080&amp;q=75 2x"
-               src="https://picsum.photos/seed/Qa5jLTfb/640/480?w=1080&amp;q=75"
-               style="color: transparent;"
-          >
-          <div class="md:sticky md:top-5">
-            <h1>
-              Title
-            </h1>
-            <span class="hidden md:block">
-              <a class="border-2 border-slate-500 uppercase font-bold bg-white dark:bg-slate-900 px-4 py-2 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-black dark:hover:text-white"
-                 href="/"
-              >
-                « Home
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="w-full">
-        <p>
-          Depulso mollitia benevolentia allatus.
-        </p>
-        <p>
-          Vae artificiose quis verto supra vulgus acceptus. Paens collum iusto dignissimos articulus cicuta.
-        </p>
-        <p>
-          Tendo sub amitto comis. Stultus verbera iste blanditiis creta conventus vespillo. Turba sum contabesco crudelis adimpleo campana cogo crastinus cubicularis.
-        </p>
-        <p>
-          Sufficio iusto vulnero abeo constans reprehenderit tempus. Optio adicio stultus. Arcus clarus cubitum tenax caput corona coniecto uterque dolores adamo. Ipsam amiculum caput aperte vado comminor degero solvo.
-        </p>
-        <p>
-          Tyrannus claudeo ipsum toties. Laboriosam creo spiritus comes tolero considero ustilo assumenda cura. Adsum confido demulceo ipsam eligendi nesciunt nobis enim colligo. Verto voveo sollers. Conscendo beatus hic clarus deduco eius cimentarius veniam clementia vorago.
-        </p>
       </div>
     </div>
   </div>

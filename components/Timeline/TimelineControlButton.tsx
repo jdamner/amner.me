@@ -42,12 +42,10 @@ export default function TimelineControlButton(
   return (
     <button
       className="p-2 w-10 h-10 mx-3
-                bg-slate-400
-                hover:bg-slate-600 dark:hover:bg-slate-200
-                text-white dark:text-slate-900
+                bg-orange-600 text-orange-100
+                hover:bg-white hover:text-black
                 hover:cursor-pointer
-                disabled:opacity-50 disabled:cursor-default
-                disabled:hover:bg-slate-400"
+                disabled:opacity-50 disabled:cursor-default"
       {...rest}
     >
       {arrow}

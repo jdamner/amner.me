@@ -5,10 +5,8 @@ import ButtonComponent from "./Button";
 import ButtonLink from "./ButtonLink";
 import MotionButton from "./MotionButton";
 import InlineLink from "./Inline";
-import PostLink from "./PostLink";
 import ProtectedLink from "./ProtectedLink";
 import TabButton from "./TabButton";
-import { generatePostLink } from "../../../utils/storybook";
 
 export default {
   title: "Atoms/Links & Buttons",
@@ -45,15 +43,6 @@ export const Inline: StoryObj<typeof InlineLink> = {
     children: faker.lorem.words(2),
     href: faker.internet.url(),
   },
-};
-
-export const Post: StoryObj<typeof PostLink> = {
-  render: (args) => (
-    <div style={{ maxWidth: "300px" }}>
-      <PostLink {...args} />
-    </div>
-  ),
-  args: generatePostLink(),
 };
 
 export const Protected: StoryObj<typeof ProtectedLink> = {

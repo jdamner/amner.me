@@ -1,7 +1,7 @@
+import Link from "next/link";
 import React from "react";
-/* Components */
-import { HomeIcon } from "@heroicons/react/24/solid";
-import InlineLink from "./Atoms/Links/Inline";
+import { font } from "utils/header-font";
+import { Container } from "./Layouts";
 
 export default function NavBar(
   props: React.DetailedHTMLProps<
@@ -9,22 +9,21 @@ export default function NavBar(
     HTMLElement
   >,
 ) {
-  const { children, ...rest } = props;
   return (
-    <nav
-      className="w-full h-16 bg-gradient-to-r text-slate-100 from-slate-900 to-slate-700 dark:text-slate-200"
+    <header
+      className="w-full text-black bg-orange-600 p-4"
       id="main-nav"
-      {...rest}
+      {...props}
     >
-      <div className="container mx-auto h-full flex flex-row items-center px-3 md:px-0">
-        <div className="">
-          <InlineLink href="/" className="text-slate-100 hover:text-slate-300">
-            <HomeIcon className="h-10" />
-            <span className="sr-only">Home</span>
-          </InlineLink>
-        </div>
-        <div className="ml-auto">{children}</div>
-      </div>
-    </nav>
+      <Container className="px-3">
+        <Link
+          href="/"
+          className="font-black uppercase text-5xl"
+          style={font.style}
+        >
+          James Amner
+        </Link>
+      </Container>
+    </header>
   );
 }

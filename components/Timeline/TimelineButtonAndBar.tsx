@@ -11,19 +11,16 @@ export default function TimelineButtonAndBar({
     "h-4",
     "mt-2.5",
     "-top-2.5",
-    "bg-slate-900",
-    "dark:bg-slate-400",
+    "bg-orange-600",
     "rounded-full",
   ];
 
   const barClasses = ["mt-1.5", "w-full", "h-1"];
 
   if (last) {
-    barClasses.push(
-      "bg-gradient-to-r from-slate-300 to-transparent dark:from-slate-600",
-    );
+    barClasses.push("bg-gradient-to-r from-orange-600 to-transparent");
   } else {
-    barClasses.push("bg-slate-300 dark:bg-slate-600");
+    barClasses.push("bg-orange-600");
   }
   return (
     <>

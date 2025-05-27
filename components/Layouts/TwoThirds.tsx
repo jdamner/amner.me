@@ -1,21 +1,19 @@
 import React from "react";
 
 export default function TwoThirds({
-  top = false,
   first,
   children,
 }: {
   children?: React.ReactNode;
-  top?: boolean;
   first?: React.ReactNode | React.ReactNode[];
 }) {
-  const classList = ["flex", "flex-col", "md:flex-row", "mb-5", "gap-5"];
-
-  if (top) {
-    classList.push("md:items-stretch");
-  } else {
-    classList.push("md:items-end");
-  }
+  const classList = [
+    "flex",
+    "flex-col",
+    "md:flex-row",
+    "mb-5",
+    "gap-5 md:items-stretch",
+  ];
 
   return (
     <div className={classList.join(" ")}>

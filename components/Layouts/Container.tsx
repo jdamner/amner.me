@@ -1,18 +1,11 @@
+import clsx from "clsx";
 import React from "react";
 
-export default function Container({
-  alt = false,
-  children,
-}: {
-  children?: React.ReactNode;
-  alt?: boolean;
-}) {
-  const container = (
-    <div className="container mx-auto py-5 px-3">{children}</div>
-  );
-  return alt ? (
-    <div className="bg-slate-200 dark:bg-slate-800 py-5">{container}</div>
-  ) : (
-    container
-  );
+export default function Container(props: React.HTMLAttributes<HTMLDivElement>) {
+  const { className, ...rest } = props;
+  const newProps = {
+    ...rest,
+    className: clsx("container mx-auto", className),
+  };
+  return <div {...newProps} />;
 }

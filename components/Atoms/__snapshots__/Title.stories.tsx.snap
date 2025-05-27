@@ -1,48 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Atoms/Title Default smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-end">
-    <div class="basis-1/3">
-      <h2 class="text-lg font-sans font-semibold tracking-tight text-left font-slate-800 uppercase text-5xl md:text-6xl break-words basis-1/3">
-        Maurine
-      </h2>
-    </div>
-    <div class="w-full">
-      <div class="w-full text-left  text-2xl font-black">
-        Pomeranian
-        <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-             style="max-width: 100%;"
-        >
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Atoms/Title TitleOnly smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-end">
-    <div class="basis-1/3">
-      <h2 class="text-lg font-sans font-semibold tracking-tight text-left font-slate-800 uppercase text-5xl md:text-6xl break-words basis-1/3">
-        Edgardo
-      </h2>
-    </div>
-    <div class="w-full">
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Atoms/Title WithSubtitle smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="w-full text-left  text-2xl font-black">
-    Greek Shepherd
-    <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-         style="max-width: 100%;"
-    >
-    </div>
-  </div>
+<div class="bg-black text-orange-100  font-sans">
+  <h2 class="tracking-tight uppercase text-6xl md:text-7xl lg:text-8xl text-orange-100 mb-5 bebas-neue-normal-400">
+    Podenco Canario
+  </h2>
 </div>
 `;
