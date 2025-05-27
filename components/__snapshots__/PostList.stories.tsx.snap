@@ -1,254 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Components/PostList Default smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="flex flex-col md:flex-row mb-5 gap-5 md:items-end">
-    <div class="basis-1/3">
-    </div>
-    <div class="w-full">
-      <div class="flex flex-col gap-2">
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/stillicidium-denique-cruciamentum"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              subito circumvenio calamitas
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://loremflickr.com/2205/2878?lock=8833938556766555&amp;w=384&amp;q=75 1x, https://loremflickr.com/2205/2878?lock=8833938556766555&amp;w=640&amp;q=75 2x"
-                 src="https://loremflickr.com/2205/2878?lock=8833938556766555&amp;w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/perferendis-suppono-commodi"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              conicio suspendo decens
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://picsum.photos/seed/awwDQI/239/1592?w=384&amp;q=75 1x, https://picsum.photos/seed/awwDQI/239/1592?w=640&amp;q=75 2x"
-                 src="https://picsum.photos/seed/awwDQI/239/1592?w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/depulso-cursim-color"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              conturbo calco claudeo
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://loremflickr.com/2524/369?lock=3880866760758412&amp;w=384&amp;q=75 1x, https://loremflickr.com/2524/369?lock=3880866760758412&amp;w=640&amp;q=75 2x"
-                 src="https://loremflickr.com/2524/369?lock=3880866760758412&amp;w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/cuppedia-usitas-casso"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              cursim varietas vinco
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://loremflickr.com/2007/2496?lock=2857853555392131&amp;w=384&amp;q=75 1x, https://loremflickr.com/2007/2496?lock=2857853555392131&amp;w=640&amp;q=75 2x"
-                 src="https://loremflickr.com/2007/2496?lock=2857853555392131&amp;w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/occaecati-quibusdam-spero"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              denuncio voro earum
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://picsum.photos/seed/xlipGSvF/2451/483?w=384&amp;q=75 1x, https://picsum.photos/seed/xlipGSvF/2451/483?w=640&amp;q=75 2x"
-                 src="https://picsum.photos/seed/xlipGSvF/2451/483?w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/iusto-articulus-argumentum"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              turbo agnosco tenax
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://picsum.photos/seed/SCI1A/975/777?w=384&amp;q=75 1x, https://picsum.photos/seed/SCI1A/975/777?w=640&amp;q=75 2x"
-                 src="https://picsum.photos/seed/SCI1A/975/777?w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/arcus-cubitum-caput"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              sub comis stultus
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://picsum.photos/seed/m2ioHZmLAG/2217/1556?w=384&amp;q=75 1x, https://picsum.photos/seed/m2ioHZmLAG/2217/1556?w=640&amp;q=75 2x"
-                 src="https://picsum.photos/seed/m2ioHZmLAG/2217/1556?w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/tyrannus-ipsum-ultra"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              coniecto dolores sophismata
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://loremflickr.com/424/524?lock=5958841800183409&amp;w=384&amp;q=75 1x, https://loremflickr.com/424/524?lock=5958841800183409&amp;w=640&amp;q=75 2x"
-                 src="https://loremflickr.com/424/524?lock=5958841800183409&amp;w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/nesciunt-enim-abbas"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              creo comes considero
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://loremflickr.com/685/3316?lock=4975307330530001&amp;w=384&amp;q=75 1x, https://loremflickr.com/685/3316?lock=4975307330530001&amp;w=640&amp;q=75 2x"
-                 src="https://loremflickr.com/685/3316?lock=4975307330530001&amp;w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-        <div class="break-inside-avoid-column">
-          <a class="group flex flex-col-reverse md:flex-row bg-slate-200 p-5 border-4 border-slate-200 dark:border-slate-900 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-slate-400 transition-all duration-100 ease-in-out"
-             href="/cursus-bardus-defendo"
-          >
-            <div class="w-full text-left  text-2xl font-black">
-              voveo ventosus beatus
-              <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-                   style="margin-left: auto; max-width: 100%;"
-              >
-              </div>
-            </div>
-            <img alt
-                 loading="lazy"
-                 width="320"
-                 height="160"
-                 decoding="async"
-                 data-nimg="1"
-                 class="border-4 h-30 w-80 object-cover border-slate-800 dark:border-slate-300 brightness-90 dark:brightness:75 group-hover:brightness-105 bg-white dark:bg-slate-900 transition-all duration-100 ease-in-out"
-                 srcset="https://picsum.photos/seed/fyOoJ9BRY4/1170/2080?w=384&amp;q=75 1x, https://picsum.photos/seed/fyOoJ9BRY4/1170/2080?w=640&amp;q=75 2x"
-                 src="https://picsum.photos/seed/fyOoJ9BRY4/1170/2080?w=640&amp;q=75"
-                 style="color: transparent;"
-            >
-          </a>
-        </div>
-      </div>
-    </div>
+<div class="bg-black text-orange-100  font-sans">
+  <div>
+    <h2 class="tracking-tight uppercase text-6xl md:text-7xl lg:text-8xl text-orange-100 mb-5 bebas-neue-normal-400">
+      Blog Posts
+    </h2>
+    <ul>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/ipsa-super-curo"
+        >
+          subito circumvenio calamitas
+        </a>
+      </li>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/cruciamentum-conicio-suspendo"
+        >
+          vomer stillicidium denique
+        </a>
+      </li>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/taceo-auctor-atque"
+        >
+          decens adulatio cubicularis
+        </a>
+      </li>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/ulciscor-surculus-perferendis"
+        >
+          exercitationem exercitationem reiciendis
+        </a>
+      </li>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/calco-claudeo-quos"
+        >
+          suppono commodi conturbo
+        </a>
+      </li>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/depulso-cursim-color"
+        >
+          aliquam damno curvo
+        </a>
+      </li>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/desipio-quia-ancilla"
+        >
+          cursim varietas vinco
+        </a>
+      </li>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/casso-denuncio-voro"
+        >
+          comes cuppedia usitas
+        </a>
+      </li>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/trepide-pax-impedit"
+        >
+          earum placeat animi
+        </a>
+      </li>
+      <li class="mb-1">
+        <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+           href="/stabilis-utique-dolore"
+        >
+          conicio cognomen cur
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 `;

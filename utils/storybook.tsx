@@ -1,5 +1,4 @@
 import { faker } from "@faker-js/faker";
-import { PostLinkType } from "../types";
 import React from "react";
 import { parseMarkdown } from ".";
 import matter from "gray-matter";
@@ -24,13 +23,12 @@ export const generateMdContent = (): string =>
       }).join(""),
   ).join("");
 
-export const generatePostLink = (): PostLinkType => ({
+export const generatePostLink = () => ({
   title: faker.lorem.words(3),
-  thumbnail: faker.image.url(),
   slug: faker.lorem.slug(),
 });
 
-export const generatePostLinks = (count: number): PostLinkType[] =>
+export const generatePostLinks = (count: number) =>
   Array.from({ length: count }, () => generatePostLink());
 
 export const generateMD = <T extends MatterData>(attributes: T) =>

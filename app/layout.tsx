@@ -2,23 +2,15 @@ import React from "react";
 
 /* Components */
 import Link from "next/link";
-import { Poppins } from "next/font/google";
-
 /* Types */
 import type { Metadata } from "next";
 
 /* Components */
 import { Container } from "../components/Layouts";
-import { ContactDetails, NavBar, Signpost } from "../components";
+import { NavBar } from "../components";
 
 /* Global Styles */
 import "./global.css";
-
-// Get Regular, Bold and SemiBold
-const font = Poppins({
-  weight: ["400", "600", "700"],
-  subsets: ["latin-ext"],
-});
 
 export const metadata: Metadata = {
   title: "Amner.me",
@@ -28,20 +20,13 @@ export const metadata: Metadata = {
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <html>
     <head />
-    <body
-      className="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300"
-      style={font.style}
-    >
-      <NavBar>
-        <Signpost title="Contact">
-          <ContactDetails />
-        </Signpost>
-      </NavBar>
+    <body className="bg-black text-orange-100  font-sans">
+      <NavBar />
       <main id="page">{children}</main>
-      <footer id="footer">
+      <footer id="footer" className="bg-orange-600 text-black p-5">
         <Container>
           <div className="text-sm">
-            <ul className="flex flex-wrap items-center justify-center gap-10 mb-10">
+            <ul className="flex flex-wrap items-center justify-center gap-10 mb-10 uppercase font-bold">
               {[
                 { href: "/cv", text: "Digital CV" },
                 { href: "/privacy", text: "Privacy Policy" },

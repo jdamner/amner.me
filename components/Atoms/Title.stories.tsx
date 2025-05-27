@@ -14,19 +14,6 @@ faker.seed(123);
 
 export const Default: Story = {
   args: {
-    title: faker.person.firstName(),
-    children: faker.animal.dog(),
-  },
-};
-
-export const TitleOnly: Story = {
-  args: {
-    title: faker.person.firstName(),
-  },
-};
-
-export const WithSubtitle: Story = {
-  args: {
     children: faker.animal.dog(),
   },
 };

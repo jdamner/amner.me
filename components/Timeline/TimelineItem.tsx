@@ -2,6 +2,7 @@ import React from "react";
 
 import InlineLink from "../Atoms/Links/Inline";
 import TimelineButtonAndBar from "./TimelineButtonAndBar";
+import { font } from "@/utils/header-font";
 
 export default function TimelineItem(
   props: React.DetailedHTMLProps<
@@ -23,8 +24,13 @@ export default function TimelineItem(
       {...rest}
     >
       <TimelineButtonAndBar last={last} />
-      <div className="mt-3 text-slate-900 dark:text-slate-200">
-        <h3 className="w-full text-left text-2xl font-black mb-2">{role}</h3>
+      <div className="mt-3">
+        <h3
+          className="w-full text-left text-4xl font-black mb-2 uppercase"
+          style={font.style}
+        >
+          {role}
+        </h3>
         <h4 className="text-lg">
           <InlineLink href={companyUrl} target="_blank">
             {company}

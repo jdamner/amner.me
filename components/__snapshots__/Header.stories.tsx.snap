@@ -1,30 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Components/Header Default smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+<div class="bg-black text-orange-100  font-sans">
   <section id="header"
-           class="bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-300 py-10"
+           class="bg-black corner-blob text-orange-100 py-4 px-4"
   >
-    <div class="container mx-auto text-center py-5 px-3 md:px-0 flex flex-col">
-      <h1 class="font-sans text-5xl md:text-9xl font-black uppercase mb-5 order-2">
-        Header
+    <div class="container py-5 mx-auto ">
+      <h1 class="font-sans text-5xl sm:text-8xl lg:text-9xl font-black uppercase mb-5 lg:w-1/2">
+        Hi, I'm a web developer.
       </h1>
-      <h2 class="font-sans text-md font-black justify-stretch items-center w-full order-1 flex-col mb-5 hidden md:text-xl md:flex md:flex-row">
-        <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-             style="max-width: 100%;"
-        >
-        </div>
-        <span class="my-3 basis-3/4 grow px-5">
-          Subtitle
-        </span>
-        <div class="bg-slate-800 dark:bg-slate-300 h-1 w-full"
-             style="max-width: 100%;"
-        >
-        </div>
-      </h2>
-      <span class="order-3">
-        Children
-      </span>
+      <div class="text-xl md:text-2xl prose max-w-screen-md">
+        I build accessible, high performance web applications.
+      </div>
     </div>
   </section>
 </div>

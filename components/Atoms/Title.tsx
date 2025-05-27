@@ -1,43 +1,18 @@
 import React from "react";
 
-import TwoThirds from "../Layouts/TwoThirds";
-import ExpandingLine from "./ExpandingLine";
+import { font } from "utils/header-font";
 
-export default function Title({
-  children,
-  title,
-  reverse,
-}: {
-  children?: React.ReactNode;
-  title?: string;
-  reverse?: boolean;
-}) {
+export default function Title({ children }: React.PropsWithChildren) {
   const classes = [
-    "text-lg",
-    "font-sans",
-    "font-semibold",
     "tracking-tight",
-    "text-left",
-    "font-slate-800",
     "uppercase",
-    "text-5xl",
-    "md:text-6xl",
-    "break-words",
-    "basis-1/3",
+    "text-6xl",
+    "md:text-7xl",
+    "lg:text-8xl",
+    "text-orange-100",
+    "mb-5",
+    font.className,
   ];
 
-  const ChildComponent = (
-    <div className="w-full text-left  text-2xl font-black">
-      {children}
-      <ExpandingLine reverse={reverse} />
-    </div>
-  );
-
-  return title ? (
-    <TwoThirds first={<h2 className={classes.join(" ")}>{title}</h2>}>
-      {children && ChildComponent}
-    </TwoThirds>
-  ) : (
-    children && ChildComponent
-  );
+  return <h2 className={classes.join(" ")}>{children}</h2>;
 }

@@ -1,32 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout/Container Alt smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="bg-slate-200 dark:bg-slate-800 py-5">
-    <div class="container mx-auto py-5 px-3">
-      <p>
-        Vorago causa magni timor cruentus suus arto paulatim uredo vorago.
-      </p>
-      <p>
-        Cursus bardus defendo. Aliquid clibanus vestigium modi defluo tardus talis.
-      </p>
-      <p>
-        Suggero tumultus asperiores. Cito cohibeo sono amoveo sono valens subito decerno debitis. Maxime ago nostrum tot conduco vestigium tandem natus tantillus.
-      </p>
-      <p>
-        Unde trado verbera. Aggredior aptus cubitum curriculum. Annus baiulus tondeo delibero titulus absens ipsam. Non basium supellex cras sordeo adamo repellat adduco tamdiu demergo.
-      </p>
-      <p>
-        Illo aeger solitudo. Tenus natus ambulo subseco solvo admiratio textor earum cursim tertius. Denique attonbitus commemoro tutis audentia cur. Capillus veritatis versus aliqua delectus desipio combibo adiuvo carbo allatus. Timor vehemens adimpleo cogito.
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Layout/Container Default smoke-test 1`] = `
-<div class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
-  <div class="container mx-auto py-5 px-3">
+<div class="bg-black text-orange-100  font-sans">
+  <div class="container mx-auto">
     <p>
       Circumvenio calamitas ipsa super curo vomer stillicidium denique.
     </p>

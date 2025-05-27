@@ -15,10 +15,3 @@ export const Default: Story = {
     children: generatePlaceholderContent(),
   },
 };
-
-export const Alt: Story = {
-  args: {
-    children: generatePlaceholderContent(),
-    alt: true,
-  },
-};

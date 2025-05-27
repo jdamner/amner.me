@@ -7,8 +7,8 @@ import { useState } from "react";
 
 /* Components */
 import { EnvelopeOpenIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import Title from "./Atoms/Title";
 import ProtectedLink from "./Atoms/Links/ProtectedLink";
+import { font } from "@/utils/header-font";
 
 export default function ContactDetails(
   props: React.DetailedHTMLProps<
@@ -23,16 +23,19 @@ export default function ContactDetails(
   const iconClass = "inline-block w-12 h-12 mr-3";
 
   return (
-    <section className="px-4 py-3 container mx-auto" id="contact" {...props}>
-      <Title title="Contact Me">Say hello</Title>
-      <div className="w-full gap-5 my-10 text-center">
-        <p className="my-5">
+    <section className="col-span-2 mt-5 lg:ml-8" id="contact" {...props}>
+      <div className="px-4 py-3 bg-highlighted text-black flex flex-col gap-5">
+        <h2 className="text-9xl tracking-tight uppercase" style={font.style}>
+          Say hello
+        </h2>
+        <p className="mb-5">
           If you&apos;d like to get in touch, just send me an email by clicking
           the link below.
         </p>
         <ProtectedLink
           href="mailto:jdamner@me.com"
-          className="block bg-white dark:bg-slate-800 border-2 px-3 py-2 rounded-sm font-bold border-solid border-slate-900 hover:bg-slate-100 dark:hover:bg-slate-700"
+          className="inline-block px-3 py-3 bg-orange-100 text-black border-4 border-orange-600  hover:bg-orange-600 uppercase font-black text-4xl"
+          style={font.style}
           onMouseEnter={enableMouseOver}
           onMouseLeave={disableMouseOver}
         >
