@@ -1,5 +1,5 @@
 import React from "react";
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/nextjs";
 import "../app/global.css";
 
 export default {
@@ -10,6 +10,8 @@ export default {
       </div>
     ),
   ],
+
   parameters: {},
+  tags: ["autodocs"]
 } as Preview;
 
