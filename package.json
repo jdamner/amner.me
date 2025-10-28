@@ -44,7 +44,7 @@
     "@faker-js/faker": "^10.0.0",
     "@storybook/addon-a11y": "^10.0.0",
     "@storybook/addon-docs": "^10.0.0",
-    "@storybook/nextjs": "^9.0.0",
+    "@storybook/nextjs": "^10.0.0",
     "@storybook/test-runner": "^0.23.0",
     "@tailwindcss/postcss": "^4.1.7",
     "@types/mdx": "^2.0.13",
