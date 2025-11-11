@@ -61,13 +61,16 @@ jobs:
           
           # Wait for server to be ready
           echo "Waiting for server to start on port 6006..."
-          for i in {1..30}; do
+          COUNTER=0
+          MAX_ATTEMPTS=30
+          while [ $COUNTER -lt $MAX_ATTEMPTS ]; do
             if nc -z localhost 6006 2>/dev/null; then
               echo "Server is ready!"
               break
             fi
-            if [ $i -eq 30 ]; then
-              echo "Server failed to start"
+            COUNTER=$((COUNTER + 1))
+            if [ $COUNTER -eq $MAX_ATTEMPTS ]; then
+              echo "Server failed to start after $MAX_ATTEMPTS seconds"
               kill $SERVER_PID 2>/dev/null
               exit 1
             fi
