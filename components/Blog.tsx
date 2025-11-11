@@ -1,4 +1,3 @@
-import React from "react";
 /* Layout */
 import PostList from "./PostList";
 /* Types */

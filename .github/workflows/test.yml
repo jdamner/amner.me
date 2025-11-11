@@ -26,13 +26,13 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: pnpx playwright install --with-deps
       - name: Build Storybook
-        run: npm run build:storybook --quiet
+        run: pnpm run build:storybook --quiet
       - name: Serve Storybook and run tests
         run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && npm run test:ci"
+          pnpx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "pnpx http-server storybook-static --port 6006 --silent" \
+            "pnpx wait-on tcp:6006 && pnpx run test:ci"

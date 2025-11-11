@@ -1,6 +1,6 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React from "react";
-import { font } from "utils/header-font";
+import { font } from "@/utils/header-font";
 import { Container } from "./Layouts";
 
 export default function NavBar(
@@ -17,7 +17,7 @@ export default function NavBar(
     >
       <Container className="px-3">
         <Link
-          href="/"
+          to="/"
           className="font-black uppercase text-5xl"
           style={font.style}
         >

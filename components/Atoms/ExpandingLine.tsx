@@ -1,6 +1,4 @@
-"use client";
 
-import React from "react";
 /* API */
 import { HTMLMotionProps, motion, useReducedMotion } from "framer-motion";
 

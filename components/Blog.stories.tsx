@@ -11,7 +11,7 @@ export default {
 } as Meta;
 
 export const Default: Story = {
-  args: {
+  args: { 
     posts: generatePostLinks(10),
   },
 };

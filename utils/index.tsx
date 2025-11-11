@@ -1,108 +1,73 @@
 /* External Deps */
-import { readFileSync, readdirSync } from "fs";
-import { resolve } from "path";
-import matter from "gray-matter";
 import { slug } from "github-slugger";
+import React from "react";
 
-/* Components */
-import { Markdown } from "@/components/Markdown";
+/* Import all MDX files using Vite's glob import */
+const serviceModules = import.meta.glob<MDXModule>('../content/services/*.mdx', { eager: true });
+const projectModules = import.meta.glob<MDXModule>('../content/cv/projects/*.mdx', { eager: true });
+const referenceModules = import.meta.glob<MDXModule>('../content/cv/references/*.mdx', { eager: true });
+const employmentModules = import.meta.glob<MDXModule>('../content/cv/employment/*.mdx', { eager: true });
+const educationModules = import.meta.glob<MDXModule>('../content/cv/education/*.mdx', { eager: true });
+const blogModules = import.meta.glob<MDXModule>('../content/blog/*.mdx', { eager: true });
 
-/* Constants */
-const postsDirectory: string = resolve("content/blog/");
-const servicesDirectory: string = resolve("content/services");
-const cvDirectory: string = resolve("content/cv");
-const projectsDirectory: string = resolve(cvDirectory, "projects");
-const referencesDirectory: string = resolve(cvDirectory, "references");
-const employmentDirectory: string = resolve(cvDirectory, "employment");
-const educationDirectory: string = resolve(cvDirectory, "education");
-
-type MatterData = ReturnType<typeof matter>["data"];
-type AttributeValidator<T extends MatterData> = (data: MatterData) => data is T;
-
-const defaultAttributeValidator = <T extends MatterData>(
-  data: MatterData,
-): data is T => {
-  return typeof data === "object" && data !== null;
+type MDXModule = {
+  default: React.ComponentType;
+  frontmatter?: Record<string, any>;
 };
 
-/**
- * Gets all files in a directory
- */
-const getAllFrom = <T extends MatterData>(
-  directory: string,
-  attributeValidator: AttributeValidator<T> = defaultAttributeValidator,
-) =>
-  readdirSync(directory).map((filename) =>
-    readMdFile<T>(filename, directory, attributeValidator),
-  );
-
-/**
- * Reads a markdown file
- */
-const readMdFile = <T extends MatterData>(
-  filename: string,
-  directory: string = "content/",
-  attributeValidator: AttributeValidator<T> = defaultAttributeValidator,
-) =>
-  parseMarkdown<T>(
-    readFileSync(`${directory}/${filename}`, "utf8"),
-    filename,
-    attributeValidator,
-  );
-
-/**
- * Parses markdown file contents
- */
-export const parseMarkdown = <T extends MatterData>(
-  fileContents: string,
-  filename: string,
-  attributeValidator: AttributeValidator<T> = defaultAttributeValidator,
+const extractMetadata = <T extends Record<string, any>>(
+  modules: Record<string, MDXModule>,
+  validator?: (data: any) => data is T,
 ) => {
-  const { content, data } = matter(fileContents);
-
-  if (!attributeValidator(data)) {
-    console.log(data);
-    throw new Error(`Invalid attributes in ${filename}` + JSON.stringify(data));
-  }
-
-  return {
-    data,
-    slug: slug(filename.replace(/\.mdx$/, "")),
-    content: <Markdown>{content}</Markdown>,
-  };
+  return Object.entries(modules).map(([path, module]) => {
+    const filename = path.split('/').pop() || '';
+    const slugValue = slug(filename.replace(/\.mdx$/, ''));
+    const frontmatter = module.frontmatter || {};
+    
+    // Only log if we have a validator and frontmatter exists but is invalid
+    if (validator && Object.keys(frontmatter).length > 0 && !validator(frontmatter)) {
+      console.warn(`Invalid frontmatter in ${filename}:`, frontmatter);
+    }
+    
+    return {
+      slug: slugValue,
+      data: frontmatter as T,
+      content: module.default,
+    };
+  });
 };
 
 /**
  * Gets all Posts
  */
 const getAllPosts = () =>
-  getAllFrom<WithTitle & WithThumbnail & WithDate>(
-    postsDirectory,
-    (data): data is WithTitle & WithThumbnail & WithDate =>
-      hasTitle(data) && hasThumbnail(data) && hasDate(data),
+  extractMetadata<WithTitle & WithThumbnail & WithDateString>(
+    blogModules,
+    (data): data is WithTitle & WithThumbnail & WithDateString =>
+      hasTitle(data) && hasThumbnail(data) && hasDateString(data),
   );
 
 export const useAllServices = () =>
-  getAllFrom<WithTitle>(servicesDirectory, hasTitle);
+  extractMetadata<WithTitle>(serviceModules, hasTitle);
 
 export const getAllProjects = () =>
-  getAllFrom<WithTitle & WithLink>(
-    projectsDirectory,
+  extractMetadata<WithTitle & WithLink>(
+    projectModules,
     (data): data is WithTitle & WithLink => hasTitle(data) && hasLink(data),
   );
 
 export const useAllReferences = () =>
-  getAllFrom<WithTitle & WithWebsite & WithPhone & WithEmail>(
-    referencesDirectory,
+  extractMetadata<WithTitle & WithWebsite & WithPhone & WithEmail>(
+    referenceModules,
     (data): data is WithTitle & WithWebsite & WithPhone & WithEmail =>
       hasTitle(data) && hasWebsite(data) && hasPhone(data) && hasEmail(data),
   );
 
 export const useAllEmployment = () =>
-  getAllFrom<
+  extractMetadata<
     WithTitle & WithSubtitle & WithDateString & WithRole & WithWebsite
   >(
-    employmentDirectory,
+    employmentModules,
     (
       data,
     ): data is WithTitle &
@@ -118,8 +83,8 @@ export const useAllEmployment = () =>
   );
 
 export const useAllEducation = () =>
-  getAllFrom<WithTitle & WithDateString>(
-    educationDirectory,
+  extractMetadata<WithTitle & WithDateString>(
+    educationModules,
     (data): data is WithTitle & WithDateString =>
       hasTitle(data) && hasDateString(data),
   );
@@ -141,41 +106,38 @@ type WithTitle = { title: string };
 type WithSubtitle = { subtitle: string };
 type WithLink = { link: string };
 type WithThumbnail = { thumbnail: string };
-type WithDate = { date: Date };
 type WithDateString = { date: string };
 type WithPhone = { phone: string };
 type WithWebsite = { website: string };
 type WithEmail = { email: string };
 type WithRole = { role: string };
 
-const hasTitle = (data: MatterData): data is WithTitle =>
-  defaultAttributeValidator(data) &&
+const hasTitle = (data: any): data is WithTitle =>
+  typeof data === "object" &&
+  data !== null &&
   "title" in data &&
   typeof data.title === "string";
 
-const hasSubtitle = (data: MatterData): data is WithSubtitle =>
+const hasSubtitle = (data: any): data is WithSubtitle =>
   "subtitle" in data && typeof data.subtitle === "string";
 
-const hasLink = (data: MatterData): data is WithLink =>
+const hasLink = (data: any): data is WithLink =>
   "link" in data && typeof data.link === "string";
 
-const hasThumbnail = (data: MatterData): data is WithThumbnail =>
+const hasThumbnail = (data: any): data is WithThumbnail =>
   "thumbnail" in data && typeof data.thumbnail === "string";
 
-const hasDate = (data: MatterData): data is WithDate =>
-  "date" in data && data.date instanceof Date;
-
-const hasDateString = (data: MatterData): data is WithDateString =>
+const hasDateString = (data: any): data is WithDateString =>
   "date" in data && typeof data.date === "string";
 
-const hasPhone = (data: MatterData): data is WithPhone =>
+const hasPhone = (data: any): data is WithPhone =>
   "phone" in data && typeof data.phone === "string";
 
-const hasWebsite = (data: MatterData): data is WithWebsite =>
+const hasWebsite = (data: any): data is WithWebsite =>
   "website" in data && typeof data.website === "string";
 
-const hasEmail = (data: MatterData): data is WithEmail =>
+const hasEmail = (data: any): data is WithEmail =>
   "email" in data && typeof data.email === "string";
 
-export const hasRole = (data: MatterData): data is WithRole =>
+export const hasRole = (data: any): data is WithRole =>
   "role" in data && typeof data.role === "string";

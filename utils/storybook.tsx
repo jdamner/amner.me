@@ -1,5 +1,4 @@
 import { faker } from "@faker-js/faker";
-import React from "react";
 import { parseMarkdown } from ".";
 import matter from "gray-matter";
 

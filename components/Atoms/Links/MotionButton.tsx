@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 /* API */
@@ -21,7 +20,7 @@ export default function MotionButton(
   return (
     <button {...props}>
       {letters.map((letter, index) => {
-        const delay = props.delay + index * 0.05;
+        const delay = (props.delay ?? 0) + index * 0.05;
         const motionProps: MotionProps = {
           whileInView: {
             translateY: [0, -3, 0],
