@@ -53,7 +53,33 @@ jobs:
         run: pnpx playwright install --with-deps
       - name: Build Storybook
         run: pnpm run build:storybook --quiet
-      - name: Serve Storybook
-        run: npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && pnpm run test:ci"
+      - name: Serve Storybook and Run Tests
+        run: |
+          # Start HTTP server in background
+          npx http-server storybook-static --port 6006 --silent &
+          SERVER_PID=$!
+          
+          # Wait for server to be ready
+          echo "Waiting for server to start on port 6006..."
+          for i in {1..30}; do
+            if nc -z localhost 6006 2>/dev/null; then
+              echo "Server is ready!"
+              break
+            fi
+            if [ $i -eq 30 ]; then
+              echo "Server failed to start"
+              kill $SERVER_PID 2>/dev/null
+              exit 1
+            fi
+            sleep 1
+          done
+          
+          # Run tests
+          pnpm run test:ci
+          TEST_EXIT=$?
+          
+          # Kill server
+          kill $SERVER_PID 2>/dev/null
+          
+          # Exit with test result
+          exit $TEST_EXIT
