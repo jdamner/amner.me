@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { generateMdContent } from "@/utils/storybook";
 import { Markdown } from "./Markdown";

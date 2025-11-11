@@ -1,4 +1,4 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate } from "react-router";
 
 /* Layout */
 import { Article } from "@/components/Layouts/";

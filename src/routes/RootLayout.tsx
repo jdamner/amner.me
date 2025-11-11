@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router";
 
 /* Components */
 import { Container } from "@/components/Layouts";

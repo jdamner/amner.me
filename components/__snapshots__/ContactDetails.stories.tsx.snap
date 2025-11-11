@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Components/ContactDetails Default smoke-test 1`] = `
 <div class="bg-black text-orange-100  font-sans">
@@ -7,7 +7,7 @@ exports[`Components/ContactDetails Default smoke-test 1`] = `
   >
     <div class="px-4 py-3 bg-highlighted text-black flex flex-col gap-5">
       <h2 class="text-9xl tracking-tight uppercase"
-          style="font-family: &quot;Bebas Neue&quot;; font-style: normal; font-weight: 400;"
+          style="font-family: &quot;Bebas Neue&quot;, cursive;"
       >
         Say hello
       </h2>
@@ -15,8 +15,8 @@ exports[`Components/ContactDetails Default smoke-test 1`] = `
         If you'd like to get in touch, just send me an email by clicking the link below.
       </p>
       <a class="inline-block px-3 py-3 bg-orange-100 text-black border-4 border-orange-600  hover:bg-orange-600 uppercase font-black text-4xl"
-         href="/#"
-         style="font-family: &quot;Bebas Neue&quot;; font-style: normal; font-weight: 400;"
+         href="#"
+         style="font-family: &quot;Bebas Neue&quot;, cursive;"
       >
         <svg xmlns="http://www.w3.org/2000/svg"
              fill="none"

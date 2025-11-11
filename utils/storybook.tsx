@@ -1,13 +1,15 @@
 import { faker } from "@faker-js/faker";
-import { parseMarkdown } from ".";
 import matter from "gray-matter";
 
 type MatterData = ReturnType<typeof matter>["data"];
 
 faker.seed(123);
 
-export const generateMdFile = <T extends MatterData>(attributes: T) =>
-  parseMarkdown<T>(generateMD(attributes), "test.mdx");
+// Stub for Storybook - parseMarkdown no longer exists after Vite migration
+export const generateMdFile = <T extends MatterData>(attributes: T) => ({
+  data: attributes,
+  content: () => null,
+});
 
 export const generateMdContent = (): string =>
   `# ${faker.lorem.words(3)}\n` +
