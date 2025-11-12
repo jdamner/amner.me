@@ -1,6 +1,6 @@
 import React from "react";
 
-import { font } from "utils/header-font";
+import { font } from "@/utils/header-font";
 
 export default function Title({ children }: React.PropsWithChildren) {
   const classes = [
@@ -11,8 +11,7 @@ export default function Title({ children }: React.PropsWithChildren) {
     "lg:text-8xl",
     "text-orange-100",
     "mb-5",
-    font.className,
   ];
 
-  return <h2 className={classes.join(" ")}>{children}</h2>;
+  return <h2 className={classes.join(" ")} style={font.style}>{children}</h2>;
 }

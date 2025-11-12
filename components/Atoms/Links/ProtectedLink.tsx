@@ -1,12 +1,10 @@
 import React from "react";
-import Link, { LinkProps } from "next/link";
 
 export default function ProtectedLink(
-  props: LinkProps &
-    React.DetailedHTMLProps<
-      React.HTMLAttributes<HTMLAnchorElement>,
-      HTMLAnchorElement
-    >,
+  props: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  > & { href: string },
 ) {
   // extract the HREF from the props, and make it
   // an on-click event... Stops bots from crawling
@@ -17,5 +15,5 @@ export default function ProtectedLink(
     window.location.href = href.toString();
   };
 
-  return <Link {...rest} onClick={onClick} href="#" />;
+  return <a {...rest} onClick={onClick} href="#" />;
 }

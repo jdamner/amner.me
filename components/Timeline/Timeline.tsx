@@ -1,4 +1,3 @@
-"use client";
 
 import React, { useState } from "react";
 
@@ -89,7 +88,7 @@ export default function Timeline(
           </div>
           <div className="flex justify-between flex-col md:flex-row">
             {events[currentIndex] && (
-              <TimelineDetail>{events[currentIndex].content}</TimelineDetail>
+              <TimelineDetail>{React.createElement(events[currentIndex].content)}</TimelineDetail>
             )}
           </div>
         </>
