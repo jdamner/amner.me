@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Atoms/Links & Buttons ActiveTab smoke-test 1`] = `
 <div class="bg-black text-orange-100  font-sans">
   <button delay="0.29371404638882936"
-          class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400 mb-1 bg-orange-100 text-black"
+          class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 mb-1 bg-orange-100 text-black"
   >
     conturbo calco
   </button>
@@ -12,7 +12,9 @@ exports[`Atoms/Links & Buttons ActiveTab smoke-test 1`] = `
 
 exports[`Atoms/Links & Buttons Button smoke-test 1`] = `
 <div class="bg-black text-orange-100  font-sans">
-  <button class="undefined inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400">
+  <button class="undefined inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600"
+          style="font-family: &quot;Bebas Neue&quot;, cursive;"
+  >
     subito circumvenio
   </button>
 </div>
@@ -30,7 +32,7 @@ exports[`Atoms/Links & Buttons Inline smoke-test 1`] = `
 
 exports[`Atoms/Links & Buttons LinkButton smoke-test 1`] = `
 <div class="bg-black text-orange-100  font-sans">
-  <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400"
+  <a class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600"
      href="https://insignificant-wear.net"
   >
     calamitas ipsa
@@ -147,7 +149,7 @@ exports[`Atoms/Links & Buttons Motion smoke-test 1`] = `
 
 exports[`Atoms/Links & Buttons Protected smoke-test 1`] = `
 <div class="bg-black text-orange-100  font-sans">
-  <a href="/#">
+  <a href="#">
     atque exercitationem
   </a>
 </div>
@@ -156,7 +158,7 @@ exports[`Atoms/Links & Buttons Protected smoke-test 1`] = `
 exports[`Atoms/Links & Buttons Tab smoke-test 1`] = `
 <div class="bg-black text-orange-100  font-sans">
   <button delay="0.3229589138531782"
-          class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 bebas-neue-normal-400 mb-1"
+          class="inline-block border-2 border-orange-600 bg-orange-600 text-black uppercase text-2xl font-black px-4 py-2 hover:bg-orange-100 hover:text-orange-600 hover:border-orange-600 mb-1"
   >
     perferendis suppono
   </button>

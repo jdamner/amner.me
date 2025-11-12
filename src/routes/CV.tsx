@@ -1,32 +1,23 @@
-import React from "react";
-import type { Metadata } from "next";
-
 import Service from "@/content/services.mdx";
 import Profile from "@/content/cv/profile.mdx";
 
-import { Tabs, Timeline } from "../../components";
-import { TwoThirds, Article, Container } from "../../components/Layouts";
-import Title from "../../components/Atoms/Title";
-import ButtonLink from "../../components/Atoms/Links/ButtonLink";
-import InlineLink from "../../components/Atoms/Links/Inline";
+import { Tabs, Timeline } from "@/components";
+import { TwoThirds, Article, Container } from "@/components/Layouts";
+import Title from "@/components/Atoms/Title";
+import ButtonLink from "@/components/Atoms/Links/ButtonLink";
+import InlineLink from "@/components/Atoms/Links/Inline";
 
 /* Content */
-
 import {
   useAllEducation,
   useAllEmployment,
   getAllProjects,
   useAllReferences,
   useAllServices,
-} from "../../utils";
+} from "@/utils";
 import { font } from "@/utils/header-font";
 
-export const metadata: Metadata = {
-  title: "Curriculum Vitae",
-  description: "James Amner's Curriculum Vitae (Resume)",
-};
-
-const Page = () => {
+const CV = () => {
   const employment = useAllEmployment();
   const education = useAllEducation();
   const projects = getAllProjects();
@@ -71,7 +62,7 @@ const Page = () => {
               >
                 {item.data.title}
               </h3>
-              <div className="prose my-5">{item.content}</div>
+              <div className="prose my-5"><item.content /></div>
               <ButtonLink href={item.data.link} target="_blank">
                 Find out more
               </ButtonLink>
@@ -95,7 +86,7 @@ const Page = () => {
                   </h3>
                   <span className="text-sm">{item.data.date}</span>
                 </div>
-                <div className="prose">{item.content}</div>
+                <div className="prose"><item.content /></div>
               </div>
             ))}
           </TwoThirds>
@@ -116,7 +107,7 @@ const Page = () => {
                 </h3>
               </div>
               <ul>
-                <li>{item.content}</li>
+                <li><item.content /></li>
                 {item.data.website && (
                   <li>
                     <InlineLink href={item.data.website}>
@@ -147,4 +138,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default CV;

@@ -1,15 +1,11 @@
 import React from "react";
 
-/* Components */
-import Link, { type LinkProps } from "next/link";
-
 export default function InlineLink(
-  props: Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> &
-    LinkProps & {
-      children?: React.ReactNode;
-    } & React.RefAttributes<HTMLAnchorElement>,
+  props: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    children?: React.ReactNode;
+  },
 ) {
-  return <Link className={InlineLinkClasses.join(" ")} {...props} />;
+  return <a className={InlineLinkClasses.join(" ")} {...props} />;
 }
 
 export const InlineLinkClasses = [

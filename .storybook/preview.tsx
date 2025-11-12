@@ -1,6 +1,5 @@
-import React from "react";
-import type { Preview } from "@storybook/nextjs";
-import "../app/global.css";
+import type { Preview } from "@storybook/react";
+import "../src/global.css";
 
 export default {
   decorators: [

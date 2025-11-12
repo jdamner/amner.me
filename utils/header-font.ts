@@ -1,5 +1,6 @@
-import { Bebas_Neue as Font } from "next/font/google";
-export const font = Font({
-  weight: "400",
-  subsets: ["latin", "latin-ext"],
-});
+// Font is now loaded via Google Fonts in the HTML head
+export const font = {
+  style: {
+    fontFamily: "'Bebas Neue', cursive",
+  },
+};

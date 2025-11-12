@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Blog from "./Blog";
 import { generatePostLinks } from "../utils/storybook";
@@ -11,7 +11,7 @@ export default {
 } as Meta;
 
 export const Default: Story = {
-  args: {
+  args: { 
     posts: generatePostLinks(10),
   },
 };

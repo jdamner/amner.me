@@ -1,6 +1,6 @@
 import React from "react";
 
-import { font } from "utils/header-font";
+import { font } from "@/utils/header-font";
 
 export default function Button(
   props: React.DetailedHTMLProps<
@@ -11,6 +11,7 @@ export default function Button(
   const newProps = {
     ...props,
     className: `${props.className} ${ButtonClasses.join(" ")}`,
+    ...font
   };
   return <button {...newProps} />;
 }
@@ -34,5 +35,4 @@ export const ButtonClasses: string[] = [
   "hover:bg-orange-100",
   "hover:text-orange-600",
   "hover:border-orange-600",
-  font.className,
 ];

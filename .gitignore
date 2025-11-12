@@ -58,6 +58,9 @@ typings/
 .next
 out
 
+# vite build output
+dist
+
 # Mac files
 .DS_Store
 

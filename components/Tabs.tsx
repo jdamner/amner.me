@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 /* API */
@@ -60,7 +59,7 @@ export default function Tabs({
         <h3 className="text-3xl font-bold mb-5 uppercase" style={font.style}>
           {tab.data.title}
         </h3>
-        {tab.content}
+        <tab.content />
       </div>
     );
   }
