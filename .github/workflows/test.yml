@@ -3,7 +3,6 @@ name: Test
 on:
   pull_request:
     branches:
-      - 'staging'
       - 'main'
   workflow_dispatch:
   
