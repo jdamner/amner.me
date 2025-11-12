@@ -24,7 +24,7 @@ jobs:
       image: mcr.microsoft.com/playwright:v1.50.1-noble
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
