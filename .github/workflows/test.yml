@@ -56,13 +56,13 @@ jobs:
       - name: Serve Storybook and Run Tests
         run: |
           # Start HTTP server in background
-          npx http-server storybook-static --port 6006 --silent &
+          pnpx http-server storybook-static --port 6006 --silent &
           SERVER_PID=$!
           
           # Wait for server to be ready
           echo "Waiting for server to start on port 6006..."
           COUNTER=0
-          MAX_ATTEMPTS=30
+          MAX_ATTEMPTS=60
           while [ $COUNTER -lt $MAX_ATTEMPTS ]; do
             if nc -z localhost 6006 2>/dev/null; then
               echo "Server is ready!"
