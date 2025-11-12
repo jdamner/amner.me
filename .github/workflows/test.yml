@@ -53,36 +53,8 @@ jobs:
         run: pnpx playwright install --with-deps
       - name: Build Storybook
         run: pnpm run build:storybook --quiet
-      - name: Serve Storybook and Run Tests
+      - name: Serve Storybook and run tests
         run: |
-          # Start HTTP server in background
-          pnpx http-server storybook-static --port 6006 --silent &
-          SERVER_PID=$!
-          
-          # Wait for server to be ready
-          echo "Waiting for server to start on port 6006..."
-          COUNTER=0
-          MAX_ATTEMPTS=60
-          while [ $COUNTER -lt $MAX_ATTEMPTS ]; do
-            if nc -z localhost 6006 2>/dev/null; then
-              echo "Server is ready!"
-              break
-            fi
-            COUNTER=$((COUNTER + 1))
-            if [ $COUNTER -eq $MAX_ATTEMPTS ]; then
-              echo "Server failed to start after $MAX_ATTEMPTS seconds"
-              kill $SERVER_PID 2>/dev/null
-              exit 1
-            fi
-            sleep 1
-          done
-          
-          # Run tests
-          pnpm run test:ci
-          TEST_EXIT=$?
-          
-          # Kill server
-          kill $SERVER_PID 2>/dev/null
-          
-          # Exit with test result
-          exit $TEST_EXIT
+          pnpx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "pnpx http-server storybook-static --port 6006 --silent" \
+            "pnpx wait-on tcp:6006 && pnpm run test:ci"
