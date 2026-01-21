@@ -60,7 +60,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.26",
     "eslint-plugin-storybook": "^10.1.11",
-    "prettier": "^3.8.0",
+    "prettier": "^3.8.1",
     "rehype-highlight": "^7.0.2",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
