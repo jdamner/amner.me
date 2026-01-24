@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 import "../src/global.css";
 
 export default {
@@ -10,7 +10,11 @@ export default {
     ),
   ],
 
-  parameters: {},
+  parameters: {
+    a11y: {
+      test: "error"
+    }
+  },
   tags: ["autodocs"]
 } as Preview;
 
