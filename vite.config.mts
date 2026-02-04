@@ -41,6 +41,7 @@ export default defineConfig({
     include: ['react', 'react-dom', 'react-router']
   },
   test: {
+    reporters: process.env.GITHUB_ACTIONS ? ['default', 'github-actions'] : ['default'],
     projects: [{
       extends: true,
       plugins: [
