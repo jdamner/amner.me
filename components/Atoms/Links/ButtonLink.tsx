@@ -1,12 +1,11 @@
-import React from "react";
+import { type ComponentProps } from "react";
 
 /* Components */
 import { ButtonClasses } from "./Button";
+import { Link } from "react-router";
 
 export default function ButtonLink(
-  props: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    children?: React.ReactNode;
-  },
+  props: ComponentProps<typeof Link>
 ) {
-  return <a className={ButtonClasses.join(" ")} {...props} />;
+  return <Link className={ButtonClasses.join(" ")} {...props} />;
 }

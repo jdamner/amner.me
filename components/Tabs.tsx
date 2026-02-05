@@ -65,7 +65,7 @@ export default function Tabs({
   }
 
   function NonActiveTab() {
-    return <div className={contentClassName}>{defaultContent}</div>;
+    return defaultContent;
   }
 
   return (

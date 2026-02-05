@@ -1,11 +1,10 @@
-import React from "react";
+import { type ComponentProps } from "react";
+import { Link } from "react-router";
 
 export default function InlineLink(
-  props: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    children?: React.ReactNode;
-  },
+  props: ComponentProps<typeof Link>
 ) {
-  return <a className={InlineLinkClasses.join(" ")} {...props} />;
+  return <Link className={InlineLinkClasses.join(" ")} {...props} />;
 }
 
 export const InlineLinkClasses = [

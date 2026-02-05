@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 
-import { components } from "../mdx-components";
+import { components } from "../src/mdx-components";
 import type { ComponentProps } from "react";
 
 export function Markdown({ children }: ComponentProps<typeof ReactMarkdown>) {

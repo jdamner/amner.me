@@ -1,11 +1,11 @@
 import { getAllPostLinks, useAllServices } from "@/utils";
 
 import Content from "@/content/home.mdx";
-import Service from "@/content/services.mdx";
 
 /* Layout/Visual Component */
-import { Blog, Tabs, Header } from "@/components";
+import { Blog, Tabs, Header, } from "@/components";
 import { Container } from "@/components/Layouts/";
+import { ServicePointer } from "@/components/ServicePointer";
 import Title from "@/components/Atoms/Title";
 
 const Home = () => {
@@ -22,9 +22,9 @@ const Home = () => {
       <div className="bg-orange-600 lg:bg-linear-to-r from-orange-600 from-50% to-50% to-orange-100 text-black px-3">
         <Container>
           <Tabs
-            title={<Title>Technical Skills</Title>}
+            title={<Title>Skills</Title>}
             tabs={services}
-            defaultContent={<Service />}
+            defaultContent={<ServicePointer />}
           />
         </Container>
       </div>
