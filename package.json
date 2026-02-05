@@ -30,6 +30,7 @@
     "framer-motion": "^12.33.0",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.11.1",
     "mdx": "^0.3.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
