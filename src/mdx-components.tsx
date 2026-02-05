@@ -1,7 +1,5 @@
 import type { MDXComponents } from "mdx/types";
 
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { slug } from "github-slugger";
 
 /* Types */
@@ -71,17 +69,9 @@ export const components = {
     return <>{children}</>;
   },
   code(props: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>) {
-    const { children, className, ...rest } = props;
-    const match = /language-(\w+)/.exec(className || "");
-    return match ? (
-      <SyntaxHighlighter language={match[1]} style={vscDarkPlus}>
-        {String(children)}
-      </SyntaxHighlighter>
-    ) : (
-      <code {...rest} className={className}>
-        {children}
-      </code>
-    );
+    // Highlighting is already applied by rehype-highlight during build time
+    // Just render the code element with classes from the build process
+    return <code {...props} />;
   },
   h1(
     props: DetailedHTMLProps<

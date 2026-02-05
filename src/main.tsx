@@ -4,12 +4,13 @@ import { MDXProvider } from '@mdx-js/react'
 import { BrowserRouter, Routes, Route } from 'react-router'
 
 import { components } from './mdx-components'
+import Loading from './components/Loading'
 
 import RootLayout from './routes/RootLayout'
 import Home from './routes/Home'
-import BlogPost from './routes/BlogPost'
-import CV from './routes/CV'
-import Privacy from './routes/Privacy'
+const BlogPost = React.lazy(() => import('./routes/BlogPost'))
+const CV = React.lazy(() => import('./routes/CV'))
+const Privacy = React.lazy(() => import('./routes/Privacy'))
 import NotFound from './routes/NotFound'
 
 import './global.css'
@@ -28,9 +29,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />
-            <Route path="cv" element={<CV />} />
-            <Route path="privacy" element={<Privacy />} />
-            <Route path=":slug" element={<BlogPost />} />
+            <Route path="cv" element={<React.Suspense fallback={<Loading />}><CV /></React.Suspense>} />
+            <Route path="privacy" element={<React.Suspense fallback={<Loading />}><Privacy /></React.Suspense>} />
+            <Route path=":slug" element={<React.Suspense fallback={<Loading />}><BlogPost /></React.Suspense>} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
