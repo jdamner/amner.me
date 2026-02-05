@@ -1,4 +1,3 @@
-import Service from "@/content/services.mdx";
 import Profile from "@/content/cv/profile.mdx";
 
 import { Tabs, Timeline } from "@/components";
@@ -16,6 +15,7 @@ import {
   useAllServices,
 } from "@/utils";
 import { font } from "@/utils/header-font";
+import { ServicePointer } from "@/components/ServicePointer";
 
 const CV = () => {
   const employment = useAllEmployment();
@@ -46,7 +46,7 @@ const CV = () => {
           <Tabs
             title={<Title>Technical Skills</Title>}
             tabs={services}
-            defaultContent={<Service />}
+            defaultContent={<ServicePointer />}
           />
         </Container>
       </div>
@@ -63,7 +63,7 @@ const CV = () => {
                 {item.data.title}
               </h3>
               <div className="prose my-5"><item.content /></div>
-              <ButtonLink href={item.data.link} target="_blank">
+              <ButtonLink to={item.data.link} target="_blank">
                 Find out more
               </ButtonLink>
             </div>
@@ -110,21 +110,21 @@ const CV = () => {
                 <li><item.content /></li>
                 {item.data.website && (
                   <li>
-                    <InlineLink href={item.data.website}>
+                    <InlineLink to={item.data.website}>
                       {item.data.website}
                     </InlineLink>
                   </li>
                 )}
                 {item.data.phone && (
                   <li>
-                    <InlineLink href={`tel:${item.data.phone}`}>
+                    <InlineLink to={`tel:${item.data.phone}`}>
                       {item.data.phone}
                     </InlineLink>
                   </li>
                 )}
                 {item.data.email && (
                   <li>
-                    <InlineLink href={`mailto:${item.data.email}`}>
+                    <InlineLink to={`mailto:${item.data.email}`}>
                       {item.data.email}
                     </InlineLink>
                   </li>

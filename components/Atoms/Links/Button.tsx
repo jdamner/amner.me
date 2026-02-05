@@ -22,11 +22,14 @@ export default function Button(
  * @type {string[]}
  */
 export const ButtonClasses: string[] = [
-  "inline-block",
+  "inline-flex",
+  "justify-center",
+  "items-center",
   "border-2",
   "border-orange-600",
   "bg-orange-600",
   "text-black",
+  "text-decoration-none",
   "uppercase",
   "text-2xl",
   "font-black",
@@ -35,4 +38,5 @@ export const ButtonClasses: string[] = [
   "hover:bg-orange-100",
   "hover:text-orange-600",
   "hover:border-orange-600",
+  "hover:cursor-pointer",
 ];

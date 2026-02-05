@@ -18,7 +18,7 @@ export default function PostList(
         {posts &&
           posts.map((post, index) => (
             <li key={index} className="mb-1">
-              <ButtonLink href={post.slug} key={index}>
+              <ButtonLink to={post.slug} key={index}>
                 {post.title}
               </ButtonLink>
             </li>
