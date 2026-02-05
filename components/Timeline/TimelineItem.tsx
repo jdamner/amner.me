@@ -31,11 +31,11 @@ export default function TimelineItem(
         >
           {role}
         </h3>
-        <h4 className="text-lg">
-          <InlineLink href={companyUrl} target="_blank">
+        {companyUrl && (<h4 className="text-lg">
+          <InlineLink to={companyUrl} target="_blank">
             {company}
           </InlineLink>
-        </h4>
+        </h4> )}
         <span className="text-sm">{date}</span>
       </div>
     </li>
