@@ -69,6 +69,7 @@ export default defineConfig({
       }
     }
   },
+  assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.otf'],
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router']
   },
