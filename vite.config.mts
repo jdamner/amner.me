@@ -48,7 +48,6 @@ export default defineConfig({
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router'],
           'vendor-mdx': ['@mdx-js/react'],
-          'vendor-motion': ['framer-motion']
         }
       }
     }
