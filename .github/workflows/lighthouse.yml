@@ -1,0 +1,123 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v5
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Install Lighthouse
+        run: npm install -g @lhci/cli@0.12.x lighthouse
+
+      - name: Run Lighthouse
+        id: lighthouse
+        run: |
+          npx http-server ./dist -p 8080 -s &
+          SERVER_PID=$!
+          sleep 2
+          
+          lighthouse http://localhost:8080 \
+            --chrome-flags="--headless" \
+            --output json \
+            --output-path ./lighthouse-report.json \
+            --output html \
+            --output-path ./lighthouse-report.html || true
+          
+          kill $SERVER_PID 2>/dev/null || true
+          
+          # Extract scores
+          if [ -f ./lighthouse-report.json ]; then
+            PERF=$(jq '.categories.performance.score * 100 | floor' ./lighthouse-report.json)
+            ACCESS=$(jq '.categories.accessibility.score * 100 | floor' ./lighthouse-report.json)
+            BEST=$(jq '.categories."best-practices".score * 100 | floor' ./lighthouse-report.json)
+            SEO=$(jq '.categories.seo.score * 100 | floor' ./lighthouse-report.json)
+            
+            echo "performance=$PERF" >> $GITHUB_OUTPUT
+            echo "accessibility=$ACCESS" >> $GITHUB_OUTPUT
+            echo "best_practices=$BEST" >> $GITHUB_OUTPUT
+            echo "seo=$SEO" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload Lighthouse Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-report
+          path: |
+            ./lighthouse-report.html
+            ./lighthouse-report.json
+          retention-days: 30
+
+      - name: Comment PR with Results
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('./lighthouse-report.json', 'utf8'));
+            const { categories } = report;
+            
+            const scoreEmoji = (score) => {
+              const s = score * 100;
+              if (s >= 90) return '🟢';
+              if (s >= 75) return '🟡';
+              return '🔴';
+            };
+            
+            const comment = `## ⚡ Lighthouse Audit Results
+            
+| Category | Score |
+|----------|-------|
+| ${scoreEmoji(categories.performance.score)} Performance | ${(categories.performance.score * 100).toFixed(0)}/100 |
+| ${scoreEmoji(categories.accessibility.score)} Accessibility | ${(categories.accessibility.score * 100).toFixed(0)}/100 |
+| ${scoreEmoji(categories['best-practices'].score)} Best Practices | ${(categories['best-practices'].score * 100).toFixed(0)}/100 |
+| ${scoreEmoji(categories.seo.score)} SEO | ${(categories.seo.score * 100).toFixed(0)}/100 |
+
+[📊 Full Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
