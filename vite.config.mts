@@ -8,6 +8,23 @@ import rehypeHighlight from 'rehype-highlight';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import cssInjectedByJs from 'vite-plugin-css-injected-by-js';
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import typescript from 'highlight.js/lib/languages/typescript';
+import php from 'highlight.js/lib/languages/php';
+import html from 'highlight.js/lib/languages/xml';
+import css from 'highlight.js/lib/languages/css';
+import json from 'highlight.js/lib/languages/json';
+import yaml from 'highlight.js/lib/languages/yaml';
+
+// Register only the languages we use
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('php', php);
+hljs.registerLanguage('html', html);
+hljs.registerLanguage('css', css);
+hljs.registerLanguage('json', json);
+hljs.registerLanguage('yaml', yaml);
 
 // https://vitejs.dev/config/
 import path from 'node:path';
@@ -21,7 +38,7 @@ export default defineConfig({
   base: '/',
   plugins: [cssInjectedByJs(), mdx({
     remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm],
-    rehypePlugins: [rehypeHighlight]
+    rehypePlugins: [[rehypeHighlight, { highlighter: hljs }]]
   }), react({
     include: /\.(jsx|js|tsx|ts)$/
   })],
@@ -48,11 +65,11 @@ export default defineConfig({
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router'],
           'vendor-mdx': ['@mdx-js/react'],
-          'vendor-motion': ['framer-motion']
         }
       }
     }
   },
+  assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.otf'],
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router']
   },

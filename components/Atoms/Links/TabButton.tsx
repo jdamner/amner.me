@@ -1,9 +1,6 @@
 import React from "react";
-/* API */
-import { useReducedMotion } from "framer-motion";
 
 /* Components */
-import MotionButton from "./MotionButton";
 import { ButtonClasses } from "./Button";
 import clsx from "clsx";
 
@@ -22,9 +19,5 @@ export default function TabButton(
     }),
   };
 
-  return useReducedMotion() ? (
-    <button {...newProps} />
-  ) : (
-    <MotionButton {...newProps} />
-  );
+  return <button {...newProps} />
 }

@@ -13,6 +13,7 @@ const CV = React.lazy(() => import('./routes/CV'))
 const Privacy = React.lazy(() => import('./routes/Privacy'))
 import NotFound from './routes/NotFound'
 
+import '@fontsource/bebas-neue'
 import './global.css'
 
 // Handle GitHub Pages SPA redirect
