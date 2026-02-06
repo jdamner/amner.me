@@ -19,11 +19,13 @@
     "test:snapshots": "vitest --project=storybook --run -u",
     "build": "tsc && vite build",
     "build:storybook": "storybook build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lighthouse": "lhci autorun"
   },
   "dependencies": {
     "@fontsource/bebas-neue": "^5.2.7",
     "@heroicons/react": "^2.2.0",
+    "@lhci/cli": "^0.15.1",
     "@mdx-js/react": "^3.1.1",
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.24",
