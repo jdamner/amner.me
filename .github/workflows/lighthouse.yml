@@ -105,15 +105,15 @@ jobs:
             
             const comment = `## ⚡ Lighthouse Audit Results
             
-| Category | Score |
-|----------|-------|
-| ${scoreEmoji(categories.performance.score)} Performance | ${(categories.performance.score * 100).toFixed(0)}/100 |
-| ${scoreEmoji(categories.accessibility.score)} Accessibility | ${(categories.accessibility.score * 100).toFixed(0)}/100 |
-| ${scoreEmoji(categories['best-practices'].score)} Best Practices | ${(categories['best-practices'].score * 100).toFixed(0)}/100 |
-| ${scoreEmoji(categories.seo.score)} SEO | ${(categories.seo.score * 100).toFixed(0)}/100 |
+            | Category | Score |
+            |----------|-------|
+            | ${scoreEmoji(categories.performance.score)} Performance | ${(categories.performance.score * 100).toFixed(0)}/100 |
+            | ${scoreEmoji(categories.accessibility.score)} Accessibility | ${(categories.accessibility.score * 100).toFixed(0)}/100 |
+            | ${scoreEmoji(categories['best-practices'].score)} Best Practices | ${(categories['best-practices'].score * 100).toFixed(0)}/100 |
+            | ${scoreEmoji(categories.seo.score)} SEO | ${(categories.seo.score * 100).toFixed(0)}/100 |
 
-[📊 Full Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-`;
+            [📊 Full Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            `;
             
             github.rest.issues.createComment({
               issue_number: context.issue.number,
