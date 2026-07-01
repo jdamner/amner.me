@@ -34,7 +34,7 @@
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
     "mdx": "^0.3.1",
-    "react": "^19.2.4",
+    "react": "^19.2.7",
     "react-dom": "^19.2.4",
     "react-router": "^7.18.1",
     "tailwindcss": "^4.3.2"
@@ -49,7 +49,7 @@
     "@tailwindcss/postcss": "^4.3.2",
     "@types/mdx": "^2.0.14",
     "@types/node": "26.1.0",
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.2.0",
     "@vitest/browser-playwright": "^4.0.18",
