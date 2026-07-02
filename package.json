@@ -43,7 +43,7 @@
     "@faker-js/faker": "^10.5.0",
     "@mdx-js/rollup": "^3.1.1",
     "@storybook/addon-a11y": "^10.4.6",
-    "@storybook/addon-docs": "^10.2.12",
+    "@storybook/addon-docs": "^10.4.6",
     "@storybook/addon-vitest": "^10.2.10",
     "@storybook/react-vite": "^10.4.6",
     "@tailwindcss/postcss": "^4.3.2",
