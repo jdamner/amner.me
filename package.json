@@ -23,7 +23,7 @@
     "lighthouse": "lhci autorun"
   },
   "dependencies": {
-    "@fontsource/bebas-neue": "^5.2.7",
+    "@fontsource/bebas-neue": "^5.3.0",
     "@heroicons/react": "^2.2.0",
     "@lhci/cli": "^0.15.1",
     "@mdx-js/react": "^3.1.1",
