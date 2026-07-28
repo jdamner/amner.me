@@ -48,7 +48,7 @@
     "@storybook/react-vite": "^10.5.4",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/mdx": "^2.0.14",
-    "@types/node": "26.1.1",
+    "@types/node": "26.1.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.2.0",
