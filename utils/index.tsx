@@ -41,14 +41,31 @@ const extractMetadata = <T extends Record<string, any>>(
  * Gets all Posts
  */
 const getAllPosts = () =>
-  extractMetadata<WithTitle & WithThumbnail & WithDateString>(
+  extractMetadata<WithTitle & WithThumbnail & WithDateString & WithFeatured>(
     blogModules,
-    (data): data is WithTitle & WithThumbnail & WithDateString =>
-      hasTitle(data) && hasThumbnail(data) && hasDateString(data),
+    (
+      data,
+    ): data is WithTitle &
+      WithThumbnail &
+      WithDateString &
+      WithFeatured =>
+      hasTitle(data) &&
+      hasDateString(data) &&
+      (!("thumbnail" in data) || typeof data.thumbnail === "string") &&
+      (!("featured" in data) || typeof data.featured === "boolean"),
   );
 
 export const useAllServices = () =>
-  extractMetadata<WithTitle>(serviceModules, hasTitle);
+  extractMetadata<WithTitle>(serviceModules, hasTitle).sort((a, b) => {
+    const priority = ["React", "Node.js & TypeScript", "Cloud Native"];
+    const aPriority = priority.indexOf(a.data.title);
+    const bPriority = priority.indexOf(b.data.title);
+    if (aPriority !== -1 || bPriority !== -1) {
+      return (aPriority === -1 ? priority.length : aPriority) -
+        (bPriority === -1 ? priority.length : bPriority);
+    }
+    return a.data.title.localeCompare(b.data.title);
+  });
 
 export const getAllProjects = () =>
   extractMetadata<WithTitle & WithLink>(
@@ -92,25 +109,27 @@ export const useAllEducation = () =>
 export const getPost = (slug: string) =>
   getAllPosts().find((post) => post.slug === slug);
 
-export const getAllPostLinks = () =>
+export const getAllPostLinks = (featuredOnly = false) =>
   getAllPosts()
+    .filter(({ data }) => !featuredOnly || data.featured === true)
     .map((post) => ({
       title: post.data.title,
       thumbnail: post.data.thumbnail,
       slug: post.slug,
       date: post.data.date,
     }))
-    .sort((a, b) => (a.date > b.date ? -1 : 1));
+    .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
 
 type WithTitle = { title: string };
 type WithSubtitle = { subtitle: string };
 type WithLink = { link: string };
-type WithThumbnail = { thumbnail: string };
+type WithThumbnail = { thumbnail?: string };
 type WithDateString = { date: string };
 type WithPhone = { phone: string };
 type WithWebsite = { website: string };
 type WithEmail = { email: string };
 type WithRole = { role: string };
+type WithFeatured = { featured?: boolean };
 
 const hasTitle = (data: any): data is WithTitle =>
   typeof data === "object" &&
@@ -123,9 +142,6 @@ const hasSubtitle = (data: any): data is WithSubtitle =>
 
 const hasLink = (data: any): data is WithLink =>
   "link" in data && typeof data.link === "string";
-
-const hasThumbnail = (data: any): data is WithThumbnail =>
-  "thumbnail" in data && typeof data.thumbnail === "string";
 
 const hasDateString = (data: any): data is WithDateString =>
   "date" in data && typeof data.date === "string";

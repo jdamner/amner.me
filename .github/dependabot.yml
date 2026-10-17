@@ -12,6 +12,23 @@ updates:
     open-pull-requests-limit: 10
     labels:
       - "dependencies"
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      storybook:
+        patterns:
+          - "storybook"
+          - "@storybook/*"
+          - "eslint-plugin-storybook"
+          - "storybook-addon-*"
+      playwright:
+        patterns:
+          - "playwright"
+          - "@vitest/browser-playwright"
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:

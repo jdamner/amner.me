@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 
 import { components } from './mdx-components'
 import Loading from './components/Loading'
+import ScrollToTop from './components/ScrollToTop'
 
 import RootLayout from './routes/RootLayout'
 import Home from './routes/Home'
@@ -30,9 +31,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />
-            <Route path="cv" element={<React.Suspense fallback={<Loading />}><CV /></React.Suspense>} />
-            <Route path="privacy" element={<React.Suspense fallback={<Loading />}><Privacy /></React.Suspense>} />
-            <Route path=":slug" element={<React.Suspense fallback={<Loading />}><BlogPost /></React.Suspense>} />
+            <Route path="cv" element={<React.Suspense fallback={<Loading />}><ScrollToTop /><CV /></React.Suspense>} />
+            <Route path="privacy" element={<React.Suspense fallback={<Loading />}><ScrollToTop /><Privacy /></React.Suspense>} />
+            <Route path=":slug" element={<React.Suspense fallback={<Loading />}><ScrollToTop /><BlogPost /></React.Suspense>} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
