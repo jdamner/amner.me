@@ -4,6 +4,7 @@ import type { StorybookConfig } from "@storybook/react-vite";
 import { mergeConfig } from 'vite';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { blogFrontmatter } from '../vite-plugins/blog-frontmatter.mts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,6 +20,7 @@ export default {
   framework: "@storybook/react-vite",
   async viteFinal(config) {
     return mergeConfig(config, {
+      plugins: [blogFrontmatter(resolve(__dirname, '..'))],
       resolve: {
         alias: {
           '@/components': resolve(__dirname, '../components'),

@@ -1,58 +1,56 @@
 /* External Deps */
 import { slug } from "github-slugger";
 import React from "react";
+import blogFrontmatter from "virtual:blog-frontmatter";
 
-/* Import all MDX files using Vite's glob import */
+/* Services are shown on the home page; post bodies and CV content load lazily elsewhere. */
 const serviceModules = import.meta.glob<MDXModule>('../content/services/*.mdx', { eager: true });
-const projectModules = import.meta.glob<MDXModule>('../content/cv/projects/*.mdx', { eager: true });
-const referenceModules = import.meta.glob<MDXModule>('../content/cv/references/*.mdx', { eager: true });
-const employmentModules = import.meta.glob<MDXModule>('../content/cv/employment/*.mdx', { eager: true });
-const educationModules = import.meta.glob<MDXModule>('../content/cv/education/*.mdx', { eager: true });
-const blogModules = import.meta.glob<MDXModule>('../content/blog/*.mdx', { eager: true });
-
-type MDXModule = {
+export type MDXModule = {
   default: React.ComponentType;
   frontmatter?: Record<string, any>;
 };
 
-const extractMetadata = <T extends Record<string, any>>(
-  modules: Record<string, MDXModule>,
+const parseFrontmatter = <T extends Record<string, any>>(
+  path: string,
+  frontmatter: Record<string, any> = {},
   validator?: (data: any) => data is T,
 ) => {
-  return Object.entries(modules).map(([path, module]) => {
-    const filename = path.split('/').pop() || '';
-    const slugValue = slug(filename.replace(/\.mdx$/, ''));
-    const frontmatter = module.frontmatter || {};
-    
-    // Only log if we have a validator and frontmatter exists but is invalid
-    if (validator && Object.keys(frontmatter).length > 0 && !validator(frontmatter)) {
-      console.warn(`Invalid frontmatter in ${filename}:`, frontmatter);
-    }
-    
-    return {
-      slug: slugValue,
-      data: frontmatter as T,
-      content: module.default,
-    };
-  });
+  const filename = path.split('/').pop() || '';
+
+  // Only log if we have a validator and frontmatter exists but is invalid
+  if (validator && Object.keys(frontmatter).length > 0 && !validator(frontmatter)) {
+    console.warn(`Invalid frontmatter in ${filename}:`, frontmatter);
+  }
+
+  return {
+    slug: slug(filename.replace(/\.mdx$/, '')),
+    data: frontmatter as T,
+  };
 };
+
+export const extractMetadata = <T extends Record<string, any>>(
+  modules: Record<string, MDXModule>,
+  validator?: (data: any) => data is T,
+) =>
+  Object.entries(modules).map(([path, module]) => ({
+    ...parseFrontmatter(path, module.frontmatter, validator),
+    content: module.default,
+  }));
 
 /**
  * Gets all Posts
  */
+export const isPost = (
+  data: any,
+): data is WithTitle & WithThumbnail & WithDateString & WithFeatured =>
+  hasTitle(data) &&
+  hasDateString(data) &&
+  (!("thumbnail" in data) || typeof data.thumbnail === "string") &&
+  (!("featured" in data) || typeof data.featured === "boolean");
+
 const getAllPosts = () =>
-  extractMetadata<WithTitle & WithThumbnail & WithDateString & WithFeatured>(
-    blogModules,
-    (
-      data,
-    ): data is WithTitle &
-      WithThumbnail &
-      WithDateString &
-      WithFeatured =>
-      hasTitle(data) &&
-      hasDateString(data) &&
-      (!("thumbnail" in data) || typeof data.thumbnail === "string") &&
-      (!("featured" in data) || typeof data.featured === "boolean"),
+  Object.entries(blogFrontmatter).map(([path, frontmatter]) =>
+    parseFrontmatter(path, frontmatter, isPost),
   );
 
 export const useAllServices = () =>
@@ -66,45 +64,6 @@ export const useAllServices = () =>
     }
     return a.data.title.localeCompare(b.data.title);
   });
-
-export const getAllProjects = () =>
-  extractMetadata<WithTitle & WithLink>(
-    projectModules,
-    (data): data is WithTitle & WithLink => hasTitle(data) && hasLink(data),
-  );
-
-export const useAllReferences = () =>
-  extractMetadata<WithTitle & WithWebsite & WithPhone & WithEmail>(
-    referenceModules,
-    (data): data is WithTitle & WithWebsite & WithPhone & WithEmail =>
-      hasTitle(data) && hasWebsite(data) && hasPhone(data) && hasEmail(data),
-  );
-
-export const useAllEmployment = () =>
-  extractMetadata<
-    WithTitle & WithSubtitle & WithDateString & WithRole & WithWebsite
-  >(
-    employmentModules,
-    (
-      data,
-    ): data is WithTitle &
-      WithSubtitle &
-      WithDateString &
-      WithRole &
-      WithWebsite =>
-      hasTitle(data) &&
-      hasSubtitle(data) &&
-      hasDateString(data) &&
-      hasRole(data) &&
-      hasWebsite(data),
-  );
-
-export const useAllEducation = () =>
-  extractMetadata<WithTitle & WithDateString>(
-    educationModules,
-    (data): data is WithTitle & WithDateString =>
-      hasTitle(data) && hasDateString(data),
-  );
 
 export const getPost = (slug: string) =>
   getAllPosts().find((post) => post.slug === slug);
@@ -120,39 +79,39 @@ export const getAllPostLinks = (featuredOnly = false) =>
     }))
     .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
 
-type WithTitle = { title: string };
-type WithSubtitle = { subtitle: string };
-type WithLink = { link: string };
-type WithThumbnail = { thumbnail?: string };
-type WithDateString = { date: string };
-type WithPhone = { phone: string };
-type WithWebsite = { website: string };
-type WithEmail = { email: string };
-type WithRole = { role: string };
-type WithFeatured = { featured?: boolean };
+export type WithTitle = { title: string };
+export type WithSubtitle = { subtitle: string };
+export type WithLink = { link: string };
+export type WithThumbnail = { thumbnail?: string };
+export type WithDateString = { date: string };
+export type WithPhone = { phone: string };
+export type WithWebsite = { website: string };
+export type WithEmail = { email: string };
+export type WithRole = { role: string };
+export type WithFeatured = { featured?: boolean };
 
-const hasTitle = (data: any): data is WithTitle =>
+export const hasTitle = (data: any): data is WithTitle =>
   typeof data === "object" &&
   data !== null &&
   "title" in data &&
   typeof data.title === "string";
 
-const hasSubtitle = (data: any): data is WithSubtitle =>
+export const hasSubtitle = (data: any): data is WithSubtitle =>
   "subtitle" in data && typeof data.subtitle === "string";
 
-const hasLink = (data: any): data is WithLink =>
+export const hasLink = (data: any): data is WithLink =>
   "link" in data && typeof data.link === "string";
 
-const hasDateString = (data: any): data is WithDateString =>
+export const hasDateString = (data: any): data is WithDateString =>
   "date" in data && typeof data.date === "string";
 
-const hasPhone = (data: any): data is WithPhone =>
+export const hasPhone = (data: any): data is WithPhone =>
   "phone" in data && typeof data.phone === "string";
 
-const hasWebsite = (data: any): data is WithWebsite =>
+export const hasWebsite = (data: any): data is WithWebsite =>
   "website" in data && typeof data.website === "string";
 
-const hasEmail = (data: any): data is WithEmail =>
+export const hasEmail = (data: any): data is WithEmail =>
   "email" in data && typeof data.email === "string";
 
 export const hasRole = (data: any): data is WithRole =>

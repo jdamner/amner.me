@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import { blogFrontmatter } from './vite-plugins/blog-frontmatter.mts';
 import cssInjectedByJs from 'vite-plugin-css-injected-by-js';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -35,7 +36,7 @@ const dirname = import.meta.dirname;
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   base: '/',
-  plugins: [cssInjectedByJs(), mdx({
+  plugins: [blogFrontmatter(dirname), cssInjectedByJs(), mdx({
     remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm],
     rehypePlugins: [[rehypeHighlight, { highlighter: hljs }]]
   }), react({
