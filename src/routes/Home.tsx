@@ -14,7 +14,7 @@ const Home = () => {
   
   return (
     <>
-      <Header title="Hi, I'm a software developer.">
+      <Header title="React & TypeScript Developer">
         <div className="prose prose-invert">
           <Content />
         </div>
