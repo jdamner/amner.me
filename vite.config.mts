@@ -1,5 +1,6 @@
 /// <reference types="vitest/config" />
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
+import csp from 'vite-plugin-csp-guard';
 import react from '@vitejs/plugin-react';
 import mdx from '@mdx-js/rollup';
 import { resolve } from 'path';
@@ -8,7 +9,6 @@ import rehypeHighlight from 'rehype-highlight';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import { blogFrontmatter } from './vite-plugins/blog-frontmatter.mts';
-import cssInjectedByJs from 'vite-plugin-css-injected-by-js';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
@@ -27,8 +27,42 @@ hljs.registerLanguage('css', css);
 hljs.registerLanguage('json', json);
 hljs.registerLanguage('yaml', yaml);
 
+// Inlines built CSS into index.html (no request chain, no JS injection) and
+// adds its hash to the CSP, since vite-plugin-csp-guard doesn't hash inline styles.
+const inlineCss = (): Plugin => {
+  let hash = '';
+  return {
+  name: 'inline-css',
+  apply: 'build',
+  enforce: 'post',
+  generateBundle: {
+    order: 'post',
+    handler(_, bundle) {
+      const html = bundle['index.html'];
+      if (hash && html?.type === 'asset') {
+        html.source = String(html.source).replace("style-src-elem 'self'", `style-src-elem 'self' ${hash}`);
+      }
+    },
+  },
+  transformIndexHtml: {
+    order: 'post',
+    handler(html, ctx) {
+      const bundle = ctx.bundle ?? {};
+      const cssFiles = Object.values(bundle).filter((f) => f.type === 'asset' && f.fileName.endsWith('.css'));
+      const css = cssFiles.map((f) => String((f as { source: string | Uint8Array }).source)).join('');
+      cssFiles.forEach((f) => delete bundle[f.fileName]);
+      hash = `'sha256-${createHash('sha256').update(css).digest('base64')}'`;
+      return html
+        .replace(/<link rel="stylesheet"[^>]*>/g, '')
+        .replace('</head>', `<style>${css}</style></head>`);
+    },
+  },
+  };
+};
+
 // https://vitejs.dev/config/
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
 const dirname = import.meta.dirname;
@@ -36,7 +70,21 @@ const dirname = import.meta.dirname;
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   base: '/',
-  plugins: [blogFrontmatter(dirname), cssInjectedByJs(), mdx({
+  plugins: [inlineCss(), csp({
+    dev: { run: false },
+    policy: {
+      'default-src': ["'self'"],
+      'script-src': ["'self'"],
+      'style-src-attr': ["'unsafe-inline'"],
+      'img-src': ["'self'", 'data:'],
+      'font-src': ["'self'", 'data:'],
+      'connect-src': ["'self'"],
+      'manifest-src': ["'self'"],
+      'base-uri': ["'self'"],
+      'form-action': ["'none'"],
+    },
+    build: { sri: true },
+  }), blogFrontmatter(dirname), mdx({
     remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm],
     rehypePlugins: [[rehypeHighlight, { highlighter: hljs }]]
   }), react({
