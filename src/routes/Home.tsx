@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <Header
         title="I build enterprise web applications"
-        titleClassName="text-4xl sm:text-5xl lg:text-6xl"
+        titleClassName="text-4xl sm:text-5xl lg:text-9xl"
       >
         <div className="prose prose-invert">
           <Content />
