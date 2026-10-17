@@ -28,10 +28,9 @@ hljs.registerLanguage('yaml', yaml);
 
 // https://vitejs.dev/config/
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
-const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
+const dirname = import.meta.dirname;
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
@@ -44,11 +43,11 @@ export default defineConfig({
   })],
   resolve: {
     alias: {
-      '@/components': resolve(__dirname, './components'),
-      '@/content': resolve(__dirname, './content'),
-      '@/public': resolve(__dirname, './public'),
-      '@/utils': resolve(__dirname, './utils'),
-      '@/app': resolve(__dirname, './app')
+      '@/components': resolve(dirname, './components'),
+      '@/content': resolve(dirname, './content'),
+      '@/public': resolve(dirname, './public'),
+      '@/utils': resolve(dirname, './utils'),
+      '@/app': resolve(dirname, './app')
     }
   },
   build: {
