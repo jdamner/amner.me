@@ -1,0 +1,29 @@
+---
+layout: post
+title: Local Development for Cloud-Native Systems
+date: 2026-10-17T18:00:00.000Z
+slug: local-development-cloud-native
+---
+
+Cloud-native software can depend on services that do not exist on a developer's laptop: queues, object storage, identity providers, databases or event-driven functions. Connecting every local change to live cloud infrastructure can make development slow, fragile and difficult to reproduce.
+
+The challenge is to make local development useful without pretending that a laptop is the cloud.
+
+One option is to call shared or development cloud resources directly. That can provide a realistic integration, but it also introduces network dependencies, credentials, shared state and the risk of one developer's work affecting another's. It can make a simple test fail because a remote service is unavailable or configured differently.
+
+At the other extreme, a local fake can be so lightweight that it behaves nothing like the real dependency. That makes the feedback loop fast, but can create false confidence: code passes locally and fails when it meets the actual service.
+
+The useful middle ground depends on the system. A local substitute should reproduce the behavior the application relies on, not every detail of the remote provider. Keep the boundary explicit, make setup repeatable, and document what the local environment does—and does not—validate. Then reserve integration checks against real infrastructure for the behaviors that a local substitute cannot faithfully represent.
+
+Some practical options, depending on the services and fidelity you need:
+
+- [LocalStack](https://localstack.cloud/) — emulate a range of AWS services locally for development and integration testing.
+- [Moto](https://docs.getmoto.org/en/latest/) — mock AWS services in tests or run a local server that AWS SDK clients can target.
+- [AWS SAM CLI local](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/using-sam-cli-local.html) — run and test serverless functions and API Gateway integrations on a local machine.
+- [Testcontainers](https://testcontainers.com/) — start disposable containers for real dependencies such as databases, queues or other services as part of tests.
+
+This is not only a tooling problem. It is an architecture problem. Clear interfaces around external services make it easier to swap implementations, test application logic in isolation and understand where a failure originates. Consistent configuration and predictable startup reduce the amount of unwritten knowledge required to contribute.
+
+Good local development does not mean eliminating cloud dependencies from development altogether. It means choosing deliberately which dependencies need to be real, which can be simulated, and how to check the gap between those environments before release.
+
+For a team, the payoff is a calmer feedback loop: developers can make progress without waiting on shared infrastructure, while still having a clear path to validating the system as it will actually run.

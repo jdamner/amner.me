@@ -22,7 +22,11 @@ export default function ContactDetails(
   const iconClass = "inline-block w-12 h-12 mr-3";
 
   return (
-    <section className="col-span-2 mt-5 lg:ml-8" id="contact" {...props}>
+    <section
+      className="col-span-2 mt-5 lg:ml-8 lg:sticky lg:top-5 lg:self-start"
+      id="contact"
+      {...props}
+    >
       <div className="px-4 py-3 bg-highlighted text-black flex flex-col gap-5">
         <h2 className="text-9xl tracking-tight uppercase" style={font.style}>
           Say hello
