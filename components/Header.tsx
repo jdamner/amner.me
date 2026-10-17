@@ -1,4 +1,5 @@
 import React from "react";
+import { font } from "@/utils/header-font";
 
 export default function Header(
   props: React.DetailedHTMLProps<
@@ -21,7 +22,8 @@ export default function Header(
     >
       <div className="container py-5 mx-auto ">
         <h1
-          className={`font-sans ${titleClassName} font-black uppercase mb-5 lg:w-1/2`}
+          className={`tracking-tight leading-none ${titleClassName} uppercase mb-5 lg:w-1/2`}
+          style={font.style}
         >
           {title}
         </h1>
