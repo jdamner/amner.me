@@ -28,7 +28,10 @@ updates:
       playwright:
         patterns:
           - "playwright"
-          - "@vitest/browser-playwright"
+      vitest:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
