@@ -13,7 +13,7 @@ export default function PostList(
   const { posts, ...rest } = props;
   return (
     <div {...rest}>
-      <Title>Blog Posts</Title>
+      <Title>Writing</Title>
       <ul>
         {posts &&
           posts.map((post, index) => (
