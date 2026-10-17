@@ -4,9 +4,14 @@ export default function Header(
   props: React.DetailedHTMLProps<
     React.HTMLProps<HTMLDivElement>,
     HTMLDivElement
-  > & { title: string },
+  > & { title: string; titleClassName?: string },
 ) {
-  const { title, children, ...rest } = props;
+  const {
+    title,
+    titleClassName = "text-5xl sm:text-8xl lg:text-9xl",
+    children,
+    ...rest
+  } = props;
 
   return (
     <section
@@ -15,7 +20,9 @@ export default function Header(
       {...rest}
     >
       <div className="container py-5 mx-auto ">
-        <h1 className="font-sans text-5xl sm:text-8xl lg:text-9xl font-black uppercase mb-5 lg:w-1/2">
+        <h1
+          className={`font-sans ${titleClassName} font-black uppercase mb-5 lg:w-1/2`}
+        >
           {title}
         </h1>
         <div className="text-xl md:text-2xl prose max-w-screen-md">

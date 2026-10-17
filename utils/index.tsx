@@ -50,8 +50,8 @@ const getAllPosts = () =>
       WithDateString &
       WithFeatured =>
       hasTitle(data) &&
-      hasThumbnail(data) &&
       hasDateString(data) &&
+      (!("thumbnail" in data) || typeof data.thumbnail === "string") &&
       (!("featured" in data) || typeof data.featured === "boolean"),
   );
 
@@ -118,12 +118,12 @@ export const getAllPostLinks = (featuredOnly = false) =>
       slug: post.slug,
       date: post.data.date,
     }))
-    .sort((a, b) => (a.date > b.date ? -1 : 1));
+    .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
 
 type WithTitle = { title: string };
 type WithSubtitle = { subtitle: string };
 type WithLink = { link: string };
-type WithThumbnail = { thumbnail: string };
+type WithThumbnail = { thumbnail?: string };
 type WithDateString = { date: string };
 type WithPhone = { phone: string };
 type WithWebsite = { website: string };
@@ -142,9 +142,6 @@ const hasSubtitle = (data: any): data is WithSubtitle =>
 
 const hasLink = (data: any): data is WithLink =>
   "link" in data && typeof data.link === "string";
-
-const hasThumbnail = (data: any): data is WithThumbnail =>
-  "thumbnail" in data && typeof data.thumbnail === "string";
 
 const hasDateString = (data: any): data is WithDateString =>
   "date" in data && typeof data.date === "string";

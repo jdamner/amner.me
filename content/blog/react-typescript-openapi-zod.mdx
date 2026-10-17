@@ -1,0 +1,20 @@
+---
+layout: post
+title: From React UI to a Typed API
+date: 2026-10-17T18:00:00.000Z
+slug: react-typescript-openapi-zod
+---
+
+A feature is more than the screen a user sees. Behind a useful React interface is a request, a response contract and a set of decisions about what the user should experience while the system is working—or when it cannot.
+
+Here is a sanitized example of that flow: a React screen needs to show a collection of records from an API. The specific product details are not important; the same considerations apply to a dashboard, a search result or an internal tool.
+
+I start with the shape of the data the screen needs. An **OpenAPI schema** describes the API contract, and CI validates the backend and frontend against that contract so incompatible changes can be caught before they ship. The contract should describe the information the UI actually uses, rather than exposing every detail of an internal data model. On the backend, the endpoint is responsible for validating the request, applying the relevant business rules and returning a predictable response.
+
+On the React side, the request is only one part of the interaction. The screen needs to handle loading, success, empty and error states explicitly. A well-designed loading state reassures the user that work is happening. An empty state explains that there is nothing to show yet. An error state should make the problem clear and, where appropriate, give the user a way to try again.
+
+On the frontend, **Zod** can enforce the expected response shape at runtime when data arrives, while TypeScript helps make those data boundaries visible during development. Static types and CI contract checks catch many mistakes early, but they do not remove the need to handle unexpected data and failures at runtime.
+
+Finally, tests should exercise the behavior that matters: the API's response contract and the interface's reaction to each outcome. That gives the feature a more reliable foundation than testing only the happy path.
+
+Thinking through a feature end to end helps me avoid treating the frontend and backend as separate deliverables. The goal is a coherent experience, backed by an API that is clear to use and straightforward to maintain.

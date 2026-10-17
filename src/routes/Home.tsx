@@ -14,7 +14,10 @@ const Home = () => {
   
   return (
     <>
-      <Header title="React & TypeScript Developer">
+      <Header
+        title="I build enterprise web applications"
+        titleClassName="text-4xl sm:text-5xl lg:text-6xl"
+      >
         <div className="prose prose-invert">
           <Content />
         </div>
