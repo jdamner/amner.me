@@ -60,14 +60,16 @@ export default defineConfig({
         drop_console: true,
       },
     },
-    rollupOptions: {
+    rolldownOptions: {
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom', 'react-router'],
-          'vendor-mdx': ['@mdx-js/react'],
-        }
-      }
-    }
+        codeSplitting: {
+          groups: [
+            { name: 'vendor-react', test: /node_modules[\\/](react|react-dom|react-router)[\\/]/ },
+            { name: 'vendor-mdx', test: /node_modules[\\/]@mdx-js[\\/]react[\\/]/ },
+          ],
+        },
+      },
+    },
   },
   assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.otf'],
   optimizeDeps: {
