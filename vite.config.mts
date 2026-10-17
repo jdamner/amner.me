@@ -115,6 +115,8 @@ export default defineConfig({
     },
     rolldownOptions: {
       output: {
+        // New name busts caches of the old index-*.js, whose hash collided with the post-processed (CSS-injected) build
+        entryFileNames: 'assets/main-[hash].js',
         codeSplitting: {
           groups: [
             { name: 'vendor-react', test: /node_modules[\\/](react|react-dom|react-router)[\\/]/ },
