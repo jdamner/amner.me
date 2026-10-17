@@ -25,28 +25,27 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "baseUrl": ".",
     "paths": {
       "@/components/*": [
-        "components/*"
+        "./components/*"
       ],
       "@/components": [
-        "components"
+        "./components"
       ],
       "@/content/*": [
-        "content/*"
+        "./content/*"
       ],
       "@/public/*": [
-        "public/*"
+        "./public/*"
       ],
       "@/utils/*": [
-        "utils/*"
+        "./utils/*"
       ],
       "@/utils": [
-        "utils"
+        "./utils"
       ],
       "@/app/*": [
-        "app/*"
+        "./app/*"
       ]
     }
   },
