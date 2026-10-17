@@ -5,7 +5,7 @@ import TimelineItem from "./TimelineItem";
 import TimelineDetail from "./TimelineDetail";
 import TimelineControlButton from "./TimelineControlButton";
 
-import { useAllEmployment } from "@/utils/index";
+import type { useAllEmployment } from "@/utils/cv";
 
 export default function Timeline(
   props: React.DetailedHTMLProps<

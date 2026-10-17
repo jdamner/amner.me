@@ -12,8 +12,8 @@ import {
   useAllEmployment,
   getAllProjects,
   useAllReferences,
-  useAllServices,
-} from "@/utils";
+} from "@/utils/cv";
+import { useAllServices } from "@/utils";
 import { font } from "@/utils/header-font";
 import { ServicePointer } from "@/components/ServicePointer";
 
