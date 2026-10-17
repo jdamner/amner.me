@@ -1,19 +1,9 @@
-import { useLayoutEffect } from "react";
-import { Link, Outlet, useLocation } from "react-router";
+import { Link, Outlet } from "react-router";
 
 /* Components */
 import { Container } from "@/components/Layouts";
 import { NavBar } from "@/components";
-
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-};
+import ScrollToTop from "../components/ScrollToTop";
 
 const RootLayout = () => (
   <>
