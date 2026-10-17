@@ -40,7 +40,12 @@ const inlineCss = (): Plugin => {
     handler(_, bundle) {
       const html = bundle['index.html'];
       if (hash && html?.type === 'asset') {
-        html.source = String(html.source).replace("style-src-elem 'self'", `style-src-elem 'self' ${hash}`);
+        // The charset must be within the first 1024 bytes, but the CSP meta is prepended and long
+        const charset = '<meta charset="UTF-8">';
+        html.source = String(html.source)
+          .replace("style-src-elem 'self'", `style-src-elem 'self' ${hash}`)
+          .replace(charset, '')
+          .replace('<head>', `<head>${charset}`);
       }
     },
   },
