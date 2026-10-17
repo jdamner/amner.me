@@ -3,9 +3,11 @@ import { Link, Outlet } from "react-router";
 /* Components */
 import { Container } from "@/components/Layouts";
 import { NavBar } from "@/components";
+import ScrollToTop from "../components/ScrollToTop";
 
 const RootLayout = () => (
   <>
+    <ScrollToTop />
     <NavBar />
     <main id="page">
       <Outlet />
