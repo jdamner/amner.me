@@ -61,7 +61,7 @@
     "eslint-plugin-prettier": "^5.5.7",
     "eslint-plugin-storybook": "^10.6.3",
     "playwright": "^1.64.1",
-    "postcss": "^8.5.31",
+    "postcss": "^8.5.32",
     "postcss-import": "^17.0.1",
     "prettier": "^3.9.10",
     "react-markdown": "^10.1.0",
