@@ -46,7 +46,7 @@
     "@storybook/addon-docs": "^10.6.5",
     "@storybook/addon-vitest": "^10.6.5",
     "@storybook/react-vite": "^10.6.5",
-    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/postcss": "^4.3.4",
     "@types/mdx": "^2.0.14",
     "@types/node": "26.6.6",
     "@types/react": "^19.3.0",
